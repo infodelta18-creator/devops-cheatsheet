@@ -2,136 +2,136 @@
 
 ![text](https://imgur.com/XHwJp6U.png)
 
-## Checkout detailed article on [Dev.to](https://dev.to/prodevopsguytech/docker-commands-from-beginner-to-advanced-for-devops-engineers-bb3)
+## [Dev.to] saytidagi batafsil maqolani ko'rib chiqing (https://dev.to/prodevopsguytech/docker-commands-from-beginner-to-advanced-for-devops-engineers-bb3)
 
-## 1. Introduction to Docker
+## 1. Dockerga kirish
 
-### What is Docker?
+### Docker nima?
 
-- **Docker** is an open-source platform that automates the deployment, scaling, and management of applications by using containerization technology. Containers are lightweight, portable, and consistent environments that contain everything needed to run a piece of software, including the code, runtime, system tools, libraries, and settings.
+- **Docker** - bu konteynerizatsiya texnologiyasidan foydalangan holda ilovalarni joylashtirish, masshtablash va boshqarishni avtomatlashtiradigan ochiq kodli platforma. Konteynerlar - bu dasturiy ta'minotni ishga tushirish uchun zarur bo'lgan barcha narsalarni, jumladan, kod, ish vaqti, tizim vositalari, kutubxonalar va sozlamalarni o'z ichiga olgan yengil, ko'chma va barqaror muhitlar.
 
-### Key Concepts
+### Asosiy tushunchalar
 
-- **Docker Engine**: The core component of Docker, responsible for running containers.
-- **Image**: A lightweight, standalone, and executable software package that includes everything needed to run an application.
-- **Container**: A runtime instance of a Docker image that shares the host system's kernel.
-- **Dockerfile**: A script containing a series of commands to assemble a Docker image.
-- **Registry**: A storage and distribution system for Docker images, such as Docker Hub.
-- **Docker Compose**: A tool for defining and running multi-container Docker applications using a YAML file.
+- **Docker Engine**: Dockerning asosiy komponenti, konteynerlarni ishga tushirish uchun mas'ul.
+- **Rasm**: Ilovani ishga tushirish uchun zarur bo'lgan barcha narsalarni o'z ichiga olgan yengil, mustaqil va bajariladigan dasturiy ta'minot to'plami.
+- **Konteyner**: Xost tizimining yadrosini ulashadigan Docker tasvirining ish vaqtidagi nusxasi.
+- **Dockerfile**: Docker tasvirini yig'ish uchun bir qator buyruqlarni o'z ichiga olgan skript.
+- **Registry**: Docker Hub kabi Docker tasvirlari uchun saqlash va tarqatish tizimi.
+- **Docker Compose**: YAML faylidan foydalangan holda ko'p konteynerli Docker ilovalarini aniqlash va ishga tushirish vositasi.
 
 ---
 
-## 2. Installing Docker
+## 2. Dockerni o'rnatish
 
-### Install Docker on Linux
+### Dockerni Linuxda o'rnatish
 
-- **Install Docker Engine**:
+- **Docker Engineni o'rnatish**:
 
   ```bash
   sudo apt-get update
   sudo apt-get install docker-ce docker-ce-cli containerd.io
   ```
 
-- **Start Docker Service**:
+- **Docker xizmatini ishga tushiring**:
 
   ```bash
   sudo systemctl start docker
   sudo systemctl enable docker
   ```
 
-### Install Docker on macOS
+### Dockerni macOS-ga o'rnating
 
-- **Install Docker Desktop**:
-  - Download and install Docker Desktop from [Docker's official website](https://www.docker.com/products/docker-desktop).
+- **Docker Desktopni o'rnatish**:
+  - Docker Desktop dasturini [Docker rasmiy veb-saytidan] (https://www.docker.com/products/docker-desktop) yuklab oling va o'rnating.
 
-### Install Docker on Windows
+### Dockerni Windows-ga o'rnating
 
-- **Install Docker Desktop**:
-  - Download and install Docker Desktop from [Docker's official website](https://www.docker.com/products/docker-desktop).
+- **Docker Desktopni o'rnatish**:
+- Docker Desktopni [Docker rasmiy veb-saytidan] (https://www.docker.com/products/docker-desktop) yuklab oling va o'rnating.
 
 ---
 
-## 3. Basic Docker Operations
+## 3. Dockerning asosiy operatsiyalari
 
-### Working with Docker Images
+### Docker tasvirlari bilan ishlash
 
-- **Search for an Image**:
+- **Tasvirni qidirish**:
 
   ```bash
   docker search nginx
   ```
 
-- **Pull an Image from Docker Hub**:
+- **Docker Hub’dan rasmni tortib oling**:
 
   ```bash
   docker pull nginx
   ```
 
-- **List All Images**:
+- **Barcha rasmlarni ro'yxatlash**:
 
   ```bash
   docker images
   ```
 
-- **Remove an Image**:
+- **Rasmni olib tashlash**:
 
   ```bash
   docker rmi nginx
   ```
 
-### Working with Docker Containers
+### Docker konteynerlari bilan ishlash
 
-- **Run a Container**:
+- **Konteynerni ishga tushirish**:
 
   ```bash
   docker run -d -p 80:80 --name mynginx nginx
   ```
 
-- **List Running Containers**:
+- **Ishlayotgan konteynerlar ro'yxati**:
 
   ```bash
   docker ps
   ```
 
-- **List All Containers (including stopped)**:
+- **Barcha konteynerlarni ro'yxatlash (to'xtatilganlarni ham qo'shib hisoblaganda)**:
 
   ```bash
   docker ps -a
   ```
 
-- **Stop a Running Container**:
+- **Ishlayotgan konteynerni to'xtatish**:
 
   ```bash
   docker stop mynginx
   ```
 
-- **Remove a Container**:
+- **Konteynerni olib tashlash**:
 
   ```bash
   docker rm mynginx
   ```
 
-### Docker Networks
+### Docker tarmoqlari
 
-- **List All Networks**:
+- **Barcha tarmoqlarni ro'yxatlash**:
 
   ```bash
   docker network ls
   ```
 
-- **Create a New Network**:
+- **Yangi tarmoq yaratish**:
 
   ```bash
   docker network create mynetwork
   ```
 
-- **Connect a Container to a Network**:
+- **Konteynerni tarmoqqa ulang**:
 
   ```bash
   docker network connect mynetwork mynginx
   ```
 
-- **Disconnect a Container from a Network**:
+- **Konteynerni tarmoqdan uzib qo'yish**:
 
   ```bash
   docker network disconnect mynetwork mynginx
@@ -139,52 +139,51 @@
 
 ---
 
-## 4. Building Docker Images
+## 4. Docker tasvirlarini yaratish
 
-### Dockerfile Basics
+### Dockerfile asoslari
 
-- **Sample Dockerfile**:
+- **Dockerfile namunasi**:
 
   ```Dockerfile
-  # Use an official Node.js runtime as a parent image
-  FROM node:14
+# Rasmiy Node.js ish vaqtidan ota-ona tasviri sifatida foydalaning
+FROM tugun:14
 
-  # Set the working directory in the container
-  WORKDIR /app
+  # Ishchi katalogni konteynerga o'rnating
+WORKDIR /app
 
-  # Copy the current directory contents into the container at /app
-  COPY . /app
+  # Joriy katalog tarkibini /app manzilidagi konteynerga nusxalash. NUSXA . /app
 
-  # Install any needed packages specified in package.json
+  # Ko'rsatilgan barcha kerakli paketlarni o'rnating package.json
   RUN npm install
 
-  # Make port 8080 available to the world outside this container
+  # 8080 portini ushbu konteynerdan tashqaridagi dunyo uchun mavjud qiling
   EXPOSE 8080
 
-  # Define environment variable
-  ENV NODE_ENV production
+  # Atrof-muhit o'zgaruvchisini aniqlang
+ENV NODE_ENV production
 
-  # Run app.js using node
-  CMD ["node", "app.js"]
-  ```
+  # Node yordamida app.js ni ishga tushiring
+CMD ["node", "app.js"]
+```
 
-### Building an Image from a Dockerfile
+### Dockerfile’dan rasm yaratish
 
-- **Build the Image**:
+- **Rasm yaratish**:
 
   ```bash
   docker build -t mynodeapp .
   ```
 
-### Managing Image Tags
+### Tasvir teglarini boshqarish
 
-- **Tag an Image**:
+- **Tasvir tegini qo'shish**:
 
   ```bash
   docker tag mynodeapp myrepo/mynodeapp:v1.0
   ```
 
-- **Push an Image to Docker Hub**:
+- **Tasvirni Docker Hubga yuborish**:
 
   ```bash
   docker push myrepo/mynodeapp:v1.0
@@ -194,11 +193,11 @@
 
 ## 5. Docker Compose
 
-### Introduction to Docker Compose
+### Docker Compose’ga kirish
 
-- **Docker Compose** is a tool for defining and running multi-container Docker applications. You use a YAML file to configure your application's services, and then use a single command to create and start all the services.
+- **Docker Compose** ko'p konteynerli Docker ilovalarini aniqlash va ishga tushirish vositasidir. Siz ilovangiz xizmatlarini sozlash uchun YAML faylidan foydalanasiz va keyin barcha xizmatlarni yaratish va ishga tushirish uchun bitta buyruqdan foydalanasiz.
 
-### Sample `docker-compose.yml` File
+### `docker-compose.yml` faylining namunasi
 
 ```yaml
 version: '3'
@@ -213,29 +212,29 @@ services:
       MYSQL_ROOT_PASSWORD: example
 ```
 
-### Docker Compose Commands
+### Docker Compose buyruqlari
 
-- **Start Services**:
+- **Xizmatlarni ishga tushirish**:
 
   ```bash
   docker-compose up
   ```
 
-- **Stop Services**:
+- **Xizmatlarni to'xtatish**:
 
   ```bash
   docker-compose down
   ```
 
-- **Scale Services**:
+- **Ko'lamli xizmatlar**:
 
   ```bash
   docker-compose up --scale web=3
   ```
 
-### Managing Volumes with Docker Compose
+### Docker Compose yordamida hajmlarni boshqarish
 
-- **Defining Volumes**:
+- **Hajmlarni aniqlash**:
 
   ```yaml
   services:
@@ -247,49 +246,49 @@ services:
 
 ---
 
-## 6. Docker Volumes and Storage
+## 6. Docker hajmlari va saqlash
 
-### Understanding Docker Volumes
+### Docker hajmlarini tushunish
 
-- **Volumes** are the preferred mechanism for persisting data generated and used by Docker containers.
+- **Jildlar** Docker konteynerlari tomonidan yaratilgan va ishlatiladigan ma'lumotlarni saqlash uchun afzal ko'rilgan mexanizmdir.
 
-### Managing Volumes
+### Jildlarni boshqarish
 
-- **Create a Volume**:
+- **Jild yaratish**:
 
   ```bash
   docker volume create myvolume
   ```
 
-- **List All Volumes**:
+- **Barcha jildlarni ro'yxatlash**:
 
   ```bash
   docker volume ls
   ```
 
-- **Inspect a Volume**:
+- **Jildni tekshirish**:
 
   ```bash
   docker volume inspect myvolume
   ```
 
-- **Remove a Volume**:
+- **Jildni olib tashlash**:
 
   ```bash
   docker volume rm myvolume
   ```
 
-### Mounting Volumes
+### O'rnatish hajmlari
 
-- **Mount a Volume to a Container**:
+- **Ovozni konteynerga o'rnatish**:
 
   ```bash
   docker run -d -p 80:80 --name mynginx -v myvolume:/usr/share/nginx/html nginx
   ```
 
-### Bind Mounts
+### Bog'lash moslamalari
 
-- **Use a Bind Mount**:
+- **Bog'lash moslamasidan foydalaning**:
 
   ```bash
   docker run -d -p 80:80 --name mynginx -v /path/to/local/dir:/usr/share/nginx/html nginx
@@ -297,90 +296,90 @@ services:
 
 ---
 
-## 7. Docker Networking
+## 7. Docker Tarmoqlari
 
-### Networking Modes
+### Tarmoq Usullari
 
-- **Bridge Network**: The default network driver, which allows containers to communicate on the same host.
-- **Host Network**: Removes network isolation between the container and the Docker host.
-- **Overlay Network**: Enables networking between multiple Docker hosts in a swarm.
+- **Ko'prik tarmog'i**: Konteynerlarga bir xil xostda aloqa o'rnatish imkonini beruvchi standart tarmoq drayveri.
+- **Xost Tarmog'i**: Konteyner va Docker xosti o'rtasidagi tarmoq izolyatsiyasini olib tashlaydi.
+- **Qoplama Tarmog'i**: Bir to'dada bir nechta Docker xostlari o'rtasida tarmoq ulanishini yoqadi.
 
-### Working with Networks
+### Tarmoqlar bilan ishlash
 
-- **Create a User-Defined Bridge Network**:
+- **Foydalanuvchi tomonidan belgilangan ko'prik tarmog'ini yaratish**:
 
   ```bash
   docker network create mynetwork
   ```
 
-- **Run a Container in a Network**:
+- **Tarmoqda konteynerni ishga tushirish**:
 
   ```bash
   docker run -d --name mynginx --network=mynetwork nginx
   ```
 
-- **Inspect a Network**:
+- **Tarmoqni tekshirish**:
 
   ```bash
   docker network inspect mynetwork
   ```
 
-### DNS in Docker
+### Docker’dagi DNS
 
-- Docker containers can resolve each other's hostnames to IP addresses by using the embedded DNS server.
+- Docker konteynerlari oʻrnatilgan DNS serveridan foydalanib, bir-birining xost nomlarini IP manzillariga oʻzgartirishi mumkin.
 
 ---
 
-## 8. Docker Security
+## 8. Docker xavfsizligi
 
-### Securing Docker
+### Docker xavfsizligini ta'minlash
 
-- **Least Privileged User**: Always run containers as a non-root user.
+- **Eng kam imtiyozli foydalanuvchi**: Konteynerlarni har doim root bo'lmagan foydalanuvchi sifatida ishga tushiring.
 
   ```Dockerfile
   FROM nginx
   USER www-data
   ```
 
-- **Use Trusted Images**: Use official images or images from trusted sources.
-- **Keep Docker Updated**: Regularly update Docker to the latest version to benefit from security patches.
+- **Ishonchli tasvirlardan foydalaning**: Rasmiy tasvirlardan yoki ishonchli manbalardan olingan tasvirlardan foydalaning.
+- **Dockerni yangilab turing**: Xavfsizlik yamoqlaridan foydalanish uchun Dockerni muntazam ravishda eng so'nggi versiyasiga yangilab turing.
 
 ### Docker Content Trust
 
-- **Enable Docker Content Trust (DCT)**:
+- **Docker Content Trust (DCT) ni yoqish**:
 
   ```bash
   export DOCKER_CONTENT_TRUST=1
   ```
 
-### Managing Secrets
+### Sirlarni boshqarish
 
-- **Create a Secret in Docker Swarm**:
+- **Docker Swarmda sir yaratish**:
 
   ```bash
   echo "mysecretpassword" | docker secret create my_secret -
   ```
 
-- **Use a Secret in a Service**:
+- **Xizmatda maxfiy ma'lumotlardan foydalanish**:
 
   ```bash
   docker service create --name myservice --secret my_secret nginx
   ```
 
-### Securing Docker Daemon
+### Docker Daemonini Xavfsizlantirish
 
-- **Use TLS to Secure Docker API**:
-  - Generate TLS certificates and configure the Docker daemon to use them for secure communication.
+- **Docker API'sini Xavfsizlantirish uchun TLS dan foydalanish**:
+- TLS sertifikatlarini yaratish va Docker daemonini ulardan xavfsiz aloqa uchun foydalanish uchun sozlash.
 
-### Limiting Container Resources
+### Konteyner resurslarini cheklash
 
-- **Limit Memory**:
+- **Xotirani cheklash**:
 
   ```bash
   docker run -d --name mynginx --memory="256m" nginx
   ```
 
-- **Limit CPU**:
+- **CPU chegarasi**:
 
   ```bash
   docker run -d --name mynginx --cpus="1.0" nginx
@@ -388,31 +387,31 @@ services:
 
 ---
 
-## 9. Advanced Docker Features
+## 9. Kengaytirilgan Docker xususiyatlari
 
 ### Docker Swarm
 
-- **Initialize a Swarm**:
+- **Swarmni ishga tushiring**:
 
   ```bash
   docker swarm init
   ```
 
-- **Join a Swarm**:
+- **Ommaga qo'shiling**:
 
   ```bash
   docker swarm join --token SWMTKN-1-xxxx
   ```
 
-- **Deploy a Stack**:
+- **Stekni joylashtirish**:
 
   ```bash
   docker stack deploy -c docker-compose.yml mystack
   ```
 
-### Multi-Stage Builds
+### Ko'p bosqichli tuzilmalar
 
-- **Example of a Multi-Stage Dockerfile**:
+- **Ko'p bosqichli Dockerfile misoli**:
 
   ```Dockerfile
   # First Stage
@@ -428,15 +427,15 @@ services:
   CMD ["./myapp"]
   ```
 
-### Docker Plugins
+### Docker plaginlari
 
-- **List Installed Plugins**:
+- **O'rnatilgan plaginlar ro'yxati**:
 
   ```bash
   docker plugin ls
   ```
 
-- **Install a Plugin
+- **Plaginni o'rnatish
 
 **:
 
@@ -444,10 +443,10 @@ services:
   docker plugin install vieux/sshfs
   ```
 
-### Docker Daemon Configuration
+### Docker Daemon konfiguratsiyasi
 
-- **Customizing Docker Daemon**:
-  - Edit the `/etc/docker/daemon.json` file to configure the Docker daemon.
+- **Docker Daemonni sozlash**:
+- Docker daemonni sozlash uchun `/etc/docker/daemon.json` faylini tahrirlang.
 
   ```json
   {
@@ -457,7 +456,7 @@ services:
   }
   ```
 
-- **Reload Daemon Configuration**:
+- **Daemon konfiguratsiyasini qayta yuklash**:
 
   ```bash
   sudo systemctl reload docker
@@ -465,40 +464,40 @@ services:
 
 ---
 
-## 10. Monitoring and Logging
+## 10. Monitoring va jurnalga yozish
 
-### Docker Logs
+### Docker jurnallari
 
-- **View Container Logs**:
+- **Konteyner jurnallarini ko'rish**:
 
   ```bash
   docker logs mynginx
   ```
 
-- **Follow Logs**:
+- **Jurnallarni kuzatib boring**:
 
   ```bash
   docker logs -f mynginx
   ```
 
-### Monitoring Containers
+### Konteynerlarni kuzatish
 
-- **Inspect Resource Usage**:
+- **Resurslardan foydalanishni tekshirish**:
 
   ```bash
   docker stats mynginx
   ```
 
-- **Docker Events**:
-  - Monitor Docker events in real-time.
+- **Docker tadbirlari**:
+- Docker tadbirlarini real vaqt rejimida kuzatib boring.
 
   ```bash
   docker events
   ```
 
-### Integrating with Monitoring Tools
+### Monitoring vositalari bilan integratsiya
 
-- **Prometheus and Grafana**: Use cAdvisor and Prometheus Node Exporter to monitor Docker containers.
+- **Prometheus va Grafana**: Docker konteynerlarini kuzatish uchun cAdvisor va Prometheus Node Exporter dan foydalaning.
 
   ```bash
   docker run -d --name=cadvisor --volume=/:/rootfs:ro --volume=/var/run:/var/run:ro --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --volume=/dev/disk/:/dev/disk:ro --publish=8080:8080 google/cadvisor:latest
@@ -506,25 +505,25 @@ services:
 
 ---
 
-## 11. Docker Best Practices
+## 11. Dockerning eng yaxshi amaliyotlari
 
-### Dockerfile Best Practices
+### Dockerfilening eng yaxshi amaliyotlari
 
-- **Minimize Image Size**: Use multi-stage builds and slim base images.
-- **Leverage Build Cache**: Organize Dockerfile instructions to maximize the use of cache layers.
-- **Use `.dockerignore`**: Exclude unnecessary files from the build context using a `.dockerignore` file.
+- **Tasvir hajmini minimallashtirish**: Ko'p bosqichli yig'ishlar va ingichka asosiy tasvirlardan foydalaning.
+- **Build Cache’dan foydalaning**: Kesh qatlamlaridan maksimal darajada foydalanish uchun Dockerfile ko'rsatmalarini tartibga soling.
+- **`.dockerignore`** dan foydalaning: `.dockerignore` fayli yordamida keraksiz fayllarni tuzish kontekstidan chiqarib tashlang.
 
-### Container Management Best Practices
+### Konteynerlarni boshqarish bo'yicha eng yaxshi amaliyotlar
 
-- **Immutable Infrastructure**: Treat containers as immutable, replace rather than modify running containers.
-- **Keep Containers Stateless**: Design containers to be stateless, with external data persistence.
-- **Log to STDOUT/STDERR**: Ensure containers log to STDOUT/STDERR for easier aggregation and analysis.
+- **O'zgarmas infratuzilma**: Konteynerlarni o'zgarmas deb hisoblang, ishlayotgan konteynerlarni o'zgartirish o'rniga ularni almashtiring.
+- **Konteynerlarni davlatsiz saqlang**: Konteynerlarni tashqi ma'lumotlar saqlanib qoladigan davlatsiz qilib loyihalashtiring.
+- **STDOUT/STDERR ga kirish**: Konteynerlarning osonroq agregatsiya va tahlil qilish uchun STDOUT/STDERR ga kirishini ta'minlang.
 
-### Security Best Practices
+### Xavfsizlikning eng yaxshi amaliyotlari
 
-- **Regularly Scan Images**: Use tools like `trivy` to scan images for vulnerabilities.
-- **Use Namespaces**: Use namespaces to isolate container resources and enhance security.
-- **Limit Capabilities**: Drop unnecessary capabilities from containers.
+- **Rasmlarni muntazam ravishda skanerlang**: Zaifliklarni aniqlash uchun tasvirlarni skanerlash uchun `trivy` kabi vositalardan foydalaning.
+- **Nomlar maydonidan foydalaning**: Konteyner resurslarini ajratish va xavfsizlikni oshirish uchun nomlar maydonidan foydalaning.
+- **Cheklash imkoniyatlari**: Konteynerlardan keraksiz imkoniyatlarni olib tashlang.
 
   ```bash
   docker run --cap-drop=ALL --cap-add=NET_BIND_SERVICE nginx
@@ -532,46 +531,46 @@ services:
 
 ---
 
-## 12. Troubleshooting Docker
+## 12. Docker bilan bog'liq muammolarni bartaraf etish
 
-### Common Issues
+### Umumiy muammolar
 
-- **Container Exits Immediately**:
-  - Check the Docker logs for errors.
+- **Konteyner darhol chiqadi**:
+- Docker jurnallarida xatolar bor-yo'qligini tekshiring.
 
   ```bash
   docker logs <container_id>
   ```
 
-- **Image Build Fails**:
-  - Debug using the `--no-cache` option to rebuild the image without cache.
+- **Tasvir yaratishda xatoliklar**:
+- Tasvirni keshsiz qayta tiklash uchun `--keshsiz` opsiyasidan foydalanib nosozliklarni tuzatish.
 
   ```bash
   docker build --no-cache -t myimage .
   ```
 
-- **Networking Issues**:
-  - Verify network settings and connectivity.
+- **Tarmoq bilan bog'liq muammolar**:
+- Tarmoq sozlamalari va ulanishni tekshiring.
 
   ```bash
   docker network inspect <network_name>
   ```
 
-### Useful Docker Commands for Troubleshooting
+### Muammolarni bartaraf etish uchun foydali Docker buyruqlari
 
-- **Inspect a Container**:
+- **Konteynerni tekshiring**:
 
   ```bash
   docker inspect <container_id>
   ```
 
-- **Enter a Running Container**:
+- **Ishlayotgan konteynerni kiriting**:
 
   ```bash
   docker exec -it <container_id> /bin/bash
   ```
 
-- **Check Resource Usage**:
+- **Resurslardan foydalanishni tekshirish**:
 
   ```bash
   docker stats
@@ -579,14 +578,14 @@ services:
 
 ---
 
-## 13. References
+## 13. Adabiyotlar
 
-### Official Documentation
+### Rasmiy hujjatlar
 
-- [Docker Documentation](https://docs.docker.com/)
+- [Docker hujjatlari](https://docs.docker.com/)
 
-### Community Resources
+### Jamiyat resurslari
 
 - [Docker Hub](https://hub.docker.com/)
-- [Docker GitHub Repository](https://github.com/docker/docker-ce)
-- [Docker Forums](https://forums.docker.com/)
+- [Docker GitHub ombori](https://github.com/docker/docker-ce)
+- [Docker forumlari](https://forums.docker.com/)
