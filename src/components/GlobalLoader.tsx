@@ -13,7 +13,7 @@ interface GlobalLoaderProps {
 
 export function GlobalLoader({
   minimumLoadingTime = 1200,
-  loadingMessage = 'Loading DevOps Hub...',
+  loadingMessage = 'Loading DevOps Netlivy...',
 }: GlobalLoaderProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
