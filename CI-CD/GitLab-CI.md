@@ -2,20 +2,19 @@
 
 ![](https://imgur.com/dbufti0.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- GitLab CI/CD is a part of GitLab, a complete DevOps platform, allowing you to define CI/CD pipelines directly within your GitLab repository using the `.gitlab-ci.yml` file.
+- GitLab CI/CD to'liq DevOps platformasi bo'lgan GitLabning bir qismi bo'lib, sizga CI/CD quvurlarini to'g'ridan-to'g'ri GitLab omboringizda `.gitlab-ci.yml` faylidan foydalanib aniqlash imkonini beradi.
 
-**2. Key Concepts:**
+**2. Asosiy tushunchalar:**
 
-- **Pipeline:** A series of stages that run jobs sequentially or in parallel.
-- **Job:** An individual unit of work, such as running tests or deploying code.
-- **Stage:** A group of jobs that run in parallel.
-- **Runner:** The agent that executes jobs, can be GitLab-hosted or self-hosted.
+- **Quvur liniyasi:** Ishlarni ketma-ket yoki parallel ravishda bajaradigan bosqichlar seriyasi.
+- **Ish:** Sinovlarni bajarish yoki kodni joylashtirish kabi alohida ish birligi.
+- **Bosqich:** Guruh
 
-**3. Basic `.gitlab-ci.yml` Example:**
+**3. Asosiy `.gitlab-ci.yml` Misol:**
 
-- **YAML Syntax:**
+- **YAML sintaksisi:**
 
   ```yaml
   stages:
@@ -44,15 +43,11 @@
       - make deploy
   ```
 
-**4. Runners:**
+**4. Yuguruvchilar:**
 
-- **Shared Runners:** Provided by GitLab and available to all projects.
-- **Specific Runners:** Custom runners registered to a specific project or group.
-- **Tags:** Use tags to specify which runner should execute a job.
-
-**5. Artifacts and Caching:**
-
-- **Artifacts:** Save job outputs and make them available to subsequent jobs.
+- **Umumiy yuguruvchilar:** GitLab tomonidan taqdim etiladi va barcha loyihalar uchun mavjud.
+- **Maxsus yuguruvchilar:** Muayyan loyiha yoki guruhga ro'yxatdan o'tgan maxsus yuguruvchilar.
+- **Teglar:** Belgilash uchun teglardan foydalaning
 
   ```yaml
   artifacts:
@@ -61,7 +56,7 @@
     expire_in: 1 week
   ```
 
-- **Caching:** Speed up jobs by reusing previously downloaded dependencies.
+- **Keshlash:** Avval yuklab olingan bog'liqliklardan qayta foydalanish orqali ishlarni tezlashtirish.
 
   ```yaml
   cache:
@@ -69,9 +64,9 @@
       - node_modules/
   ```
 
-**6. Environments and Deployments:**
+**6. Muhitlar va joylashtirishlar:**
 
-- **Environments:** Define environments to organize and manage deployments.
+- **Muhitlar:** Joylashtirishlarni tashkil qilish va boshqarish uchun muhitlarni aniqlang.
 
   ```yaml
   deploy-job:
@@ -84,7 +79,7 @@
       - ./deploy.sh
   ```
 
-- **Manual Deployments:** Require manual approval before a job runs.
+- **Qo'lda joylashtirish:** Ishni boshlashdan oldin qo'lda tasdiqlash talab qilinadi.
 
   ```yaml
   deploy-job:
@@ -94,9 +89,9 @@
     when: manual
   ```
 
-**7. Advanced `.gitlab-ci.yml` Features:**
+**7. Kengaytirilgan `.gitlab-ci.yml` xususiyatlari:**
 
-- **YAML Anchors:** Reuse parts of your YAML configuration.
+- **YAML langarlari:** YAML konfiguratsiyangizning qismlaridan qayta foydalaning.
 
   ```yaml
   .default-job: &default-job
@@ -110,16 +105,16 @@
     <<: *default-job
   ```
 
-- **Includes:** Include other YAML files to organize your configuration.
+- **O'z ichiga oladi:** Konfiguratsiyangizni tartibga solish uchun boshqa YAML fayllarini qo'shing.
 
   ```yaml
   include:
     - local: '/templates/.gitlab-ci-template.yml'
   ```
 
-**8. Security and Compliance:**
+**8. Xavfsizlik va muvofiqlik:**
 
-- **Secret Variables:** Store sensitive data securely in GitLab CI/CD.
+- **Maxfiy o'zgaruvchilar:** GitLab CI/CD da maxfiy ma'lumotlarni xavfsiz saqlang.
 
   ```yaml
   deploy-job:
@@ -127,15 +122,15 @@
       - deploy --token $CI_DEPLOY_TOKEN
   ```
 
-- **Protected Branches:** Restrict certain jobs to run only on protected branches.
+- **Himoyalangan filiallar:** Muayyan ishlarni faqat himoyalangan filiallarda bajarishni cheklash.
 
-**9. Troubleshooting:**
+**9. Muammolarni bartaraf etish:**
 
-- **Pipeline Logs:** Access detailed logs for each job to troubleshoot failures.
-- **Retrying Jobs:** Use the GitLab UI to manually retry failed jobs.
+- **Quvur liniyasi jurnallari:** Nosozliklarni bartaraf etish uchun har bir ish uchun batafsil jurnallarga kirish.
+- **Qayta urinish.- **Protected Branches:** Restrict certain jobs to run only on protected branches.
 
-**10. Best Practices:**
 
-- **Modular Pipelines:** Break down your pipeline into stages for better organization.
-- **Use CI/CD Templates:** Leverage GitLab’s built-in templates for common CI/CD tasks.
-- **Optimize Runner Usage:** Use caching, artifacts, and parallel jobs to reduce pipeline runtime.
+**10. Eng yaxshi amaliyotlar:**
+
+- **Modulli quvurlar:** Yaxshiroq tashkil etish uchun quvuringizni bosqichlarga ajrating.
+- **CI/CD shablonlaridan foydalaning:** Umumiy CI/CD vazifalari uchun GitLabning o'rnatilgan shablonlaridan foydalaning.
