@@ -30,13 +30,13 @@ export default function Error({
             onClick={reset}
             className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors"
           >
-            Try again
+            Qayta yuklash
           </button>
           <Link
             href="/"
             className="px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           >
-            Go back home
+           Boshiga qaytish
           </Link>
         </div>
       </div>
