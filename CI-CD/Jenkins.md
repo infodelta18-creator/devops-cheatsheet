@@ -2,21 +2,21 @@
 
 ![](https://imgur.com/jWGs9lH.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- Jenkins is an open-source automation server that helps automate parts of software development related to building, testing, and deploying, facilitating continuous integration and delivery.
+- Jenkins - bu dasturiy ta'minotni ishlab chiqishning yaratish, sinovdan o'tkazish va joylashtirish bilan bog'liq qismlarini avtomatlashtirishga yordam beradigan, uzluksiz integratsiyani osonlashtiradigan ochiq kodli avtomatlashtirish serveri.
 
-**2. Installation:**
+**2. O'rnatish:**
 
-- **Docker Installation:**
+- **Docker o'rnatish:**
 
   ```bash
   docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
   ```
 
-- **Direct Installation:**
+- **To'g'ridan-to'g'ri o'rnatish:**
 
-  - **For Ubuntu/Debian:**
+- **Ubuntu/Debian uchun:**
 
     ```bash
     wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
@@ -25,7 +25,7 @@
     sudo apt install jenkins
     ```
 
-  - **For CentOS/RHEL:**
+  - **CentOS/RHEL uchun:**
 
     ```bash
     sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
@@ -33,12 +33,12 @@
     sudo yum install jenkins
     ```
 
-- **Access Jenkins:**
-  - Visit `http://localhost:8080` in your web browser.
+- **Jenkins’ga kirish:**
+- Veb-brauzeringizda `http://localhost:8080` ga tashrif buyuring.
 
-**3. Jenkins Pipeline:**
+**3. Jenkins Quvuri:**
 
-- **Declarative Pipeline:**
+- **Deklarativ Quvuri:**
 
   ```groovy
   pipeline {
@@ -79,7 +79,7 @@
   }
   ```
 
-- **Scripted Pipeline:**
+- **Ssenariy asosida tuzilgan quvur liniyasi:**
 
   ```groovy
   node {
@@ -98,33 +98,33 @@
   }
   ```
 
-**4. Common Jenkins Commands:**
+**4. Jenkinsning keng tarqalgan buyruqlari:**
 
-- **Restart Jenkins:**
+- **Jenkinsni qayta ishga tushiring:**
 
   ```bash
   sudo systemctl restart jenkins
   ```
 
-- **Manage Jenkins from CLI:**
+- **Jenkinsni CLI dan boshqarish:**
 
   ```bash
   java -jar jenkins-cli.jar -s http://localhost:8080/ list-jobs
   ```
 
-**5. Useful Jenkins Plugins:**
+**5. Foydali Jenkins plaginlari:**
 
-- **Blue Ocean:** Modern UI for Jenkins pipelines.
-- **Git:** Integrate Git version control into Jenkins.
-- **Pipeline:** Enables Pipeline as Code.
-- **Credentials Binding:** Securely manage credentials.
-- **SonarQube Scanner:** Integrate code quality checks.
-- **Slack Notification:** Send pipeline status notifications to Slack.
+- **Moviy Okean:** Jenkins quvur liniyalari uchun zamonaviy foydalanuvchi interfeysi.
+- **Git:** Git versiya boshqaruvini Jenkinsga integratsiya qilish.
+- **Quvur liniyasi:** Quvur liniyasini kod sifatida yoqadi.
+- **Ishonch yorliqlarini bog'lash:** Ishonch yorliqlarini xavfsiz boshqarish
+- **SonarQube skaneri:** Kod sifatini tekshirishni birlashtiradi.
+- **Slack bildirishnomasi:** Slack’ga quvur liniyasi holati haqida bildirishnomalarni yuboring.
 
-**6. Best Practices:**
+**6. Eng yaxshi amaliyotlar:**
 
-- **Pipeline as Code:** Always use Jenkins Pipelines defined in `Jenkinsfile` for consistent and version-controlled builds.
-- **Use Parameters:** Use parameters to make your pipelines flexible and reusable.
+- **Quvur liniyasi kodi sifatida:** Izchil va versiya nazorati ostidagi tuzilmalar uchun har doim `Jenkinsfile` da belgilangan Jenkins quvur liniyasidan foydalaning.
+- **Parametrlardan foydalaning:** Quvur liniyasini moslashuvchan va qayta ishlash uchun parametrlardan foydalaning.
 
   ```groovy
   parameters {
@@ -132,19 +132,18 @@
   }
   ```
 
-- **Secure Jenkins:** Regularly update plugins, use RBAC, and secure the Jenkins instance with HTTPS.
+- **Jenkins xavfsizligini ta'minlash:** Plaginlarni muntazam ravishda yangilab turing, RBAC dan foydalaning va Jenkins nusxasini HTTPS bilan himoyalang.
 
-**7. Jenkins Configuration:**
+**7. Jenkins konfiguratsiyasi:**
 
-- **Manage Jenkins:**
-  - Manage and configure global settings from the Jenkins dashboard under **Manage Jenkins**.
-- **Configure Tools:** Set up JDK, Maven, and other tools globally in **Global Tool Configuration**.
-- **Jenkinsfile Configuration:**
-  - Define your pipeline stages, environment, and agents within a `Jenkinsfile` stored in your repository.
+- **Jenkinsni boshqarish:**
+- **Jenkinsni boshqarish** ostidagi Jenkins boshqaruv panelidan global sozlamalarni boshqarish va sozlash.
+- **Asboblarni sozlash:** JDK, Maven va boshqa vositalarni global miqyosda **Global Asboblar Konfiguratsiyasi** da sozlang. - **Jenkinsfile Konfiguratsiyasi:**
+  - Omboringizda saqlangan "Jenkinsfile" ichidagi quvur bosqichlaringizni, muhitingizni va agentlaringizni aniqlang.
 
-**8. Advanced Jenkins:**
+**8. Kengaytirilgan Jenkins:**
 
-- **Parallel Stages:**
+- **Parallel bosqichlar:**
 
   ```groovy
   pipeline {
@@ -168,13 +167,13 @@
   }
   ```
 
-- **Shared Libraries:** Centralize and reuse pipeline code across projects using Shared Libraries.
+- **Umumiy kutubxonalar:** Umumiy kutubxonalardan foydalangan holda loyihalar bo'ylab quvur liniyasi kodini markazlashtiring va qayta ishlating.
 
-## **Troubleshooting**
+## **Muammolarni bartaraf etish**
 
-### **Common Issues**
+### **Umumiy muammolar**
 
-1. **Jenkins Won't Start**
+1. Jenkins boshlamaydi**
    ```bash
    # Check logs
    sudo tail -f /var/log/jenkins/jenkins.log
@@ -183,7 +182,7 @@
    sudo chown -R jenkins:jenkins /var/lib/jenkins
    ```
 
-2. **Pipeline Failure**
+2. **Quvur liniyasidagi nosozlik**
    ```groovy
    // Add error handling
    pipeline {
@@ -205,37 +204,37 @@
    }
    ```
 
-3. **Plugin Issues**
-   - Clear plugin cache:
+3. **Plagin bilan bog'liq muammolar**
+   - Plagin keshini tozalash:
      ```bash
      rm -rf $JENKINS_HOME/plugins/*.jpi
      rm -rf $JENKINS_HOME/plugins/*.hpi
      ```
-   - Restart Jenkins after plugin updates
+   - Plagin yangilanishlaridan so'ng Jenkinsni qayta ishga tushiring
 
-## **Useful Plugins**
+## **Foydali plaginlar**
 
-1. **Pipeline**
+1. **Quvur liniyasi**
    - Pipeline Graph View
    - Pipeline Stage View
    - Blue Ocean
 
-2. **Source Control**
+2. **Manba boshqaruvi**
    - Git
-   - GitHub Integration
-   - BitBucket Integration
+   - GitHub Integratsiya
+   - BitBucket Integratsiya
 
-3. **Build Tools**
-   - Maven Integration
+3. **Yaratish vositalari**
+   - Maven Integratsiya
    - Gradle
    - NodeJS
 
-4. **Testing**
+4. **Sinov**
    - JUnit
    - Cobertura
    - SonarQube Scanner
 
-5. **Deployment**
+5. **Joylashtirish**
    - Docker
    - Kubernetes
    - AWS
