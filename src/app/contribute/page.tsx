@@ -43,7 +43,7 @@ export default function ContributePage() {
       title: "Fork the Repository",
       description:
         "Start by forking the DevOps Cheatsheet repository to your GitHub account. This creates your own copy of the project to work with.",
-      link: "https://github.com/NotHarshhaa/devops-cheatsheet/fork",
+      link: "",
       linkText: "Fork Now",
       color: "blue",
     },
@@ -52,7 +52,7 @@ export default function ContributePage() {
       title: "Make Your Changes",
       description:
         "Add new tools, update existing content, or fix issues in your forked repository. Follow our contribution guidelines for best results.",
-      link: "https://github.com/NotHarshhaa/devops-cheatsheet/blob/master/CONTRIBUTING.md",
+      link: "",
       linkText: "View Guidelines",
       color: "purple",
     },
@@ -61,7 +61,7 @@ export default function ContributePage() {
       title: "Submit a Pull Request",
       description:
         "Create a pull request with your changes for review by the maintainers. We'll help you get your contribution ready to merge.",
-      link: "https://github.com/NotHarshhaa/devops-cheatsheet/pulls",
+      link: "",
       linkText: "Create PR",
       color: "green",
     },
@@ -104,21 +104,21 @@ export default function ContributePage() {
   const testimonials = [
     {
       quote:
-        "Contributing to this project helped me solidify my DevOps knowledge while helping others.",
+        "Ushbu loyihaga hissa qo'shish menga boshqalarga yordam berish bilan birga DevOps haqidagi bilimlarimni mustahkamlashga yordam berdi.",
       author: "Sarah K.",
       role: "Senior DevOps Engineer",
       avatar: "https://randomuser.me/api/portraits/women/32.jpg",
     },
     {
       quote:
-        "The maintainers were so helpful in guiding me through my first open-source contribution!",
+        "Dasturchilar menga birinchi ochiq kodli hissamni yaratishda juda yordam berishdi!",
       author: "Michael T.",
       role: "Cloud Architect",
       avatar: "https://randomuser.me/api/portraits/men/46.jpg",
     },
     {
       quote:
-        "I've learned so much by collaborating with this amazing community of DevOps professionals.",
+        "Men Netlivy jamoa mutaxassislarining ushbu ajoyib hamjamiyati bilan hamkorlik qilib, juda ko'p narsalarni o'rgandim.",
       author: "Jamie L.",
       role: "SRE Lead",
       avatar: "https://randomuser.me/api/portraits/women/68.jpg",
@@ -211,7 +211,7 @@ export default function ContributePage() {
                 </div>
                 <div className="flex items-center gap-2 text-blue-100">
                   <FaStar className="w-5 h-5 text-yellow-300" />
-                  <span className="font-semibold text-white">500+ Stars</span>
+                  <span className="font-semibold text-white">500+ Likes</span>
                 </div>
                 <div className="flex items-center gap-2 text-blue-100">
                   <BiGitPullRequest className="w-5 h-5" />
@@ -222,7 +222,7 @@ export default function ContributePage() {
               </div>
 
               <a
-                href="https://github.com/NotHarshhaa/devops-cheatsheet"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors shadow-md hover:shadow-lg"
@@ -276,7 +276,7 @@ export default function ContributePage() {
               variants={fadeIn}
               className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
             >
-              Follow these steps to make your first contribution to our DevOps
+              Follow these steps to make your first contribution to our DevOps Netlivy
               Cheatsheet
             </motion.p>
           </div>
@@ -466,7 +466,7 @@ export default function ContributePage() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://github.com/NotHarshhaa/devops-cheatsheet"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-md font-medium"
