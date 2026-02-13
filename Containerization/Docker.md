@@ -2,7 +2,7 @@
 
 ![text](https://imgur.com/XHwJp6U.png)
 
-## [Dev.to] saytidagi batafsil maqolani ko'rib chiqing (https://dev.to/prodevopsguytech/docker-commands-from-beginner-to-advanced-for-devops-engineers-bb3)
+## [Dev.to] saytidagi batafsil maqolani ko'rib chiqing 
 
 ## 1. Dockerga kirish
 
