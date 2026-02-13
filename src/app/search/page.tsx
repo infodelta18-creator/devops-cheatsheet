@@ -102,10 +102,10 @@ export default function SearchPage() {
         {/* Search Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Search DevOps Tools
+            DevOps dan qidirish
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Find the tools and resources you need from our comprehensive collection.
+            Bizning keng qamrovli to'plamimizdan kerakli vositalar va resurslarni toping.
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export default function SearchPage() {
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search for tools, categories, or keywords..."
+              placeholder="Search for tools, categories, or keyword"
               className="w-full px-6 py-4 rounded-full border border-gray-200 dark:border-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent pl-14 bg-white dark:bg-gray-800 text-gray-900 dark:text-white dark:placeholder-gray-400"
             />
             <div className="absolute left-4 top-1/2 -translate-y-1/2">
