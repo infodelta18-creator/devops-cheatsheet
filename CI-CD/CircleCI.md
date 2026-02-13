@@ -2,20 +2,19 @@
 
 ![](https://imgur.com/s6aXKl9.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- CircleCI is a continuous integration and delivery platform that automates the build, test, and deploy processes, allowing for quick and efficient development workflows.
+- CircleCI - bu tez va samarali ishlab chiqish ish oqimlarini ta'minlaydigan, qurish, sinovdan o'tkazish va joylashtirish jarayonlarini avtomatlashtiradigan uzluksiz integratsiya va yetkazib berish platformasi.
 
-**2. Key Concepts:**
+**2. Asosiy tushunchalar:**
 
-- **Job:** A collection of steps to be executed in a build.
-- **Step:** A single command or script within a job.
-- **Workflow:** Defines the order of jobs and their dependencies.
-- **Executor:** Specifies the environment in which the job runs (e.g., Docker, Linux VM, macOS).
+- **Vazifa:** Buildda bajarilishi kerak bo'lgan qadamlar to'plami.
+- **Bosqich:** Vazifa ichidagi bitta buyruq yoki skript.
+- **Ish jarayoni:** Vazifalar tartibini va ularning bog'liqliklarini belgilaydi.
 
-**3. Basic `.circleci/config.yml` Example:**
+**3. Asosiy `.circleci/config.yml` Misol:**
 
-- **YAML Syntax:**
+- **YAML sintaksisi:**
 
   ```yaml
   version: 2.1
@@ -44,32 +43,32 @@
         - deploy
   ```
 
-**4. Executors:**
+**4. Ijrochilar:**
 
-- **Docker:** Run jobs in Docker containers.
+- **Docker:** Docker konteynerlarida ishlarni bajarish.
 
   ```yaml
   docker:
     - image: circleci/node:14
   ```
 
-- **Machine:** Run jobs in a Linux VM.
+- **Mashina:** Linux virtual mashinasida vazifalarni bajarish.
 
   ```yaml
   machine:
     image: ubuntu-2004:202101-01
   ```
 
-- **macOS:** Run jobs on macOS for iOS builds.
+- **macOS:** iOS versiyalari uchun macOS’da ishlarni bajaring.
 
   ```yaml
   macos:
     xcode: "12.4.0"
   ```
 
-**5. Reusable Configurations:**
+**5. Qayta ishlatiladigan konfiguratsiyalar:**
 
-- **Commands:** Reuse steps across multiple jobs.
+- **Buyruqlar:** Bir nechta vazifalarda qadamlarni qayta ishlatish.
 
   ```yaml
   commands:
@@ -87,7 +86,7 @@
         - run: npm test
   ```
 
-- **Executors:** Reuse the environment configuration.
+- **Ijrochilar:** Muhit konfiguratsiyasidan qayta foydalaning.
 
   ```yaml
   executors:
@@ -103,9 +102,9 @@
         - run: npm install
   ```
 
-**6. Caching and Artifacts:**
+**6. Keshlash va artefaktlar:**
 
-- **Caching:** Speed up builds by caching dependencies.
+- **Keshlash:** Bog'liqliklarni keshlash orqali tuzilishlarni tezlashtirish.
 
   ```yaml
   - restore_cache:
@@ -117,7 +116,7 @@
       key: v1-dependencies-{{ checksum "package-lock.json" }}
   ```
 
-- **Artifacts:** Save build outputs and other data for later use.
+- **Artefaktlar:** Keyinchalik foydalanish uchun yig'ish natijalari va boshqa ma'lumotlarni saqlang.
 
   ```yaml
   - store_artifacts:
@@ -125,9 +124,9 @@
       destination: build_output
   ```
 
-**7. Workflows:**
+**7. Ish jarayonlari:**
 
-- **Sequential Jobs:** Define jobs that run in sequence.
+- **Ketma-ket vazifalar:** Ketma-ket bajariladigan vazifalarni aniqlang.
 
   ```yaml
   workflows:
@@ -138,7 +137,7 @@
         - deploy
   ```
 
-- **Parallel Jobs:** Run jobs in parallel to speed up pipeline execution.
+- **Parallel ishlar:** Quvur liniyasi bajarilishini tezlashtirish uchun ishlarni parallel ravishda bajaring.
 
   ```yaml
   workflows:
@@ -149,11 +148,10 @@
         - deploy
   ```
 
-**8. Environment Variables:**
+**8. Atrof-muhit o'zgaruvchilari:**
 
-- **Project-level Variables:** Set environment variables in the CircleCI project settings.
-- **Context Variables:** Use contexts to securely store and manage environment variables.
-- **Job-level Variables:**
+- **Loyiha darajasidagi o'zgaruvchilar:** CircleCI loyiha sozlamalarida muhit o'zgaruvchilarini o'rnating.
+- **Kontekst o'zgaruvchilari:** Atrof-muhitni xavfsiz saqlash va boshqarish uchun kontekstlardan foydalaning
 
   ```yaml
   jobs:
@@ -164,9 +162,9 @@
         NODE_ENV: production
   ```
 
-**9. Advanced CircleCI Features:**
+**9. Kengaytirilgan CircleCI xususiyatlari:**
 
-- **Orbs:** Reusable packages of CircleCI configuration that make it easy to integrate with third-party tools.
+- **Orbs:** Uchinchi tomon vositalari bilan integratsiyani osonlashtiradigan CircleCI konfiguratsiyasining qayta ishlatiladigan paketlari.
 
   ```yaml
   orbs:
@@ -180,7 +178,7 @@
             to: "s3://my-bucket/"
   ```
 
-- **Conditional Steps:** Run steps conditionally based on the success or failure of previous steps.
+- **Shartli bosqichlar:** Oldingi bosqichlarning muvaffaqiyati yoki muvaffaqiyatsizligiga qarab bosqichlarni shartli ravishda bajaring.
 
   ```yaml
   - run:
@@ -189,8 +187,8 @@
       when: on_success
   ```
 
-**10. Best Practices:**
 
-- **Parallelism:** Use parallelism to reduce build times by running tests and other tasks simultaneously.
-- **Modular Configurations:** Break down your CircleCI configuration into reusable components with orbs, commands, and executors.
-- **Effective Caching:** Cache dependencies effectively to reduce build times, but remember to invalidate caches when necessary to avoid stale dependencies.
+**10. Eng yaxshi amaliyotlar:**
+
+- **Parallelizm:** Sinovlar va boshqa vazifalarni bir vaqtning o'zida bajarish orqali yig'ish vaqtini qisqartirish uchun parallelizmdan foydalaning.
+- **Modul konfiguratsiyalari:** CircleCI konfiguratsiyangizni tahlil qiling. 
