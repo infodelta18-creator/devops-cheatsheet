@@ -160,7 +160,7 @@ export function Header() {
                   DevOps Hub
                 </span>
                 <span className="text-[10px] text-gray-500 dark:text-gray-400 -mt-1">
-                  Your Ultimate Cheatsheet
+                  Your Ultimate Cheatsheets
                 </span>
               </div>
             </Link>
@@ -339,7 +339,7 @@ export function Header() {
             </div>
 
             <a
-              href="https://github.com/NotHarshhaa"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -425,7 +425,7 @@ export function Header() {
                   className="border-b border-gray-100 dark:border-gray-800 pb-6"
                 >
                   <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
-                    Categories
+                    Kategoriyalar
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     {[
@@ -467,7 +467,7 @@ export function Header() {
                   className="border-b border-gray-100 dark:border-gray-800 pb-6"
                 >
                   <div className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3">
-                    Resources
+                    Resurslar
                   </div>
                   <div className="space-y-2">
                     <Link
@@ -491,7 +491,7 @@ export function Header() {
                       <span>About Us</span>
                     </Link>
                     <a
-                      href="https://github.com/NotHarshhaa"
+                      href=""
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 px-3 py-2 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
