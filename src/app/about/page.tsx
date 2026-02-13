@@ -96,7 +96,7 @@ export default function AboutPage() {
             <div className="relative inline-block mb-8">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-md opacity-75"></div>
               <motion.img
-                src="https://avatars.githubusercontent.com/NotHarshhaa"
+                src=""
                 alt="Harshhaa"
                 className="relative w-36 h-36 rounded-full border-4 border-white dark:border-gray-800 shadow-xl"
                 initial={{ scale: 0, rotate: 0 }}
@@ -109,15 +109,14 @@ export default function AboutPage() {
               className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-4"
               variants={fadeInUp}
             >
-              Hey there! 👋 I&apos;m Harshhaa
+              Salom! 👋 I&apos;m Netlivy
             </motion.h1>
 
             <motion.p
               className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-10"
               variants={fadeInUp}
             >
-              A passionate DevOps Engineer on a mission to automate everything
-              and scale cloud infrastructures efficiently.
+              Hamma narsani avtomatlashtirish va bulutli infratuzilmalarni samarali ravishda kengaytirish vazifasini bajaruvchi  DevOps ni Netlivy jamoasi yaratdi.
             </motion.p>
 
             {/* Stats Cards */}
@@ -194,7 +193,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p>
-                    I&apos;m a seasoned DevOps Engineer passionate about building
+                    I&apos;m a seasoned Programming Engineer passionate about building
                     efficient, scalable systems. My journey began with a
                     curiosity about how things work behind the scenes in
                     software development.
@@ -223,22 +222,22 @@ export default function AboutPage() {
                       {
                         icon: <Globe className="w-5 h-5" />,
                         title: "Portfolio",
-                        url: "https://notharshhaa.site/",
+                        url: "https://bytexllc.vercel.app",
                       },
                       {
                         icon: <FileText className="w-5 h-5" />,
                         title: "Resume",
-                        url: "https://cv.notharshhaa.site/",
+                        url: "https://instagram.com/car1movvvvv",
                       },
                       {
                         icon: <BookOpen className="w-5 h-5" />,
                         title: "Blog",
-                        url: "https://blog.notharshhaa.site/",
+                        url: "https://instagram.com/car1movvvvv",
                       },
                       {
                         icon: <LinkIcon className="w-5 h-5" />,
                         title: "Links",
-                        url: "https://link.notharshhaa.site/",
+                        url: "https://instagram.com/car1movvvvv",
                       },
                     ].map((link) => (
                       <a
@@ -267,17 +266,17 @@ export default function AboutPage() {
                       {[
                         {
                           icon: <Github className="w-5 h-5" />,
-                          url: "https://github.com/NotHarshhaa",
+                          url: "",
                           color: "hover:bg-gray-200 dark:hover:bg-gray-700",
                         },
                         {
                           icon: <Twitter className="w-5 h-5" />,
-                          url: "https://twitter.com/NotHarshhaa",
+                          url: "",
                           color: "hover:bg-blue-100 dark:hover:bg-blue-900/30",
                         },
                         {
                           icon: <Linkedin className="w-5 h-5" />,
-                          url: "https://linkedin.com/in/harshhaa-vardhan-reddy",
+                          url: "",
                           color: "hover:bg-blue-100 dark:hover:bg-blue-900/30",
                         },
                       ].map((social, index) => (
@@ -315,7 +314,7 @@ export default function AboutPage() {
               >
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                   <Star className="w-6 h-6 text-yellow-500" />
-                  Core Expertise
+                  Asosiy ekspertiza
                 </h2>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -327,9 +326,7 @@ export default function AboutPage() {
                         Cloud & DevOps Architecture
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Architecting scalable, secure, and high-performance
-                        infrastructures using AWS, Azure, Kubernetes, Terraform,
-                        and more.
+                        AWS, Azure, Kubernetes, Terraform va boshqalardan foydalangan holda kengaytiriladigan, xavfsiz va yuqori samarali infratuzilmalarni arxitektura qilish.
                       </p>
                     </div>
                   </div>
