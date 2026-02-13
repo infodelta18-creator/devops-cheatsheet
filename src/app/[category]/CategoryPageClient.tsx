@@ -171,7 +171,7 @@ export function CategoryPageClient({ params }: Props) {
                         ))}
                       </div>
                       <span className="text-blue-600 dark:text-blue-400 text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 whitespace-nowrap">
-                        View cheatsheet
+                        View cheatsheets
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
