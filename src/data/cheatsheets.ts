@@ -34,7 +34,7 @@ export const cheatsheets: Cheatsheet[] = [
   // CI-CD
   {
     title: "Jenkins",
-    description: "Comprehensive guide to Jenkins CI/CD automation server",
+    description: "Jenkins CI/CD avtomatlashtirish serveri bo'yicha batafsil qo'llanma",
     category: "CI-CD",
     slug: "Jenkins",
     icon: "<Activity />",
@@ -46,7 +46,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "GitHub Actions",
-    description: "GitHub's built-in CI/CD solution",
+    description: "GitHub’ning o‘rnatilgan CI/CD yechimi",
     category: "CI-CD",
     slug: "GitHub-Actions",
     icon: "<Activity />",
@@ -58,11 +58,11 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "GitLab CI",
-    description: "GitLab's integrated CI/CD platform",
+    description: "GitLabning integratsiyalashgan CI/CD platformasi",
     category: "CI-CD",
     slug: "GitLab-CI",
     icon: "<Activity />",
-    difficulty: "Intermediate",
+    difficulGitHub’ning o‘rnatilgan CI/CD yechimity: "Intermediate",
     popularity: 85,
     tags: ["CI/CD", "GitLab", "Pipeline"],
     status: "",
@@ -70,7 +70,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "CircleCI",
-    description: "Cloud-native CI/CD platform",
+    description: "Bulutga asoslangan CI/CD platformasi",
     category: "CI-CD",
     slug: "CircleCI",
     icon: "<Activity />",
@@ -84,7 +84,7 @@ export const cheatsheets: Cheatsheet[] = [
   // Containerization
   {
     title: "Docker",
-    description: "Container platform for building and shipping apps",
+    description: "Ilovalarni qurish va jo'natish uchun konteyner platformasi",
     category: "Containerization",
     slug: "Docker",
     icon: "<Box />",
@@ -96,7 +96,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Kubernetes",
-    description: "Container orchestration platform",
+    description: "Konteyner orkestratsiya platformasi",
     category: "Containerization",
     slug: "Kubernetes",
     icon: "<Box />",
@@ -108,7 +108,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "CRI-O",
-    description: "Open Container Initiative-based container runtime",
+    description: "Ochiq konteyner tashabbusiga asoslangan konteyner ish vaqti",
     category: "Containerization",
     slug: "CRI-O",
     icon: "<Box />",
@@ -120,7 +120,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Podman",
-    description: "Open-source container engine",
+    description: "Ochiq kodli konteyner dvigateli",
     category: "Containerization",
     slug: "Podman",
     icon: "<Box />",
@@ -132,7 +132,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "OpenShift",
-    description: "Container platform for building and shipping apps",
+    description: "Ilovalarni qurish va jo'natish uchun konteyner platformasi",
     category: "Containerization",
     slug: "OpenShift",
     icon: "<Box />",
@@ -144,7 +144,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Helm",
-    description: "Package manager for Kubernetes",
+    description: "Kubernetes uchun paket menejeri",
     category: "Containerization",
     slug: "Helm",
     icon: "<Box />",
@@ -158,7 +158,7 @@ export const cheatsheets: Cheatsheet[] = [
   // Infrastructure Management
   {
     title: "Ansible",
-    description: "Agentless automation platform",
+    description: "Agentsiz avtomatlashtirish platformasi",
     category: "Infrastructure-Management",
     slug: "Ansible",
     icon: "<Server />",
@@ -170,7 +170,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Terraform",
-    description: "Infrastructure as Code tool",
+    description: "Infratuzilma kod vositasi sifatida",
     category: "Infrastructure-Management",
     slug: "Terraform",
     icon: "<Server />",
@@ -182,7 +182,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Chef",
-    description: "Infrastructure as Code tool",
+    description: "Infratuzilma kod vositasi sifatida",
     category: "Infrastructure-Management",
     slug: "Chef",
     icon: "<Server />",
@@ -194,7 +194,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Puppet",
-    description: "Infrastructure as Code tool",
+    description: "Infratuzilma kod vositasi sifatida",
     category: "Infrastructure-Management",
     slug: "Puppet",
     icon: "<Server />",
@@ -208,7 +208,7 @@ export const cheatsheets: Cheatsheet[] = [
   // Monitoring
   {
     title: "Prometheus",
-    description: "Monitoring and alerting toolkit",
+    description: "Monitoring va ogohlantirish vositalari to'plami",
     category: "Monitoring",
     slug: "Prometheus",
     icon: "<BarChart />",
@@ -220,7 +220,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Grafana",
-    description: "Analytics and monitoring platform",
+    description: "Analitika va monitoring platformasi",
     category: "Monitoring",
     slug: "Grafana",
     icon: "<BarChart />",
@@ -232,7 +232,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "ELK Stack",
-    description: "Elasticsearch, Logstash, and Kibana",
+    description: "Elasticsearch, Logstash va Kibana",
     category: "Monitoring",
     slug: "ELK-Stack",
     icon: "<BarChart />",
@@ -244,7 +244,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "CloudWatch",
-    description: "Monitoring and alerting tool",
+    description: "Monitoring va ogohlantirish vositasi",
     category: "Monitoring",
     slug: "CloudWatch",
     icon: "<BarChart />",
@@ -256,7 +256,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Nagios",
-    description: "Monitoring and alerting tool",
+    description: "Monitoring va ogohlantirish vositasi",
     category: "Monitoring",
     slug: "Nagios",
     icon: "<BarChart />",
@@ -270,7 +270,7 @@ export const cheatsheets: Cheatsheet[] = [
   // Security
   {
     title: "SonarQube",
-    description: "Code quality and security scanner",
+    description: "Kod sifati va xavfsizlik skaneri",
     category: "Security",
     slug: "SonarQube",
     icon: "<Shield />",
@@ -282,7 +282,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "HashiCorp Vault",
-    description: "Secrets management tool",
+    description: "Sirlarni boshqarish vositasi",
     category: "Security",
     slug: "HashiCorp-Vault",
     icon: "<Shield />",
@@ -294,7 +294,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Aqua Security",
-    description: "Security tool for Kubernetes",
+    description: "Kubernetes uchun xavfsizlik vositasi",
     category: "Security",
     slug: "AquaSec",
     icon: "<Shield />",
@@ -306,7 +306,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Trivy",
-    description: "Security tool for Kubernetes",
+    description: "Kubernetes uchun xavfsizlik vositasi",
     category: "Security",
     slug: "Trivy",
     icon: "<Shield />",
@@ -320,7 +320,7 @@ export const cheatsheets: Cheatsheet[] = [
   // Version Control
   {
     title: "GitLab",
-    description: "Complete DevOps platform",
+    description: "To'liq DevOps platformasi",
     category: "Version-Control",
     slug: "GitLab",
     icon: "<GitBranch />",
@@ -332,7 +332,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "GitHub",
-    description: "Software development platform",
+    description: "Dasturiy ta'minotni ishlab chiqish platformasi",
     category: "Version-Control",
     slug: "GitHub",
     icon: "<GitBranch />",
@@ -344,7 +344,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Bitbucket",
-    description: "Software development platform",
+    description: "Dasturiy ta'minotni ishlab chiqish platformasi",
     category: "Version-Control",
     slug: "Bitbucket",
     icon: "<GitBranch />",
@@ -358,7 +358,7 @@ export const cheatsheets: Cheatsheet[] = [
   // Cloud
   {
     title: "AWS",
-    description: "Amazon Web Services cloud platform",
+    description: "Amazon Web Services bulut platformasi",
     category: "Cloud",
     slug: "AWS",
     icon: "<Cloud />",
@@ -370,7 +370,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Azure",
-    description: "Microsoft's cloud platform",
+    description: "Microsoft bulut platformasi",
     category: "Cloud",
     slug: "Azure",
     icon: "<Cloud />",
@@ -382,7 +382,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Google Cloud",
-    description: "Google's cloud platform",
+    description: "Google bulut platformasi",
     category: "Cloud",
     slug: "GCP",
     icon: "<Cloud />",
@@ -394,7 +394,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Kubernetes On AWS",
-    description: "Kubernetes on AWS",
+    description: "AWSdagi Kubernetes",
     category: "Cloud",
     slug: "Kubernetes-on-AWS",
     icon: "<Cloud />",
@@ -406,7 +406,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Terraform On AWS",
-    description: "Terraform on AWS",
+    description: "AWSdagi Terraform",
     category: "Cloud",
     slug: "Terraform-on-AWS",
     icon: "<Cloud />",
@@ -420,7 +420,7 @@ export const cheatsheets: Cheatsheet[] = [
   // Networking
   {
     title: "Istio",
-    description: "Service mesh for Kubernetes",
+    description: "Kubernetes uchun xizmat ko'rsatish tarmog'i",
     category: "Networking",
     slug: "Istio",
     icon: "<Network />",
@@ -432,7 +432,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Consul",
-    description: "Service networking platform",
+    description: "Xizmat ko'rsatish tarmoq platformasi",
     category: "Networking",
     slug: "Consul",
     icon: "<Network />",
@@ -444,7 +444,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Envoy",
-    description: "Service mesh for Kubernetes",
+    description: "Kubernetes uchun xizmat ko'rsatish tarmog'i",
     category: "Networking",
     slug: "Envoy",
     icon: "<Network />",
@@ -456,7 +456,7 @@ export const cheatsheets: Cheatsheet[] = [
   },
   {
     title: "Linkerd",
-    description: "Service mesh for Kubernetes",
+    description: "Kubernetes uchun xizmat ko'rsatish tarmog'i",
     category: "Networking",
     slug: "Linkerd",
     icon: "<Network />",
