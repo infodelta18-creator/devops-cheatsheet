@@ -195,8 +195,8 @@ export default function SearchPage() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-600 dark:text-gray-400">No results found for &ldquo;{searchTerm}&rdquo;</p>
-              <p className="text-gray-500 dark:text-gray-500 mt-2">Try different keywords or browse our categories</p>
+              <p className="text-gray-600 dark:text-gray-400">Hech qanday natija topilmadi &ldquo;{searchTerm}&rdquo;</p>
+              <p className="text-gray-500 dark:text-gray-500 mt-2">Turli kalit so'zlarni sinab ko'ring yoki toifalarimizni ko'rib chiqing</p>
             </div>
           )}
         </div>
