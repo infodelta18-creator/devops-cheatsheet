@@ -2,20 +2,20 @@
 
 ![](https://imgur.com/GMwRo18.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- GitHub Actions is a powerful CI/CD and automation tool integrated directly into GitHub repositories, allowing you to build, test, and deploy your code.
+- GitHub Actions - bu to'g'ridan-to'g'ri GitHub omborlariga integratsiyalashgan kuchli CI/CD va avtomatlashtirish vositasi bo'lib, sizga kodingizni yaratish, sinovdan o'tkazish va joylashtirish imkonini beradi.
 
-**2. Key Concepts:**
+**2. Asosiy tushunchalar:**
 
-- **Workflow:** An automated process defined in YAML that is triggered by events like `push`, `pull_request`, etc.
-- **Job:** A set of steps that runs on the same runner.
-- **Step:** An individual task, such as running a script or installing a dependency.
-- **Runner:** A server that runs the jobs in a workflow, can be GitHub-hosted or self-hosted.
+- **Ish jarayoni:** YAMLda aniqlangan va `push`, `pull_request` va boshqalar kabi hodisalar tomonidan ishga tushiriladigan avtomatlashtirilgan jarayon.
+- **Vazifa:** Xuddi shu ishga tushirgichda bajariladigan qadamlar to'plami.
+- **Bosqich:** Alohida vazifa, masalan, skriptni ishga tushirish yoki qaramlikni o'rnatish.
+- **Ishga tushirishchi:** Ish jarayonida vazifalarni bajaradigan server GitHub-hosting yoki o'z-o'zini hosting qilish mumkin.
 
-**3. Basic Workflow Example:**
+**3. Asosiy ish jarayoniga misol:**
 
-- **YAML Syntax:**
+- **YAML sintaksisi:**
 
   ```yaml
   name: CI Workflow
@@ -41,22 +41,22 @@
         - run: npm test
   ```
 
-**4. Common Actions:**
+**4. Umumiy harakatlar:**
 
-- **actions/checkout:** Checks out your repository under `$GITHUB_WORKSPACE`.
-- **actions/setup-node:** Sets up a Node.js environment.
-- **actions/upload-artifact:** Uploads build artifacts for later use.
-- **actions/cache:** Caches dependencies like `node_modules` or `Maven`.
+- **harakatlar/to'lov:** `$GITHUB_WORKSPACE` ostidagi omboringizni tekshiradi.
+- **actions/setup-node:** Node.js muhitini sozlaydi.
+- **actions/upload-artifact:** Keyinchalik foydalanish uchun tuzilgan artefaktlarni yuklaydi.
+- **actions/cache:** `node_modules` yoki `Maven` kabi bog'liqliklarni keshlaydi.
 
-**5. Triggers:**
+**5. Triggerlar:**
 
-- **on: push:** Trigger a workflow when a push occurs.
-- **on: pull_request:** Trigger a workflow when a pull request is opened.
-- **on: schedule:** Schedule a workflow to run at specific times using cron syntax.
+- **yoqilgan: surish:** Surish sodir bo'lganda ish jarayonini ishga tushiradi.
+- **yoqilgan: pull_request:** Pull so'rovi ochilganda ish jarayonini ishga tushiradi.
+- **yoqilgan: jadval:** cron sintaksisidan foydalanib, ish jarayonini ma'lum vaqtlarda ishga tushirishni rejalashtirish.
 
-**6. Environment Variables:**
+**6. Atrof-muhit o'zgaruvchilari:**
 
-- **Set environment variables:**
+- **Atrof-muhit o'zgaruvchilarini o'rnatish:**
 
   ```yaml
   env:
@@ -64,16 +64,16 @@
     DEBUG: true
   ```
 
-- **Access secrets:**
+- **Kirish sirlari:**
 
   ```yaml
   env:
     MY_SECRET: ${{ secrets.MY_SECRET }}
   ```
 
-**7. Matrix Builds:**
+**7. Matritsa tuzilmalari:**
 
-- **Example:**
+- **Misol:**
 
   ```yaml
   jobs:
@@ -92,9 +92,9 @@
         - run: npm test
   ```
 
-**8. Artifacts and Caching:**
+**8. Artefaktlar va keshlash:**
 
-- **Upload Artifacts:**
+- **Artefaktlarni yuklash:**
 
   ```yaml
   - name: Upload build artifacts
@@ -104,7 +104,7 @@
       path: ./build
   ```
 
-- **Caching Dependencies:**
+- **Keshlash bog'liqliklari:**
 
   ```yaml
   - name: Cache Node.js modules
@@ -116,9 +116,9 @@
         ${{ runner.os }}-node-
   ```
 
-**9. Reusable Workflows:**
+**9. Qayta foydalanish mumkin bo'lgan ish oqimlari:**
 
-- **Define a reusable workflow:**
+- **Qayta foydalanish mumkin bo'lgan ish oqimini aniqlang:**
 
   ```yaml
   name: Reusable CI Workflow
@@ -143,7 +143,7 @@
         - run: npm test
   ```
 
-- **Call a reusable workflow:**
+- **Qayta foydalanish mumkin bo'lgan ish oqimini chaqiring:**
 
   ```yaml
   jobs:
@@ -153,8 +153,8 @@
         node-version: '14'
   ```
 
-**10. Best Practices:**
+**10. Eng yaxshi amaliyotlar:**
 
-- **Modular Workflows:** Break down complex workflows into smaller, reusable pieces.
-- **Use Environments:** Leverage environments in GitHub Actions for deployments with manual approvals.
-- **Secret Management:** Always use GitHub Secrets for sensitive information and never hard-code them.
+- **Modulli ish oqimlari:** Murakkab ish oqimlarini kichikroq, qayta ishlatiladigan qismlarga ajrating.
+- **Muhitlardan foydalanish:** GitHub Actions’da qo‘lda tasdiqlash bilan joylashtirish uchun muhitlardan foydalanish.
+- **Maxfiy boshqaruv:** Maxfiy ma'lumotlar uchun har doim GitHub Secrets’dan foydalaning va ularni hech qachon qattiq kodlamang.
