@@ -19,42 +19,42 @@ export const categoryData: Record<Category, {
   color: string;
 }> = {
   'CI-CD': {
-    description: 'Continuous Integration and Continuous Deployment tools and practices',
+    description: 'Uzluksiz integratsiya va uzluksiz joylashtirish vositalari va amaliyotlari',
     toolCount: 25,
     color: 'blue'
   },
   'Containerization': {
-    description: 'Container technologies and orchestration tools',
+    description: 'Konteyner texnologiyalari va orkestrlash vositalari',
     toolCount: 18,
     color: 'orange'
   },
   'Cloud': {
-    description: 'Cloud platforms and services',
+    description: 'Bulutli platformalar va xizmatlar',
     toolCount: 30,
     color: 'purple'
   },
   'Infrastructure-Management': {
-    description: 'Infrastructure as Code and configuration management',
+    description: 'Kod va konfiguratsiyani boshqarish sifatida infratuzilma',
     toolCount: 22,
     color: 'green'
   },
   'Version-Control': {
-    description: 'Source code management and version control systems',
+    description: 'Manba kodini boshqarish va versiyani boshqarish tizimlari',
     toolCount: 15,
     color: 'indigo'
   },
   'Security': {
-    description: 'Security tools and best practices',
+    description: 'Xavfsizlik vositalari va eng yaxshi amaliyotlar',
     toolCount: 20,
     color: 'red'
   },
   'Networking': {
-    description: 'Network configuration and management tools',
+    description: 'Tarmoq konfiguratsiyasi va boshqaruv vositalari',
     toolCount: 16,
     color: 'cyan'
   },
   'Monitoring': {
-    description: 'System monitoring and observability tools',
+    description: 'Tizim monitoringi va kuzatuv vositalari',
     toolCount: 24,
     color: 'teal'
   }
