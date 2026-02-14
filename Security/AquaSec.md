@@ -2,83 +2,83 @@
 
 ![text](https://imgur.com/8MBLV6G.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- **AquaSec** (Aqua Security) is a comprehensive security platform for securing containers, Kubernetes, and cloud-native applications throughout the CI/CD pipeline.
+- **AquaSec** (Aqua Security) - bu CI/CD quvur liniyasi bo'ylab konteynerlar, Kubernetes va bulutga asoslangan ilovalarni himoya qilish uchun keng qamrovli xavfsizlik platformasi.
 
-**2. Installation:**
+**2. O'rnatish:**
 
-- **Installing AquaSec:**
-  - AquaSec is usually deployed as a Kubernetes application.
-  - Download AquaSec from the [Aqua website](https://www.aquasec.com/) and follow the installation instructions for your environment.
+- **AquaSec ni o'rnatish:**
+  - AquaSec odatda Kubernetes ilovasi sifatida joylashtiriladi.
+  - AquaSec dasturini [Aqua veb-saytidan] (https://www.aquasec.com/) yuklab oling va muhitingiz uchun o'rnatish ko'rsatmalariga amal qiling.
 
-- **Dockerized Installation:**
-  - AquaSec components can also be installed using Docker images available on Docker Hub.
+- **Dockerizatsiya qilingan o'rnatish:**
+  - AquaSec komponentlarini Docker Hub’da mavjud bo‘lgan Docker tasvirlari yordamida ham o‘rnatish mumkin.
 
-**3. Basic Configuration:**
+**3. Asosiy konfiguratsiya:**
 
-- **Aqua Console:**
-  - The Aqua Console is the central management interface for configuring and monitoring AquaSec.
-  - Access the Aqua Console at `http://<aqua-console-ip>:8080`.
+- **Aqua konsoli:**
+  - Aqua Console - bu AquaSec-ni sozlash va monitoring qilish uchun markaziy boshqaruv interfeysi.
+  - Aqua konsoliga quyidagi manzil orqali kiring: `http://<aqua-console-ip>:8080`.
 
-- **User Management:**
-  - Create users and assign roles in the Aqua Console under the **Users** section.
+- **Foydalanuvchi boshqaruvi:**
+  - Aqua konsolida **Foydalanuvchilar** bo'limi ostida foydalanuvchilarni yarating va rollarni tayinlang.
 
-**4. Container Security:**
+**4. Konteyner xavfsizligi:**
 
-- **Image Scanning:**
-  - AquaSec automatically scans container images for vulnerabilities, malware, and misconfigurations.
-  - Scans can be initiated via the Aqua Console or automated in CI/CD pipelines.
+- **Tasvirni skanerlash:**
+  - AquaSec konteyner tasvirlarini zaifliklar, zararli dasturlar va noto'g'ri konfiguratsiyalar uchun avtomatik ravishda skanerlaydi.
+  - Skanerlash Aqua konsoli orqali boshlanishi yoki CI/CD quvurlarida avtomatlashtirilishi mumkin.
 
-- **Runtime Protection:**
-  - AquaSec provides real-time monitoring of running containers, blocking unauthorized activities based on predefined policies.
+- **Ish vaqti himoyasi:**
+  - AquaSec oldindan belgilangan siyosatlar asosida ruxsatsiz faoliyatni bloklab, ishlayotgan konteynerlarni real vaqt rejimida kuzatishni ta'minlaydi.
 
-**5. Kubernetes Security:**
+**5. Kubernetes xavfsizligi:**
 
-- **Kubernetes Admission Control:**
-  - AquaSec integrates with Kubernetes admission controllers to enforce security policies during the pod creation process.
-  - Policies can prevent the deployment of vulnerable or misconfigured containers.
+- **Kubernetes qabul nazorati:**
+  - AquaSec pod yaratish jarayonida xavfsizlik siyosatini amalga oshirish uchun Kubernetes qabul qilish kontrollerlari bilan integratsiyalashadi.
+  - Siyosat zaif yoki noto'g'ri sozlangan konteynerlarning joylashtirilishining oldini olishi mumkin.
 
-- **Network Segmentation:**
-  - AquaSec can segment Kubernetes network traffic using microsegmentation to restrict communication between pods.
+- **Tarmoq segmentatsiyasi:**
+  - AquaSec podlar orasidagi aloqani cheklash uchun mikrosegmentatsiya yordamida Kubernetes tarmoq trafikini segmentlashi mumkin.
 
-**6. Advanced Features:**
+**6. Kengaytirilgan xususiyatlar:**
 
-- **Secrets Management:**
-  - AquaSec integrates with secrets management tools like HashiCorp Vault to secure sensitive data in containers and Kubernetes clusters.
+- **Sirlarni boshqarish:**
+  - AquaSec konteynerlar va Kubernetes klasterlaridagi maxfiy ma'lumotlarni himoya qilish uchun HashiCorp Vault kabi maxfiy ma'lumotlarni boshqarish vositalari bilan integratsiyalashgan.
 
-- **Compliance Auditing:**
-  - AquaSec provides auditing capabilities to ensure compliance with standards like PCI-DSS, HIPAA, and NIST.
+- **Muvofiqlik auditi:**
+  - AquaSec PCI-DSS, HIPAA va NIST kabi standartlarga muvofiqligini ta'minlash uchun audit imkoniyatlarini taqdim etadi.
 
-**7. AquaSec in CI/CD Pipelines:**
+**7. CI/CD da AquaSec:**
 
-- **Integrating with Jenkins:**
-  - Use the AquaSec Jenkins plugin to scan images as part of the build process and fail builds that do not meet security criteria.
+- **Jenkins bilan integratsiya:**
+  - AquaSec Jenkins plaginidan foydalanib, tasvirlarni yaratish jarayonining bir qismi sifatida skanerlang va xavfsizlik mezonlariga javob bermaydigan muvaffaqiyatsiz versiyalarni yarating.
 
-- **Automating Policies:**
-  - Define security policies that are automatically enforced across all stages of the pipeline.
+- **Avtomatlashtirish siyosatlari:**
+  - Quvur liniyasining barcha bosqichlarida avtomatik ravishda amalga oshiriladigan xavfsizlik siyosatini aniqlang.
 
-**8. Monitoring and Reporting:**
+**8. Monitoring va hisobot berish:**
 
-- **Dashboards:**
-  - AquaSec provides detailed dashboards for monitoring vulnerabilities, policy violations, and runtime security events.
+- **Boshqaruv panellari:**
+  - AquaSec zaifliklar, siyosat buzilishlari va ish vaqtidagi xavfsizlik hodisalarini kuzatish uchun batafsil boshqaruv panellarini taqdim etadi.
 
-- **Custom Alerts:**
-  - Configure alerts for specific security events, such as the detection of high-severity vulnerabilities or unauthorized access attempts.
+- **Maxsus ogohlantirishlar:**
+  - Yuqori darajadagi zaifliklar yoki ruxsatsiz kirishga urinishlar kabi muayyan xavfsizlik hodisalari uchun ogohlantirishlarni sozlang.
 
-**9. Scaling AquaSec:**
+**9. AquaSec masshtablash:**
 
-- **High Availability:**
-  - Deploy AquaSec in a high-availability configuration with multiple Aqua Consoles and databases to ensure resilience.
+- **Yuqori darajadagi mavjudlik:**
+  - Chidamlilikni ta'minlash uchun AquaSec-ni bir nechta Aqua konsollari va ma'lumotlar bazalari bilan yuqori darajadagi konfiguratsiyada joylashtiring.
 
-- **Integrating with SIEMs:**
-  - AquaSec integrates with Security Information and Event Management (SIEM) systems like Splunk and IBM QRadar for centralized monitoring.
+- **SIEMlar bilan integratsiya:**
+  - AquaSec markazlashtirilgan monitoring uchun Splunk va IBM QRadar kabi xavfsizlik ma'lumotlari va hodisalarni boshqarish (SIEM) tizimlari bilan integratsiyalashgan.
 
-**10. Troubleshooting AquaSec:**
+**10. AquaSec bilan bog'liq muammolarni bartaraf etish:**
 
-- **Common Issues:**
-  - **Failed Scans:** Ensure that the Aqua scanner is properly configured and has access to the image registry.
-  - **Policy Enforcement Issues:** Review policy definitions and ensure they are correctly applied.
+- **Umumiy muammolar:**
+  - **Muvaffaqiyatsiz skanerlashlar:** Aqua skaneri to'g'ri sozlanganligiga va tasvirlar registriga kirish huquqiga ega ekanligiga ishonch hosil qiling.
+  - **Siyosatni amalga oshirish bilan bog'liq muammolar:** Siyosat ta'riflarini ko'rib chiqing va ularning to'g'ri qo'llanilishini ta'minlang.
 
-- **Debugging:**
-  - Check AquaSec logs for detailed error information and troubleshooting steps.
+- **Nosozliklarni tuzatish:**
+  - Batafsil xato ma'lumotlari va muammolarni bartaraf etish bosqichlari uchun AquaSec jurnallarini tekshiring.
