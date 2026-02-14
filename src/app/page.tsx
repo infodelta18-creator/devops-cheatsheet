@@ -124,8 +124,7 @@ export default function HomePage() {
               Explore DevOps Categories
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Discover specialized tools and resources organized by category to
-              optimize your DevOps workflow
+              DevOps ish jarayonini optimallashtirish uchun kategoriyalar bo'yicha tartiblangan ixtisoslashgan vositalar va resurslarni kashf eting
             </p>
           </div>
 
@@ -171,7 +170,7 @@ export default function HomePage() {
                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                         <span>Updated recently</span>
                       </div>
-                      <span>5 min read</span>
+                      <span>5 min reads</span>
                     </div>
 
                     {/* Action Buttons */}
@@ -230,20 +229,18 @@ export default function HomePage() {
                   {/* Content */}
                   <div className="relative">
                     <h2 className="text-4xl font-black text-white mb-8">
-                      Want to Contribute?
+                      Hissa qo'shmoqchimisiz?
                     </h2>
                     <p className="text-xl text-blue-100 mb-10 max-w-2xl font-light leading-relaxed">
-                      Help us make this resource better! Share your knowledge,
-                      suggest improvements, or add new tools to help fellow DevOps
-                      engineers.
+                      Ushbu resursni yaxshilashga yordam bering! Bilimlaringiz bilan o'rtoqlashing, yaxshilanishlarni taklif qiling yoki boshqa DevOps muhandislariga yordam berish uchun yangi vositalar qo'shing.
                     </p>
                     <Link
-                      href="https://github.com/yourusername/devops-cheatsheet"
+                      href="https://instagram.com/car1movvvvv"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl transition-all duration-300 text-lg font-medium group border border-white/20 hover:border-white/40"
                     >
-                      <span>Contribute on GitHub</span>
+                      <span>Contribute</span>
                       <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
