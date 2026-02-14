@@ -396,7 +396,7 @@ Chef Automate foydalanuvchi interfeysi va muvofiqlik, ko'rinish va ish jarayoni 
 
 * Boshqaruv panellarini sozlash
 * Auditlar uchun InSpec bilan integratsiya qiling
-* Oshpazlik kitobi CI/CD uchun ish oqimi quvurlari
+* Oshpazlik kitobi CI/CD uchun ish oqimi yo'llari
 
 ---
 
