@@ -109,7 +109,7 @@ export default function AboutPage() {
               className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-4"
               variants={fadeInUp}
             >
-              Salom! 👋 I&apos;m Netlivy
+              Hi! 👋 I&apos;m DevOps Helper ai
             </motion.h1>
 
             <motion.p
@@ -193,20 +193,13 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p>
-                    I&apos;m a seasoned Programming Engineer passionate about building
-                    efficient, scalable systems. My journey began with a
-                    curiosity about how things work behind the scenes in
-                    software development.
+                    Men qurilishni yaxshi ko'radigan tajribali dasturlash muhandisiman samarali, kengaytiriladigan tizimlar. Mening sayohatim a bilan boshlandi narsalarning sahna ortida qanday ishlashiga qiziqish dasturiy ta'minotni ishlab chiqish.
                   </p>
                   <p>
-                    Today, I specialize in cloud infrastructure, automation, and
-                    helping teams deliver software faster and more reliably
-                    through DevOps practices.
+                    Bugun men bulutli infratuzilma, avtomatlashtirish va jamoalarga dasturiy ta'minotni tezroq va ishonchli yetkazib berishga yordam berish DevOps amaliyotlari orqali.
                   </p>
                   <p>
-                    I believe in sharing knowledge and creating resources that
-                    help others grow in their DevOps journey. That&apos;s why I&apos;ve
-                    built this DevOps Cheatsheet Hub!
+                    Men bilim almashish va resurslarni yaratishga ishonaman boshqalarga DevOps sayohatlarida o'sishiga yordam bering. Shuning uchun biz ushbu DevOps Cheatsheet Hub-ni yaratdik!
                   </p>
                 </div>
               </motion.div>
@@ -260,7 +253,7 @@ export default function AboutPage() {
 
                   <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700">
                     <h3 className="font-medium text-gray-900 dark:text-white mb-4">
-                      Follow me on social media
+                       Ijtimoiy tarmoqlarda kuzatib boring
                     </h3>
                     <div className="flex gap-4">
                       {[
@@ -314,7 +307,7 @@ export default function AboutPage() {
               >
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                   <Star className="w-6 h-6 text-yellow-500" />
-                  Asosiy ekspertiza
+                  Asosiy struktura 
                 </h2>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -339,9 +332,7 @@ export default function AboutPage() {
                         Automation & CI/CD
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Building robust automation pipelines, Infrastructure as
-                        Code (IaC), and making deployments seamless with
-                        Jenkins, GitHub Actions, and GitLab CI.
+                        Jenkins, GitHub Actions va GitLab CI yordamida mustahkam avtomatlashtirish quvurlarini, infratuzilmani kod sifatida (IaC) yaratish va joylashtirishni uzluksiz amalga oshirish.
                       </p>
                     </div>
                   </div>
@@ -354,9 +345,7 @@ export default function AboutPage() {
                         Content Creation
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Creating educational content, writing technical blogs,
-                        and building projects to help others learn DevOps
-                        concepts and tools.
+                        Ta'lim kontentini yaratish, texnik bloglar yozish va boshqalarga DevOps konsepsiyalari va vositalarini o'rganishda yordam berish uchun loyihalar yaratish.
                       </p>
                     </div>
                   </div>
@@ -370,7 +359,7 @@ export default function AboutPage() {
                 className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl shadow-md p-8 border border-blue-100 dark:border-blue-800/30"
               >
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                  Skills & Technologies
+                    Skills & Technologies
                 </h2>
 
                 <div className="space-y-6">
@@ -458,12 +447,12 @@ export default function AboutPage() {
                 {[
                   {
                     title: "💻 Real-Time Projects Hub",
-                    url: "https://projects.prodevopsguytech.com",
+                    url: "",
                     desc: "Work on real-world DevOps/Cloud projects",
                   },
                   {
                     title: "📚 Ultimate Docs Portal",
-                    url: "https://docs.prodevopsguytech.com",
+                    url: "",
                     desc: "900+ curated learning materials",
                   },
                   {
@@ -473,17 +462,17 @@ export default function AboutPage() {
                   },
                   {
                     title: "🧭 Jobs Portal",
-                    url: "https://jobs.prodevopsguytech.com",
+                    url: ",
                     desc: "Find your next opportunity in DevOps or Cloud",
                   },
                   {
                     title: "📰 DevOps Blog",
-                    url: "https://blog.prodevopsguytech.com",
+                    url: "",
                     desc: "Learn from deep dives and practical guides",
                   },
                   {
                     title: "☁️ Cloud Blog",
-                    url: "https://cloud.prodevopsguytech.com",
+                    url: "",
                     desc: "Cloud-focused tutorials and insights",
                   },
                 ].map((resource) => (
@@ -522,12 +511,12 @@ export default function AboutPage() {
                     DevOps Tools Setup/Installations
                   </h2>
                   <p className="text-blue-100">
-                    Step-by-step guides for setting up all the popular DevOps
+                    Barcha mashhur DevOps-larni sozlash bo'yicha bosqichma-bosqich qo'llanmalar
                     tools
                   </p>
                 </div>
                 <a
-                  href="https://devopsguides.site"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-6 py-3 rounded-lg transition-colors group"
@@ -554,10 +543,9 @@ export default function AboutPage() {
               <CheckCircle2 className="w-12 h-12 text-green-500 dark:text-green-400 mx-auto" />
             </div>
             <blockquote className="text-2xl md:text-3xl font-medium text-gray-800 dark:text-gray-200 max-w-3xl mx-auto mb-6">
-              &ldquo;DevOps is not a goal, but a never-ending process of continual
-              improvement.&rdquo;
+              &ldquo;DevOps maqsad emas, balki doimiy takomillashtirishning cheksiz jarayonidir.&rdquo;
             </blockquote>
-            <p className="text-gray-600 dark:text-gray-400">— Jez Humble</p>
+            <p className="text-gray-600 dark:text-gray-400">DevOps community</p>
           </motion.div>
         </div>
       </section>
