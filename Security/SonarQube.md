@@ -2,20 +2,20 @@
 
 ![text](https://imgur.com/l49w71S.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- **SonarQube** is a popular open-source platform for continuous inspection of code quality, performing automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities.
+- **SonarQube** kod sifatini doimiy ravishda tekshirish uchun mashhur ochiq kodli platforma bo'lib, xatolar, kod hidlari va xavfsizlik zaifliklarini aniqlash uchun kodni statik tahlil qilish bilan avtomatik ko'rib chiqishlarni amalga oshiradi.
 
-**2. Installation:**
+**2. O'rnatish:**
 
-- **Installing SonarQube:**
-  - On Docker:
+- **SonarQube ni o'rnatish:**
+  - Dockerda:
 
     ```bash
     docker run -d --name sonarqube -p 9000:9000 sonarqube
     ```
 
-  - Manual Installation on Linux:
+  - Linuxda qo'lda o'rnatish:
 
     ```bash
     wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.0.43852.zip
@@ -24,15 +24,15 @@
     ./sonar.sh start
     ```
 
-- **Starting SonarQube:**
-  - Access SonarQube at `http://localhost:9000`.
-  - Default credentials: `admin/admin`.
+- **SonarQube ishga tushirilmoqda:**
+  - SonarQube’ga kirish `http://localhost:9000`.
+  - Standart hisob ma'lumotlari: `admin/admin`.
 
-**3. Configuring SonarQube:**
+**3. SonarQube-ni sozlash:**
 
-- **Database Configuration:**
-  - SonarQube requires a database like PostgreSQL, MySQL, or Oracle.
-  - Configure the database connection in the `sonar.properties` file:
+- **Ma'lumotlar bazasi konfiguratsiyasi:**
+  - SonarQube PostgreSQL, MySQL yoki Oracle kabi ma'lumotlar bazasini talab qiladi.
+  - `sonar.properties` faylida ma'lumotlar bazasi ulanishini sozlang:
 
     ```properties
     sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube
@@ -40,20 +40,20 @@
     sonar.jdbc.password=sonar
     ```
 
-- **Configuring Quality Profiles:**
-  - Quality profiles define the set of rules SonarQube uses for code analysis.
-  - Create or customize profiles in the **Quality Profiles** section of the UI.
+- **Sifat profillarini sozlash:**
+  - Sifat profillari SonarQube kod tahlili uchun foydalanadigan qoidalar to'plamini belgilaydi.
+  - Foydalanuvchi interfeysining **Sifat profillari** bo'limida profillar yarating yoki sozlang.
 
-**4. Running Analysis:**
+**4. Yugurish tahlili:**
 
-- **Using SonarQube Scanner:**
-  - Install the scanner:
+- **SonarQube skaneridan foydalanish:**
+  - Skanerni o'rnating:
 
     ```bash
     npm install -g sonarqube-scanner
     ```
 
-  - Run a scan:
+  - Skanerlashni ishga tushiring:
 
     ```bash
     sonar-scanner \
@@ -64,60 +64,60 @@
       -Dsonar.password=admin
     ```
 
-- **Integrating with CI/CD:**
-  - Integrate SonarQube with Jenkins, GitLab CI, or other CI/CD tools to automate code analysis.
+- **CI/CD bilan integratsiya:**
+  - Kod tahlilini avtomatlashtirish uchun SonarQube-ni Jenkins, GitLab CI yoki boshqa CI/CD vositalari bilan integratsiya qiling.
 
-**5. SonarQube Plugins:**
+**5. SonarQube plaginlari:**
 
-- **Installing Plugins:**
-  - Navigate to **Administration > Marketplace** in SonarQube and search for plugins.
-  - Popular plugins include SonarLint, SonarCSS, and SonarTS.
+- **Plaginlarni o'rnatish:**
+  - SonarQube’da **Administratsiya > Bozor** bo‘limiga o‘ting va plaginlarni qidiring.
+  - Ommabop plaginlar qatoriga SonarLint, SonarCSS va SonarTS kiradi.
 
-- **SonarQube and IDE Integration:**
-  - **SonarLint** is a plugin that integrates with IDEs like IntelliJ, Eclipse, and VS Code for real-time code quality feedback.
+- **SonarQube va IDE integratsiyasi:**
+  - **SonarLint** - bu real vaqt rejimida kod sifati bo'yicha fikr-mulohazalarni olish uchun IntelliJ, Eclipse va VS Code kabi IDElar bilan integratsiyalashgan plagin.
 
-**6. Advanced Features:**
+**6. Kengaytirilgan xususiyatlar:**
 
-- **Code Coverage:**
-  - SonarQube integrates with code coverage tools like Jacoco for Java and Istanbul for JavaScript to report on test coverage.
+- **Kod qamrovi:**
+  - SonarQube sinov qamrovi haqida hisobot berish uchun Java uchun Jacoco va JavaScript uchun Istanbul kabi kod qamrovi vositalari bilan integratsiyalashgan.
 
-- **Security Vulnerabilities:**
-  - SonarQube detects vulnerabilities and provides remediation guidance based on OWASP and SANS standards.
+- **Xavfsizlik zaifliklari:**
+  - SonarQube zaifliklarni aniqlaydi va OWASP va SANS standartlariga asoslangan holda tuzatish bo'yicha ko'rsatmalar beradi.
 
-**7. Managing Users and Permissions:**
+**7. Foydalanuvchilar va ruxsatnomalarni boshqarish:**
 
-- **User Management:**
-  - Add users and groups in the **Security** section.
-  - Assign roles such as **Admin**, **User**, or **Code Viewer**.
+- **Foydalanuvchi boshqaruvi:**
+  - **Xavfsizlik** bo'limiga foydalanuvchilar va guruhlarni qo'shing.
+  - **Admin**, **Foydalanuvchi** yoki **Kod ko'ruvchi** kabi rollarni tayinlang.
 
-- **LDAP/SSO Integration:**
-  - Configure LDAP or SSO in `sonar.properties` for centralized user authentication.
+- **LDAP/SSO integratsiyasi:**
+  - Markazlashtirilgan foydalanuvchi autentifikatsiyasi uchun `sonar.properties` da LDAP yoki SSO ni sozlang.
 
-**8. Monitoring and Reporting:**
+**8. Monitoring va hisobot berish:**
 
-- **Project Dashboards:**
-  - SonarQube provides detailed dashboards for each project, showing metrics like code coverage, duplications, and issues over time.
+- **Loyiha boshqaruv panellari:**
+  - SonarQube har bir loyiha uchun batafsil boshqaruv panellarini taqdim etadi, kod qamrovi, takrorlanishlar va vaqt o'tishi bilan muammolar kabi ko'rsatkichlarni ko'rsatadi.
 
-- **Custom Reports:**
-  - Generate custom reports with detailed metrics and trends for management or compliance purposes.
+- **Maxsus hisobotlar:**
+  - Boshqaruv yoki muvofiqlik maqsadlari uchun batafsil ko'rsatkichlar va tendentsiyalar bilan maxsus hisobotlarni yarating.
 
-**9. Scaling SonarQube:**
+**9. SonarQube masshtablash:**
 
-- **High Availability:**
-  - Run SonarQube in a cluster mode by configuring multiple nodes and a load balancer.
-  - Configure the cluster settings in the `sonar.properties` file.
+- **Yuqori darajadagi mavjudlik:**
+  - SonarQube dasturini klaster rejimida bir nechta tugunlar va yuk balanslashtiruvchisini sozlash orqali ishga tushiring.
+  - Klaster sozlamalarini `sonar.properties` faylida sozlang.
 
-- **Optimizing Performance:**
-  - Use a separate database for larger SonarQube deployments and allocate sufficient resources to the server.
+- **Ishlashni optimallashtirish:**
+  - SonarQube’ni kattaroq joylashtirish uchun alohida ma’lumotlar bazasidan foydalaning va serverga yetarli resurslarni ajrating.
 
-**10. Troubleshooting SonarQube:**
+**10. SonarQube bilan bog'liq muammolarni bartaraf etish:**
 
-- **Common Issues:**
-  - **Out of Memory:** Increase JVM heap size in `sonar.properties`.
-  - **Failed Scans:** Check the logs in `logs/` directory for detailed error messages.
+- **Umumiy muammolar:**
+  - **Xotira tugab qoldi:** `sonar.properties` da JVM uyum hajmini oshiring.
+  - **Muvaffaqiyatsiz skanerlashlar:** Batafsil xato xabarlari uchun `logs/` katalogidagi jurnallarni tekshiring.
 
-- **Debugging:**
-  - Enable debug logging in `sonar.properties`:
+- **Nosozliklarni tuzatish:**
+  - `sonar.properties` da disk raskadrovka jurnalini yoqish:
 
     ```properties
     sonar.log.level=DEBUG
