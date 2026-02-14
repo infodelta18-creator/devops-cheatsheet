@@ -462,7 +462,7 @@ export default function AboutPage() {
                   },
                   {
                     title: "🧭 Jobs Portal",
-                    url: ",
+                    url: "",
                     desc: "Find your next opportunity in DevOps or Cloud",
                   },
                   {
