@@ -2,54 +2,54 @@
 
 [![chef-cheat.png](https://i.postimg.cc/SsthzhnB/chef-cheat.png)](https://postimg.cc/hzxwHNbs)
 
-## 📘 Introduction
+## 📘 Kirish
 
-Chef is a configuration management tool written in Ruby and Erlang. It automates the process of configuring, deploying, and managing servers and infrastructure.
-
----
-
-## 🟢 Beginner Level
-
-### 🔹 Key Concepts
-
-* **Node**: A machine (physical/virtual) managed by Chef.
-* **Cookbook**: A collection of recipes and other config files.
-* **Recipe**: The fundamental unit for configuration — contains Ruby code to define resources.
-* **Resource**: A statement of configuration like `package`, `service`, `file`, etc.
-* **Runlist**: A list of recipes/roles applied to a node.
+Chef - bu Ruby va Erlang tillarida yozilgan konfiguratsiyani boshqarish vositasi. Bu serverlar va infratuzilmani sozlash, joylashtirish va boshqarish jarayonini avtomatlashtiradi.
 
 ---
 
-## 🍳 Chef Commands
+## 🟢 Boshlang'ich daraja
+
+### 🔹 Asosiy tushunchalar
+
+* **Tugun**: Chef tomonidan boshqariladigan mashina (jismoniy/virtual).
+* **Oshpazlik kitobi**: Retseptlar va boshqa konfiguratsiya fayllari to'plami.
+* **Retsept**: Konfiguratsiya uchun asosiy birlik — resurslarni aniqlash uchun Ruby kodini o'z ichiga oladi.
+* **Resurs**: `pack`, `service`, `file` va boshqalar kabi konfiguratsiya bayonoti.
+* **Ish ro'yxati**: Tugunga qo'llaniladigan retseptlar/rollar ro'yxati.
+
+---
+
+## 🍳 Oshpaz buyruqlari
 
 <details>
-<summary>🟢 Beginner Commands (Click to Expand)</summary>
+<summary>🟢 Boshlang'ich buyruqlar (Click to Expand)</summary>
 
-### 🔹 Check Version
+### 🔹 Versiyani tekshiring
 
 ```bash
 chef --version
 ```
 
-### 🔹 Generate Cookbook
+### 🔹 Oshpazlik kitobini yarating
 
 ```bash
 chef generate cookbook my_cookbook
 ```
 
-### 🔹 Generate Recipe
+### 🔹 Retsept yaratish
 
 ```bash
 chef generate recipe my_cookbook default
 ```
 
-### 🔹 Run Chef Client (Local Mode)
+### 🔹 Chef Clientni ishga tushirish (Mahalliy rejim)
 
 ```bash
 chef-client --local-mode --runlist 'recipe[my_cookbook]'
 ```
 
-### 🔹 Validate Ruby Syntax
+### 🔹 Ruby sintaksisini tekshirish
 
 ```bash
 ruby -c recipes/default.rb
@@ -60,27 +60,27 @@ ruby -c recipes/default.rb
 ---
 
 <details>
-<summary>🟡 Intermediate Commands (Click to Expand)</summary>
+<summary>🟡 Oraliq buyruqlar (Click to Expand)</summary>
 
-### 🔹 Knife Bootstrap Node
+### 🔹  O'rnatish tuguni
 
 ```bash
 knife bootstrap <IP_ADDRESS> -x user -P password --node-name node1
 ```
 
-### 🔹 Upload Cookbook to Server
+### 🔹 Oshpazlik kitobini serverga yuklang
 
 ```bash
 knife cookbook upload my_cookbook
 ```
 
-### 🔹 Show Node Information
+### 🔹 Tugun ma'lumotlarini ko'rsatish
 
 ```bash
 knife node show node1
 ```
 
-### 🔹 Run Chef Client on Remote Node
+### 🔹 Chef Client dasturini masofaviy tugunda ishga tushiring
 
 ```bash
 knife ssh 'name:node1' 'sudo chef-client' -x user
@@ -91,37 +91,37 @@ knife ssh 'name:node1' 'sudo chef-client' -x user
 ---
 
 <details>
-<summary>🔴 Advanced Commands (Click to Expand)</summary>
+<summary>🔴 Murakkab buyruqlar (Click to Expand)</summary>
 
-### 🔹 Search Nodes or Data Bags
+### 🔹 Tugunlarni yoki ma'lumotlar paketlarini qidirish
 
 ```bash
 knife search node 'role:web'
 knife data bag show users
 ```
 
-### 🔹 Edit Node or Role
+### 🔹 Tugun yoki rolni tahrirlash
 
 ```bash
 knife node edit node1
 knife role edit webserver
 ```
 
-### 🔹 Generate Role or Environment
+### 🔹 Rol yoki muhitni yarating
 
 ```bash
 chef generate role webserver
 chef generate environment dev
 ```
 
-### 🔹 Upload Roles/Environments
+### 🔹 Rollarni/Muhitlarni Yuklash (env)
 
 ```bash
 knife role from file roles/webserver.rb
 knife environment from file environments/dev.rb
 ```
 
-### 🔹 Test Cookbook (ChefSpec, InSpec)
+### 🔹 Sinov oshpazlik kitobi (ChefSpec, InSpec)
 
 ```bash
 chef exec rspec
@@ -132,22 +132,22 @@ chef exec inspec exec test/integration/default
 
 ---
 
-### 🔹 Chef Setup
+### 🔹 Oshpazni sozlash
 
 ```bash
-# Install Chef Workstation
+# Chef ish stantsiyasini o'rnating
 curl -LO https://packages.chef.io/files/stable/chef-workstation/latest/el/7/chef-workstation-*.rpm
 sudo rpm -Uvh chef-workstation-*.rpm
 ```
 
 ```bash
-# Verify installation
+# O'rnatishni tasdiqlash
 chef -v
 ```
 
 ---
 
-### 🔹 Create a Cookbook
+### 🔹 Oshpazlik kitobini yarating
 
 ```bash
 chef generate cookbook my_cookbook
@@ -156,7 +156,7 @@ cd my_cookbook
 
 ---
 
-### 🔹 Basic Recipe
+### 🔹 Asosiy retsept
 
 ```ruby
 # recipes/default.rb
@@ -168,13 +168,13 @@ end
 ```
 
 ```bash
-# Run recipe on local machine (Test Kitchen or chef-run)
+# Retseptni mahalliy mashinada ishga tushiring (Test Kitchen or chef-run)
 chef-run 'localhost' my_cookbook
 ```
 
 ---
 
-### 🔹 Common Resources
+### 🔹 Umumiy resurslar
 
 | Resource  | Example                                        |
 | --------- | ---------------------------------------------- |
@@ -185,9 +185,9 @@ chef-run 'localhost' my_cookbook
 
 ---
 
-## 🟡 Intermediate Level
+## 🟡 O'rta daraja
 
-### 🔸 Attributes
+### 🔸 Atributlar
 
 ```ruby
 # attributes/default.rb
@@ -201,9 +201,9 @@ end
 
 ---
 
-### 🔸 Templates
+### 🔸 Shablonlar
 
-Templates are ERB files used to manage config files.
+Shablonlar konfiguratsiya fayllarini boshqarish uchun ishlatiladigan ERB fayllari.
 
 ```bash
 # generate template
@@ -225,12 +225,12 @@ end
 
 ---
 
-### 🔸 Data Bags
+### 🔸 Ma'lumotlar paketlari
 
 ```bash
-# Create data bag and item
-knife data bag create users
-knife data bag from file users user1.json
+# Ma'lumotlar paketi va elementini yarating
+pichoqli ma'lumotlar paketi foydalanuvchilarni yaratish
+foydalanuvchilar user1.json faylidan pichoqli ma'lumotlar paketi
 ```
 
 ```json
@@ -243,7 +243,7 @@ knife data bag from file users user1.json
 ```
 
 ```ruby
-# Use in recipe
+# Retseptda foydalaning
 user_data = data_bag_item('users', 'user1')
 
 user user_data['id'] do
@@ -254,11 +254,11 @@ end
 
 ---
 
-### 🔸 Roles
+### 🔸 Rollar
 
 ```bash
-# Create role file
-knife role create webserver
+# Rol faylini yarating
+pichoq roli veb-server yaratish
 ```
 
 ```json
@@ -272,13 +272,13 @@ knife role create webserver
 
 ---
 
-### 🔸 Environments
+### 🔸 Atrof-muhit
 
-Used to manage differences between dev, test, prod.
+Dev, test, prod o'rtasidagi farqlarni boshqarish uchun ishlatiladi.
 
 ```bash
-# Create environment
-knife environment create dev
+# Atrof-muhit yarating (environment)
+pichoq muhiti ishlab chiqaruvchini yaratadi
 ```
 
 ```json
@@ -294,9 +294,9 @@ knife environment create dev
 
 ---
 
-## 🔴 Advanced Level
+## 🔴 Ilg'or daraja
 
-### 🔹 Custom Resources
+### 🔹 Maxsus resurslar
 
 ```bash
 # inside cookbooks/my_cookbook/resources/hello.rb
@@ -341,7 +341,7 @@ rspec
 
 ---
 
-### 🔹 Test Kitchen (Integration Testing)
+### 🔹 Sinov oshxonasi (Integration Testing)
 
 ```bash
 # .kitchen.yml
@@ -367,9 +367,9 @@ kitchen verify
 
 ---
 
-### 🔹 Policyfiles
+### 🔹 Siyosat fayllari
 
-Alternative to Berkshelf and runlists.
+Berkshelf va runlists ga alternativa.
 
 ```bash
 chef generate policyfile my_policy
@@ -392,15 +392,15 @@ chef push my_org my_policy.lock.json
 
 ### 🔹 Chef Automate
 
-Chef Automate provides UI and compliance, visibility, and workflow capabilities.
+Chef Automate foydalanuvchi interfeysi va muvofiqlik, ko'rinish va ish jarayoni imkoniyatlarini taqdim etadi.
 
-* Setup dashboards
-* Integrate with InSpec for audits
-* Workflow pipelines for cookbook CI/CD
+* Boshqaruv panellarini sozlash
+* Auditlar uchun InSpec bilan integratsiya qiling
+* Oshpazlik kitobi CI/CD uchun ish oqimi quvurlari
 
 ---
 
-### 🔹 Knife Tips
+### 🔹 Pichoq uchlari
 
 ```bash
 knife bootstrap IP_ADDRESS -x user -P password --node-name NODE_NAME
@@ -411,10 +411,10 @@ knife role from file webserver.json
 
 ---
 
-## 📌 Best Practices
+## 📌 Eng yaxshi amaliyotlar
 
-* Keep cookbooks modular and reusable.
-* Use Berkshelf or Policyfiles to manage dependencies.
-* Write tests (ChefSpec/Test Kitchen) for stability.
-* Avoid hardcoding; use attributes or data bags.
-* Prefer custom resources over LWRPs.
+* Oshpazlik kitoblarini modulli va qayta foydalanish mumkin holda saqlang.
+* Bog'liqliklarni boshqarish uchun Berkshelf yoki Policyfiles dan foydalaning.
+* Barqarorlik uchun testlar yozing (ChefSpec/Test Kitchen).
+* Qattiq kodlashdan saqlaning; atributlar yoki ma'lumotlar paketlaridan foydalaning.
+* LWRP'lardan ko'ra maxsus resurslarni afzal ko'ring.
