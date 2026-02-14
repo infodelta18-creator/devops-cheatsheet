@@ -2,62 +2,62 @@
 
 ![text](https://imgur.com/iw5sG1a.png)
 
-## **Overview**
+## **Umumiy ko'rinish**
 
-Envoy is a high-performance, open-source edge and service proxy. Originally developed by Lyft, Envoy is now widely adopted for managing microservices communication, especially within service meshes. Envoy handles tasks such as load balancing, security, observability, and routing.
+Envoy - bu yuqori unumdorlikka ega, ochiq manbali chekka va xizmat ko'rsatish proksi-serveridir. Dastlab Lyft tomonidan ishlab chiqilgan Envoy hozirda mikroservislar aloqasini boshqarish uchun, ayniqsa xizmat tarmoqlari ichida keng qo'llaniladi. Envoy yuklarni muvozanatlash, xavfsizlik, kuzatuvchanlik va marshrutlash kabi vazifalarni bajaradi.
 
-### **Basic Concepts**
+### **Asosiy tushunchalar**
 
-- **Proxy:** Envoy acts as a proxy, sitting between services and managing all incoming and outgoing traffic. It intercepts, processes, and forwards requests based on predefined configurations.
+- **Proksi:** Envoy proksi sifatida ishlaydi, xizmatlar o'rtasida o'tiradi va barcha kiruvchi va chiquvchi trafikni boshqaradi. U oldindan belgilangan konfiguratsiyalar asosida so'rovlarni ushlab turadi, qayta ishlaydi va yo'naltiradi.
 
-- **Listener:** A listener is a configuration that defines how Envoy should accept incoming connections. It specifies the port and protocols (e.g., HTTP, TCP) Envoy listens to.
+- **Tinglovchi:** Tinglovchi - bu Envoy kiruvchi ulanishlarni qanday qabul qilishi kerakligini belgilaydigan konfiguratsiya. U Envoy tinglaydigan port va protokollarni (masalan, HTTP, TCP) belgilaydi.
 
-- **Cluster:** In Envoy, a cluster represents a group of upstream services that Envoy proxies traffic to. A cluster typically consists of multiple instances of a service, allowing Envoy to distribute requests across them.
+- **Klaster:** Envoyda klaster Envoy trafikni uzatuvchi yuqori oqim xizmatlari guruhini ifodalaydi. Klaster odatda xizmatning bir nechta misollaridan iborat bo'lib, Envoy ularga so'rovlarni tarqatish imkonini beradi.
 
-- **Route:** Routes define how requests are processed and forwarded by Envoy. A route maps incoming requests to the appropriate cluster based on various criteria like URL paths or headers.
+- **Marshrut:** Marshrutlar so'rovlarni Envoy tomonidan qanday qayta ishlanishi va yuborilishini belgilaydi. Marshrut kiruvchi so'rovlarni URL yo'llari yoki sarlavhalar kabi turli mezonlarga asoslanib tegishli klasterga moslashtiradi.
 
-### **Traffic Management**
+### **Trafikni boshqarish**
 
-- **Load Balancing:** Envoy provides several load balancing algorithms to distribute traffic across service instances. Common algorithms include round-robin, least-request, and ring-hash. Load balancing ensures that no single instance is overwhelmed with too much traffic.
+- **Yuklarni muvozanatlash:** Envoy trafikni xizmat ko'rsatish misollari bo'ylab taqsimlash uchun bir nechta yuklarni muvozanatlash algoritmlarini taqdim etadi. Umumiy algoritmlarga aylanma, eng kam so'rov va halqa-xesh kiradi. Yuklarni muvozanatlash hech qanday misol juda ko'p trafik bilan to'lib ketmasligini ta'minlaydi.
 
-- **Retries:** Envoy can automatically retry failed requests based on configurable policies. For example, if an upstream service fails to respond, Envoy can retry the request on a different instance.
+- **Qayta urinishlar:** Envoy sozlanishi mumkin bo'lgan siyosatlar asosida muvaffaqiyatsiz so'rovlarni avtomatik ravishda qayta urinib ko'rishi mumkin. Misol uchun, agar yuqori oqim xizmati javob bermasa, Envoy so'rovni boshqa misolda qayta urinib ko'rishi mumkin.
 
-- **Circuit Breakers:** Circuit breakers prevent a service from becoming overwhelmed by limiting the number of concurrent connections or requests. If a service exceeds the defined thresholds, Envoy will stop sending traffic to it until it recovers.
+- **O'chirgichlar:** O'chirgichlar bir vaqtning o'zida ulanishlar yoki so'rovlar sonini cheklash orqali xizmatning haddan tashqari yuklanishiga yo'l qo'ymaydi. Agar xizmat belgilangan chegaralardan oshib ketsa, Envoy xizmat tiklanmaguncha unga trafik yuborishni to'xtatadi.
 
-- **Rate Limiting:** Envoy allows you to define rate limits on incoming requests, controlling how many requests are allowed over a given period. This is useful for preventing abuse or overloading of services.
+- **Tariflarni cheklash:** Envoy sizga kiruvchi so'rovlar uchun tarif chegaralarini belgilash imkonini beradi, ma'lum bir davrda qancha so'rovlarga ruxsat berilishini nazorat qiladi. Bu xizmatlarning suiiste'mol qilinishi yoki ortiqcha yuklanishining oldini olish uchun foydalidir.
 
-### **Security**
+### **Xavfsizlik**
 
-- **TLS Termination:** Envoy can handle TLS termination, decrypting inbound traffic, and encrypting outbound traffic. This simplifies the management of secure communications within your services.
+- **TLS ni tugatish:** Envoy TLS ni tugatish, kiruvchi trafikni shifrlash va chiquvchi trafikni shifrlash bilan shug'ullanishi mumkin. Bu sizning xizmatlaringizdagi xavfsiz aloqalarni boshqarishni osonlashtiradi.
 
-- **mTLS (Mutual TLS):** Envoy supports mutual TLS for securing service-to-service communication. This ensures that both parties in a communication exchange authenticate each other and that their communication is encrypted.
+- **mTLS (Mutual TLS):** Envoy xizmatdan xizmatga aloqani ta'minlash uchun o'zaro TLSni qo'llab-quvvatlaydi. Bu aloqa almashayotgan ikkala tomon ham bir-birini autentifikatsiya qilishini va ularning aloqasi shifrlanganligini ta'minlaydi.
 
-- **RBAC (Role-Based Access Control):** Envoy implements RBAC to control access to services based on predefined roles and permissions. This adds an additional layer of security, ensuring that only authorized services or users can access specific resources.
+- **RBAC (Rolga asoslangan kirishni boshqarish):** Envoy oldindan belgilangan rollar va ruxsatnomalar asosida xizmatlarga kirishni nazorat qilish uchun RBACni amalga oshiradi. Bu qo'shimcha xavfsizlik qatlamini qo'shib, faqat vakolatli xizmatlar yoki foydalanuvchilar muayyan resurslarga kirishini ta'minlaydi.
 
-### **Observability**
+### **Kuzatuvchanlik**
 
-- **Metrics:** Envoy provides detailed metrics about network traffic, including request counts, latency, error rates, and more. These metrics are essential for monitoring the health and performance of your services.
+- **Metrikalar:** Envoy tarmoq trafigi, jumladan so‘rovlar soni, kechikish, xato stavkalari va boshqalar haqida batafsil ma’lumotlarni taqdim etadi. Bu ko‘rsatkichlar xizmatlaringizning holati va ishlashini kuzatish uchun zarurdir.
 
-- **Access Logs:** Envoy generates detailed access logs for each request it handles. These logs include information about the request’s origin, the response status, and any errors encountered. Access logs are valuable for auditing and debugging.
+- **Kirish jurnallari:** Envoy har bir so'rov uchun batafsil kirish jurnallarini yaratadi. Bu jurnallar so'rovning kelib chiqishi, javob holati va yuzaga kelgan xatolar haqidagi ma'lumotlarni o'z ichiga oladi. Kirish jurnallari audit va disk raskadrovka uchun qimmatlidir.
 
-- **Tracing:** Envoy integrates with distributed tracing systems like Jaeger and Zipkin. Tracing provides a detailed view of a request’s journey through various services, helping you identify bottlenecks and failures in your application.
+- **Kuzatuv:** Envoy Jaeger va Zipkin kabi taqsimlangan kuzatuv tizimlari bilan integratsiyalashgan. Kuzatuv so‘rovning turli xizmatlar orqali o‘tishining batafsil ko‘rinishini taqdim etadi, bu sizga ilovangizdagi qiyinchiliklar va nosozliklarni aniqlashga yordam beradi.
 
-### **Advanced Concepts**
+### **Ilg‘or tushunchalar**
 
-- **Filter Chains:** Envoy’s filter chains allow for complex request processing. Filters can modify, route, or reject requests based on various conditions. Common filters include authentication, rate limiting, and request transformation.
+- **Filtr zanjirlari:** Elchining filtr zanjirlari soʻrovlarni murakkab qayta ishlash imkonini beradi. Filtrlar turli shartlarga asoslanib soʻrovlarni oʻzgartirishi, yoʻnaltirishi yoki rad etishi mumkin. Umumiy filtrlarga autentifikatsiya, tezlikni cheklash va soʻrovni oʻzgartirish kiradi.
 
-- **Dynamic Configuration with xDS APIs:** Envoy supports dynamic configuration through a set of APIs known as xDS (e.g., ADS, CDS, LDS, RDS, EDS). These APIs allow Envoy to update its configuration in real-time without restarting. This capability is crucial for environments where services are constantly changing.
+- **xDS API'lari bilan dinamik konfiguratsiya:** Envoy xDS (masalan, ADS, CDS, LDS, RDS, EDS) deb nomlanuvchi API'lar to'plami orqali dinamik konfiguratsiyani qo'llab-quvvatlaydi. Ushbu API'lar Envoyga real vaqt rejimida konfiguratsiyani qayta ishga tushirmasdan yangilash imkonini beradi. Bu qobiliyat xizmatlar doimiy ravishda o'zgarib turadigan muhitlar uchun juda muhimdir.
 
-- **Sidecar Proxy:** In a service mesh, Envoy is typically deployed as a sidecar proxy alongside each microservice. The sidecar intercepts all traffic to and from the service, providing security, observability, and traffic management features.
+- **Sidecar proksi:** Xizmatlar tarmog'ida Envoy odatda har bir mikroservis bilan birga sidecar proksi sifatida o'rnatiladi. Sidecar xizmatga kiruvchi va chiquvchi barcha trafikni ushlab turadi, bu esa xavfsizlik, kuzatuvchanlik va trafikni boshqarish imkoniyatlarini ta'minlaydi.
 
-### **Example Use Case**
+### **Misoldan Foydalanish Holati**
 
-Imagine you are running an e-commerce application with multiple microservices such as payment, inventory, and user services. Here’s how
+Tasavvur qiling-a, siz to'lov, inventarizatsiya va foydalanuvchi xizmatlari kabi bir nechta mikroservislarga ega elektron tijorat dasturini ishlayapsiz. Mana qanday
 
- Envoy can help:
+ Elchi yordam berishi mumkin:
 
-1. **Secure Communication:** Use Envoy’s TLS termination to encrypt all traffic between the microservices.
-2. **Load Balancing:** Distribute incoming requests evenly across multiple instances of the payment service using Envoy’s round-robin load balancing.
-3. **Rate Limiting:** Protect the user service from abuse by setting a rate limit on login attempts.
-4. **Observability:** Monitor the health of all microservices using Envoy’s metrics and integrate with Prometheus for alerting.
-5. **Resilience:** Use circuit breakers to prevent the inventory service from becoming overwhelmed during high traffic periods.
+1. **Xavfsiz aloqa:** Mikroservislar o'rtasidagi barcha trafikni shifrlash uchun Envoyning TLS tugatish imkoniyatidan foydalaning.
+2. ** Yuklarni muvozanatlash: * * kiruvchi so'rovlarni elchining dumaloq yuklarni muvozanatlash yordamida to'lov xizmatining bir nechta holatlarida teng ravishda taqsimlang.
+3. ** Tarifni cheklash: * * kirish urinishlarida tarif chegarasini belgilash orqali foydalanuvchi xizmatini suiiste'mol qilishdan himoya qiling.
+4. ** Kuzatuvchanlik:* * elchi o'lchovlari yordamida barcha mikroservislarning sog'lig'ini kuzatib boring va ogohlantirish uchun Prometey bilan integratsiya qiling.
+5. ** Chidamlilik: * * yuqori tirbandlik davrida inventarizatsiya xizmati to'lib ketishining oldini olish uchun o'chirgichlardan foydalaning.
