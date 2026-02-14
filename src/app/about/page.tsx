@@ -97,7 +97,7 @@ export default function AboutPage() {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-md opacity-75"></div>
               <motion.img
                 src=""
-                alt="Harshhaa"
+                alt=""
                 className="relative w-36 h-36 rounded-full border-4 border-white dark:border-gray-800 shadow-xl"
                 initial={{ scale: 0, rotate: 0 }}
                 animate={{ scale: 1, rotate: 0 }}
