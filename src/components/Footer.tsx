@@ -210,11 +210,7 @@ export function Footer() {
                   text: "Telegram",
                   href: "",
                 },
-{
-                  icon: <FaInstagram className="w-4 h-4" />,
-                  text: "Telegram",
-                  href: "https://instagram.com/car1movvvvv",
-                },
+
                 {
                   icon: <FaLinkedin className="w-4 h-4" />,
                   text: "LinkedIn",
