@@ -151,7 +151,7 @@ export function Footer() {
           <motion.div variants={itemVariants}>
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 flex items-center gap-2">
               <FaBookOpen className="text-blue-500 dark:text-blue-400 w-4 h-4 sm:w-5 sm:h-5" />
-              Quick Links
+              Tezkor havolalar
             </h3>
             <ul className="space-y-4">
               {[
@@ -195,25 +195,30 @@ export function Footer() {
           {/* Social Links */}
           <motion.div variants={itemVariants}>
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 flex items-center gap-2">
-              <FaCodeBranch className="text-purple-500 dark:text-purple-400 w-4 h-4 sm:w-5 sm:h-5" />
-              Connect With Us
+              <FaCode className="text-purple-500 dark:text-purple-400 w-4 h-4 sm:w-5 sm:h-5" />
+              Biz bilan bog'laning
             </h3>
             <ul className="space-y-4">
               {[
                 {
                   icon: <FaGithub className="w-4 h-4" />,
                   text: "GitHub",
-                  href: "https://github.com/NotHarshhaa",
+                  href: "",
                 },
                 {
                   icon: <FaTelegram className="w-4 h-4" />,
                   text: "Telegram",
-                  href: "https://t.me/prodevopsguy",
+                  href: "",
+                },
+{
+                  icon: <FaInstagram className="w-4 h-4" />,
+                  text: "Telegram",
+                  href: "https://instagram.com/car1movvvvv",
                 },
                 {
                   icon: <FaLinkedin className="w-4 h-4" />,
                   text: "LinkedIn",
-                  href: "https://linkedin.com/in/harshhaa-vardhan-reddy",
+                  href: "",
                 },
               ].map((item, index) => (
                 <li key={index}>
@@ -244,12 +249,12 @@ export function Footer() {
                     5.2K
                   </div>
                   <div className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
-                    GitHub Stars
+                   Netlivy Stars
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-xl sm:text-2xl font-bold text-purple-600 dark:text-purple-400">
-                    2.1K
+                    3.1K
                   </div>
                   <div className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
                     Community Members
@@ -263,7 +268,7 @@ export function Footer() {
         {/* Divider */}
         <div className="mt-10 sm:mt-16 pt-6 sm:pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
-            © {new Date().getFullYear()} DevOps Cheatsheet Hub. All rights
+            © {new Date().getFullYear()} DevOps Netlivy. All rights
             reserved.
           </p>
           <div className="mt-3 md:mt-0 flex items-center gap-1 sm:gap-2 text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
@@ -271,12 +276,12 @@ export function Footer() {
             <FaHeart className="w-3 h-3 sm:w-4 sm:h-4 text-red-500 animate-pulse" />
             <span>by</span>
             <a
-              href="https://github.com/NotHarshhaa"
+              href="https://instagram.com/car1movvvvv"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
             >
-              H A R S H H A A
+              Netlivy
             </a>
           </div>
         </div>
