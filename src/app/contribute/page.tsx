@@ -39,48 +39,48 @@ export default function ContributePage() {
 
   const contributionSteps = [
     {
-      icon: <FaGithub className="w-7 h-7" />,
-      title: "Fork the Repository",
+      icon: <FaCode className="w-7 h-7" />,
+      title: "Darajangizni ko'rsating",
       description:
-        "Start by forking the DevOps Cheatsheet repository to your GitHub account. This creates your own copy of the project to work with.",
-      link: "https://github.com/NotHarshhaa/devops-cheatsheet/fork",
-      linkText: "Fork Now",
+        "DevOps Netlivy Cheatsheet hisobingizga ulashdan boshlang. Bu sizning loyihangizning ishlash uchun o'z nusxasini yaratadi.",
+      link: "https://instagram.com/car1movvvvv",
+      linkText: "Hozir boshlash",
       color: "blue",
     },
     {
       icon: <FaCode className="w-7 h-7" />,
-      title: "Make Your Changes",
+      title: "O'zgarishlaringizni qiling",
       description:
-        "Add new tools, update existing content, or fix issues in your forked repository. Follow our contribution guidelines for best results.",
-      link: "https://github.com/NotHarshhaa/devops-cheatsheet/blob/master/CONTRIBUTING.md",
-      linkText: "View Guidelines",
+        "Yangi vositalar qo'shing, mavjud kontentni yangilang yoki forked omboringizdagi muammolarni hal qiling. Eng yaxshi natijalarga erishish uchun bizning hissa qo'shish bo'yicha ko'rsatmalarimizga amal qiling.",
+      link: "https://instagram.com/car1movvvvv",
+      linkText: "Qo'llanmalarni ko'rish",
       color: "purple",
     },
     {
       icon: <BiGitPullRequest className="w-7 h-7" />,
-      title: "Submit a Pull Request",
+      title: "So'rov yuboring",
       description:
-        "Create a pull request with your changes for review by the maintainers. We'll help you get your contribution ready to merge.",
-      link: "https://github.com/NotHarshhaa/devops-cheatsheet/pulls",
-      linkText: "Create PR",
+        "O'zgarishlaringiz bilan birga texnik xizmat ko'rsatuvchilar tomonidan ko'rib chiqilishi uchun request yarating. Biz sizga hissangizni birlashtirishga tayyorlashda yordam beramiz.",
+      link: "https://instagram.com/car1movvvvv",
+      linkText: "Yuborish PR",
       color: "green",
     },
   ];
 
   const contributionAreas = [
     {
-      title: "Add New Tools",
+      title: "Yangi vositalarni qo'shish",
       description:
-        "Share your knowledge about DevOps tools not yet covered in the cheatsheet. Expand our resources to help others discover new technologies.",
+        "Cheatsheetda hali yoritilmagan DevOps vositalari haqidagi bilimlaringiz bilan o'rtoqlashing. Boshqalarga yangi texnologiyalarni kashf etishda yordam berish uchun resurslarimizni kengaytiring.",
       icon: <FaBook className="w-6 h-6 text-blue-500 dark:text-blue-400" />,
       bg: "bg-blue-50 dark:bg-blue-900/20",
       color: "text-blue-600 dark:text-blue-400",
       border: "border-blue-100 dark:border-blue-800",
     },
     {
-      title: "Improve Documentation",
+      title: "Hujjatlarni takomillashtirish",
       description:
-        "Help make our documentation more comprehensive and easier to understand. Clear explanations and examples make learning DevOps more accessible.",
+        "Hujjatlarimizni yanada keng qamrovli va tushunarli qilishga yordam bering. Aniq tushuntirishlar va misollar DevOps o'rganishni osonlashtiradi.",
       icon: (
         <BsChatSquareText className="w-6 h-6 text-purple-500 dark:text-purple-400" />
       ),
@@ -89,9 +89,9 @@ export default function ContributePage() {
       border: "border-purple-100 dark:border-purple-800",
     },
     {
-      title: "Fix Issues",
+      title: "Muammolarni tuzatish",
       description:
-        "Help resolve open issues and improve the quality of the cheatsheet. Every bug fix and enhancement makes the project more valuable to the community.",
+        "Ochiq muammolarni hal qilishga va cheatsheet sifatini yaxshilashga yordam bering. Har bir xatoni tuzatish va takomillashtirish loyihani jamiyat uchun yanada qimmatli qiladi..",
       icon: (
         <FaCheckCircle className="w-6 h-6 text-green-500 dark:text-green-400" />
       ),
@@ -104,21 +104,21 @@ export default function ContributePage() {
   const testimonials = [
     {
       quote:
-        "Contributing to this project helped me solidify my DevOps knowledge while helping others.",
+        "Ushbu loyihaga hissa qo'shish menga boshqalarga yordam berish bilan birga DevOps haqidagi bilimlarimni mustahkamlashga yordam berdi.",
       author: "Sarah K.",
       role: "Senior DevOps Engineer",
       avatar: "https://randomuser.me/api/portraits/women/32.jpg",
     },
     {
       quote:
-        "The maintainers were so helpful in guiding me through my first open-source contribution!",
+        "Dasturchilar menga birinchi ochiq kodli hissamni yaratishda juda yordam berishdi!",
       author: "Michael T.",
       role: "Cloud Architect",
       avatar: "https://randomuser.me/api/portraits/men/46.jpg",
     },
     {
       quote:
-        "I've learned so much by collaborating with this amazing community of DevOps professionals.",
+        "Men DevOps mutaxassislarining ushbu ajoyib hamjamiyati bilan hamkorlik qilib, juda ko'p narsalarni o'rgandim.",
       author: "Jamie L.",
       role: "SRE Lead",
       avatar: "https://randomuser.me/api/portraits/women/68.jpg",
@@ -190,45 +190,44 @@ export default function ContributePage() {
             >
               <div className="inline-flex items-center mb-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm">
                 <FaHeartbeat className="w-5 h-5 text-pink-300 mr-2" />
-                <span className="text-sm font-medium">Join our community</span>
+                <span className="text-sm font-medium">Bizning hamjamiyatimizga qo'shiling</span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
-                Contribute to DevOps Cheatsheet
+                DevOps Cheatsheet’ga hissa qo‘shing
               </h1>
 
               <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
-                Help us make DevOps knowledge more accessible to everyone. Your
-                contributions, big or small, make a significant difference!
+                DevOps bilimlarini hamma uchun yanada ochiqroq qilishimizga yordam bering. Sizning hissalaringiz, katta yoki kichik bo'lishidan qat'i nazar, sezilarli farq qiladi!
               </p>
 
               <div className="flex flex-wrap justify-center gap-8 mb-12">
                 <div className="flex items-center gap-2 text-blue-100">
                   <FaUsers className="w-5 h-5" />
                   <span className="font-semibold text-white">
-                    100+ Contributors
+                    2K+ Hissa qo'shganlar
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-blue-100">
                   <FaStar className="w-5 h-5 text-yellow-300" />
-                  <span className="font-semibold text-white">500+ Stars</span>
+                  <span className="font-semibold text-white">50+ Hamkorlar</span>
                 </div>
                 <div className="flex items-center gap-2 text-blue-100">
                   <BiGitPullRequest className="w-5 h-5" />
                   <span className="font-semibold text-white">
-                    200+ PRs Merged
+                    200+ PRs Birlashtirilgan
                   </span>
                 </div>
               </div>
 
               <a
-                href="https://github.com/NotHarshhaa/devops-cheatsheet"
+                href="/about"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors shadow-md hover:shadow-lg"
               >
-                <FaGithub className="w-5 h-5" />
-                View on GitHub
+                <FaCode className="w-5 h-5" />
+                View on DevOps
               </a>
             </motion.div>
           </div>
@@ -269,15 +268,14 @@ export default function ContributePage() {
               variants={fadeIn}
               className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4"
             >
-              How to Contribute
+              Qanday hissa qo'shish kerak
             </motion.h2>
 
             <motion.p
               variants={fadeIn}
               className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
             >
-              Follow these steps to make your first contribution to our DevOps
-              Cheatsheet
+              DevOps Netlivy’ga birinchi hissangizni qo‘shish uchun quyidagi amallarni bajaring. Cheatsheet
             </motion.p>
           </div>
 
@@ -352,14 +350,14 @@ export default function ContributePage() {
               variants={fadeIn}
               className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4"
             >
-              What You Can Contribute
+              Siz nimalarga hissa qo'sha olasiz 
             </motion.h2>
 
             <motion.p
               variants={fadeIn}
               className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
             >
-              There are many ways to help improve the DevOps Cheatsheet
+              DevOps Cheatsweet-ni yaxshilashning ko'plab usullari mavjud
             </motion.p>
           </div>
 
@@ -398,11 +396,11 @@ export default function ContributePage() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center mb-4 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300">
               <FaRegSmile className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">Contributor Stories</span>
+              <span className="text-sm font-medium">Netlivy Stories</span>
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Hear From Our Contributors
+              Bizning hissa qo'shuvchilarimizdan 
             </h2>
           </div>
 
@@ -455,24 +453,22 @@ export default function ContributePage() {
             <FaUserAstronaut className="w-16 h-16 mx-auto mb-6 text-white/80" />
 
             <h2 className="text-3xl font-bold mb-6">
-              Ready to Make Your First Contribution?
+              Birinchi hissangizni qo'shishga tayyormisiz?
             </h2>
 
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Whether you&apos;re fixing a typo or adding a new tool guide, every
-              contribution helps make DevOps Cheatsheet better for everyone.
-              Join our growing community today!
+              Xatolikni tuzatyapsizmi yoki yangi vositalar qo'llanmasini qo'shyapsizmi, har bir hissa DevOps Cheatsheet-ni hamma uchun yaxshiroq qilishga yordam beradi. Bugun bizning o'sib borayotgan hamjamiyatimizga qo'shiling!
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://github.com/NotHarshhaa/devops-cheatsheet"
+                href="/about"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-md font-medium"
               >
-                <FaGithub className="w-5 h-5" />
-                View on GitHub
+                <FaCode className="w-5 h-5" />
+                View on Terms
               </a>
 
               <Link
@@ -499,20 +495,20 @@ export default function ContributePage() {
 
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
             <FaBook className="mr-3 text-blue-500" />
-            Contribution Guidelines
+            Hissa qo'shish bo'yicha ko'rsatmalar
           </h2>
 
           <div className="prose max-w-none text-gray-600 dark:text-gray-300">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                "Ensure your contribution follows our code of conduct and style guidelines",
-                "Test your changes locally before submitting a pull request",
-                "Include clear commit messages and documentation updates",
-                "Be responsive to feedback and questions about your contribution",
-                "Help review other contributions when possible",
-                "Follow the pull request template for better documentation",
-                "Add appropriate tests when implementing new features",
-                "Update documentation when necessary",
+                "Hissangiz bizning xulq-atvor qoidalari va uslub ko'rsatmalarimizga muvofiqligiga ishonch hosil qiling",
+                "Pull request yuborishdan oldin o'zgarishlaringizni mahalliy darajada sinab ko'ring",
+                "Aniq majburiyat xabarlari va hujjatlar yangilanishlarini qo'shing",
+                "Hissangiz haqidagi fikr-mulohazalar va savollarga javob bering",
+                "Iloji bo'lsa, boshqa hissalarni ko'rib chiqishga yordam bering",
+                "Yaxshiroq hujjatlar uchun tortish so'rovi shabloniga amal qiling",
+                "Yangi funksiyalarni joriy qilishda tegishli testlarni qo'shing",
+                "Zarur bo'lganda hujjatlarni yangilang",
               ].map((guideline, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="mt-0.5 bg-green-100 dark:bg-green-900/30 rounded-full p-1 text-green-600 dark:text-green-400 flex-shrink-0">
@@ -526,12 +522,12 @@ export default function ContributePage() {
 
           <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-700">
             <a
-              href="https://github.com/NotHarshhaa/devops-cheatsheet/blob/main/CONTRIBUTING.md"
+              href="/about"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800/30 transition-colors"
             >
-              Read full guidelines
+              Yana ko'rsatish
               <HiOutlineArrowNarrowRight className="w-5 h-5 ml-2" />
             </a>
           </div>
