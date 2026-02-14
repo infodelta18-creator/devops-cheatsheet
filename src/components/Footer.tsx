@@ -195,7 +195,7 @@ export function Footer() {
           {/* Social Links */}
           <motion.div variants={itemVariants}>
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 flex items-center gap-2">
-              <FaCode className="text-purple-500 dark:text-purple-400 w-4 h-4 sm:w-5 sm:h-5" />
+              <FaHeart className="text-purple-500 dark:text-purple-400 w-4 h-4 sm:w-5 sm:h-5" />
               Biz bilan bog'laning
             </h3>
             <ul className="space-y-4">
