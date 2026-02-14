@@ -2,68 +2,68 @@
 
 ![text](https://imgur.com/QJ7J3qs.png)
 
-**GitLab** is a web-based DevOps platform that provides a robust set of tools for source code management, CI/CD, project management, and deployment automation. This cheatsheet covers everything from basic usage to advanced GitLab features.
+**GitLab** - bu veb-ga asoslangan DevOps platformasi bo'lib, u manba kodini boshqarish, CI/CD, loyihalarni boshqarish va joylashtirishni avtomatlashtirish uchun mustahkam vositalar to'plamini taqdim etadi. Ushbu cheat varaqda asosiy foydalanishdan tortib ilg'or GitLab funksiyalarigacha bo'lgan hamma narsa qamrab olingan.
 
 ---
 
-## 1. **Introduction to GitLab**
+## 1. **GitLabga kirish**
 
-### What is GitLab?
+### GitLab nima?
 
-GitLab is an open-source DevOps platform offering integrated tools for:
+GitLab - bu quyidagilar uchun integratsiyalashgan vositalarni taklif qiluvchi ochiq kodli DevOps platformasi:
 
-- Source control (Git)
-- Continuous Integration/Continuous Deployment (CI/CD)
-- Issue tracking and project management
-- Container registry and DevSecOps
+- Manba boshqaruvi (Git)
+- Uzluksiz integratsiya/uzluksiz joylashtirish (CI/CD)
+- Muammolarni kuzatish va loyihalarni boshqarish
+- Konteyner registri va DevSecOps
 
-### Key Features
+### Asosiy xususiyatlar
 
-- **Git Repository Management**: Handles distributed version control and code review.
-- **CI/CD Pipelines**: Automates testing, integration, and deployment.
-- **DevSecOps**: Built-in security scanning for dependencies, container images, and code.
-- **Container Registry**: Docker container management.
+- **Git Repository Management**: Tarqatilgan versiyani boshqarish va kodni ko'rib chiqishni boshqaradi.
+- **CI/CD Quvurlari**: Sinov, integratsiya va joylashtirishni avtomatlashtiradi.
+- **DevSecOps**: Bogʻliqliklar, konteyner tasvirlari va kod uchun oʻrnatilgan xavfsizlik skanerlashi.
+- **Konteyner registri**: Docker konteynerlarini boshqarish.
 
 ---
 
-## 2. **Basic GitLab Setup**
+## 2. **GitLabning asosiy sozlamalari**
 
-### Signing Up and Creating a Project
+### Ro'yxatdan o'tish va loyiha yaratish
 
-1. **Sign up**: Visit [GitLab](https://gitlab.com/) and create an account.
-2. **Create a Project**:
-   - Go to **Projects** → **New Project**.
+1. **Ro'yxatdan o'tish**: Tashrif buyuring [GitLab](https://gitlab.com/) va hisob yarating.
+2. **Loyiha yarating**:
+   - Boring **Projects** → **New Project**.
    - Choose **Blank Project**, **Import**, or **Template**.
-   - Configure visibility (Private, Internal, or Public).
+   - Ko'rinishni sozlash (Private, Internal, or Public).
 
-### Adding SSH Keys
+### SSH kalitlarini qo'shish
 
-1. Generate an SSH key:
+1. SSH kalitini yarating:
 
    ```bash
    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
    ```
 
-2. Copy the public key:
+2. Ommaviy kalitni nusxalash:
 
    ```bash
    cat ~/.ssh/id_rsa.pub
    ```
 
-3. Add the key in GitLab:
-   - Go to **User Settings** → **SSH Keys** → Paste the public key.
+3. GitLab-ga kalit qo'shing:
+   - Boring **User Settings** → **SSH Keys** → Ommaviy kalitni joylashtiring.
 
 ---
 
-## 3. **GitLab Basics**
+## 3. **GitLab Asosiy tushunchalar**
 
-### Cloning a Repository
+### Klonlash Repository
 
 ```bash
 git clone git@gitlab.com:username/projectname.git
 ```
 
-### Committing Changes
+### O'zgarishlarni amalga oshirish
 
 ```bash
 # Stage files
@@ -74,35 +74,35 @@ git commit -m "Initial commit"
 git push origin main
 ```
 
-### Branching
+### Branch
 
-- Create a branch:
+- Yaratish  branch:
 
   ```bash
   git checkout -b feature-branch
   ```
 
-- Push the branch:
+- Push branch:
 
   ```bash
   git push origin feature-branch
   ```
 
-### Merge Requests (MRs)
+### Birlashtirish so'rovlari (MRs)
 
-1. Go to your project on GitLab.
-2. Navigate to **Merge Requests** → **New Merge Request**.
-3. Select source and target branches and create an MR.
+1. GitLab-dagi loyihangizga o'ting.
+2. **Birlashtirish so'rovlari** → **Yangi birlashtirish so'rovi** ga o'ting.
+3. Manba va maqsadli filiallarni tanlang va MR yarating.
 
 ---
 
-## 4. **Working with GitLab CI/CD**
+## 4. **GitLab CI/CD bilan ishlash**
 
-### Basics of `.gitlab-ci.yml`
+### `.gitlab-ci.yml` asoslari
 
 The `.gitlab-ci.yml` file defines the CI/CD pipeline.
 
-#### Example File:
+#### Namuna fayli:
 
 ```yaml
 stages:
@@ -129,65 +129,65 @@ deploy_job:
     - ./deploy-script.sh
 ```
 
-### Pipeline Lifecycle
+### Pipeline Hayot davrasi
 
-1. **Stages**: Define steps (e.g., `build`, `test`, `deploy`).
-2. **Jobs**: Define tasks in each stage.
-3. **Runners**: Execute pipeline jobs (shared or custom).
+1. **Stages**: Bosqichlarni aniqlang (e.g., `build`, `test`, `deploy`).
+2. **Jobs**: Har bir bosqichda vazifalarni aniqlang.
+3. **Runners**: Quvur ishlarini bajarish (umumiy yoki maxsus).
 
-### Running a Pipeline
+###  Pipeline ishlatish
 
-- Push changes to a branch:
+- O'zgarishlarni filialga surish:
 
   ```bash
   git push origin branch-name
   ```
 
-- Check pipelines:
-  - Navigate to **CI/CD** → **Pipelines** in GitLab.
+- Yo'llarni tekshirish:
+  - GitLab-da **CI/CD** → **Pipelines** ga o'ting.
 
 ---
 
-## 5. **Intermediate GitLab Features**
+## 5. **O'rta darajadagi GitLab xususiyatlari**
 
-### GitLab Runners
+### GitLab yuguruvchilari
 
-- Runners execute CI/CD jobs.
-- **Shared Runners**: Provided by GitLab.
-- **Custom Runners**: Self-hosted.
+- Yuguruvchilar CI/CD vazifalarini bajaradilar.
+- **Umumiy yuguruvchilar**: GitLab tomonidan taqdim etilgan.
+- **Maxsus yuguruvchilar**: O'z-o'zidan joylashtirilgan.
 
-#### Register a Custom Runner:
+#### Maxsus yuguruvchini ro'yxatdan o'tkazing:
 
-1. Install GitLab Runner:
+1. GitLab Runner-ni o'rnating:
 
    ```bash
    sudo apt install gitlab-runner
    ```
 
-2. Register the Runner:
+2. Yuguruvchini ro'yxatdan o'tkazing:
 
    ```bash
    gitlab-runner register
    ```
 
-   - Enter GitLab URL, registration token, executor (e.g., `shell`, `docker`), and tags.
+   - GitLab URL manzilini, ro'yxatdan o'tish tokenini, ijrochini (masalan, `shell`, `docker`) va teglarni kiriting.
 
-### Managing Variables
+### Boshqaruv Variables
 
-- **Set Environment Variables**:
-  1. Go to **Settings** → **CI/CD** → **Variables**.
-  2. Add variables (e.g., `AWS_ACCESS_KEY`, `DOCKER_PASSWORD`).
+- **Atrof-muhit o'zgaruvchilarini o'rnatish**:
+  1. Boring **Settings** → **CI/CD** → **Variables**.
+  2. Qo'shish variables (e.g., `AWS_ACCESS_KEY`, `DOCKER_PASSWORD`).
   
-- Use in `.gitlab-ci.yml`:
+- `.gitlab-ci.yml` da foydalaning:
 
   ```yaml
   script:
     - echo $MY_VARIABLE
   ```
 
-### Artifacts
+### Artefaktlar
 
-Artifacts store job outputs.
+Artefaktlar ish natijalarini saqlaydi.
 
 ```yaml
 test_job:
@@ -201,13 +201,13 @@ test_job:
 
 ---
 
-## 6. **Advanced GitLab Features**
+## 6. **GitLabning ilg'or xususiyatlari**
 
-### GitLab Pages
+### GitLab sahifalari
 
-Host static websites directly on GitLab.
+Statik veb-saytlarni to'g'ridan-to'g'ri GitLab-da joylashtiring.
 
-#### Example `.gitlab-ci.yml` for Pages:
+#### Misol `.gitlab-ci.yml` Sahifalar uchun:
 
 ```yaml
 pages:
@@ -220,10 +220,10 @@ pages:
       - public
 ```
 
-### Container Registry
+### Konteyner registri
 
-- GitLab provides a built-in Docker registry for container storage.
-- **Push an Image**:
+- GitLab konteyner saqlash uchun o'rnatilgan Docker registrini taqdim etadi.
+- **Rasmni bosing**:
 
   ```bash
   docker build -t registry.gitlab.com/username/projectname:tag .
@@ -231,12 +231,12 @@ pages:
   docker push registry.gitlab.com/username/projectname:tag
   ```
 
-### GitLab Kubernetes Integration
+### GitLab Kubernetes integratsiyasi
 
-- Integrate Kubernetes clusters with GitLab for deployments.
-- Navigate to **Operations** → **Kubernetes** to connect your cluster.
+- Joylashtirish uchun Kubernetes klasterlarini GitLab bilan integratsiya qiling.
+- Klasteringizni ulash uchun **Operatsiyalar** → **Kubernetes** ga o'ting.
 
-#### Deploy Using Helm:
+#### Dubulg'a yordamida joylashtirish:
 
 ```yaml
 deploy:
@@ -247,11 +247,11 @@ deploy:
 
 ---
 
-## 7. **Security in GitLab**
+## 7. **GitLab’dagi xavfsizlik**
 
 ### SAST (Static Application Security Testing)
 
-- Enable SAST to scan for vulnerabilities:
+- Zaifliklarni tekshirish uchun SAST ni yoqing:
 
   ```yaml
   include:
@@ -260,16 +260,16 @@ deploy:
 
 ### DAST (Dynamic Application Security Testing)
 
-- Perform runtime vulnerability scans:
+- Ish vaqtidagi zaifliklarni skanerlashni amalga oshiring:
 
   ```yaml
   include:
     - template: Security/DAST.gitlab-ci.yml
   ```
 
-### Secret Detection
+### Secret Aniqlash
 
-- Detect hardcoded secrets:
+- Qattiq kodlangan sirlarni aniqlang:
 
   ```yaml
   include:
@@ -278,15 +278,15 @@ deploy:
 
 ---
 
-## 8. **GitLab Monitoring and Analytics**
+## 8. **Monitoring va Analytics**
 
-### Pipeline Analytics
+### Pipeline Analysis
 
-- Navigate to **Analytics** → **CI/CD** → **Pipelines** to review pipeline efficiency.
+- Quvur liniyasi samaradorligini ko'rib chiqish uchun **Analytics** → **CI/CD** → **Quvur liniyasi** ga o'ting.
 
-### Code Coverage
+### Kodni qoplash
 
-- Enable coverage reports in `.gitlab-ci.yml`:
+- `.gitlab-ci.yml` da qamrov hisobotlarini yoqish:
 
   ```yaml
   test_job:
@@ -296,9 +296,9 @@ deploy:
     coverage: '/Code Coverage: \d+%/'
   ```
 
-### Container Scanning
+### Konteynerni skanerlash
 
-- Scan Docker images for vulnerabilities:
+- Zaifliklar uchun Docker rasmlarini skanerlang:
 
   ```yaml
   include:
@@ -307,21 +307,21 @@ deploy:
 
 ---
 
-## 9. **GitLab Backup and Recovery**
+## 9. **GitLab zaxira nusxasi va tiklash**
 
-### Backing Up GitLab
+### GitLab’ni zaxiralash
 
-- For self-hosted GitLab, run:
+- O'z-o'zidan joylashtirilgan GitLab uchun ishga tushiring:
 
   ```bash
   gitlab-backup create
   ```
 
-- Backup includes repositories, CI/CD logs, uploads, and settings.
+- Zaxira nusxalari omborlar, CI/CD jurnallari, yuklamalar va sozlamalarni o'z ichiga oladi.
 
-### Restoring GitLab
+### GitLabni tiklash
 
-- Restore a backup:
+- Zaxira nusxasini tiklash:
 
   ```bash
   gitlab-restore restore BACKUP_FILE=backup_filename
@@ -329,20 +329,20 @@ deploy:
 
 ---
 
-## 10. **Troubleshooting GitLab**
+## 10. **GitLab bilan bog'liq muammolarni bartaraf etish**
 
-### Common Errors
+### Umumiy xatolar
 
-- **Pipeline Failures**:
-  - Check pipeline logs in **CI/CD** → **Jobs**.
-- **Runner Issues**:
-  - Ensure the runner is active: `gitlab-runner status`.
-- **Permission Errors**:
-  - Verify SSH key and repository access.
+- **Pipeline Muvaffaqiyatsizliklar**:
+  - **CI/CD** → **Ishlar** bo'limidagi quvur liniyasi jurnallarini tekshiring.
+- **Yuguruvchi bilan bog'liq muammolar**:
+  - Yuguruvchi faol ekanligiga ishonch hosil qiling: `gitlab-runner status`.
+- **Ruxsat xatolari**:
+  - SSH kaliti va omborga kirishni tekshiring.
 
-### Debugging CI/CD Pipelines
+### Nosozliklarni tuzatish CI/CD Pipelines
 
-- Add verbose logging:
+- Batafsil jurnalni qo'shish:
 
   ```yaml
   script:
@@ -353,38 +353,38 @@ deploy:
 
 ---
 
-## 11. **GitLab Best Practices**
+## 11. **GitLabning eng yaxshi amaliyotlari**
 
-- **Use Branching Strategies**:
-  - Implement GitLab Flow or GitFlow for streamlined collaboration.
-- **Secure CI/CD Pipelines**:
-  - Use environment variables to manage sensitive data.
-- **Automate Reviews**:
-  - Use merge request templates and code owners.
-- **Leverage GitLab Templates**:
-  - Use pre-built `.gitlab-ci.yml` templates to save time.
-- **Monitor Usage**:
-  - Regularly check project and pipeline analytics.
+- **Dallanma strategiyalaridan foydalaning**:
+  - Hamkorlikni soddalashtirish uchun GitLab Flow yoki GitFlow ni amalga oshiring.
+- **Xavfsiz CI/CD Pipelines**:
+  - Maxfiy ma'lumotlarni boshqarish uchun muhit o'zgaruvchilaridan foydalaning.
+- **Sharhlarni avtomatlashtirish**:
+  - Birlashtirish so'rovi shablonlari va kod egalaridan foydalaning.
+- **GitLab shablonlaridan foydalanish**:
+  - Vaqtni tejash uchun oldindan tayyorlangan `.gitlab-ci.yml` shablonlaridan foydalaning.
+- **Monitordan foydalanish**:
+  - Loyiha va quvur liniyasi tahlillarini muntazam ravishda tekshirib turing.
 
 ---
 
-## 12. **Useful GitLab CLI Commands**
+## 12. **Foydali GitLab CLI buyruqlari**
 
-### Basic Commands
+### Asosiy Commands
 
-- **Login to GitLab CLI**:
+- **Kirish GitLab CLI**:
 
   ```bash
   glab auth login
   ```
 
-- **List Repositories**:
+- **Ro'yxat Repositories**:
 
   ```bash
   glab repo list
   ```
 
-- **Create an Issue**:
+- **Yaratish Issue**:
 
   ```bash
   glab issue create --title "Bug report" --description "Details here"
@@ -392,8 +392,8 @@ deploy:
 
 ---
 
-## References and Resources
+## References va Resources
 
-1. [GitLab Documentation](https://docs.gitlab.com/)
-2. [GitLab CI/CD Examples](https://docs.gitlab.com/ee/ci/examples/)
+1. [GitLab Hujjatlar](https://docs.gitlab.com/)
+2. [GitLab CI/CD Misollar](https://docs.gitlab.com/ee/ci/examples/)
 3. [GitLab CLI](https://github.com/profclems/glab)
