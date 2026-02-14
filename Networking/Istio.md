@@ -2,77 +2,77 @@
 
 ![text](https://imgur.com/QLlMSCp.png)
 
-## **Overview**
+## **Umumiy ko'rinish**
 
-Istio is an open-source service mesh that layers transparently onto existing distributed applications. It provides a way to control how microservices share data with one another. Key features of Istio include traffic management, security, and observability.
+Istio - bu ochiq manbali xizmat to'ri bo'lib, u mavjud taqsimlangan ilovalarga shaffof tarzda qatlamlanadi. U mikroservislarning bir-biri bilan ma'lumot almashishini nazorat qilish usulini taqdim etadi. Istio-ning asosiy xususiyatlariga trafikni boshqarish, xavfsizlik va kuzatuvchanlik kiradi.
 
-### **Basic Concepts**
+### **Asosiy tushunchalar**
 
-- **Service Mesh:** Istio creates a service mesh, which is an infrastructure layer that enables microservices to communicate with each other securely and efficiently. It also allows for traffic management and monitoring without requiring changes to the microservices themselves.
+- **Xizmatlar tarmog'i:** Istio xizmatlar tarmog'ini yaratadi, bu mikroservislarning bir-biri bilan xavfsiz va samarali muloqot qilishiga imkon beruvchi infratuzilma qatlamidir. Shuningdek, u mikroservislarning o'ziga o'zgartirish kiritishni talab qilmasdan, transport oqimini boshqarish va monitoring qilish imkonini beradi.
   
-- **Control Plane vs. Data Plane:** Istio's architecture is divided into two planes:
-  - **Control Plane:** Manages and configures the proxies (Envoy) to route traffic, enforce policies, and collect telemetry.
-  - **Data Plane:** Consists of Envoy proxies deployed as sidecars to the microservices, handling all network traffic between services.
+- **Boshqaruv tekisligi va ma'lumotlar tekisligi: * * Istioning arxitekturasi ikki tekislikka bo'lingan:
+  - **Boshqaruv tekisligi: * * proksi-serverlarni trafikni yo'naltirish, siyosatni amalga oshirish va telemetriyani yig'ish uchun boshqaradi va sozlaydi.
+  - **Ma'lumotlar tekisligi: * * mikroservislarga sidecars sifatida joylashtirilgan elchi proksi-serverlaridan iborat bo'lib, xizmatlar o'rtasidagi barcha tarmoq trafigini boshqaradi.
 
-### **Key Components**
+### * * Asosiy Komponentlar**
 
-- **Envoy Proxy:** The core component of Istio’s data plane. Envoy is deployed as a sidecar to each service and intercepts all inbound and outbound traffic.
+- **Envoy Proxy:** Istio ma'lumotlar tekisligining asosiy komponenti. Envoy har bir xizmatga yonma-yon o'rnatiladi va barcha kiruvchi va chiquvchi trafikni ushlab turadi.
 
-- **Pilot:** Manages the configuration of the Envoy proxies, distributing routing rules and policies across the mesh.
+- **Uchuvchi:** Envoy proksi-serverlarining konfiguratsiyasini boshqaradi, marshrutlash qoidalari va siyosatlarini tarmoq bo'ylab taqsimlaydi.
 
-- **Mixer:** Enforces access control and usage policies, and collects telemetry data. It interacts with the Envoy proxies and provides insights into traffic patterns and security.
+- **Mikser:** Kirish nazorati va foydalanish siyosatini amalga oshiradi hamda telemetriya ma'lumotlarini to'playdi. U Envoy proksi-serverlari bilan o‘zaro aloqada bo‘lib, trafik shakllari va xavfsizlik haqida ma’lumot beradi.
 
-- **Citadel:** Manages certificates and keys for mutual TLS (mTLS) and service identities within the mesh, ensuring secure communication between services.
+- **Citadel:** Tarmoq ichidagi o‘zaro TLS (mTLS) va xizmat identifikatorlari uchun sertifikatlar va kalitlarni boshqaradi, bu esa xizmatlar o‘rtasidagi xavfsiz aloqani ta’minlaydi.
 
-- **Galley:** Istio’s configuration validation component. It ensures that configurations are correct and distributes them to the appropriate components within the mesh.
+- **Galley:** Istio konfiguratsiyasini tekshirish komponenti. U konfiguratsiyalarning to'g'riligini ta'minlaydi va ularni tarmoq ichidagi tegishli komponentlarga taqsimlaydi.
 
-### **Traffic Management**
+### **Trafikni boshqarish**
 
-- **VirtualService:** A resource that defines how traffic is routed to a service. It allows you to configure complex routing rules like request matching, traffic splitting, and more.
+- **VirtualService:** Trafikning xizmatga qanday yo'naltirilishini belgilovchi resurs. Bu so'rovlarni moslashtirish, trafikni taqsimlash va boshqalar kabi murakkab marshrutlash qoidalarini sozlash imkonini beradi.
 
-- **DestinationRule:** Defines policies that apply to traffic after it has been routed to a destination. These policies can include load balancing settings, connection pool sizes, and outlier detection.
+- **DestinationRule:** Belgilangan joyga yo'naltirilgandan keyin trafikka tegishli siyosatlarni belgilaydi. Bu siyosatlar yukni muvozanatlash sozlamalari, ulanish hovuzlari o'lchamlari va chetlanishlarni aniqlashni o'z ichiga olishi mumkin.
 
-- **Gateway:** Manages external traffic entering the mesh. It controls how traffic from outside the cluster is directed into the mesh and routed to the appropriate services.
+- **Gateway:** To'rga kiruvchi tashqi trafikni boshqaradi. U klasterdan tashqaridagi trafikning to'rga qanday yo'naltirilishini va tegishli xizmatlarga yo'naltirilishini nazorat qiladi.
 
-- **Sidecar:** This resource configures the behavior of the sidecar proxies deployed alongside the microservices. It allows for fine-grained control over traffic management and resource usage.
+- **Sidecar:** Bu resurs mikroservislar bilan birga joylashtirilgan sidecar proksi-serverlarining xatti-harakatlarini sozlaydi. Bu trafikni boshqarish va resurslardan foydalanishni nozik nazorat qilish imkonini beradi.
 
-### **Security**
+### **Xavfsizlik**
 
-- **mTLS (Mutual TLS):** Istio supports mTLS to secure service-to-service communication. mTLS ensures that the identity of both the client and the server is authenticated and that the communication between them is encrypted.
+- **mTLS (Mutual TLS):** Istio xizmatdan xizmatga aloqani ta'minlash uchun mTLS-ni qo'llab-quvvatlaydi. mTLS mijoz va serverning identifikatori autentifikatsiya qilinishini va ular orasidagi aloqa shifrlanganligini ta'minlaydi.
 
-- **Authorization Policies:** These policies define access control rules, determining which services or users can access specific resources. Policies can be applied globally, per namespace, or per workload.
+- **Avtorizatsiya siyosati:** Bu siyosatlar qaysi xizmatlar yoki foydalanuvchilar muayyan resurslarga kirishi mumkinligini aniqlab, kirishni boshqarish qoidalarini belgilaydi. Siyosatlar global miqyosda, nom maydoniga yoki ish yukiga qarab qo‘llanilishi mumkin.
 
-- **Ingress/Egress Control:** Istio manages both inbound and outbound traffic to ensure that it complies with security policies. Ingress controls how external traffic enters the mesh, while egress manages how traffic leaves the mesh.
+- **Kirish/chiqish nazorati:** Istio xavfsizlik siyosatiga muvofiqligini ta'minlash uchun kiruvchi va chiquvchi trafikni boshqaradi. Kirish tashqi trafikning tarmoqqa qanday kirishini nazorat qiladi, chiqish esa trafikning tarmoqdan qanday chiqishini boshqaradi.
 
-### **Observability**
+### **Kuzatuvchanlik**
 
-- **Telemetry:** Istio collects telemetry data such as metrics, logs, and traces, providing deep insights into the behavior of your microservices. This data is essential for monitoring and debugging applications.
+- **Telemetriya:** Istio metrikalar, jurnallar va izlar kabi telemetriya ma'lumotlarini to'playdi, bu sizning mikroservislaringizning xatti-harakatlari haqida chuqur tushunchalar beradi. Bu ma'lumotlar ilovalarni kuzatish va disk raskadrovka qilish uchun zarurdir.
 
-- **Prometheus:** Istio integrates with Prometheus, a monitoring system that scrapes metrics from the Envoy proxies. These metrics can be visualized using tools like Grafana.
+- **Prometheus:** Istio Prometheus bilan integratsiyalashgan bo'lib, u Envoy proksi-serverlaridan ko'rsatkichlarni yig'adi. Bu ko'rsatkichlarni Grafana kabi vositalar yordamida vizualizatsiya qilish mumkin.
 
-- **Grafana:** A visualization tool used to create dashboards that display the metrics collected by Prometheus. Istio provides pre-built Grafana dashboards to monitor your service mesh.
+- **Grafana:** Prometheus tomonidan to'plangan ko'rsatkichlarni aks ettiruvchi asboblar panelini yaratish uchun foydalaniladigan vizualizatsiya vositasi. Istio xizmat tarmog'ini kuzatish uchun oldindan tuzilgan Grafana boshqaruv panellarini taqdim etadi.
 
-- **Jaeger/Zipkin:** Distributed tracing tools integrated with Istio. They allow you to trace the path of a request as it travels through various services in the mesh, helping to identify performance bottlenecks and errors.
+- **Jaeger/Zipkin:** Istio bilan integratsiyalashgan taqsimlangan kuzatuv vositalari. Ular so'rovning tarmoqdagi turli xizmatlar orqali o'tish yo'lini kuzatish imkonini beradi, bu esa unumdorlik bilan bog'liq muammolar va xatolarni aniqlashga yordam beradi.
 
-### **Advanced Concepts**
+### **Ilg'or tushunchalar**
 
-- **Canary Deployments:** Istio enables canary deployments by allowing you to gradually roll out a new version of a service to a small percentage of users while monitoring its performance before fully deploying it.
+- **Kanareykali joylashtirishlar:** Istio xizmatning yangi versiyasini foydalanuvchilarning kichik bir qismiga bosqichma-bosqich tarqatish imkonini beradi va uni to'liq joylashtirishdan oldin uning ishlashini kuzatib boradi.
 
-- **Traffic Mirroring:** This feature allows you to mirror a portion of live traffic to a new service version without impacting production traffic. It’s useful for testing new versions in a real-world environment.
+- **Trafikni aks ettirish:** Bu xususiyat sizga jonli trafikning bir qismini ishlab chiqarish trafigiga ta'sir qilmasdan yangi xizmat versiyasiga aks ettirish imkonini beradi. Bu yangi versiyalarni real muhitda sinab ko'rish uchun foydalidir.
 
-- **Circuit Breaking:** Prevents services from being overwhelmed by limiting the number of concurrent connections or requests. If the limit is reached, Istio can return an error or route traffic to a backup service.
+- **Tarmoqni uzish:** Bir vaqtning o'zida ulanishlar yoki so'rovlar sonini cheklash orqali xizmatlarning haddan tashqari yuklanishini oldini oladi. Agar chegaraga erishilsa, Istio xatolikni qaytarishi yoki trafikni zaxira xizmatiga yo'naltirishi mumkin.
 
-- **Rate Limiting:** Controls the rate at which requests are sent to a service, preventing overloads. Rate limits can be defined based on various factors, such as user identity or source IP.
+- **Tezlikni cheklash:** Xizmatga so'rovlar yuborilish tezligini nazorat qiladi, ortiqcha yuklanishning oldini oladi. Tezlik chegaralari foydalanuvchi identifikatori yoki manba IP kabi turli omillarga qarab belgilanishi mumkin.
 
-- **Ingress/Egress Policies:** These policies control what traffic is allowed to enter or leave the service mesh, enhancing security by restricting access based on predefined rules.
+- **Kirish/chiqish siyosati:** Bu siyosatlar xizmat tarmog‘iga qanday trafik kirishiga yoki undan chiqib ketishiga ruxsat berilishini nazorat qiladi, oldindan belgilangan qoidalar asosida kirishni cheklash orqali xavfsizlikni oshiradi.
 
-- **Service Entries:** Extend the mesh to services outside of the mesh, allowing them to be treated as if they were inside the mesh. This is useful for managing and securing external services.
+- **Xizmat yozuvlari:** To'rni tarmoqdan tashqaridagi xizmatlarga kengaytiring, bu ularga xuddi to'r ichida bo'lgandek munosabatda bo'lish imkonini beradi. Bu tashqi xizmatlarni boshqarish va himoya qilish uchun foydalidir.
 
-### **Example Use Case**
+### **Foydalanish misollari**
 
-Consider a microservices architecture where you need to manage traffic between different versions of a service. With Istio, you can:
+Xizmatning turli versiyalari o'rtasidagi trafikni boshqarishingiz kerak bo'lgan mikroservislar arxitekturasini ko'rib chiqing. Istio yordamida siz quyidagilarni qilishingiz mumkin:
 
-1. **Deploy a New Version:** Use a VirtualService to route 10% of traffic to a new version of your service.
-2. **Monitor the New Version:** Collect telemetry data to ensure the new version behaves as expected.
-3. **Gradually Increase Traffic:** If the new version is stable, gradually increase the traffic percentage.
-4. **Roll Back if Needed:** If issues are detected, quickly route all traffic back to the previous version using Istio’s traffic management capabilities.
+1. **Yangi versiyani joylashtirish:** Virtual xizmatdan foydalanib, trafikning 10 foizini xizmatingizning yangi versiyasiga yo‘naltiring.
+2. **Yangi versiyani kuzatib boring:** Yangi versiya kutilganidek ishlashini ta'minlash uchun telemetriya ma'lumotlarini to'plang.
+3. **Trafikni asta-sekin oshiring:** Agar yangi versiya barqaror bo'lsa, trafik foizini asta-sekin oshiring.
+4. **Agar kerak bo'lsa, orqaga qaytaring:** Muammolar aniqlansa, Istio-ning trafikni boshqarish imkoniyatlaridan foydalangan holda barcha trafikni tezda oldingi versiyaga qaytaring.
