@@ -2,179 +2,179 @@
 
 ![text](https://imgur.com/6x1bZIJ.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- **Podman** is an open-source container engine that performs much like Docker but without the daemon dependency. It supports the Open Container Initiative (OCI) standards for both containers and container images.
+- **Podman** - bu Dockerga o'xshash ishlaydigan, ammo demonga bog'liq bo'lmagan ochiq kodli konteyner dvigateli. Bu konteynerlar va konteyner tasvirlari uchun Open Container Initiative (OCI) standartlarini qo'llab-quvvatlaydi.
 
-**2. Key Concepts:**
+**2. Asosiy tushunchalar:**
 
-- **Pod:** A group of containers that run together and share resources, similar to a Kubernetes Pod.
-- **Rootless Containers:** Podman can run containers as a non-root user.
-- **Docker Compatibility:** Podman commands are similar to Docker, making it easy to switch between the two.
+- **Pod:** Kubernetes Podga o'xshash, birgalikda ishlaydigan va resurslarni baham ko'radigan konteynerlar guruhi.
+- **Rootless Containers:** Podman konteynerlarni root bo'lmagan foydalanuvchi sifatida ishga tushirishi mumkin.
+- **Docker mosligi:** Podman buyruqlari Dockerga o'xshaydi, bu ikkalasi o'rtasida almashishni osonlashtiradi.
 
-**3. Installation:**
+**3. O'rnatish:**
 
-- **On Fedora:**
+- **Fedora'da:**
 
   ```bash
   sudo dnf install podman
   ```
   
-- **On Ubuntu:**
+- **Ubuntu’da:**
 
   ```bash
   sudo apt-get -y install podman
   ```
 
-**4. Basic Podman Commands:**
+**4. Podmanning asosiy buyruqlari:**
 
-- **Run a Container:**
+- **Konteynerni ishga tushirish:**
 
   ```bash
   podman run -dt -p 8080:80 nginx
   ```
   
-- **List Running Containers:**
+- **Ishlayotgan konteynerlar ro'yxati:**
 
   ```bash
   podman ps
   ```
   
-- **Stop a Container:**
+- **Konteynerni to'xtating:**
 
   ```bash
   podman stop container_id
   ```
   
-- **Remove a Container:**
+- **Konteynerni olib tashlash:**
 
   ```bash
   podman rm container_id
   ```
 
-- **Build an Image:**
+- **Tasvir yarating:**
 
   ```bash
   podman build -t my-image:latest .
   ```
 
-**5. Podman vs Docker:**
+**5. Podman va Docker:**
 
-- **No Daemon:** Podman does not rely on a central daemon; each container is an isolated process.
-- **Rootless Mode:** Allows running containers without root privileges, enhancing security.
-- **Podman Pods:** Group containers under a single network namespace.
+- **Demon yo'q:** Podman markaziy demonga tayanmaydi; har bir konteyner izolyatsiya qilingan jarayondir.
+- **Rootsiz rejim:** Xavfsizlikni oshirib, konteynerlarni root imtiyozlarisiz ishga tushirishga imkon beradi.
+- **Podman Pods:** Konteynerlarni bitta tarmoq nom maydoni ostida guruhlash.
 
-**6. Pods in Podman:**
+**6. Podmandagi podlar:**
 
-- **Create a Pod:**
+- **Pod yarating:**
 
   ```bash
   podman pod create --name mypod -p 8080:80
   ```
   
-- **Run a Container in a Pod:**
+- **Podda konteynerni ishga tushirish:**
 
   ```bash
   podman run -dt --pod mypod nginx
   ```
 
-- **Inspect a Pod:**
+- **Podni tekshiring:**
 
   ```bash
   podman pod inspect mypod
   ```
 
-- **Stop a Pod:**
+- **Podni to'xtating:**
 
   ```bash
   podman pod stop mypod
   ```
 
-**7. Networking:**
+**7. Tarmoq:**
 
-- **Podman Network Command:**
+- **Podman Tarmoq Buyrug'i:**
 
   ```bash
   podman network create mynetwork
   ```
 
-- **Attaching a Container to a Network:**
+- **Konteynerni tarmoqqa ulash:**
 
   ```bash
   podman run -dt --network mynetwork nginx
   ```
 
-**8. Storage Management:**
+**8. Saqlash boshqaruvi:**
 
-- **Mount a Volume:**
+- **Jildni o'rnatish:**
 
   ```bash
   podman run -dt -v /host/data:/container/data nginx
   ```
 
-- **List Volumes:**
+- **Ro'yxat jildlari:**
 
   ```bash
   podman volume ls
   ```
 
-- **Create a Volume:**
+- **Jild yaratish:**
 
   ```bash
   podman volume create myvolume
   ```
 
-**9. Rootless Containers:**
+**9. Ildizsiz konteynerlar:**
 
-- **Running Rootless:**
+- **Ildizsiz ishlayapti:**
 
   ```bash
   podman --rootless run -dt -p 8080:80 nginx
   ```
 
-- **Inspect Rootless Mode:**
+- **Ildizsiz rejimni tekshiring:**
 
   ```bash
   podman info --format '{{.Host.Rootless}}'
   ```
 
-**10. Podman Compose:**
+**10. Podman kompozitsiyasi:**
 
-- **Install Podman Compose:**
+- **Podman Compose-ni o'rnating:**
 
   ```bash
   pip3 install podman-compose
   ```
 
-- **Using Docker Compose with Podman:**
+- **Podman bilan Docker Compose dan foydalanish:**
 
   ```bash
   podman-compose up
   ```
 
-**11. Troubleshooting Podman:**
+**11. Podman bilan bog'liq muammolarni bartaraf etish:**
 
-- **Check Podman Logs:**
+- **Podman jurnallarini tekshiring:**
 
   ```bash
   podman logs container_id
   ```
 
-- **Check Network Configuration:**
+- **Tarmoq konfiguratsiyasini tekshiring:**
 
   ```bash
   podman network inspect mynetwork
   ```
 
-- **Debugging Podman Containers:**
+- **Podman konteynerlarini nosozliklarni tuzatish:**
 
   ```bash
   podman exec -it container_id /bin/bash
   ```
 
-**12. Podman in CI/CD:**
+**12. CI/CDdagi Podman:**
 
-- **Using Podman in GitLab CI:**
+- **GitLab CI da Podmandan foydalanish:**
 
   ```yaml
   image: quay.io/podman/stable
@@ -185,37 +185,37 @@
       - podman push myimage registry.example.com/myimage:latest
   ```
 
-**13. Security Best Practices:**
+**13. Xavfsizlikning eng yaxshi amaliyotlari:**
 
-- **Run Containers as Non-Root:**
-  - Use rootless mode or specify a non-root user in the container.
+- **Konteynerlarni ildiz bo'lmagan sifatida ishga tushirish:**
+- Rootsiz rejimdan foydalaning yoki konteynerda ildiz bo'lmagan foydalanuvchini ko'rsating.
 
   ```bash
   podman run -dt -u 1001 nginx
   ```
 
-- **Use SELinux:**
-  - Enable SELinux for added security on supported systems.
+- **SELinux dan foydalaning:**
+- Qo'llab-quvvatlanadigan tizimlarda qo'shimcha xavfsizlik uchun SELinux ni yoqing.
 
   ```bash
   podman run -dt --security-opt label=type:container_runtime_t nginx
   ```
 
-**14. Migrating from Docker to Podman:**
+**14. Dockerdan Podmanga o'tish:**
 
-- **Docker Compatibility Mode:**
+- **Docker moslik rejimi:**
 
   ```bash
   alias docker=podman
   ```
 
-- **Importing Docker Images:**
+- **Docker rasmlarini import qilish:**
 
   ```bash
   podman pull docker-daemon:nginx:latest
   ```
 
-**15. Podman on Kubernetes:**
+**15. Kubernetesdagi Podman:**
 
-- **CRI-O Integration:**
-  - Podman can be used with CRI-O as a runtime for Kubernetes, allowing seamless integration with Kubernetes clusters.
+- **CRI-O integratsiyasi:**
+  - Podman CRI-O bilan Kubernetes uchun ish vaqti sifatida ishlatilishi mumkin, bu esa Kubernetes klasterlari bilan uzluksiz integratsiyani ta'minlaydi.
