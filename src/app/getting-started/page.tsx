@@ -110,32 +110,29 @@ export default function GettingStartedPage() {
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-              What is DevOps?
+              DevOps nima?
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              DevOps is a set of practices that combines software development
-              (Dev) and IT operations (Ops). It aims to shorten the systems
-              development life cycle and provide continuous delivery with high
-              quality.
+              DevOps - bu dasturiy ta'minotni ishlab chiqish (Dev) va IT operatsiyalarini (Ops) birlashtirgan amaliyotlar to'plami. Uning maqsadi tizimlarni ishlab chiqish hayot aylanishini qisqartirish va uzluksiz ishlashni ta'minlashdir. DevOps - Netlivy mahsuloti
             </p>
 
             <div className="space-y-4">
               {[
                 {
-                  text: "Improved collaboration between development and operations teams",
+                  text: "Ishlab chiqish va operatsion guruhlar o'rtasidagi hamkorlikni yaxshilash",
                   icon: <Users className="w-5 h-5" />,
                 },
                 {
-                  text: "Faster delivery of features and fixes",
+                  text: "Xususiyatlar va tuzatishlarni tezroq yetkazib berish",
                   icon: <Zap className="w-5 h-5" />,
                 },
                 {
-                  text: "More stable operating environments",
+                  text: "Barqarorroq ish muhiti",
                   icon: <Server className="w-5 h-5" />,
                 },
                 {
-                  text: "Better resource utilization",
+                  text: "Resurslardan yaxshiroq foydalanish",
                   icon: <BarChart2 className="w-5 h-5" />,
                 },
               ].map((item, i) => (
@@ -164,7 +161,7 @@ export default function GettingStartedPage() {
                       Plan
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Define requirements and create roadmap
+                      Talablarni aniqlang va yo'l xaritasini tuzing
                     </p>
                   </div>
                 </div>
@@ -178,7 +175,7 @@ export default function GettingStartedPage() {
                       Code
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Write and review code
+                      Kodni yozing va ko'rib chiqing
                     </p>
                   </div>
                 </div>
@@ -192,7 +189,7 @@ export default function GettingStartedPage() {
                       Build
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Compile and build artifacts
+                      Artefaktlarni kompilyatsiya qiling va yarating
                     </p>
                   </div>
                 </div>
@@ -206,7 +203,7 @@ export default function GettingStartedPage() {
                       Test
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Automated testing and quality checks
+                      Avtomatlashtirilgan sinov va sifat tekshiruvlari
                     </p>
                   </div>
                 </div>
@@ -220,7 +217,7 @@ export default function GettingStartedPage() {
                       Deploy
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Release to production environment
+                      Ishlab chiqarish muhitiga chiqarish
                     </p>
                   </div>
                 </div>
@@ -234,7 +231,7 @@ export default function GettingStartedPage() {
                       Monitor
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Observe and improve continuously
+                      Kuzating va doimiy ravishda yaxshilang
                     </p>
                   </div>
                 </div>
@@ -257,8 +254,7 @@ export default function GettingStartedPage() {
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              Follow this guided path to master DevOps skills from fundamentals
-              to advanced topics
+              DevOps ko'nikmalarini asosiy mavzulardan tortib, ilg'or mavzulargacha o'zlashtirish uchun ushbu yo'naltirilgan yo'ldan boring
             </p>
           </div>
 
@@ -273,7 +269,7 @@ export default function GettingStartedPage() {
                   level: "Beginner",
                   title: "Linux & Command Line Basics",
                   description:
-                    "Learn the fundamentals of Linux operating system and shell scripting.",
+                    "Linux operatsion tizimi va shell skriptlarining asoslarini o'rganing.",
                   icon: <Terminal className="w-6 h-6" />,
                   color: "blue",
                 },
@@ -282,7 +278,7 @@ export default function GettingStartedPage() {
                   level: "Beginner",
                   title: "Version Control with Git",
                   description:
-                    "Master Git workflow, branching strategies, and collaboration.",
+                    "Master Git ish jarayoni, tarmoqlanish strategiyalari va hamkorlik.",
                   icon: <GitBranch className="w-6 h-6" />,
                   color: "green",
                 },
@@ -290,7 +286,7 @@ export default function GettingStartedPage() {
                   position: "left",
                   level: "Intermediate",
                   title: "Containerization with Docker",
-                  description: "Learn to build, deploy and manage containers.",
+                  description: "Konteynerlarni qurishni, joylashtirishni va boshqarishni o'rganing.",
                   icon: <Puzzle className="w-6 h-6" />,
                   color: "purple",
                 },
@@ -299,7 +295,7 @@ export default function GettingStartedPage() {
                   level: "Intermediate",
                   title: "CI/CD Pipelines",
                   description:
-                    "Implement continuous integration and delivery workflows.",
+                    "Uzluksiz integratsiya va yetkazib berish ish oqimlarini amalga oshiring.",
                   icon: <Workflow className="w-6 h-6" />,
                   color: "yellow",
                 },
@@ -308,7 +304,7 @@ export default function GettingStartedPage() {
                   level: "Advanced",
                   title: "Infrastructure as Code",
                   description:
-                    "Automate infrastructure provisioning with Terraform and Ansible.",
+                    "Terraform va Ansible yordamida infratuzilmani ta'minlashni avtomatlashtiring.",
                   icon: <Code className="w-6 h-6" />,
                   color: "red",
                 },
@@ -317,7 +313,7 @@ export default function GettingStartedPage() {
                   level: "Advanced",
                   title: "Kubernetes Orchestration",
                   description:
-                    "Deploy and scale containerized applications with Kubernetes.",
+                    "Kubernetes yordamida konteynerlashtirilgan ilovalarni joylashtiring va masshtablang.",
                   icon: <Server className="w-6 h-6" />,
                   color: "indigo",
                 },
@@ -326,7 +322,7 @@ export default function GettingStartedPage() {
                   level: "Expert",
                   title: "Monitoring & Observability",
                   description:
-                    "Implement logging, monitoring, and alerting solutions.",
+                    "Jurnallarni yuritish, monitoring qilish va ogohlantirish yechimlarini joriy etish.",
                   icon: <BarChart2 className="w-6 h-6" />,
                   color: "teal",
                 },
@@ -335,7 +331,7 @@ export default function GettingStartedPage() {
                   level: "Expert",
                   title: "Cloud Platforms",
                   description:
-                    "Master AWS, Azure, or GCP cloud services and architecture.",
+                    "Master AWS, Azure yoki GCP bulut xizmatlari va arxitekturasi.",
                   icon: <Database className="w-6 h-6" />,
                   color: "orange",
                 },
@@ -393,7 +389,7 @@ export default function GettingStartedPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 mb-4">
-              <span className="text-sm font-medium">Essential Resources</span>
+              <span className="text-sm font-medium">Muhim resurslar</span>
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -401,8 +397,7 @@ export default function GettingStartedPage() {
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              Explore these essential tools that every DevOps engineer should be
-              familiar with
+              Har bir DevOps muhandisi tanish bo'lishi kerak bo'lgan ushbu muhim vositalarni o'rganing
             </p>
           </div>
 
@@ -413,7 +408,7 @@ export default function GettingStartedPage() {
                 category: "Version Control",
                 icon: <GitBranch className="w-6 h-6" />,
                 description:
-                  "Distributed version control system for tracking changes in source code.",
+                  "Manba kodidagi o'zgarishlarni kuzatish uchun tarqatilgan versiyani boshqarish tizimi.",
                 link: "/Version-Control/Github",
               },
               {
@@ -421,7 +416,7 @@ export default function GettingStartedPage() {
                 category: "Containerization",
                 icon: <Puzzle className="w-6 h-6" />,
                 description:
-                  "Platform for developing, shipping, and running applications in containers.",
+                  "Konteynerlarda ilovalarni ishlab chiqish, yetkazib berish va ishga tushirish uchun platforma.",
                 link: "/Containerization/Docker",
               },
               {
@@ -429,7 +424,7 @@ export default function GettingStartedPage() {
                 category: "CI/CD",
                 icon: <Workflow className="w-6 h-6" />,
                 description:
-                  "Open-source automation server for building, testing, and deploying code.",
+                  "Kodni yaratish, sinovdan o'tkazish va joylashtirish uchun ochiq kodli avtomatlashtirish serveri.",
                 link: "/CI-CD/Jenkins",
               },
               {
@@ -437,7 +432,7 @@ export default function GettingStartedPage() {
                 category: "Orchestration",
                 icon: <Server className="w-6 h-6" />,
                 description:
-                  "Container orchestration system for automating deployment and scaling.",
+                  "Joylashtirish va masshtablashni avtomatlashtirish uchun konteyner orkestratsiya tizimi.",
                 link: "/Containerization/Kubernetes",
               },
               {
@@ -445,7 +440,7 @@ export default function GettingStartedPage() {
                 category: "Infrastructure as Code",
                 icon: <Code className="w-6 h-6" />,
                 description:
-                  "Tool for building, changing, and versioning infrastructure safely.",
+                  "Infratuzilmani xavfsiz qurish, o'zgartirish va versiyalash vositasi.",
                 link: "/Infrastructure-Management/Terraform",
               },
               {
@@ -453,7 +448,7 @@ export default function GettingStartedPage() {
                 category: "Monitoring",
                 icon: <BarChart2 className="w-6 h-6" />,
                 description:
-                  "Monitoring and alerting toolkit designed for reliability and scalability.",
+                  "Ishonchlilik va miqyoslash imkoniyati uchun mo'ljallangan monitoring va ogohlantirish vositalari to'plami.",
                 link: "/Monitoring/Prometheus",
               },
             ].map((tool, i) => (
@@ -499,34 +494,33 @@ export default function GettingStartedPage() {
             <div className="grid md:grid-cols-2">
               <div className="p-8 md:p-12">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 mb-4">
-                  <span className="text-sm font-medium">Need Help?</span>
+                  <span className="text-sm font-medium">Yordam kerak?</span>
                 </div>
 
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                  Join our DevOps Community
+                  Join our Netlivy Community
                 </h2>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                  Connect with fellow DevOps engineers, ask questions, share
-                  knowledge, and grow together.
+                  Netlivy jamoasi bilan bog'laning, savollar bering, bilimlaringizni baham ko'ring va birgalikda rivojlaning.
                 </p>
 
                 <div className="space-y-4 mb-8">
                   {[
                     {
-                      text: "Access to exclusive resources and guides",
+                      text: "Eksklyuziv resurslar va qo'llanmalarga kirish",
                       icon: <BookOpen className="w-5 h-5" />,
                     },
                     {
-                      text: "Direct help from experienced professionals",
+                      text: "Tajribali mutaxassislarning bevosita yordami",
                       icon: <HelpCircle className="w-5 h-5" />,
                     },
                     {
-                      text: "Regular webinars and learning sessions",
+                      text: "Doimiy vebinarlar va o'quv sessiyalari",
                       icon: <Award className="w-5 h-5" />,
                     },
                     {
-                      text: "Network with industry experts",
+                      text: "Sanoat mutaxassislari bilan tarmoq",
                       icon: <Users className="w-5 h-5" />,
                     },
                   ].map((item, i) => (
@@ -543,12 +537,12 @@ export default function GettingStartedPage() {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://discord.gg/devops"
+                    href="https://instagram.com/car1movvvvv"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
                   >
-                    Join Discord Community
+                    Join Community
                   </a>
                   <Link
                     href="/contribute"
@@ -613,19 +607,18 @@ export default function GettingStartedPage() {
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Frequently Asked Questions
+              Tez-tez so'raladigan savollar
             </h2>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              Find answers to the most common questions about getting started
-              with DevOps
+              DevOps bilan ishlashni boshlash haqida eng keng tarqalgan savollarga javoblarni toping
             </p>
           </div>
 
           <div className="space-y-6">
             {[
               {
-                question: "What skills do I need to become a DevOps engineer?",
+                question: "DevOps muhandisi bo'lish uchun qanday ko'nikmalarga ega bo'lishim kerak?",
                 answer:
                   "A good DevOps engineer should have skills in Linux administration, networking basics, programming/scripting (Python, Bash), cloud platforms, containers, CI/CD, infrastructure as code, and monitoring tools. Strong problem-solving and communication skills are also essential.",
               },
