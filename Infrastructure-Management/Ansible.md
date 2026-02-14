@@ -2,28 +2,28 @@
 
 ![ansible](https://imgur.com/XwECXoK.png)
 
-## **🔹 Introduction to Ansible**  
+## **🔹 Ansiblega kirish**  
 
-### ✅ What is Ansible?  
+### ✅ Ansible nima?  
 
-Ansible is an **open-source automation tool** used for:  
-✅ **Configuration Management** (e.g., installing & managing software on servers)  
-✅ **Application Deployment** (e.g., deploying a web app on multiple servers)  
-✅ **Orchestration** (e.g., managing multi-tier applications like load balancer + DB)  
-✅ **Provisioning** (e.g., setting up cloud infrastructure with AWS, Azure, GCP)  
+Ansible - bu quyidagilar uchun ishlatiladigan **ochiq kodli avtomatlashtirish vositasi**:  
+✅ **Konfiguratsiyani boshqarish** (masalan, serverlarga dasturiy ta'minotni o'rnatish va boshqarish)  
+✅ **Ilovalarni joylashtirish** (masalan, veb-ilovani bir nechta serverlarga joylashtirish)  
+✅ **Orkestratsiya** (masalan, yuklama balanslashtiruvchisi + ma'lumotlar bazasi kabi ko'p bosqichli ilovalarni boshqarish)  
+✅ **Ta'minot** (masalan, AWS, Azure, GCP bilan bulutli infratuzilmani sozlash)  
 
-### ✅ Why Use Ansible?  
+### ✅ Nima uchun Ansible’dan foydalanish kerak?  
 
-🔹 **Agentless:** No need to install agents on target machines (uses SSH & WinRM)  
-🔹 **Idempotent:** Runs multiple times without unwanted changes  
-🔹 **Human-Readable:** Uses YAML playbooks  
-🔹 **Cross-Platform:** Works on **Linux, Windows, macOS, Cloud Servers**  
+🔹 **Agentsiz:** Maqsadli mashinalarga agentlarni o'rnatish shart emas (SSH va WinRM dan foydalanadi)  
+🔹 **Idempotent:** Keraksiz o'zgarishlarsiz bir necha marta ishlaydi  
+🔹 **Odam o'qiy oladigan:** YAML o'yin daftarlaridan foydalanadi  
+🔹 **Kross-platformalar:** **Linux, Windows, macOS, Cloud Servers** da ishlaydi  
 
 ---
 
-## **🛠️ 1. Installing & Setting Up Ansible**  
+## **🛠️ 1. O'rnatish va sozlash Ansible**  
 
-### ✅ Installing Ansible on Linux  
+### ✅ Linuxda Ansible-ni o'rnatish  
 
 ```bash
 # Ubuntu/Debian
@@ -34,16 +34,15 @@ sudo apt install -y ansible
 sudo yum install -y ansible
 ```
 
-### ✅ Checking Installation  
+### ✅ O'rnatishni tekshirish  
 
 ```bash
 ansible --version
 ```
 
-### ✅ Setting Up an Inventory File  
+### ✅ Inventarizatsiya faylini sozlash  
 
-An **inventory file** (`/etc/ansible/hosts`) tells Ansible where to connect.  
-Example:  
+**Inventarizatsiya fayli** (`/etc/ansible/hosts`) Ansible’ga qayerga ulanish kerakligini aytadi. Misol:  
 
 ```ini
 [webservers]
@@ -54,13 +53,13 @@ server2 ansible_host=192.168.1.11 ansible_user=ubuntu
 db1 ansible_host=192.168.1.20 ansible_user=root
 ```
 
-### ✅ Testing Connectivity with `ping`  
+### ✅ `ping` yordamida ulanishni tekshirish  
 
 ```bash
 ansible all -m ping
 ```
 
-📌 If successful, you'll see:  
+📌 Muvaffaqiyatli bo'lsa, quyidagilarni ko'rasiz:  
 
 ```bash
 server1 | SUCCESS => {"changed": false, "ping": "pong"}
@@ -69,39 +68,39 @@ server2 | SUCCESS => {"changed": false, "ping": "pong"}
 
 ---
 
-## **🚀 2. Running Ad-Hoc Commands (Quick Tasks Without a Playbook)**  
+## **🚀 2. Maxsus buyruqlarni bajarish (qo'llanmasiz tezkor vazifalar)**  
 
-✅ **Check disk usage**  
+✅ **Diskdan foydalanishni tekshiring**  
 
 ```bash
 ansible all -m command -a "df -h"
 ```
 
-✅ **Check system uptime**  
+✅ **Tizimning ish vaqtini tekshirish**  
 
 ```bash
 ansible all -m command -a "uptime"
 ```
 
-✅ **Create a directory on remote hosts**  
+✅ **Masofaviy xostlarda katalog yarating**  
 
 ```bash
 ansible all -m file -a "path=/opt/newdir state=directory"
 ```
 
-✅ **Copy files to remote servers**  
+✅ **Fayllarni masofaviy serverlarga nusxalash**  
 
 ```bash
 ansible all -m copy -a "src=/tmp/file.txt dest=/home/ubuntu/file.txt"
 ```
 
-✅ **Install a package (e.g., nginx) on all web servers**  
+✅ **Barcha veb-serverlarga paketni (masalan, nginx) o'rnatish**  
 
 ```bash
 ansible webservers -m apt -a "name=nginx state=present" --become
 ```
 
-✅ **Restart a service (e.g., nginx)**  
+✅ **Xizmatni qayta ishga tushiring (masalan, nginx)**  
 
 ```bash
 ansible webservers -m service -a "name=nginx state=restarted" --become
@@ -109,12 +108,12 @@ ansible webservers -m service -a "name=nginx state=restarted" --become
 
 ---
 
-## **📜 3. Writing Ansible Playbooks (Automation Scripts)**  
+## **📜 3. Ansible Playbooks (Avtomatlashtirish skriptlari) yozish**  
 
-✅ **What is a Playbook?**  
-A **playbook** is a YAML file that contains tasks to **automate configuration**.  
+✅ **Playbook nima?**  
+**Playbook** - bu konfiguratsiyani **avtomatlashtirish** vazifalarini o'z ichiga olgan YAML fayli.  
 
-### **🔹 Basic Playbook Example**  
+### **🔹 Asosiy o'yin daftariga misol**  
 
 ```yaml
 - name: Install and Start Nginx
@@ -132,7 +131,7 @@ A **playbook** is a YAML file that contains tasks to **automate configuration**.
         state: started
 ```
 
-✅ **Run the Playbook**  
+✅ **O'yin daftarchasini ishga tushiring**  
 
 ```bash
 ansible-playbook playbook.yml
@@ -140,9 +139,9 @@ ansible-playbook playbook.yml
 
 ---
 
-## **🔹 4. Using Variables in Ansible**  
+## **🔹 4. Ansibleda o'zgaruvchilardan foydalanish**  
 
-✅ **Define Variables in a Playbook**  
+✅ **O'yin daftarida o'zgaruvchilarni aniqlang**  
 
 ```yaml
 - name: Install a Package with a Variable
@@ -156,13 +155,13 @@ ansible-playbook playbook.yml
         state: present
 ```
 
-✅ **Use Built-in Ansible Facts**  
+✅ **O'rnatilgan Ansible Facts dan foydalaning**  
 
 ```bash
 ansible all -m setup
 ```
 
-Example Fact Usage in Playbook:  
+Playbook’dagi faktlardan foydalanishga misol:  
 
 ```yaml
 - name: Display System Information
@@ -174,9 +173,9 @@ Example Fact Usage in Playbook:
 
 ---
 
-## **🔹 5. Loops & Conditionals**  
+## **🔹 5. Tsikllar va shartli shartlar**  
 
-✅ **Loop Example (Install Multiple Packages)**  
+✅ **Tsikl namunasi (Bir nechta paketlarni o'rnatish)**  
 
 ```yaml
 - name: Install Multiple Packages
@@ -193,7 +192,7 @@ Example Fact Usage in Playbook:
         - unzip
 ```
 
-✅ **Conditional Execution**  
+✅ **Shartli ijro**  
 
 ```yaml
 - name: Restart Nginx Only If Needed
@@ -214,18 +213,18 @@ Example Fact Usage in Playbook:
 
 ---
 
-## **📂 6. Ansible Roles (Best Practices for Large Projects)**  
+## **📂 6. Ansible Roles (Katta loyihalar uchun eng yaxshi amaliyotlar)**  
 
-✅ **Generate an Ansible Role Structure**  
+✅ **Mumkin bo'lgan rol tuzilmasini yarating**  
 
 ```bash
 ansible-galaxy init my_role
 ```
 
-📌 This creates a structured directory like:  
+📌 Bu quyidagicha tuzilgan katalog yaratadi:  
 
 ```plaintext
-my_role/
+mening_rolim/
 ├── tasks/
 │   └── main.yml
 ├── handlers/
@@ -241,7 +240,7 @@ my_role/
 ├── README.md
 ```
 
-✅ **Use Roles in a Playbook**  
+✅ **O'yin daftarida rollardan foydalaning**  
 
 ```yaml
 - name: Deploy Web Server
@@ -252,21 +251,21 @@ my_role/
 
 ---
 
-## **🔐 7. Ansible Vault (Encrypting Secrets)**  
+## **🔐 7. Ansible Vault (Sirlarni shifrlash)**  
 
-✅ **Create an Encrypted File**  
+✅ **Shifrlangan fayl yarating**  
 
 ```bash
 ansible-vault create secrets.yml
 ```
 
-✅ **Edit an Encrypted File**  
+✅ **Shifrlangan faylni tahrirlash**  
 
 ```bash
 ansible-vault edit secrets.yml
 ```
 
-✅ **Use Vault in Playbooks**  
+✅ **Playbooksda Vaultdan foydalaning**  
 
 ```yaml
 - name: Deploy with Encrypted Secrets
@@ -278,7 +277,7 @@ ansible-vault edit secrets.yml
         msg: "The secret password is {{ secret_password }}"
 ```
 
-✅ **Run Playbook with Vault Password Prompt**  
+✅ **Playbook’ni Vault parol so‘rovi bilan ishga tushiring**  
 
 ```bash
 ansible-playbook playbook.yml --ask-vault-pass
@@ -286,27 +285,27 @@ ansible-playbook playbook.yml --ask-vault-pass
 
 ---
 
-## **🎯 8. Useful Ansible Commands**  
+## **🎯 8. Foydali Ansible buyruqlari**  
 
-✅ **Check Playbook Syntax**  
+✅ **O'yin daftari sintaksisini tekshiring**  
 
 ```bash
 ansible-playbook playbook.yml --syntax-check
 ```
 
-✅ **Dry Run (Test Without Executing Changes)**  
+✅ **Quruq ishga tushirish (o'zgarishlarni amalga oshirmasdan sinov)**  
 
 ```bash
 ansible-playbook playbook.yml --check
 ```
 
-✅ **List All Available Modules**  
+✅ **Barcha mavjud modullar ro'yxati**  
 
 ```bash
 ansible-doc -l
 ```
 
-✅ **Get Help for a Specific Module**  
+✅ **Muayyan modul uchun yordam oling**  
 
 ```bash
 ansible-doc apt
@@ -314,14 +313,14 @@ ansible-doc apt
 
 ---
 
-## 🎯 **Conclusion**  
+## 🎯 **Xulosa**  
 
-This **Ansible Cheatsheet** provides a **step-by-step guide** from **beginner to advanced**.  
+Ushbu **Ansible Cheatsheet** boshlang'ichdan yuqori darajagacha bo'lgan **bosqichma-bosqich qo'llanma** ni taqdim etadi.  
 
-🚀 **Next Steps:**  
-✅ **Practice with real-world playbooks**  
-✅ **Use roles for better structuring**  
-✅ **Secure credentials with Ansible Vault**  
-✅ **Automate cloud infrastructure with Terraform + Ansible**  
+🚀 **Keyingi qadamlar:**  
+✅ **Haqiqiy o'yin daftarlari bilan mashq qiling**  
+✅ **Yaxshiroq tuzilish uchun rollardan foydalaning**  
+✅ **Ansible Vault bilan hisob ma'lumotlarini himoya qiling**  
+✅ **Bulutli infratuzilmani avtomatlashtirish Terraform + Ansible**  
 
-🔗 **Contribute to the Cheatsheet Collection:** [GitHub Repo](https://github.com/NotHarshhaa/devops-cheatsheet)  
+🔗 **Cheatsheet to'plamiga hissa qo'shing:** [Press](https://netlivys.vercel.app)  
