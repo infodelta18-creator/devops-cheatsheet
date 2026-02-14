@@ -2,60 +2,60 @@
 
 ![text](https://imgur.com/7PDN0aZ.png)
 
-Bitbucket, developed by Atlassian, is a Git-based source code repository hosting service. It is designed for teams and provides strong integration with other Atlassian tools like Jira, Trello, and Confluence. This cheatsheet provides a detailed guide for mastering Bitbucket from basic operations to advanced features.
+Atlassian tomonidan ishlab chiqilgan Bitbucket Git-ga asoslangan manba kodlari ombori hosting xizmatidir. U jamoalar uchun mo'ljallangan va Jira, Trello va Confluence kabi boshqa Atlassian vositalari bilan kuchli integratsiyani ta'minlaydi. Ushbu cheatsheet Bitbucket-ni asosiy operatsiyalardan tortib kengaytirilgan funksiyalargacha o'zlashtirish uchun batafsil qo'llanmani taqdim etadi.
 
 ---
 
-## **1. Introduction to Bitbucket**
+## **1. Bitbucketga kirish**
 
-### What is Bitbucket?
+### Bitbucket nima?
 
-- Bitbucket is a Git-based platform for version control, CI/CD pipelines, and project collaboration.
-- It supports both **private** and **public repositories**.
-- Known for its seamless integration with Atlassian tools (e.g., Jira) and in-built CI/CD pipelines.
+- Bitbucket - bu versiyalarni boshqarish, CI/CD quvurlari va loyihalar hamkorligi uchun Git-ga asoslangan platforma.
+- U **xususiy** va **ommaviy omborlarni** qo'llab-quvvatlaydi.
+- Atlassian vositalari (masalan, Jira) va o'rnatilgan CI/CD quvurlari bilan uzluksiz integratsiyasi bilan mashhur.
 
-### Key Features
+### Asosiy xususiyatlar
 
-- Git repository hosting
-- In-built CI/CD via **Bitbucket Pipelines**
-- Jira integration for issue tracking
-- Branch permissions and code review tools
-- Supports Mercurial (deprecated)
+- Git omborini xosting qilish
+- **Bitbucket Pipelines** orqali o'rnatilgan CI/CD
+- Muammolarni kuzatish uchun Jira integratsiyasi
+- Filial ruxsatnomalari va kodni ko'rib chiqish vositalari
+- Mercurialni qo'llab-quvvatlaydi (eskirgan)
 
 ---
 
-## **2. Getting Started**
+## **2. Ishni boshlash**
 
-### Creating a Bitbucket Account
+### Bitbucket hisobini yaratish
 
-1. Go to [Bitbucket](https://bitbucket.org/) and sign up for an account.
-2. Optionally, link your Atlassian account for better integration.
+1. Boring [Bitbucket](https://bitbucket.org/) va hisob qaydnomasiga ro'yxatdan o'ting.
+2. Ixtiyoriy ravishda, yaxshiroq integratsiya uchun Atlassian hisobingizni bog'lang.
 
-### Setting Up SSH Keys
+### SSH kalitlarini sozlash
 
-1. Generate an SSH key:
+1. SSH kalitini yarating:
 
    ```bash
    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
    ```
 
-2. Add the public key to Bitbucket:
-   - Navigate to **Personal Settings** → **SSH Keys** → **Add Key**.
+2. Bitbucket-ga ochiq kalitni qo'shing:
+   - Navigatsiya qiling **Personal Settings** → **SSH Keys** → **Add Key**.
 
 ### Creating a Repository
 
-1. Log in to Bitbucket.
+1. Bitbucket-ga kiring.
 2. Go to **Repositories** → **Create Repository**.
-3. Configure:
-   - Repository Name
-   - Access level (Private/Public)
-   - Repository Type (Git)
+3. Sozlash:
+   - Repository nomi
+   - Kirish darajasi (Private/Public)
+   - Repository Turi (Git)
 
 ---
 
-## **3. Basic Operations**
+## **3. Asosiy operatsiyalar**
 
-### Cloning a Repository
+### Klonlash  Repository
 
 ```bash
 git clone git@bitbucket.org:username/repository.git
@@ -72,7 +72,7 @@ git commit -m "Initial commit"
 git push origin main
 ```
 
-### Pulling Changes
+### O'zgarishlarni tortish
 
 ```bash
 git pull origin main
@@ -80,9 +80,9 @@ git pull origin main
 
 ---
 
-## **4. Branching and Merging**
+## **4. Tarmoqlanish va birlashish**
 
-### Creating and Switching Branches
+### Filiallarni yaratish va almashtirish
 
 ```bash
 # Create a new branch
@@ -99,32 +99,32 @@ git push origin feature-branch
 
 ### Creating a Pull Request (PR)
 
-1. Open Bitbucket and navigate to **Pull Requests**.
-2. Click **Create Pull Request**.
-3. Select branches, add reviewers, and provide a description.
+1. Bitbucketni oching va  **Pull Requests**.
+2. Bosing **Create Pull Request**.
+3. Filiallarni tanlang, sharhlovchilarni qo'shing va tavsif bering.
 
-### Merging Pull Requests
+### Birlashish Pull Requests
 
-1. Approve the PR.
-2. Merge using the options:
-   - **Merge Commit**: Keeps all commits intact.
-   - **Squash Merge**: Combines all commits into one.
-   - **Rebase**: Rewrites commit history.
+1. Tasdiqlang PR.
+2. Variantlar yordamida birlashtirish:
+   - **Merge Commit**: Barcha commitlarni butun holda saqlaydi.
+   - **Squash Merge**: Barcha topshiriqlarni bittaga birlashtiradi.
+   - **Rebase**: Tarixni qayta yozadi.
 
 ---
 
-## **5. Bitbucket Pipelines (CI/CD)**
+## **5. Bitbucket yo'llar (CI/CD)**
 
-### Overview
+### Umumiy ma'lumot
 
-Bitbucket Pipelines is an integrated CI/CD service to automate builds, tests, and deployments.
+Bitbucket Pipelines - bu qurilishlar, sinovlar va joylashtirishlarni avtomatlashtirish uchun o'rnatilgan CI/CD xizmati.
 
-### Enabling Pipelines
+### Yo'llarni yoqish
 
 1. Go to the repository settings → **Pipelines**.
-2. Enable Pipelines and configure the `.bitbucket-pipelines.yml` file.
+2. Yo'l liniyalarini yoqing va `.bitbucket-pipelines.yml` faylini sozlang.
 
-### Sample Pipeline Configuration
+### Namuna yo'l liniyasi konfiguratsiyasi
 
 ```yaml
 pipelines:
@@ -141,18 +141,18 @@ pipelines:
           - echo "Deploying to production..."
 ```
 
-### Key Triggers
+### Kalit triggerlar
 
-- **default**: Runs on any branch when pushed.
-- **branches**: Customizes triggers for specific branches.
-- **tags**: Automates deployment for version tags.
+- **default**: Itarilganda istalgan shoxchada ishlaydi.
+- **branches**: Muayyan tarmoqlar uchun triggerlarni sozlaydi.
+- **tags**: Versiya teglari uchun joylashtirishni avtomatlashtiradi.
 
-### Variables and Secrets
+### Variables va Secrets
 
 1. Go to **Repository Settings** → **Pipelines** → **Environment Variables**.
-2. Add sensitive variables like `AWS_ACCESS_KEY`.
+2. `AWS_ACCESS_KEY` kabi sezgir o'zgaruvchilarni qo'shing.
 
-#### Using Variables in Pipelines
+#### Foydalanish Variables ichida Pipelines
 
 ```yaml
 script:
@@ -161,53 +161,53 @@ script:
 
 ---
 
-## **6. Branch Permissions and Access Control**
+## **6. Filial ruxsatnomalari va kirishni boshqarish**
 
-### Branch Permissions
+### Branch Ruxsatnomalar
 
 1. Go to **Repository Settings** → **Branch Permissions**.
-2. Add rules such as:
-   - Prevent direct pushes to `main`.
-   - Require at least 2 code reviews before merging.
+2.  Qoidalarni qo'shing:
+   - "main" tomonga to'g'ridan-to'g'ri itarishlarning oldini oling.
+   - Birlashtirishdan oldin kamida 2 ta kodni ko'rib chiqish talab qilinadi.
 
-### User Roles
+### Foydalanuvchi rollari
 
-- **Admin**: Full control over repositories and permissions.
-- **Write**: Can push and pull code.
-- **Read**: Read-only access to repositories.
+- **Admin**: Omborlar va ruxsatnomalar ustidan to'liq nazorat.
+- **Write**: Kodni surish va tortib olish mumkin.
+- **Read**: Omborlarga faqat o'qish uchun kirish.
 
 ---
 
-## **7. Integration with Jira**
+## **7. Jira bilan integratsiya**
 
-### Linking a Repository to Jira
+### Omborni Jira bilan bog'lash
 
 1. Go to **Repository Settings** → **Jira Settings**.
-2. Connect the repository to a Jira project.
+2. Repozitoriyani Jira loyihasiga ulang.
 
-### Automating Issue Tracking
+### Muammolarni kuzatishni avtomatlashtirish
 
-- Add Jira issue keys in commit messages:
+- Jira muammo kalitlarini commit xabarlariga qo'shing:
 
   ```text
   PROJ-123: Fix login page bug
   ```
 
-- Jira automatically links commits, pull requests, and deployments.
+- Jira avtomatik ravishda commitlarni, pull requestlarni va joylashtirishlarni (deploy) bog'laydi.
 
 ---
 
-## **8. Code Review and Quality**
+## **8. Kodni ko'rib chiqish va sifat**
 
-### Using Pull Requests for Code Review
+### Foydalanish Pull Requests uchun Code Review
 
-1. Assign reviewers while creating a pull request.
-2. Add comments inline to highlight issues.
+1. Pull request yaratishda sharhlovchilarni tayinlang.
+2. Muammolarni ta'kidlash uchun izohlarni qatorga qo'shing.
 
-### Integrating Code Quality Tools
+### Kod sifati vositalarini integratsiyalash
 
-- Add tools like **SonarCloud** or **CodeClimate** to your pipelines for static code analysis.
-- Example: Adding SonarCloud to Bitbucket Pipelines:
+- Statik kod tahlili uchun kanallaringizga **SonarCloud** yoki **CodeClimate** kabi vositalarni qo'shing.
+- Misol: SonarCloudni Bitbucket quvur liniyalariga qo'shish:
 
   ```yaml
   - pipe: sonarsource/sonarcloud-scan:1.4.0
@@ -219,9 +219,9 @@ script:
 
 ## **9. Bitbucket API**
 
-### Authenticating
+### Autentifikatsiya qilinmoqda
 
-Generate a personal access token:
+Shaxsiy token yarating:
 
 1. Go to **Personal Settings** → **Access Management** → **Create App Password**.
 
@@ -231,9 +231,9 @@ Use the token in API calls:
 curl -u username:app_password https://api.bitbucket.org/2.0/repositories
 ```
 
-### Common API Endpoints
+### Umumiy API tugash nuqtalari
 
-- List repositories:
+- Ro'yxat repositories:
 
   ```bash
   curl -X GET https://api.bitbucket.org/2.0/repositories/{username}
@@ -250,15 +250,15 @@ curl -u username:app_password https://api.bitbucket.org/2.0/repositories
 
 ---
 
-## **10. Advanced Features**
+## **10. Kengaytirilgan xususiyatlar**
 
-### Deployments with Bitbucket Pipelines
+###  Bitbucket Pipelines bilan deploy
 
 Track deployment environments:
 
-1. Go to **Deployments** → Configure environments (e.g., Dev, Staging, Prod).
+1. Boring **Deployments** → Configure environments (e.g., Dev, Staging, Prod).
 
-Add deployment steps in `.bitbucket-pipelines.yml`:
+Joylashtirish bosqichlarini qo'shing `.bitbucket-pipelines.yml`:
 
 ```yaml
 pipelines:
@@ -271,11 +271,11 @@ pipelines:
             - ./deploy.sh staging
 ```
 
-### Monorepo Support
+### Monorepo qo'llab-quvvatlashi
 
-Host multiple services in one repository:
+Bitta omborda bir nechta xizmatlarni joylashtiring:
 
-- Use Pipelines for individual service builds:
+- Alohida xizmat ko'rsatish tuzilmalari uchun quvur liniyalaridan foydalaning:
 
   ```yaml
   pipelines:
@@ -288,7 +288,7 @@ Host multiple services in one repository:
 
 ### Mirror Repositories
 
-Mirror a repository between Bitbucket and GitHub:
+Bitbucket va GitHub o'rtasidagi omborni aks ettirish:
 
 ```bash
 git remote add bitbucket git@bitbucket.org:username/repo.git
@@ -297,52 +297,52 @@ git push bitbucket --mirror
 
 ---
 
-## **11. Security and Best Practices**
+## **11. Xavfsizlik va eng yaxshi amaliyotlar**
 
-### Enforcing Two-Factor Authentication (2FA)
+### Ikki faktorli autentifikatsiyani amalga oshirish (2FA)
 
-1. Go to **Personal Settings** → **Security** → Enable 2FA.
+1. Boring **Personal Settings** → **Security** → Yoqing (Enable) 2FA.
 
-### Secret Scanning
+### Maxfiy skanerlash (Secret Scanning)
 
-Bitbucket scans for hard-coded credentials and alerts users.
+Bitbucket qattiq kodlangan hisob ma'lumotlarini skanerlaydi va foydalanuvchilarni ogohlantiradi.
 
-### Dependency Scanning
+### Bog'liqlikni skanerlash (Dependency Scanning)
 
-Use Atlassian tools like **Snyk** or **Dependabot** to identify vulnerabilities.
+Zaifliklarni aniqlash uchun **Snyk** yoki **Dependabot** kabi Atlassian vositalaridan foydalaning.
 
 ---
 
 ## **12. Best Practices**
 
-1. **Branch Naming Convention**:
-   - Use prefixes like `feature/`, `bugfix/`, and `release/`.
+1. **Branch Nomlash konventsiyasi**:
+   - Quyidagi kabi prefikslardan foydalaning `feature/`, `bugfix/`, and `release/`.
 
    ```text
    feature/add-login-form
    bugfix/fix-authentication-error
    ```
 
-2. **Commit Messages**:
-   - Follow a format like:
+2. **Commit Xabarlar**:
+   - Quyidagi kabi formatga amal qiling:
 
      ```text
-     [PROJ-123] Fix bug in login functionality
+     [PROJ-123] Kirish funksiyasidagi xatoni tuzatish
      ```
 
-   - Reference Jira issues in commit messages.
+   - commit xabarlarida Jira muammolariga murojaat qiling.
 
-3. **Automate Everything**:
-   - Use Pipelines for CI/CD.
-   - Automate linting, testing, and deployment.
+3. **Hamma narsani avtomatlashtirish**:
+   -  Pipelinesdan foydalanish  CI/CD uchun.
+   - Astarlash, sinovdan o'tkazish va joylashtirishni(deploy) avtomatlashtirish.
 
-4. **Use Pull Request Templates**:
-   - Add `.bitbucket/pull_request_template.md` to standardize PR descriptions.
+4. **Foydalanish Pull Request Templates**:
+   - Qo'shish `.bitbucket/pull_request_template.md` PR tavsiflarini standartlashtirish.
 
 ---
 
-## **13. References and Resources**
+## **13. Adabiyotlar va resurslar**
 
-- [Bitbucket Documentation](https://bitbucket.org/product/)
-- [Bitbucket API Documentation](https://developer.atlassian.com/bitbucket/api/2/reference/)
-- [Pipelines Guide](https://bitbucket.org/product/features/pipelines)
+- [Bitbucket Hujjatlar](https://bitbucket.org/product/)
+- [Bitbucket API Hujjatlar](https://developer.atlassian.com/bitbucket/api/2/reference/)
+- [Pipelines Qo'llanma](https://bitbucket.org/product/features/pipelines)
