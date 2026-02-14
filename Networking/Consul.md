@@ -2,68 +2,68 @@
 
 ![text](https://imgur.com/RWncIhL.png)
 
-## **Overview**
+## **Umumiy ma'lumot**
 
-Consul by HashiCorp is a service mesh and service discovery tool that provides distributed service networking, configuration management, and segmentation. It’s widely used for managing microservices in dynamic environments like Kubernetes.
+Konsul HashiCorp - bu tarqatilgan xizmatlar tarmog'i, konfiguratsiyani boshqarish va segmentatsiyani ta'minlovchi xizmat tarmog'i va xizmatlarni kashf qilish vositasi. U Kubernetes kabi dinamik muhitlarda mikroservislarni boshqarish uchun keng qo'llaniladi.
 
-### **Basic Concepts**
+### **Asosiy tushunchalar**
 
-- **Service Discovery:** Consul automatically detects services in your network, allowing them to register and discover each other without hardcoding IP addresses or DNS names. This is especially useful in dynamic environments where services are constantly scaling.
+- **Xizmatni aniqlash: ** Konsul tarmoqdagi xizmatlarni avtomatik ravishda aniqlaydi, bu ularga IP manzillari yoki DNS nomlarini qattiq kodlashsiz ro'yxatdan o'tish va bir-birlarini topish imkonini beradi. Bu xizmatlar doimiy ravishda kengayib boruvchi dinamik muhitlarda ayniqsa foydalidir.
 
-- **Key/Value Store:** Consul includes a distributed key/value store that can be used for dynamic configuration management. This allows applications to retrieve configuration data at runtime without restarting.
+- **Kalit/qiymat do‘koni:** Consul dinamik konfiguratsiyani boshqarish uchun ishlatilishi mumkin bo‘lgan taqsimlangan kalit/qiymat do‘konini o‘z ichiga oladi. Bu ilovalarga konfiguratsiya ma’lumotlarini ish vaqtida qayta ishga tushirmasdan olish imkonini beradi.
 
-- **Health Checking:** Consul monitors the health of services through health checks. If a service fails its health check, Consul can automatically remove it from the service registry, preventing traffic from being routed to unhealthy instances.
+- **Sog‘liqni tekshirish:** Consul sog‘liqni tekshirish orqali xizmatlarning holatini kuzatib boradi. Agar xizmat sog'lig'ini tekshirishdan o'ta olmasa, Consul uni avtomatik ravishda xizmat registridan olib tashlashi mumkin, bu esa nosog'lom misollarga yo'naltirilgan trafikni oldini oladi.
 
-- **Agent:** Each node in a Consul cluster runs an agent that provides a local interface for service registration, health checking, and querying. Agents communicate with each other to ensure consistent service data across the cluster.
+- **Agent: * * konsul klasteridagi har bir tugun xizmatni ro'yxatdan o'tkazish, sog'lig'ini tekshirish va so'rov o'tkazish uchun mahalliy interfeysni ta'minlovchi agentni boshqaradi. Klaster bo'ylab izchil xizmat ma'lumotlarini ta'minlash uchun agentlar bir-biri bilan aloqa qilishadi.
 
-### **Service Mesh Features**
+### * * Xizmat Mash Xususiyatlari**
 
-- **Connect:** Consul’s service mesh feature, Connect, provides secure service-to-service communication using mutual TLS (mTLS). It ensures that all traffic between services is encrypted and authenticated.
+- **Ulanish:** Konsulning xizmat ko'rsatish tarmog'i xususiyati Connect o'zaro TLS (mTLS) yordamida xizmatdan xizmatga xavfsiz aloqani ta'minlaydi. Bu xizmatlar orasidagi barcha trafik shifrlangan va autentifikatsiya qilinishini ta'minlaydi.
 
-- **Intention:** Intentions in Consul define policies that control which services are allowed to communicate with each other. This fine-grained access control enhances security by ensuring that only authorized services can connect.
+- **Maqsad:** Konsulda niyatli siyosat qaysi xizmatlarning bir-biri bilan aloqa qilishiga ruxsat berilishini nazorat qiladi. Bu nozik donador kirishni boshqarish faqat vakolatli xizmatlar ulanishi mumkinligini ta'minlash orqali xavfsizlikni oshiradi.
 
-- **Sidecar Proxy:** Consul uses Envoy as a sidecar proxy to manage and secure service communication. The sidecar handles tasks such as load balancing, mTLS, and observability.
+- **Sidecar proksi:** Consul xizmat aloqalarini boshqarish va himoya qilish uchun Envoy-dan sidecar proksi sifatida foydalanadi. Sidecar yukni muvozanatlash, mTLS va kuzatuvchanlik kabi vazifalarni bajaradi.
 
-### **Traffic Management**
+### **Trafikni boshqarish**
 
-- **Service Segmentation:** Consul’s intentions allow you to segment traffic by defining which services can communicate. For example, you can ensure that only the web service can talk to the payment service, preventing unauthorized access.
+- **Xizmatlarni segmentlash:** Konsulning niyatlari qaysi xizmatlar muloqot qilishi mumkinligini aniqlash orqali trafikni segmentlash imkonini beradi. Masalan, siz faqat veb-xizmatning to'lov xizmati bilan gaplashishini ta'minlashingiz mumkin, bu esa ruxsatsiz kirishning oldini oladi.
 
-- **Service Failover:** If a service instance becomes unhealthy or fails, Consul can automatically reroute traffic to healthy instances. This ensures high availability and resilience in your applications.
+- **Xizmatning ishlamay qolishi:** Agar xizmat namunasi nosog'lom bo'lib qolsa yoki ishlamay qolsa, Consul avtomatik ravishda trafikni sog'lom namunalarga yo'naltirishi mumkin. Bu sizning ilovalaringizda yuqori mavjudlik va barqarorlikni ta'minlaydi.
 
-- **Ingress Gateways:** Consul manages ingress gateways that control and secure traffic entering the service mesh. These gateways can enforce policies and provide TLS termination for incoming traffic.
+- **Kirish shlyuzlari:** Konsul xizmat tarmog'iga kiruvchi trafikni boshqaradigan va himoya qiladigan kirish shlyuzlarini boshqaradi. Bu shlyuzlar siyosatlarni amalga oshirishi va kiruvchi trafik uchun TLS tugatishni ta'minlashi mumkin.
 
-### **Security**
+### **Xavfsizlik**
 
-- **ACLs (Access Control Lists):** Consul’s ACL system provides fine-grained security controls. You can create policies that determine which users or services have access to specific resources, enhancing security in multi-tenant environments.
+- **ACL (Kirishni boshqarish ro'yxatlari):** Konsulning ACL tizimi nozik xavfsizlik nazoratini ta'minlaydi. Siz qaysi foydalanuvchilar yoki xizmatlarning muayyan resurslarga kirishini aniqlaydigan siyosatlarni yaratishingiz mumkin, bu esa ko'p ijarachilar muhitida xavfsizlikni oshiradi.
 
-- **mTLS:** Consul uses mutual TLS to secure communication between services. mTLS not only encrypts traffic but also ensures that both the client and server are authenticated before communication is allowed.
+- **mTLS:** Consul xizmatlar o'rtasidagi aloqani ta'minlash uchun o'zaro TLS dan foydalanadi. mTLS nafaqat trafikni shifrlaydi, balki aloqa o'rnatilishidan oldin mijoz va serverning autentifikatsiya qilinishini ham ta'minlaydi.
 
-- **Service Mesh Policies:** Consul allows you to define policies that control various aspects of service communication, such as rate limiting, traffic shaping, and access control. These policies help you manage and secure your service mesh.
+- **Xizmat tarmog'i siyosati:** Consul sizga tariflarni cheklash, trafikni shakllantirish va kirishni boshqarish kabi xizmat aloqalarining turli jihatlarini boshqaradigan siyosatlarni belgilash imkonini beradi. Ushbu siyosatlar xizmat tarmog'ingizni boshqarish va himoya qilishga yordam beradi.
 
-### **Observability**
+### **Kuzatuvchanlik**
 
-- **Metrics:** Consul provides detailed metrics about service health, traffic patterns, and performance. These metrics can be exported to monitoring systems like Prometheus for further analysis.
+- **Metrikalar:** Consul xizmatning holati, trafik shakllari va unumdorligi haqida batafsil ma'lumotlarni taqdim etadi. Ushbu ko'rsatkichlarni keyingi tahlil qilish uchun Prometheus kabi monitoring tizimlariga eksport qilish mumkin.
 
-- **Logs:** Consul collects and stores logs related to service health, configuration changes, and traffic routing. These logs are useful for auditing and troubleshooting.
+- **Jurnallar:** Konsul xizmatning sog'lig'i, konfiguratsiya o'zgarishlari va trafikni yo'naltirish bilan bog'liq jurnallarni to'playdi va saqlaydi. Bu jurnallar audit va muammolarni bartaraf etish uchun foydalidir.
 
-- **Tracing:** Consul integrates with tracing systems like Jaeger and Zipkin to provide visibility into service communication. Tracing helps you understand how requests flow through your services and identify bottlenecks or failures.
+- **Kuzatuv:** Consul xizmatlar o'rtasidagi aloqani ko'rishni ta'minlash uchun Jaeger va Zipkin kabi kuzatuv tizimlari bilan integratsiyalashgan. Kuzatuv so'rovlar sizning xizmatlaringiz orqali qanday o'tishini tushunishga va qiyinchiliklar yoki nosozliklarni aniqlashga yordam beradi.
 
-### **Advanced Concepts**
+### **Ilg'or tushunchalar**
 
-- **Mesh Gateways:** Mesh gateways allow Consul to manage traffic between services in different datacenters or regions. This extends the service mesh beyond a single cluster, enabling global service networking.
+- **Mesh shlyuzlari:** Mesh shlyuzlari Consulga turli maʼlumotlar markazlari yoki hududlardagi xizmatlar oʻrtasidagi trafikni boshqarish imkonini beradi. Bu xizmat tarmogʻini bitta klasterdan tashqariga kengaytiradi va global xizmat tarmogʻini yaratishga imkon beradi.
 
-- **Network Middleware Integration:** Consul can integrate with firewalls, load balancers, and other network devices to enforce policies outside the service mesh. This is useful for securing traffic at the network edge.
+- **Tarmoq vositalarining integratsiyasi:** Consul xavfsizlik devorlar, yuk balanslagichlari va boshqa tarmoq qurilmalari bilan integratsiyalashib, xizmat ko'rsatish tarmog'idan tashqarida siyosatlarni amalga oshirishi mumkin. Bu tarmoq chetidagi trafikni himoya qilish uchun foydalidir.
 
-- **Service Failover Across Datacenters:** In multi-datacenter deployments, Consul can automatically failover services to another datacenter if the primary one fails. This ensures continuity and resilience.
+- **Ma'lumotlar markazlari bo'ylab xizmat ko'rsatishning uzilishi:** Bir nechta ma'lumotlar markazlarida o'rnatilgan bo'lsa, Consul asosiy ma'lumotlar markazi ishlamay qolsa, xizmatlarni avtomatik ravishda boshqa ma'lumotlar markaziga o'tkazishi mumkin. Bu uzluksizlik va chidamlilikni ta'minlaydi.
 
-- **Consul-Terraform Sync:** Consul can automatically configure network infrastructure by syncing its service data with Terraform. This allows you to dynamically manage network devices based on the state of your services.
+- **Consul-Terraform sinxronizatsiyasi:** Consul o'zining xizmat ma'lumotlarini Terraform bilan sinxronlash orqali tarmoq infratuzilmasini avtomatik ravishda sozlashi mumkin. Bu sizga xizmatlaringiz holatiga qarab tarmoq qurilmalarini dinamik ravishda boshqarish imkonini beradi.
 
-### **Example Use Case**
+### **Foydalanish misollari**
 
-Consider a microservices architecture where services need to be dynamically discovered, secured, and managed across multiple environments:
+Xizmatlarni dinamik ravishda kashf qilish, himoya qilish va bir nechta muhitda boshqarish kerak bo'lgan mikroservislar arxitekturasini ko'rib chiqing:
 
-1. **Service Discovery:** Use Consul to automatically register services and make them discoverable to other services without manual intervention.
-2. **Secure Communication:** Implement mTLS with Consul Connect to ensure all service-to-service communication is encrypted and authenticated.
-3. **High Availability:** Configure service failover to reroute traffic to healthy instances if a service fails.
-4. **Access Control:** Use ACLs to restrict access to sensitive services like payment processing, ensuring that only authorized services can communicate with them.
-5. **Multi-Datacenter Resilience:** Deploy mesh gateways to manage traffic between services across different datacenters, ensuring global service availability.
+1. **Xizmatni aniqlash:** Xizmatlarni avtomatik ro'yxatdan o'tkazish va ularni qo'lda aralashuvisiz boshqa xizmatlarga taqdim etish uchun Consul-dan foydalaning.
+2. **Xavfsiz aloqa:** Barcha xizmatdan xizmatga aloqa shifrlangan va autentifikatsiya qilinishini ta'minlash uchun Consul Connect bilan mTLS-ni joriy qiling.
+3. **Yuqori mavjudlik:** Xizmat ishlamay qolganda, trafikni sog'lom misollarga yo'naltirish uchun xizmatni qayta yo'naltirishni sozlang.
+4. **Kirish nazorati:** Toʻlovlarni qayta ishlash kabi nozik xizmatlarga kirishni cheklash uchun ACL-lardan foydalaning, ular bilan faqat vakolatli xizmatlar muloqot qilishini taʼminlang.
+5. **Ko'p ma'lumotlar markazining barqarorligi:** Turli ma'lumotlar markazlari bo'ylab xizmatlar o'rtasidagi trafikni boshqarish uchun tarmoq shlyuzlarini o'rnating va global xizmatlarning mavjudligini ta'minlang.
