@@ -618,30 +618,30 @@ export default function GettingStartedPage() {
           <div className="space-y-6">
             {[
               {
-                question: "DevOps muhandisi bo'lish uchun qanday ko'nikmalarga ega bo'lishim kerak?",
+                question: "Netlivy jamoasida bo'lish uchun qanday ko'nikmalarga ega bo'lishim kerak?",
                 answer:
-                  "A good DevOps engineer should have skills in Linux administration, networking basics, programming/scripting (Python, Bash), cloud platforms, containers, CI/CD, infrastructure as code, and monitoring tools. Strong problem-solving and communication skills are also essential.",
+                  "Yaxshi Netlivy jamoasi aʼzosi bo'lishingiz uchun Linux boshqaruvi, tarmoq asoslari, dasturlash/skriptlash (Python, Bash), bulut platformalari, konteynerlar, CI/CD, kod sifatida infratuzilma va monitoring bo'yicha ko'nikmalarga ega bo'lishingiz kerak.",
               },
               {
-                question: "How long does it take to learn DevOps?",
+                question: "DevOpsni o'rganish qancha vaqt oladi?",
                 answer:
-                  "The time to learn DevOps varies depending on your background and dedication. With a technical background, you can grasp the basics in 3-6 months. Becoming proficient typically takes 1-2 years of continuous learning and practical experience.",
+                  "DevOpsni o'rganish vaqti sizning tajribangiz va fidoyiligingizga qarab o'zgaradi. Texnik ma'lumot bilan siz 3-6 oy ichida asoslarni o'zlashtira olasiz. Mohir bo'lish odatda 1-2 yil davom etadi.",
               },
               {
-                question: "Should I learn Docker or Kubernetes first?",
+                question: "Avval Docker yoki Kubernetesni o'rganishim kerakmi?",
                 answer:
-                  "You should start with Docker before moving to Kubernetes. Docker teaches you containerization concepts, which are fundamental to understanding Kubernetes. Once you are comfortable with Docker, Kubernetes will be easier to grasp as it builds upon those concepts.",
+                  "Kubernetesga o'tishdan oldin Docker bilan boshlashingiz kerak. Docker sizga Kubernetesni tushunish uchun asosiy bo'lgan konteynerizatsiya tushunchalarini o'rgatadi. Docker bilan ishlashni o'rganganingizdan so'ng, Kuberne",
               },
               {
                 question:
-                  "Which cloud provider should I learn first - AWS, Azure, or GCP?",
+                  "Avval qaysi bulut provayderini o'rganishim kerak - AWS, Azure yoki GCP?",
                 answer:
-                  "AWS is often recommended for beginners due to its market dominance and extensive documentation. However, the best choice depends on your career goals and local job market. The core concepts you learn will be transferable between cloud providers.",
+                  "AWS ko'pincha bozorda ustunlik qilishi va keng hujjatlarga ega bo'lishi sababli yangi boshlanuvchilar uchun tavsiya etiladi. Biroq, eng yaxshi tanlov sizning martaba maqsadlaringiz va mahalliy mehnat bozoriga bog'liq. Siz o'rganadigan asosiy tushunchalar ",
               },
               {
-                question: "Is DevOps a good career path?",
+                question: "DevOps yaxshi martaba yo'limi?",
                 answer:
-                  "Yes, DevOps is an excellent career path with strong demand, competitive salaries, and opportunities for growth. As organizations continue to adopt cloud and automation technologies, the need for skilled DevOps professionals continues to increase.",
+                  "Ha, DevOps - bu kuchli talab, raqobatbardosh maosh va o'sish imkoniyatlariga ega ajoyib martaba yo'li. Tashkilotlar bulutli va avtomatlashtirish texnologiyalarini qabul qilishda davom etar ekan, DevOpsning ya'ni Netlivyning malakali mutaxassislariga ehtiyoj ortib bormoqda.",
               },
             ].map((faq, i) => (
               <div
@@ -658,7 +658,7 @@ export default function GettingStartedPage() {
 
           <div className="mt-12 text-center">
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Still have questions? We&apos;re here to help!
+              Hali ham savollar bor? Biz yordam beramiz!
             </p>
             <Link
               href="/about"
