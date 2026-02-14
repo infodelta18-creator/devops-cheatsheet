@@ -1,55 +1,53 @@
-# 🧾 Terraform Cheat Sheet (Beginner → Advanced)
+# 🧾 Terraform Cheat Sheet (Boshlang'ich → Ilg'or)
 
 ![text](https://imgur.com/FwmjyK1.png)
 
-## 📘 **Introduction**
+## 📘 **Kirish**
 
-Terraform by [HashiCorp](https://www.hashicorp.com/products/terraform) is an **open-source Infrastructure as Code (IaC)** tool used to provision and manage cloud, on-prem, and SaaS infrastructure through configuration files written in **HCL (HashiCorp Configuration Language)**.
+Terraform tomonidan [HashiCorp](https://www.hashicorp.com/products/terraform) bu **HCL (HashiCorp Konfiguratsiya tili)** da yozilgan konfiguratsiya fayllari orqali bulutli, mahalliy va SaaS infratuzilmasini taʼminlash va boshqarish uchun foydalaniladigan **kod sifatida ochiq manbali infratuzilma (IaC)** vositasidir. Terraform yordamida siz infratuzilmani **deklarativ formatda** aniqlaysiz, bu versiyalarni yaratish, qayta ishlatish, avtomatlashtirish va muhitlar bo'ylab izchillik imkonini beradi.
 
-With Terraform, you define infrastructure in a **declarative format**, allowing for versioning, reusability, automation, and consistency across environments.
+## 🔹 **Asosiy tushunchalar**
 
-## 🔹 **Key Concepts**
-
-| Term           | Description                                                            |
+| Muddat            | Tavsif                                                            |
 | -------------- | ---------------------------------------------------------------------- |
-| **Providers**  | Plugin responsible for managing a specific cloud platform (e.g., AWS). |
-| **Resources**  | Infrastructure components like EC2, S3, etc.                           |
-| **Variables**  | Input values passed into configuration.                                |
-| **Outputs**    | Values that Terraform returns after execution.                         |
-| **State File** | Keeps track of resources Terraform manages.                            |
+| **Providers**  | Muayyan bulut platformasini (masalan, AWS) boshqarish uchun mas'ul bo'lgan plagin. |
+| **Resources**  | EC2, S3 va boshqalar kabi infratuzilma komponentlari.                           |
+| **Variables**  | Kirish qiymatlari konfiguratsiyaga o'tkazildi.                                |
+| **Outputs**    | Terraform bajarilgandan so'ng qaytaradigan qiymatlar.                         |
+| **State File** | Terraform boshqaradigan resurslarni kuzatib boradi.                            |
 
 ---
 
-## 🌍 Terraform Commands
+## 🌍 Terraform buyruqlari
 
 <details>
-<summary>🟢 Beginner Commands (Click to Expand)</summary>
+<summary>🟢 Boshlang'ich buyruqlar (Click to Expand)</summary>
 
-### 🔹 Check Version
+### 🔹 Versiyani tekshiring
 
 ```bash
 terraform version
 ```
 
-### 🔹 Initialize Working Directory
+### 🔹 Ishchi katalogni ishga tushiring
 
 ```bash
 terraform init
 ```
 
-### 🔹 Validate Configuration
+### 🔹 Konfiguratsiyani tasdiqlash
 
 ```bash
 terraform validate
 ```
 
-### 🔹 Format Code
+### 🔹 Kodni formatlash
 
 ```bash
 terraform fmt
 ```
 
-### 🔹 Show Help
+### 🔹 Yordamni ko'rsatish
 
 ```bash
 terraform -help
@@ -61,34 +59,34 @@ terraform plan -help
 ---
 
 <details>
-<summary>🟡 Intermediate Commands (Click to Expand)</summary>
+<summary>🟡 Oraliq buyruqlar (Click to Expand)</summary>
 
-### 🔹 Plan Infrastructure Changes
+### 🔹 Reja infratuzilmasidagi o'zgarishlar
 
 ```bash
 terraform plan
 ```
 
-### 🔹 Apply Infrastructure Changes
+### 🔹 Infratuzilma o'zgarishlarini qo'llang
 
 ```bash
 terraform apply
 ```
 
-### 🔹 Destroy Infrastructure
+### 🔹 Infratuzilmani yo'q qilish
 
 ```bash
 terraform destroy
 ```
 
-### 🔹 Output Variables
+### 🔹 Chiqish o'zgaruvchilari (Output Variables)
 
 ```bash
 terraform output
 terraform output my_variable
 ```
 
-### 🔹 Manage State
+### 🔹 Shtatni boshqarish
 
 ```bash
 terraform state list
@@ -100,35 +98,35 @@ terraform state show <resource>
 ---
 
 <details>
-<summary>🔴 Advanced Commands (Click to Expand)</summary>
+<summary>🔴 Murakkab buyruqlar (Click to Expand)</summary>
 
-### 🔹 Target Specific Resources
+### 🔹 Maqsadli resurslar
 
 ```bash
 terraform apply -target=aws_instance.example
 terraform destroy -target=module.vpc
 ```
 
-### 🔹 Work with Modules
+### 🔹 Modullar bilan ishlash
 
 ```bash
 terraform get
 terraform init -upgrade
 ```
 
-### 🔹 Backend Configuration
+### 🔹 Orqa tomon konfiguratsiyasi
 
 ```bash
 terraform init -backend-config="key=my-state.tfstate"
 ```
 
-### 🔹 Import Existing Infrastructure
+### 🔹 Mavjud infratuzilmani import qilish
 
 ```bash
 terraform import aws_instance.example i-12345678
 ```
 
-### 🔹 Graph Dependency Tree
+### 🔹 Grafik bog'liqlik daraxti
 
 ```bash
 terraform graph | dot -Tpng > graph.png
@@ -138,11 +136,11 @@ terraform graph | dot -Tpng > graph.png
 
 ---
 
-## 🟢 **Beginner Commands**
+## 🟢 **Boshlang'ich buyruqlar**
 
-### 🔹 `terraform version`
+### 🔹 `terraform versiya`
 
-Shows the installed version of Terraform.
+Terraformning o'rnatilgan versiyasini ko'rsatadi.
 
 ```bash
 terraform version
@@ -152,19 +150,19 @@ terraform version
 
 ### 🔹 `terraform init`
 
-Initializes the working directory with provider plugins and backend config.
+Ishchi katalogni provayder plaginlari va orqa tomon konfiguratsiyasi bilan ishga tushiradi.
 
 ```bash
 terraform init
 ```
 
-💡 Run this once per project after writing your `.tf` files.
+💡 `.tf` fayllaringizni yozgandan so'ng, buni har bir loyiha uchun bir marta ishga tushiring.
 
 ---
 
-### 🔹 `terraform validate`
+### 🔹 `terraform tasdiqlash`
 
-Validates your configuration files for syntax errors.
+Konfiguratsiya fayllaringizni sintaksis xatolari uchun tekshiradi.
 
 ```bash
 terraform validate
@@ -172,27 +170,27 @@ terraform validate
 
 ---
 
-### 🔹 `terraform plan`
+### 🔹 `terraform reja`
 
-Shows what actions Terraform *will* take without applying them.
+Terraform ularni qo'llamasdan qanday harakatlarni *bajarishini* ko'rsatadi.
 
 ```bash
 terraform plan
 ```
 
-📌 Use before every `apply` to preview infrastructure changes.
+📌 Infratuzilma o'zgarishlarini oldindan ko'rish uchun har bir "qo'llash" dan oldin foydalaning.
 
 ---
 
-### 🔹 `terraform apply`
+### 🔹 `terraform qo'llash`
 
-Applies changes to reach the desired infrastructure state.
+Kerakli infratuzilma holatiga erishish uchun o'zgarishlarni qo'llaydi.
 
 ```bash
 terraform apply
 ```
 
-* You can auto-approve with:
+* Siz quyidagilar bilan avtomatik tasdiqlashingiz mumkin:
 
 ```bash
 terraform apply -auto-approve
@@ -200,15 +198,15 @@ terraform apply -auto-approve
 
 ---
 
-### 🔹 `terraform destroy`
+### 🔹 `terraform yo'q qilish`
 
-Removes infrastructure defined in the configuration files.
+Konfiguratsiya fayllarida belgilangan infratuzilmani olib tashlaydi.
 
 ```bash
 terraform destroy
 ```
 
-* Auto-confirm with:
+* Avtomatik tasdiqlash:
 
 ```bash
 terraform destroy -auto-approve
@@ -218,13 +216,13 @@ terraform destroy -auto-approve
 
 ### 🔹 `terraform fmt`
 
-Automatically formats `.tf` files to canonical style.
+`.tf` fayllarini avtomatik ravishda kanonik uslubga formatlaydi.
 
 ```bash
 terraform fmt
 ```
 
-* Format all recursively:
+* Barchasini rekursiv ravishda formatlash:
 
 ```bash
 terraform fmt -recursive
@@ -232,11 +230,11 @@ terraform fmt -recursive
 
 ---
 
-## 🟡 **Intermediate Commands**
+## 🟡 **Oraliq buyruqlar**
 
 ### 🔹 `terraform show`
 
-Displays human-readable output of the current or saved state.
+Joriy yoki saqlangan holatning inson tomonidan o'qilishi mumkin bo'lgan natijasini ko'rsatadi.
 
 ```bash
 terraform show
@@ -245,9 +243,9 @@ terraform show terraform.tfstate
 
 ---
 
-### 🔹 `terraform output`
+### 🔹 `terraform chiqish`
 
-Prints the values of output variables after apply.
+Qo'llanilgandan keyin chiqish o'zgaruvchilarining qiymatlarini chop etadi.
 
 ```bash
 terraform output
@@ -256,9 +254,9 @@ terraform output instance_ip
 
 ---
 
-### 🔹 `terraform state list`
+### 🔹 `terraform shtat ro'yxati`
 
-Lists all resources tracked in the current state file.
+Joriy holat faylida kuzatilgan barcha resurslar ro'yxatini ko'rsatadi.
 
 ```bash
 terraform state list
@@ -268,7 +266,7 @@ terraform state list
 
 ### 🔹 `terraform state show`
 
-Displays details about a specific resource in the state.
+Shtatdagi ma'lum bir resurs haqida ma'lumotlarni ko'rsatadi.
 
 ```bash
 terraform state show aws_instance.example
@@ -278,7 +276,7 @@ terraform state show aws_instance.example
 
 ### 🔹 `terraform taint`
 
-Forces recreation of a resource on the next apply.
+Keyingi safar resursni qayta tiklashga majbur qiladi.
 
 ```bash
 terraform taint aws_instance.example
@@ -286,9 +284,9 @@ terraform taint aws_instance.example
 
 ---
 
-### 🔹 `terraform untaint`
+### 🔹 `terraform dog'sizlantirish`
 
-Removes taint from a resource.
+Resursdan dog'larni olib tashlaydi.
 
 ```bash
 terraform untaint aws_instance.example
@@ -298,7 +296,7 @@ terraform untaint aws_instance.example
 
 ### 🔹 `terraform import`
 
-Brings existing infrastructure into Terraform state.
+Mavjud infratuzilmani Terraform holatiga keltiradi.
 
 ```bash
 terraform import aws_instance.example i-0abcd1234efgh5678
@@ -306,9 +304,9 @@ terraform import aws_instance.example i-0abcd1234efgh5678
 
 ---
 
-### 🔹 `terraform graph`
+### 🔹 `terraform grafik`
 
-Generates a dependency graph (in DOT format).
+Bog'liqlik grafigini yaratadi (DOT formatida).
 
 ```bash
 terraform graph | dot -Tpng > graph.png
@@ -316,9 +314,9 @@ terraform graph | dot -Tpng > graph.png
 
 ---
 
-### 🔹 `terraform providers`
+### 🔹 `terraform provayderlar`
 
-Lists all providers used in the current configuration.
+Joriy konfiguratsiyada ishlatiladigan barcha provayderlar ro'yxatini ko'rsatadi.
 
 ```bash
 terraform providers
@@ -326,9 +324,9 @@ terraform providers
 
 ---
 
-### 🔹 `terraform workspace` commands
+### 🔹 `terraform ish maydoni` commands
 
-Used to manage multiple workspaces (e.g., dev, staging, prod).
+Bir nechta ish joylarini (masalan, dev, staging, prod) boshqarish uchun ishlatiladi.
 
 ```bash
 terraform workspace new dev
@@ -338,17 +336,17 @@ terraform workspace list
 
 ---
 
-## 🔴 **Advanced Commands**
+## 🔴 **Kengaytirilgan buyruqlar**
 
 ### 🔹 `terraform plan -out=tfplan`
 
-Saves the execution plan to a file.
+Bajarish rejasini faylga saqlaydi.
 
 ```bash
 terraform plan -out=tfplan
 ```
 
-Then apply it later:
+Keyin uni keyinroq qo'llang:
 
 ```bash
 terraform apply tfplan
@@ -356,9 +354,9 @@ terraform apply tfplan
 
 ---
 
-### 🔹 `terraform apply -target=resource`
+### 🔹 `terraform qo'llash -target=resource`
 
-Apply only specific resources.
+Faqat ma'lum resurslarni qo'llang.
 
 ```bash
 terraform apply -target=aws_instance.example
@@ -368,7 +366,7 @@ terraform apply -target=aws_instance.example
 
 ### 🔹 `terraform state mv`
 
-Moves/renames resources in the state.
+Shtatdagi resurslarni ko'chiradi/nomini o'zgartiradi.
 
 ```bash
 terraform state mv aws_instance.old aws_instance.new
@@ -378,7 +376,7 @@ terraform state mv aws_instance.old aws_instance.new
 
 ### 🔹 `terraform state rm`
 
-Removes resource from state (does NOT destroy it in the cloud).
+Resursni holatdan olib tashlaydi (uni bulutda yo'q qilmaydi).
 
 ```bash
 terraform state rm aws_instance.example
@@ -386,9 +384,9 @@ terraform state rm aws_instance.example
 
 ---
 
-### 🔹 `terraform console`
+### 🔹 `terraform konsol`
 
-Opens an interactive console to evaluate HCL expressions.
+HCL ifodalarini baholash uchun interaktiv konsolni ochadi.
 
 ```bash
 terraform console
@@ -399,7 +397,7 @@ terraform console
 
 ### 🔹 `terraform login`
 
-Authenticates to Terraform Cloud or Enterprise.
+Terraform Cloud yoki Enterprise’ga autentifikatsiya qiladi.
 
 ```bash
 terraform login
@@ -409,7 +407,7 @@ terraform login
 
 ### 🔹 `terraform logout`
 
-Logs out from Terraform Cloud.
+Terraform Cloud’dan chiqish.
 
 ```bash
 terraform logout
@@ -417,9 +415,9 @@ terraform logout
 
 ---
 
-### 🔹 `terraform force-unlock`
+### 🔹 `terraform majburiy qulfni ochish`
 
-Force-unlocks a state file after a failed operation.
+Muvaffaqiyatsiz operatsiyadan so'ng holat faylini majburan ochadi.
 
 ```bash
 terraform force-unlock <LOCK_ID>
@@ -427,9 +425,9 @@ terraform force-unlock <LOCK_ID>
 
 ---
 
-## 📌 **Common Command Workflows**
+## 📌 **Umumiy buyruq ish oqimlari**
 
-### 🛠 New Project
+### 🛠 Yangi loyiha
 
 ```bash
 terraform init
@@ -437,7 +435,7 @@ terraform plan
 terraform apply
 ```
 
-### 🔁 Make a Change
+### 🔁 O'zgarish qiling
 
 ```bash
 terraform fmt
@@ -446,31 +444,31 @@ terraform plan
 terraform apply
 ```
 
-### 🧽 Destroy Infra
+### 🧽 Infraqizilni yo'q qiling
 
 ```bash
 terraform destroy
 ```
 
-Great — here’s the full version of the `Terraform.md` cheat sheet with **introductory info at the top** and **additional learning resources at the bottom**, perfect for your repo:
+Ajoyib — mana bu yerda "Terraform.md" cheat varag'ining to'liq versiyasi, yuqori qismida **kirish ma'lumotlari** va pastki qismida **qo'shimcha o'quv resurslari** mavjud bo'lib, omboringiz uchun juda mos keladi:
 
 ---
 
-## 🧠 **Tips & Best Practices**
+## 🧠 **Maslahatlar va eng yaxshi amaliyotlar**
 
-* Keep `.tfstate` files **secure** (use S3 + DynamoDB for remote locking)
-* Use `terraform.tfvars` or `.auto.tfvars` for sensitive input variables
-* Mark secrets using `sensitive = true` in outputs
-* Use **modules** for reusable code
-* Always run `terraform plan` before `apply`
-* Version-lock providers in `required_providers`
+* `.tfstate` fayllarini **xavfsiz** saqlang (masofaviy qulflash uchun S3 + DynamoDB dan foydalaning)
+* Sezgir kirish o'zgaruvchilari uchun `terraform.tfvars` yoki `.auto.tfvars` dan foydalaning
+* Chiqishlarda `sensitive = true` yordamida sirlarni belgilang
+* Qayta ishlatiladigan kod uchun **modullar** dan foydalaning
+* "Qo'llash"dan oldin har doim "terraform rejasi"ni ishga tushiring
+* `required_providers` ichidagi versiya qulflash provayderlari
 
 ---
 
-## 📚 **Learning Resources**
+## 📚 **O'quv resurslari**
 
-* 🔗 [Official Docs](https://developer.hashicorp.com/terraform/docs)
-* 📘 [Terraform Registry](https://registry.terraform.io/)
-* 🎓 [Learn Terraform (Free)](https://learn.hashicorp.com/terraform)
-* 🧪 [Checkov - IaC Scanning](https://www.checkov.io/)
-* 📖 [Terraform CLI Reference](https://developer.hashicorp.com/terraform/cli)
+* 🔗 [Rasmiy Docs](https://developer.hashicorp.com/terraform/docs)
+* 📘 [Terraform registri](https://registry.terraform.io/)
+* 🎓 [Terraformni o'rganing (Bepul)](https://learn.hashicorp.com/terraform)
+* 🧪 [Checkov - IaC Skanerlash](https://www.checkov.io/)
+* 📖 [Terraform CLI Malumotnoma](https://developer.hashicorp.com/terraform/cli)
