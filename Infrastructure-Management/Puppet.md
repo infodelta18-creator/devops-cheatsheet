@@ -2,66 +2,66 @@
 
 [![puppet-cheat.png](https://i.postimg.cc/HkpyTqyw/puppet-cheat.png)](https://postimg.cc/8j05Hnwc)
 
-## 📘 Introduction
+## 📘 Kirish
 
-[Puppet](https://puppet.com) is an **open-source configuration management tool** that automates infrastructure provisioning, configuration, and management. It uses a **declarative language** to describe the desired state of your systems.
+[Puppet](https://puppet.com)  
 
-Puppet supports both **agent-master** and **agentless (bolt)** architectures, making it powerful for large-scale environments.
+Puppet ham **agent-master**, ham **agentless (bolt)** arxitekturalarini qo'llab-quvvatlaydi, bu esa uni keng ko'lamli muhitlar uchun kuchli qiladi.
 
 ---
 
-## 🧠 Key Concepts
+## 🧠 Asosiy tushunchalar
 
-| Term         | Description                                                                |
+| Muddat         | Tavsif                                                                |
 | ------------ | -------------------------------------------------------------------------- |
-| **Manifest** | A file written in Puppet DSL (.pp) that describes desired system state.    |
-| **Module**   | A collection of manifests, templates, files, etc., organized in structure. |
-| **Class**    | Reusable block of Puppet code.                                             |
-| **Resource** | Basic unit that describes something (like a package or service).           |
-| **Facts**    | System information gathered by **Facter**.                                 |
-| **Catalog**  | Compiled version of the manifests specific to a node.                      |
-| **Node**     | A client machine being managed.                                            |
+| **Manifest** | Kerakli tizim holatini tavsiflovchi Puppet DSL (.pp) da yozilgan fayl.    |
+| **Module**   | Tuzilma bo'yicha tartiblangan manifestlar, shablonlar, fayllar va boshqalar to'plami. |
+| **Class**    | Puppet kodining qayta ishlatiladigan bloki.                                             |
+| **Resource** | Biror narsani tavsiflovchi asosiy birlik (paket yoki xizmat kabi).           |
+| **Facts**    | Tizim ma'lumotlari to'plangan **Facter**.                                 |
+| **Catalog**  | Tugunga xos manifestlarning kompilyatsiya qilingan versiyasi.                      |
+| **Node**     | Mijoz mashinasi boshqarilmoqda.                                            |
 
 ---
 
 ## 🧾 Puppet Commands
 
 <details>
-<summary>🟢 Beginner Commands (Click to Expand)</summary>
+<summary>🟢 Boshlang'ich buyruqlar (Click to Expand)</summary>
 
-### 🔹 Check Version
+### 🔹 Versiyani tekshiring
 
 ```bash
 puppet --version
 ```
 
-### 🔹 Apply Manifest Locally
+### 🔹 Manifestni mahalliy ravishda qo'llang
 
 ```bash
 puppet apply example.pp
 ```
 
-### 🔹 Validate Syntax of Manifest
+### 🔹 Manifest sintaksisini tasdiqlash
 
 ```bash
 puppet parser validate example.pp
 ```
 
-### 🔹 Format Manifests (Linting)
+### 🔹 Format Manifestlari (Linting)
 
 ```bash
 puppet parser validate example.pp
 puppet-lint example.pp
 ```
 
-### 🔹 List Available Facts
+### 🔹 Mavjud faktlar ro'yxati
 
 ```bash
 facter
 facter os
 ```
 
-### 🔹 View Help
+### 🔹 Yordamni ko'rish
 
 ```bash
 puppet help
@@ -73,9 +73,9 @@ puppet help apply
 ---
 
 <details>
-<summary>🟡 Intermediate Commands (Click to Expand)</summary>
+<summary>🟡 Oraliq buyruqlar (Click to Expand)</summary>
 
-### 🔹 Puppet Resource (Inspect or Manage)
+### 🔹 Puppet Resurs (Tekshirish yoki boshqarish)
 
 ```bash
 puppet resource <type>
@@ -83,25 +83,25 @@ puppet resource user root
 puppet resource service ssh
 ```
 
-### 🔹 Generate New Module Skeleton
+### 🔹 Yangi modul skeletini yaratish
 
 ```bash
 puppet module generate yourname-modulename
 ```
 
-### 🔹 Install a Module
+### 🔹 Modulni o'rnating
 
 ```bash
 puppet module install puppetlabs-apache
 ```
 
-### 🔹 List Installed Modules
+### 🔹 O'rnatilgan modullar ro'yxati
 
 ```bash
 puppet module list
 ```
 
-### 🔹 Check Current Puppet Config
+### 🔹 Joriy qo'g'irchoq konfiguratsiyasini tekshiring
 
 ```bash
 puppet config print
@@ -113,16 +113,16 @@ puppet config print all
 ---
 
 <details>
-<summary>🔴 Advanced Commands (Click to Expand)</summary>
+<summary>🔴 Murakkab buyruqlar (Click to Expand)</summary>
 
-### 🔹 Agent Commands
+### 🔹 Agent buyruqlari
 
 ```bash
 puppet agent -t
 puppet agent -t --debug
 ```
 
-### 🔹 Manage Certificates
+### 🔹 Sertifikatlarni boshqarish
 
 ```bash
 puppetserver ca list
@@ -131,13 +131,13 @@ puppetserver ca revoke --certname node.example.com
 puppetserver ca clean --certname node.example.com
 ```
 
-### 🔹 PuppetDB Query
+### 🔹 PuppetDB So'rov
 
 ```bash
 puppet query 'inventory[certname] { facts.os.name = "Ubuntu" }'
 ```
 
-### 🔹 Run Task with Bolt
+### 🔹 Vazifani Bolt bilan ishga tushirish
 
 ```bash
 bolt command run "uptime" --targets localhost
@@ -167,21 +167,21 @@ puppet resource --to_yaml
 
 ---
 
-## 🟢 Beginner Level
+## 🟢 Boshlang'ich daraja
 
-### 🔹 Installing Puppet (Agent/Master)
+### 🔹 O'rnatish Puppet (Agent/Master)
 
 ```bash
-# Install Puppet (Debian/Ubuntu)
+# O'rnatish Puppet (Debian/Ubuntu)
 sudo apt install puppet
 
-# Check version
+# Versiyani tekshiring
 puppet --version
 ```
 
 ---
 
-### 🔹 First Manifest Example
+### 🔹 Birinchi Manifest Misoli
 
 ```puppet
 # hello.pp
@@ -191,7 +191,7 @@ file { '/tmp/hello.txt':
 }
 ```
 
-Run it:
+Uni ishga tushiring:
 
 ```bash
 puppet apply hello.pp
@@ -199,17 +199,17 @@ puppet apply hello.pp
 
 ---
 
-### 🔹 Resource Types
+### 🔹 Resurs turlari
 
-| Type        | Example                             |
+| Turi        | Example                             |
 | ----------- | ----------------------------------- |
-| **file**    | Manage files, directories, symlinks |
-| **package** | Install, remove software            |
-| **service** | Ensure a service is running/stopped |
-| **user**    | Manage system users                 |
+| **file**    | Fayllar, kataloglar, simvolik havolalarni boshqarish |
+| **package** | Dasturiy ta'minotni o'rnatish, olib tashlash            |
+| **service** | Xizmat ishlayotganiga/to'xtatilganiga ishonch hosil qiling |
+| **user**    | Tizim foydalanuvchilarini boshqarish                 |
 
 ```puppet
-# Install nginx and ensure it runs
+# Nginx ni o'rnating va uning ishlashiga ishonch hosil qiling
 package { 'nginx':
   ensure => installed,
 }
@@ -222,7 +222,7 @@ service { 'nginx':
 
 ---
 
-### 🔹 Variables
+### 🔹 O'zgaruvchilar (Variables)
 
 ```puppet
 $greeting = "Hello, World"
@@ -231,7 +231,7 @@ notice($greeting)
 
 ---
 
-### 🔹 Conditionals
+### 🔹 Shartli shartlar
 
 ```puppet
 if $osfamily == 'Debian' {
@@ -243,18 +243,18 @@ if $osfamily == 'Debian' {
 
 ---
 
-## 🟡 Intermediate Level
+## 🟡 O'rta daraja
 
-### 🔸 Facts and Facter
+### 🔸 Faktlar va faktlar
 
-View system facts:
+Tizim faktlarini ko'rish:
 
 ```bash
 facter
 facter os
 ```
 
-Use in manifests:
+Manifestlarda foydalanish:
 
 ```puppet
 if $facts['os']['family'] == 'RedHat' {
@@ -264,7 +264,7 @@ if $facts['os']['family'] == 'RedHat' {
 
 ---
 
-### 🔸 Classes
+### 🔸 Sinflar
 
 ```puppet
 class apache {
@@ -273,7 +273,7 @@ class apache {
 }
 ```
 
-Include it:
+Bunga qo'shing:
 
 ```puppet
 include apache
@@ -281,14 +281,14 @@ include apache
 
 ---
 
-### 🔸 Modules
+### 🔸 Modullar
 
 ```bash
 puppet module generate yourname-apache
 puppet module install puppetlabs-apache
 ```
 
-Structure:
+Tuzilma:
 
 ```
 apache/
@@ -298,7 +298,7 @@ apache/
 ├── templates/
 ```
 
-Use:
+Foydalanish:
 
 ```puppet
 class { 'apache': }
@@ -308,7 +308,7 @@ class { 'apache': }
 
 ### 🔸 Templates (ERB)
 
-File: `templates/vhost.erb`
+Fayl: `templates/vhost.erb`
 
 ```erb
 <VirtualHost *:80>
@@ -326,28 +326,28 @@ file { '/etc/httpd/conf.d/vhost.conf':
 
 ---
 
-### 🔸 Puppet Apply vs Agent
+### 🔸 Puppet Apply va Agent
 
 | Mode      | Usage                                  |
 | --------- | -------------------------------------- |
-| **Apply** | Local apply of manifests               |
-| **Agent** | Connects to master and applies catalog |
+| **Apply** | Manifestlarning mahalliy qo'llanilishi               |
+| **Agent** | Masterga ulanadi va katalogni qo'llaydi |
 
 ---
 
-## 🔴 Advanced Level
+## 🔴 Ilg'or daraja
 
 ### 🔹 Puppet Master-Agent Setup
 
-* **Puppet Server**: Central server managing infrastructure.
-* **Agent**: Node that pulls configuration from the server.
+* **Puppet server**: Infratuzilmani boshqaruvchi markaziy server.
+* **Agent**: Serverdan konfiguratsiyani oladigan tugun.
 
 ```bash
-# On agent
+# Agentda
 puppet agent -t
 ```
 
-Sign certs:
+Sertifikatlarga imzo qo'ying:
 
 ```bash
 puppetserver ca list
@@ -358,9 +358,9 @@ puppetserver ca sign --certname <agent-fqdn>
 
 ### 🔹 Environments
 
-Used to separate dev, staging, prod configs.
+Dev, staging, prod konfiguratsiyalarini ajratish uchun ishlatiladi.
 
-Directory structure:
+Katalog tuzilishi:
 
 ```
 /etc/puppetlabs/code/environments/
@@ -373,7 +373,7 @@ Directory structure:
 
 ### 🔹 Hiera (Hierarchical Data Lookup)
 
-Configure external data in YAML:
+YAMLda tashqi ma'lumotlarni sozlash:
 
 ```yaml
 # hiera.yaml
@@ -386,7 +386,7 @@ defaults:
 apache::port: 80
 ```
 
-Access in Puppet:
+Kirish Puppet:
 
 ```puppet
 $port = lookup('apache::port')
@@ -396,9 +396,9 @@ $port = lookup('apache::port')
 
 ### 🔹 PuppetDB
 
-Central storage for catalog, fact, and report data.
+Katalog, faktlar va hisobot ma'lumotlari uchun markaziy saqlash joyi.
 
-Query:
+So'rov:
 
 ```puppet
 query_nodes(['=', 'catalog_environment', 'production'])
@@ -413,31 +413,31 @@ bolt command run 'uptime' --targets localhost
 bolt plan run myplan
 ```
 
-Write plans in YAML or Puppet DSL.
+Rejalarni YAML yoki Puppet DSL da yozing.
 
 ---
 
-## 📌 Useful Puppet CLI Commands
+## 📌 Foydali qo'g'irchoq CLI buyruqlari
 
-| Command                          | Description                   |
+| Command                          | Tavsif                   |
 | -------------------------------- | ----------------------------- |
-| `puppet apply <file.pp>`         | Apply a manifest locally      |
-| `puppet agent -t`                | Trigger agent run             |
-| `puppet resource <type> <name>`  | View current resource state   |
-| `puppet module install <name>`   | Install a module              |
-| `puppet config print all`        | Print all config settings     |
-| `puppet parser validate file.pp` | Validate syntax of manifest   |
-| `facter`                         | Show system facts             |
-| `puppet doc <module>`            | Generate module documentation |
+| `puppet apply <file.pp>`         | Manifestni mahalliy ravishda qo'llang      |
+| `puppet agent -t`                | Trigger agenti ishga tushirildi             |
+| `puppet resource <type> <name>`  | Joriy resurs holatini ko'rish   |
+| `puppet module install <name>`   | Modulni o'rnating              |
+| `puppet config print all`        | Barcha konfiguratsiya sozlamalarini chop eting     |
+| `puppet parser validate file.pp` | Manifest sintaksisini tasdiqlash   |
+| `facter`                         | Tizim faktlarini ko'rsatish             |
+| `puppet doc <module>`            | Modul hujjatlarini yarating |
 
 ---
 
-## 📚 Learning Resources
+## 📚 O'quv resurslari
 
-* 📘 [Official Docs](https://puppet.com/docs/puppet/latest/puppet_index.html)
-* 📦 [Forge Modules](https://forge.puppet.com/)
-* 🧪 [Bolt (Task Runner)](https://puppet.com/docs/bolt/latest/bolt.html)
+* 📘 [Rasmiy Docs](https://puppet.com/docs/puppet/latest/puppet_index.html)
+* 📦 [Temirchilik modullari](https://forge.puppet.com/)
+* 🧪 [Bolt (Task Yuguruvchi)](https://puppet.com/docs/bolt/latest/bolt.html)
 * 📖 [Puppet DSL Cheat Sheet](https://puppet.com/docs/puppet/latest/lang_summary.html)
-* 🧠 [Learn Puppet Free Courses](https://learn.puppet.com)
+* 🧠 [Qo'g'irchoqbozlik bo'yicha bepul kurslarni o'rganing](https://learn.puppet.com)
 
 ---
