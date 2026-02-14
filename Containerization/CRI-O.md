@@ -2,95 +2,95 @@
 
 ![text](https://imgur.com/iET0fW6.png)
 
-## Table of Contents
+## Mundarija
 
-1. **Introduction to CRI-O**
-   - What is CRI-O?
-   - Architecture Overview
-   - Key Features
-2. **Installation**
-   - System Requirements
-   - Installing CRI-O on Linux
-   - Post-Installation Configuration
-3. **Basic Commands**
-   - CRI-O CLI Overview
-   - Starting and Stopping CRI-O
-   - Managing Containers
-   - Viewing Logs
-4. **Container Management**
-   - Pulling Images
-   - Running Containers
-   - Stopping and Removing Containers
-   - Viewing Running Containers
-5. **Networking**
-   - Default Networking Configuration
-   - Configuring Custom Networks
-   - Using CNI Plugins with CRI-O
-6. **Storage**
-   - Managing Container Storage
-   - Configuring Storage Options
-   - Persistent Storage Management
-7. **Security**
-   - Pod Security Policies (PSPs)
-   - SELinux and CRI-O
-   - Seccomp Profiles
-   - AppArmor Integration
-8. **Monitoring and Logging**
-   - Integrating with Prometheus
-   - Setting Up Log Collection
-   - Debugging Containers
-9. **Advanced Configuration**
-   - CRI-O Configuration Files
-   - Runtime Configuration
-   - Resource Limits and Cgroups
-   - Tuning for Performance
-10. **Troubleshooting**
-    - Common Issues and Fixes
-    - Analyzing CRI-O Logs
-    - Debugging Failed Containers
-11. **Integration with Kubernetes**
-    - Configuring CRI-O with Kubernetes
-    - CRI-O as a Container Runtime for K8s
-    - Multi-tenancy with CRI-O in Kubernetes
-12. **Best Practices**
-    - Security Best Practices
-    - Performance Optimization
-    - Efficient Resource Management
-13. **FAQs**
-    - Common Questions about CRI-O
-14. **References**
-    - Official Documentation
-    - Community Resources
-
----
-
-## 1. Introduction to CRI-O
-
-### What is CRI-O?
-
-- **CRI-O** is an open-source, lightweight container runtime for Kubernetes. It is designed to provide a minimal and stable interface between Kubernetes and the container runtime, adhering to the Container Runtime Interface (CRI) specifications.
-
-### Architecture Overview
-
-- **CRI-O** integrates directly with Kubernetes, using OCI-compatible runtimes (like runc) to handle container operations. It replaces the need for a full container engine like Docker in Kubernetes environments.
-
-### Key Features
-
-- **Lightweight**: Minimal dependencies and a smaller footprint compared to full container engines.
-- **Compatibility**: Fully compliant with Kubernetes and the Open Container Initiative (OCI) specifications.
-- **Security**: Integrates with SELinux, AppArmor, and seccomp for enhanced security.
-- **Performance**: Optimized for performance with lower overhead.
+1. **CRI-O ga kirish**
+   - CRI-O nima?
+   - Arxitektura haqida umumiy ma'lumot
+   - Asosiy xususiyatlar
+2. **O'rnatish**
+   - Tizim talablari
+   - Linuxda CRI-O ni o'rnatish
+   - O'rnatishdan keyingi konfiguratsiya
+3. **Asosiy buyruqlar**
+   - CRI-O CLI haqida umumiy ma'lumot
+   - CRI-O ni ishga tushirish va to'xtatish
+   - Konteynerlarni boshqarish
+   - Jurnallarni ko'rish
+4. **Konteynerlarni boshqarish**
+   - Rasmlarni tortish
+   - Ishlayotgan konteynerlar
+   - Konteynerlarni to'xtatish va olib tashlash
+   - Ishlayotgan konteynerlarni ko'rish
+5. **Tarmoq**
+   - Standart tarmoq konfiguratsiyasi
+   - Maxsus tarmoqlarni sozlash
+   - CRI-O bilan CNI plaginlaridan foydalanish
+6. **Saqlash**
+   - Konteyner saqlashni boshqarish
+   - Saqlash parametrlarini sozlash
+   - Doimiy saqlashni boshqarish
+7. **Xavfsizlik**
+   - Pod xavfsizlik siyosati (PSP)
+   - SELinux va CRI-O
+   - Seccomp profillari
+   - AppArmor integratsiyasi
+8. **Monitoring va jurnalga yozish**
+   - Prometey bilan integratsiya
+   - Jurnal to'plamini sozlash
+   - Nosozliklarni tuzatish konteynerlari
+9. **Kengaytirilgan konfiguratsiya**
+   - CRI-O konfiguratsiya fayllari
+   - Ish vaqti konfiguratsiyasi
+   - Resurs limitlari va C guruhlari
+   - Ishlash uchun sozlash
+10. **Muammolarni bartaraf qilish; nosozliklarni TUZATISH**
+    - Umumiy muammolar va tuzatishlar
+    - CRI-O jurnallarini tahlil qilish
+    - Konteynerlarni nosozliklarni tuzatishda muvaffaqiyatsizlikka uchradi
+11. **Kubernetes bilan integratsiya**
+    - CRI-O ni Kubernetes bilan sozlash
+    - CRI-O K8s uchun konteyner ish vaqti sifatida
+    - Kubernetesda CRI-O bilan ko'p ijaraga beriladigan uylar
+12. **Eng yaxshi amaliyotlar**
+    - Xavfsizlikning eng yaxshi amaliyotlari
+    - Ishlashni optimallashtirish
+    - Samarali resurslarni boshqarish
+13. **Tez-tez so'raladigan savollar**
+    - CRI-O haqida keng tarqalgan savollar
+14. **Manbalar**
+    - Rasmiy hujjatlar
+    - Jamiyat resurslari
 
 ---
 
-## 2. Installation
+## 1. CRI-O ga kirish
 
-### System Requirements
+### CRI-O nima?
 
-- **Supported OS**: CRI-O supports various Linux distributions including Fedora, CentOS, and Ubuntu.
-- **Kernel Version**: Ensure that your Linux kernel is 4.19 or higher for optimal compatibility.
+- **CRI-O** Kubernetes uchun ochiq kodli, yengil konteyner ish vaqti. U Kubernetes va konteyner ish vaqti o'rtasida minimal va barqaror interfeysni ta'minlash uchun mo'ljallangan bo'lib, konteyner ish vaqti interfeysi (CRI) spetsifikatsiyalariga rioya qiladi.
 
-### Installing CRI-O on Linux
+### Arxitektura haqida umumiy ma'lumot
+
+- **CRI-O** konteyner operatsiyalarini boshqarish uchun OCI bilan mos keladigan ish vaqtlaridan (masalan, runc) foydalanib, Kubernetes bilan to'g'ridan-to'g'ri integratsiyalashadi.Bu Kubernetes muhitida Docker kabi to'liq konteyner dvigateliga bo'lgan ehtiyojni almashtiradi.
+
+### Asosiy xususiyatlar
+
+- **Yengil**: To'liq konteyner dvigatellariga nisbatan minimal bog'liqliklar va kichikroq iz.
+- **Moslik**: Kubernetes va Open Container Initiative (OCI) spetsifikatsiyalariga to'liq mos keladi.
+- **Xavfsizlik**: Kengaytirilgan xavfsizlik uchun SELinux, AppArmor va seccomp bilan integratsiyalashgan.
+- **Ishlash**: Kamroq qo'shimcha xarajatlar bilan ishlash uchun optimallashtirilgan.
+
+---
+
+## 2. O'rnatish
+
+### Tizim talablari
+
+- **Qo'llab-quvvatlanadigan OS**: CRI-O Fedora, CentOS va Ubuntu kabi turli xil Linux distributivlarini qo'llab-quvvatlaydi.
+- **Yadro versiyasi**: Optimal moslik uchun Linux yadrongiz 4.19 yoki undan yuqori ekanligiga ishonch hosil qiling.
+
+### Linuxda CRI-O ni o'rnatish
 
 - **Fedora/CentOS**:
 
@@ -104,16 +104,16 @@
   sudo apt-get install -y cri-o
   ```
 
-### Post-Installation Configuration
+### O'rnatishdan keyingi konfiguratsiya
 
-- **Start and Enable CRI-O**:
+- **CRI-O ni ishga tushirish va yoqish**:
 
   ```bash
   sudo systemctl start crio
   sudo systemctl enable crio
   ```
 
-- **Verify Installation**:
+- **O'rnatishni tasdiqlash**:
 
   ```bash
   crio --version
@@ -121,50 +121,50 @@
 
 ---
 
-## 3. Basic Commands
+## 3. Asosiy buyruqlar
 
-### CRI-O CLI Overview
+### CRI-O CLI haqida umumiy ma'lumot
 
-- **`crio`**: The main command for interacting with the CRI-O service.
-- **`crictl`**: A CLI tool used to manage containers and images through CRI-O.
+- **`crio`**: CRI-O xizmati bilan o'zaro ishlash uchun asosiy buyruq.
+- **`crictl`**: CRI-O orqali konteynerlar va tasvirlarni boshqarish uchun ishlatiladigan CLI vositasi.
 
-### Starting and Stopping CRI-O
+### CRI-O ni ishga tushirish va to'xtatish
 
-- **Start CRI-O**:
+- **CRI-O ni boshlang**:
 
   ```bash
   sudo systemctl start crio
   ```
 
-- **Stop CRI-O**:
+- **CRI-O ni to'xtating**:
 
   ```bash
   sudo systemctl stop crio
   ```
 
-### Managing Containers
+### Konteynerlarni boshqarish
 
-- **List Running Containers**:
+- **Ishlayotgan konteynerlar ro'yxati**:
 
   ```bash
   sudo crictl ps
   ```
 
-- **Stop a Container**:
+- **Konteynerni to'xtating**:
 
   ```bash
   sudo crictl stop <container_id>
   ```
 
-- **Remove a Container**:
+- **Konteynerni olib tashlash**:
 
   ```bash
   sudo crictl rm <container_id>
   ```
 
-### Viewing Logs
+### Jurnallarni ko'rish
 
-- **View CRI-O Logs**:
+- **CRI-O jurnallarini ko'rish**:
 
   ```bash
   sudo journalctl -u crio
@@ -172,41 +172,41 @@
 
 ---
 
-## 4. Container Management
+## 4. Konteynerlarni boshqarish
 
-### Pulling Images
+### Tasvirlarni tortib olish
 
-- **Pull an Image**:
+- **Rasmni torting**:
 
   ```bash
   sudo crictl pull <image_name>
   ```
 
-### Running Containers
+### Ishlaydigan konteynerlar
 
-- **Run a Container**:
+- **Konteynerni ishga tushirish**:
 
   ```bash
   sudo crictl run <pod_config.json> <container_config.json>
   ```
 
-### Stopping and Removing Containers
+### Konteynerlarni to'xtatish va olib tashlash
 
-- **Stop a Container**:
+- **Konteynerni to'xtating**:
 
   ```bash
   sudo crictl stop <container_id>
   ```
 
-- **Remove a Container**:
+- **Konteynerni olib tashlash**:
 
   ```bash
   sudo crictl rm <container_id>
   ```
 
-### Viewing Running Containers
+### Ishlayotgan konteynerlarni ko'rish
 
-- **List Containers**:
+- **Ro'yxat konteynerlari**:
 
   ```bash
   sudo crictl ps
@@ -214,77 +214,77 @@
 
 ---
 
-## 5. Networking
+## 5. Tarmoq
 
-### Default Networking Configuration
+### Standart tarmoq konfiguratsiyasi
 
-- **Default Network**: CRI-O uses the `cni0` bridge for networking by default.
+- **Standart tarmoq**: CRI-O standart holatda tarmoq uchun `cni0` ko'prigidan foydalanadi.
 
-### Configuring Custom Networks
+### Maxsus tarmoqlarni sozlash
 
-- **CNI Plugins**: CRI-O can use various CNI plugins to configure custom network setups.
+- **CNI plaginlari**: CRI-O maxsus tarmoq sozlamalarini sozlash uchun turli xil CNI plaginlaridan foydalanishi mumkin.
 
-### Using CNI Plugins with CRI-O
+### CRI-O bilan CNI plaginlaridan foydalanish
 
-- **Install CNI Plugins**:
+- **CNI plaginlarini o'rnatish**:
 
   ```bash
   sudo dnf install -y containernetworking-plugins
   ```
 
-- **Configure Plugin**: Add your CNI plugin configuration in `/etc/cni/net.d/`.
+- **Plaginni sozlash**: CNI plagin konfiguratsiyangizni `/etc/cni/net.d/` fayliga qo'shing.
 
 ---
 
-## 6. Storage
+## 6. Saqlash
 
-### Managing Container Storage
+### Konteynerlarni saqlashni boshqarish
 
-- **Default Storage**: CRI-O uses `overlay` storage driver by default.
+- **Standart xotira**: CRI-O sukut bo'yicha `overlay` xotira drayveridan foydalanadi.
 
-### Configuring Storage Options
+### Saqlash parametrlarini sozlash
 
-- **Modify Storage Driver**: Edit `/etc/containers/storage.conf` to change the storage driver.
+- **Saqlash drayverini o'zgartirish**: Saqlash drayverini o'zgartirish uchun `/etc/containers/storage.conf` faylini tahrirlang.
 
-### Persistent Storage Management
+### Doimiy saqlashni boshqarish
 
-- **Mount Volumes**: Use `--mount` option to attach persistent storage volumes to containers.
-
----
-
-## 7. Security
-
-### Pod Security Policies (PSPs)
-
-- **Enable PSPs**: Configure PSPs in Kubernetes to apply security restrictions on CRI-O managed containers.
-
-### SELinux and CRI-O
-
-- **SELinux Enforcement**: Ensure SELinux is enabled on the host system for better security.
-
-### Seccomp Profiles
-
-- **Enable Seccomp**: CRI-O supports seccomp profiles to restrict system calls for containers.
-
-### AppArmor Integration
-
-- **AppArmor Profiles**: Apply AppArmor profiles for CRI-O containers to enforce security policies.
+- **O'rnatish hajmlari**: Doimiy saqlash hajmlarini konteynerlarga ulash uchun `--mount` parametridan foydalaning.
 
 ---
 
-## 8. Monitoring and Logging
+## 7. Xavfsizlik
 
-### Integrating with Prometheus
+### Pod xavfsizlik siyosati (PSP)
 
-- **Prometheus Metrics**: CRI-O exposes metrics that can be scraped by Prometheus for monitoring.
+- **PSPlarni yoqish**: CRI-O boshqariladigan konteynerlarga xavfsizlik cheklovlarini qo'llash uchun Kubernetes-da PSPlarni sozlang.
 
-### Setting Up Log Collection
+### SELinux va CRI-O
 
-- **Log Rotation**: Configure log rotation in `/etc/crio/crio.conf` to manage container logs.
+- **SELinuxni amalga oshirish**: Xavfsizlikni yaxshilash uchun xost tizimida SELinux yoqilganligiga ishonch hosil qiling.
 
-### Debugging Containers
+### Seccomp profillari
 
-- **Container Logs**:
+- **Seccomp ni yoqish**: CRI-O konteynerlar uchun tizim chaqiruvlarini cheklash uchun seccomp profillarini qo'llab-quvvatlaydi.
+
+### AppArmor integratsiyasi
+
+- **AppArmor profillari**: Xavfsizlik siyosatini amalga oshirish uchun CRI-O konteynerlari uchun AppArmor profillarini qo'llang.
+
+---
+
+## 8. Monitoring va jurnalga yozish
+
+### Prometheus bilan integratsiya
+
+- **Prometheus Metrics**: CRI-O Prometheus tomonidan monitoring uchun olib tashlanishi mumkin bo'lgan metrikalarni ochib beradi.
+
+### Jurnal to'plamini sozlash
+
+- **Jurnalni aylantirish**: Konteyner jurnallarini boshqarish uchun `/etc/crio/crio.conf` faylida jurnalni aylantirishni sozlang.
+
+### Nosozliklarni tuzatish konteynerlari
+
+- **Konteyner jurnallari**:
 
   ```bash
   sudo crictl logs <container_id>
@@ -292,45 +292,45 @@
 
 ---
 
-## 9. Advanced Configuration
+## 9. Kengaytirilgan konfiguratsiya
 
-### CRI-O Configuration Files
+### CRI-O konfiguratsiya fayllari
 
-- **Main Configuration File**: `/etc/crio/crio.conf`
-- **Modify Configurations**: Adjust settings for runtime, networking, and storage.
+- **Asosiy konfiguratsiya fayli**: `/etc/crio/crio.conf`
+- **Konfiguratsiyalarni o'zgartirish**: Ish vaqti, tarmoq va xotira uchun sozlamalarni sozlang.
 
-### Runtime Configuration
+### Ish vaqti konfiguratsiyasi
 
-- **Specify Runtime**: Use the `runtime` section in `crio.conf` to set the container runtime (e.g., runc, kata).
+- **Ish vaqtini belgilang**: Konteynerning ish vaqtini (masalan, runc, kata) o'rnatish uchun `crio.conf` faylidagi `ish vaqti` bo'limidan foydalaning.
 
-### Resource Limits and Cgroups
+### Resurs limitlari va C guruhlari
 
-- **Set Resource Limits**: Define CPU and memory limits in the container configuration.
+- **Resurs limitlarini o'rnatish**: Konteyner konfiguratsiyasida protsessor va xotira limitlarini aniqlang.
 
-### Tuning for Performance
+### Ishlash uchun sozlash
 
-- **Adjust Parameters**: Modify parameters like `pids_limit` and `log_size_max` in `crio.conf` for performance tuning.
+- **Parametrlarni sozlash**: Ishlashni sozlash uchun `crio.conf` faylidagi `pids_limit` va `log_size_max` kabi parametrlarni o'zgartiring.
 
 ---
 
-## 10. Troubleshooting
+## 10. Muammolarni bartaraf etish
 
-### Common Issues and Fixes
+### Umumiy muammolar va tuzatishlar
 
-- **Containers Not Starting**: Check logs for errors related to runtime or configuration issues.
-- **Networking Issues**: Verify CNI plugin configurations and network settings.
+- **Konteynerlar ishga tushmayapti**: Ish vaqti yoki konfiguratsiya muammolari bilan bog'liq xatolar uchun jurnallarni tekshiring.
+- **Tarmoq bilan bog'liq muammolar**: CNI plagini konfiguratsiyalari va tarmoq sozlamalarini tekshiring.
 
-### Analyzing CRI-O Logs
+### CRI-O jurnallarini tahlil qilish
 
-- **View Logs**:
+- **Jurnallarni ko'rish**:
 
   ```bash
   sudo journalctl -u crio
   ```
 
-### Debugging Failed Containers
+### Konteynerlarni nosozliklarni tuzatishda muvaffaqiyatsizlikka uchradi
 
-- **Check Exit Code**:
+- **Chiqish kodini tekshiring**:
 
   ```bash
   sudo crictl inspect <container_id>
@@ -338,61 +338,61 @@
 
 ---
 
-## 11. Integration with Kubernetes
+## 11. Kubernetes bilan integratsiya
 
-### Configuring CRI-O with Kubernetes
+### CRI-O ni Kubernetes yordamida sozlash
 
-- **Set CRI-O as the Default Runtime**: Modify Kubernetes configuration to use CRI-O as the default container runtime.
+- **CRI-O ni standart ish vaqti sifatida o'rnating**: Kubernetes konfiguratsiyasini CRI-O ni standart konteyner ish vaqti sifatida ishlatish uchun o'zgartiring.
 
-### CRI-O as a Container Runtime for K8s
+### CRI-O K8s uchun konteyner ish vaqti sifatida
 
-- **Installation**: Ensure CRI-O is installed and configured on all Kubernetes nodes.
+- **O'rnatish**: CRI-O barcha Kubernetes tugunlariga o'rnatilgan va sozlanganligiga ishonch hosil qiling.
 
-### Multi-tenancy with CRI-O in Kubernetes
+### Kubernetesda CRI-O bilan ko'p ijaraga beriladigan uylar
 
-- **Namespace Isolation**: Use Kubernetes namespaces and CRI-O security features to ensure tenant isolation.
-
----
-
-## 12. Best Practices
-
-### Security Best Practices
-
-- **Use SELinux**: Enable SELinux for all nodes running CRI-O.
-- **Limit Resource Usage**: Define CPU and memory limits to prevent resource exhaustion.
-
-### Performance Optimization
-
-- **Tune Runtime**: Adjust runtime parameters for high-performance workloads.
-- **Log Management**: Set up proper log rotation to prevent disk space exhaustion.
-
-### Efficient Resource Management
-
-- **Resource Limits**: Apply resource limits to containers to optimize cluster resource usage.
+- **Nom maydoni izolyatsiyasi**: Ijarachilarning izolyatsiyasini ta'minlash uchun Kubernetes nom maydonlari va CRI-O xavfsizlik xususiyatlaridan foydalaning.
 
 ---
 
-## 13. FAQs
+## 12. Eng yaxshi amaliyotlar
 
-### Common Questions about CRI-O
+### Xavfsizlikning eng yaxshi amaliyotlari
+
+- **SELinuxdan foydalaning**: CRI-O ishlaydigan barcha tugunlar uchun SELinuxni yoqing.
+- **Resurslardan foydalanishni cheklash**: Resurslar tugashining oldini olish uchun protsessor va xotira chegaralarini belgilang.
+
+### Ishlashni optimallashtirish
+
+- **Ish vaqtini sozlash**: Yuqori unumdorlikdagi ish yuklamalari uchun ish vaqti parametrlarini sozlash.
+- **Jurnallarni boshqarish**: Disk maydoni tugab qolishining oldini olish uchun jurnalni to'g'ri aylantirishni sozlang.
+
+### Resurslarni samarali boshqarish
+
+- **Resurs cheklovlari**: Klaster resurslaridan foydalanishni optimallashtirish uchun konteynerlarga resurs cheklovlarini qo'llang.
+
+---
+
+## 13. Tez-tez so'raladigan savollar
+
+### CRI-O haqida keng tarqalgan savollar
 
 - **
 
-Q**: How does CRI-O differ from Docker?
-  **A**: CRI-O is a lightweight container runtime designed specifically for Kubernetes, whereas Docker is a full-featured container platform.
+Savol: CRI-O Dockerdan qanday farq qiladi?
+  **A**: CRI-O - bu Kubernetes uchun maxsus ishlab chiqilgan yengil konteyner ish vaqti, Docker esa to'liq funksiyali konteyner platformasi.
 
-- **Q**: Can CRI-O run standalone without Kubernetes?
-  **A**: CRI-O is designed to run within Kubernetes environments, but it can also be used with tools like `crictl` for standalone operations.
+- **Savol**: CRI-O Kubernetessiz mustaqil ravishda ishlay oladimi?
+  **A**: CRI-O Kubernetes muhitida ishlash uchun mo'ljallangan, ammo undan mustaqil operatsiyalar uchun `crictl` kabi vositalar bilan ham foydalanish mumkin.
 
 ---
 
-## 14. References
+## 14. Manbalar
 
-### Official Documentation
+### Rasmiy hujjatlar
 
 - [CRI-O GitHub Repository](https://github.com/cri-o/cri-o)
-- [CRI-O Documentation](https://crio.readthedocs.io/)
+- [CRI-O Hujjatlar](https://crio.readthedocs.io/)
 
-### Community Resources
+### Jamiyat resurslari
 
 - [Kubernetes CRI-O Integration Guide](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#cri-o)
