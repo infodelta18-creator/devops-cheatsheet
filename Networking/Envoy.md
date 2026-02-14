@@ -57,7 +57,7 @@ Tasavvur qiling-a, siz to'lov, inventarizatsiya va foydalanuvchi xizmatlari kabi
  Elchi yordam berishi mumkin:
 
 1. **Xavfsiz aloqa:** Mikroservislar o'rtasidagi barcha trafikni shifrlash uchun Envoyning TLS tugatish imkoniyatidan foydalaning.
-2. ** Yuklarni muvozanatlash: * * kiruvchi so'rovlarni elchining dumaloq yuklarni muvozanatlash yordamida to'lov xizmatining bir nechta holatlarida teng ravishda taqsimlang.
-3. ** Tarifni cheklash: * * kirish urinishlarida tarif chegarasini belgilash orqali foydalanuvchi xizmatini suiiste'mol qilishdan himoya qiling.
-4. ** Kuzatuvchanlik:* * elchi o'lchovlari yordamida barcha mikroservislarning sog'lig'ini kuzatib boring va ogohlantirish uchun Prometey bilan integratsiya qiling.
-5. ** Chidamlilik: * * yuqori tirbandlik davrida inventarizatsiya xizmati to'lib ketishining oldini olish uchun o'chirgichlardan foydalaning.
+2. **Yuklarni muvozanatlash:** kiruvchi so'rovlarni elchining dumaloq yuklarni muvozanatlash yordamida to'lov xizmatining bir nechta holatlarida teng ravishda taqsimlang.
+3. **Tarifni cheklash:** kirish urinishlarida tarif chegarasini belgilash orqali foydalanuvchi xizmatini suiiste'mol qilishdan himoya qiling.
+4. **Kuzatuvchanlik:** elchi o'lchovlari yordamida barcha mikroservislarning sog'lig'ini kuzatib boring va ogohlantirish uchun Prometey bilan integratsiya qiling.
+5. **Chidamlilik:** yuqori tirbandlik davrida inventarizatsiya xizmati to'lib ketishining oldini olish uchun o'chirgichlardan foydalaning.
