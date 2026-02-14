@@ -39,7 +39,7 @@ export default function ContributePage() {
 
   const contributionSteps = [
     {
-      icon: <FaLove className="w-7 h-7" />,
+      icon: <FaCode className="w-7 h-7" />,
       title: "Jamiyatga hissa qo'shing",
       description:
         "DevOps Cheatsheet omborini Google hisobingizga ulashdan boshlang. Bu sizning loyihangizning ishlash uchun o'z kuchini yaratadi..",
