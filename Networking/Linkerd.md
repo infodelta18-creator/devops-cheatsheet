@@ -2,62 +2,62 @@
 
 ![text](https://imgur.com/xyQcgGf.png)
 
-## **Overview**
+## **Umumiy ko'rinish**
 
-Linkerd is a lightweight service mesh designed to be simple to operate while providing powerful features for observability, security, and reliability. Unlike some other service meshes, Linkerd focuses on minimal configuration and performance.
+Linkerd - bu kuzatish, xavfsizlik va ishonchlilik uchun kuchli xususiyatlarni ta'minlagan holda ishlatish uchun qulay bo'lgan engil xizmat tarmog'i. Ba'zi boshqa xizmat tarmoqlaridan farqli o'laroq, Linkerd minimal konfiguratsiya va ishlashga qaratilgan.
 
-### **Basic Concepts**
+### **Asosiy tushunchalar**
 
-- **Service Mesh:** Linkerd provides an infrastructure layer that enables secure, reliable, and observable communication between microservices. It operates transparently, requiring minimal changes to your services.
+- **Service Mesh:** Linkerd mikroservislar o'rtasida xavfsiz, ishonchli va kuzatilishi mumkin bo'lgan aloqani ta'minlaydigan infratuzilma qatlamini taqdim etadi. U shaffof ishlaydi va xizmatlaringizga minimal o'zgarishlar kiritishni talab qiladi.
 
-- **Control Plane:** Linkerd’s control plane manages the configuration and behavior of the service mesh. It includes components for managing policies, collecting telemetry, and issuing certificates.
+- **Boshqaruv tekisligi:** Linkerd boshqaruv tekisligi xizmat tarmog'ining konfiguratsiyasi va xatti-harakatlarini boshqaradi. U siyosatlarni boshqarish, telemetriyani yig'ish va sertifikatlar berish uchun komponentlarni o'z ichiga oladi.
 
-- **Data Plane:** The data plane consists of lightweight proxies deployed as sidecars to each service. These proxies handle all inbound and outbound traffic, providing features like mTLS, retries, and load balancing.
+- **Ma'lumotlar tekisligi:** Ma'lumotlar tekisligi har bir xizmatga yonma-yon o'rnatilgan engil proksilardan iborat. Ushbu proksi-serverlar barcha kiruvchi va chiquvchi trafikni boshqaradi, mTLS, qayta urinishlar va yuklarni muvozanatlash kabi xususiyatlarni taqdim etadi.
 
-### **Traffic Management**
+### **Trafikni boshqarish**
 
-- **Routing:** Linkerd automatically manages routing for service-to-service communication. It handles retries and timeouts, ensuring that requests are routed efficiently and reliably.
+- **Marshrutlash:** Linkerd xizmatdan xizmatga aloqa qilish uchun marshrutlashni avtomatik ravishda boshqaradi. U qayta urinishlar va vaqt tugashlarini boshqaradi, bu esa so'rovlarning samarali va ishonchli yo'naltirilishini ta'minlaydi.
 
-- **Load Balancing:** Linkerd distributes traffic across available service instances to prevent any single instance from being overwhelmed. It uses algorithms like random and least-request to balance traffic effectively.
+- **Yuklarni muvozanatlash:** Linkerd har qanday alohida misolni haddan tashqari yuklamaslik uchun trafikni mavjud xizmat namunalari bo'ylab taqsimlaydi. U trafikni samarali muvozanatlash uchun tasodifiy va eng kam so'rov kabi algoritmlardan foydalanadi.
 
-- **Traffic Splitting:** Linkerd allows you to split traffic between different versions of a service. This is useful for canary deployments, where a small percentage of traffic is sent to a new version before full rollout.
+- **Trafikni taqsimlash:** Linkerd sizga xizmatning turli versiyalari o'rtasida trafikni taqsimlash imkonini beradi. Bu kanareykalarni joylashtirish uchun foydalidir, bunda trafikning kichik bir qismi to'liq ishga tushirilgunga qadar yangi versiyaga yuboriladi.
 
-### **Security**
+### **Xavfsizlik**
 
-- **mTLS:** Linkerd provides out-of-the-box mutual TLS (mTLS) for all communication between services. This ensures that all traffic is encrypted and that both the client and server are authenticated.
+- **mTLS:** Linkerd xizmatlar orasidagi barcha aloqalar uchun o'zaro TLS (mTLS) ni taqdim etadi. Bu barcha trafik shifrlanganligini va mijoz ham, server ham autentifikatsiya qilinganligini ta'minlaydi.
 
-- **Identity Service:** Linkerd includes an identity service that issues and renews TLS certificates for the proxies. This service manages the cryptographic identities used for mTLS.
+- **Identifikatsiya xizmati:** Linkerd proksi-serverlar uchun TLS sertifikatlarini chiqaradigan va yangilaydigan identifikatsiya xizmatini o'z ichiga oladi. Bu xizmat mTLS uchun ishlatiladigan kriptografik identifikatorlarni boshqaradi.
 
-- **Authorization:** Linkerd’s mTLS also acts as an authorization mechanism, ensuring that only authorized services can communicate with each other. This enhances security by preventing unauthorized access.
+- **Avtorizatsiya:** Linkerdning mTLS ham avtorizatsiya mexanizmi sifatida ishlaydi, bu faqat vakolatli xizmatlar bir-biri bilan muloqot qilishini ta'minlaydi. Bu ruxsatsiz kirishning oldini olish orqali xavfsizlikni oshiradi.
 
-### **Observability**
+### **Kuzatuvchanlik**
 
-- **Metrics:** Linkerd automatically collects and exposes metrics such as latency, success rates, and request volumes. These metrics are essential for monitoring the health and performance of your services.
+- **Metrikalar:** Linkerd kechikish, muvaffaqiyat darajasi va so'rovlar hajmi kabi ko'rsatkichlarni avtomatik ravishda to'playdi va ko'rsatadi. Bu ko'rsatkichlar xizmatlaringizning salomatligi va ishlashini kuzatish uchun zarurdir.
 
-- **Prometheus Integration:** Linkerd integrates seamlessly with Prometheus, allowing you to scrape and visualize metrics. Prometheus can be used to create alerts based on Linkerd’s metrics.
+- **Prometheus integratsiyasi:** Linkerd Prometheus bilan muammosiz integratsiyalashgan bo'lib, bu sizga ko'rsatkichlarni qirqib olish va vizualizatsiya qilish imkonini beradi. Prometheusdan Linkerd ko'rsatkichlariga asoslangan ogohlantirishlarni yaratish uchun foydalanish mumkin.
 
-- **Grafana Dashboards:** Linkerd provides pre-built Grafana dashboards for visualizing metrics. These dashboards offer insights into service performance and help in identifying issues.
+- **Grafana boshqaruv panellari:** Linkerd ko'rsatkichlarni vizualizatsiya qilish uchun oldindan tuzilgan Grafana boshqaruv panellarini taqdim etadi. Ushbu boshqaruv panellari xizmat ko'rsatish samaradorligi haqida tushuncha beradi va muammolarni aniqlashga yordam beradi.
 
-- **Distributed Tracing:** Linkerd supports distributed tracing, allowing you to track requests as they flow through different services. This helps in understanding the service interaction and diagnosing issues.
+- **Taqsimlangan kuzatuv:** Linkerd turli xizmatlar orqali o'tadigan so'rovlarni kuzatish imkonini beruvchi taqsimlangan kuzatuvni qo'llab-quvvatlaydi. Bu xizmatlarning o'zaro ta'sirini tushunish va muammolarni aniqlashga yordam beradi.
 
-### **Advanced Concepts**
+### **Ilg'or tushunchalar**
 
-- **Service Profiles:** Service profiles allow you to define expected behavior for services, such as retries, timeouts, and traffic shaping. They provide fine-grained control over how traffic is handled.
+- **Xizmat profillari:** Xizmat profillari xizmatlar uchun kutilayotgan xatti-harakatlarni, masalan, qayta urinishlar, vaqt tugashi va trafikni shakllantirishni aniqlash imkonini beradi. Ular trafikni qanday boshqarish ustidan nozik nazoratni ta'minlaydi.
 
-- **Tap API:** The Tap API provides real-time visibility into live traffic. You can use it to inspect requests and responses, making it a powerful tool for debugging and monitoring.
+- **Tap API:** Tap API real vaqt rejimida jonli trafikni ko'rishni ta'minlaydi. Siz undan so'rovlar va javoblarni tekshirish uchun foydalanishingiz mumkin, bu esa uni nosozliklarni tuzatish va monitoring qilish uchun kuchli vositaga aylantiradi.
 
-- **Traffic Shifting:** Linkerd supports traffic shifting, enabling you to gradually shift traffic from one version of a service to another. This is particularly useful for rolling out updates safely.
+- **Trafikni o'zgartirish:** Linkerd trafikni o'zgartirishni qo'llab-quvvatlaydi, bu sizga trafikni xizmatning bir versiyasidan boshqasiga bosqichma-bosqich o'tkazish imkonini beradi. Bu, ayniqsa, yangilanishlarni xavfsiz tarqatish uchun foydalidir.
 
-- **Multicluster Support:** Linkerd can extend its service mesh across multiple Kubernetes clusters, allowing you to manage services that span different environments. This is useful for high availability and disaster recovery.
+- **Ko'p klasterli qo'llab-quvvatlash:** Linkerd o'z xizmat tarmog'ini bir nechta Kubernetes klasterlari bo'ylab kengaytirishi mumkin, bu sizga turli muhitlarni qamrab oluvchi xizmatlarni boshqarish imkonini beradi. Bu yuqori mavjudlik va tabiiy ofatlarni tiklash uchun foydalidir.
 
-- **Policy Enforcement:** Linkerd allows you to define policies that control traffic routing, access control, and rate limiting. These policies help ensure that services behave as expected under various conditions.
+- **Siyosatni amalga oshirish:** Linkerd sizga trafik marshrutini, kirishni nazorat qilish va tezlikni cheklashni boshqaradigan siyosatlarni belgilash imkonini beradi. Ushbu siyosatlar xizmatlarning turli sharoitlarda kutilganidek ishlashiga yordam beradi.
 
-### **Example Use Case**
+### **Foydalanish misollari**
 
-Suppose you are managing a microservices application where you need a lightweight service mesh to provide observability and security with minimal overhead:
+Aytaylik, siz mikroservislar ilovasini boshqarasiz, bunda minimal qo'shimcha xarajatlar bilan kuzatuvchanlik va xavfsizlikni ta'minlash uchun engil xizmat tarmog'i kerak bo'ladi:
 
-1. **Simplified Deployment:** Deploy Linkerd with minimal configuration and start benefiting from automatic mTLS and load balancing.
-2. **Canary Releases:** Use traffic splitting to gradually route traffic to a new version of a service, reducing the risk of full deployment.
-3. **Real-time Monitoring:** Utilize the Tap API to monitor live traffic and quickly identify any issues with requests.
-4. **Secure Communication:** Rely on Linkerd’s mTLS to secure all service-to-service communication without the need for complex certificate management.
-5. **Cross-Cluster Management:** Extend Linkerd’s service mesh across multiple Kubernetes clusters to ensure high availability and disaster recovery.
+1. **Soddalashtirilgan joylashtirish:** Linkerd-ni minimal konfiguratsiya bilan o'rnating va avtomatik mTLS va yuk balansidan avtomatik ravishda foydalanishni boshlang.
+2. **Kanareykalar nashrlari:** Trafikni bo'lishdan foydalanib, xizmatning yangi versiyasiga trafikni bosqichma-bosqich yo'naltiring va to'liq joylashtirish xavfini kamaytiring.
+3. **Haqiqiy vaqtda monitoring:** Jonli trafikni kuzatish va so‘rovlar bilan bog‘liq muammolarni tezda aniqlash uchun Tap API’dan foydalaning.
+4. **Xavfsiz aloqa:** Murakkab sertifikat boshqaruviga ehtiyoj sezmasdan, xizmatdan xizmatga aloqani ta'minlash uchun Linkerd's mTLS xizmatiga ishoning.
+5. **Klasterlararo boshqaruv:** Yuqori mavjudlik va tabiiy ofatlarni bartaraf etishni ta'minlash uchun Linkerd xizmat tarmog'ini bir nechta Kubernetes klasterlari bo'ylab kengaytiring.
