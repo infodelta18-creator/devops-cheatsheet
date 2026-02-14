@@ -4,7 +4,7 @@
 
 **1. Kirish:**
 
-- **AquaSec** (Aqua Security) - bu CI/CD quvur liniyasi bo'ylab konteynerlar, Kubernetes va bulutga asoslangan ilovalarni himoya qilish uchun keng qamrovli xavfsizlik platformasi.
+- **AquaSec** (Aqua Security) - bu CI/CD yo'l liniyasi bo'ylab konteynerlar, Kubernetes va bulutga asoslangan ilovalarni himoya qilish uchun keng qamrovli xavfsizlik platformasi.
 
 **2. O'rnatish:**
 
