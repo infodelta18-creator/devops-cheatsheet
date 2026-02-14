@@ -2,91 +2,91 @@
 
 ![text](https://imgur.com/aYuSIvY.png)
 
-## Checkout detailed article on [Dev.to](https://dev.to/prodevopsguytech/kubernetes-commands-for-devops-engineers-124o)
+## Batafsil maqolani ko'rib chiqing [Dev.to](https://dev.to/prodevopsguytech/kubernetes-commands-for-devops-engineers-124o)
 
-## 1. Introduction to Kubernetes
+## 1. Kubernetesga kirish
 
-### What is Kubernetes?
+### Kubernetes nima?
 
-- **Kubernetes** is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications.
+- **Kubernetes** - bu konteynerlashtirilgan ilovalarni joylashtirish, masshtablash va boshqarishni avtomatlashtiradigan ochiq kodli konteyner orkestrlash platformasi.
 
-### Key Concepts
+### Asosiy tushunchalar
 
-- **Cluster**: A set of worker machines, called nodes, that run containerized applications.
-- **Node**: A single machine in a Kubernetes cluster.
-- **Pod**: The smallest deployable unit, which can contain one or more containers.
-- **Service**: A stable network endpoint to expose a set of pods.
-- **Namespace**: A way to divide cluster resources between multiple users.
-- **Kubelet**: An agent running on each node that ensures containers are running in a Pod.
-- **Kubectl**: Command-line tool to interact with Kubernetes clusters.
+- **Klaster**: Konteynerlashtirilgan ilovalarni ishga tushiradigan tugunlar deb ataladigan ishchi mashinalar to'plami.
+- **Tugun**: Kubernetes klasteridagi bitta mashina.
+- **Pod**: Bir yoki bir nechta konteynerni o'z ichiga olishi mumkin bo'lgan eng kichik joylashtiriladigan birlik.
+- **Xizmat**: Podlar to'plamini namoyish qilish uchun barqaror tarmoq nuqtasi.
+- **Nomlar maydoni**: Klaster resurslarini bir nechta foydalanuvchilar o'rtasida taqsimlash usuli.
+- **Kubelet**: Konteynerlarning Podda ishlayotganini ta'minlaydigan har bir tugunda ishlaydigan agent.
+- **Kubectl**: Kubernetes klasterlari bilan o'zaro ishlash uchun buyruq satri vositasi.
 
 ---
 
-## 2. Basic Kubernetes Operations
+## 2. Kubernetesning asosiy operatsiyalari
 
-### Setting Up a Kubernetes Cluster
+### Kubernetes klasterini yaratish
 
-- **Minikube**: Set up a single-node Kubernetes cluster for testing.
+- **Minikube**: Sinov uchun bitta tugunli Kubernetes klasterini sozlang.
 
   ```bash
   minikube start
   ```
 
-### Working with `kubectl`
+### `kubectl` bilan ishlash
 
-- **Get Cluster Information**:
+- **Klaster ma'lumotlarini olish**:
 
   ```bash
   kubectl cluster-info
   ```
 
-- **Get All Nodes in the Cluster**:
+- **Klasterdagi barcha tugunlarni oling**:
 
   ```bash
   kubectl get nodes
   ```
 
-### Managing Pods
+### Podlarni boshqarish
 
-- **Create a Pod**:
+- **Pod yaratish**:
 
   ```bash
   kubectl run mypod --image=nginx
   ```
 
-- **List All Pods**:
+- **Barcha podlarni ro'yxatlash**:
 
   ```bash
   kubectl get pods
   ```
 
-- **Describe a Pod**:
+- **Podni tasvirlab bering**:
 
   ```bash
   kubectl describe pod mypod
   ```
 
-- **Delete a Pod**:
+- **Podni o'chirish**:
 
   ```bash
   kubectl delete pod mypod
   ```
 
-### Using Namespaces
+### Nomlar maydonidan foydalanish
 
-- **List All Namespaces**:
+- **Barcha nomlar maydonlarini ro'yxatlash**:
 
   ```bash
   kubectl get namespaces
   ```
 
-- **Create a Namespace**:
+- **Nom maydonini yaratish**:
 
   ```bash
   kubectl create namespace mynamespace
   ```
 
-- **Delete a Namespace**:
+- **Nom maydonini o'chirish**:
 
   ```bash
   kubectl delete namespace mynamespace
@@ -94,43 +94,43 @@
 
 ---
 
-## 3. Deployments and Scaling
+## 3. Joylashtirish va masshtablash
 
-### Deployments
+### Joylashtirishlar
 
-- **Create a Deployment**:
+- **Joylashtirishni yaratish(Deploy)**:
 
   ```bash
   kubectl create deployment myapp --image=nginx
   ```
 
-- **View Deployment Status**:
+- **Joylashtirish holatini ko'rish**:
 
   ```bash
   kubectl get deployments
   ```
 
-- **Update a Deployment**:
+- **Joylashtirishni yangilash**:
 
   ```bash
   kubectl set image deployment/myapp nginx=nginx:1.16
   ```
 
-- **Rollback a Deployment**:
+- **Joylashtirishni orqaga qaytarish**:
 
   ```bash
   kubectl rollout undo deployment/myapp
   ```
 
-### Scaling Applications
+### Ilovalarni masshtablash
 
-- **Scale a Deployment**:
+- **Joylashtirishni masshtablash**:
 
   ```bash
   kubectl scale deployment myapp --replicas=3
   ```
 
-- **Auto-scaling with Horizontal Pod Autoscaler (HPA)**:
+- **Gorizontal Pod Autoscaler (HPA) yordamida avtomatik masshtablash**:
 
   ```bash
   kubectl autoscale deployment myapp --min=1 --max=5 --cpu-percent=80
@@ -138,32 +138,32 @@
 
 ---
 
-## 4. Services and Networking
+## 4. Xizmatlar va tarmoqlar
 
-### Services
+### Xizmatlar
 
-- **Expose a Pod with a Service**:
+- **Xizmat ko'rsatuvchi podni namoyish eting**:
 
   ```bash
   kubectl expose pod mypod --port=80 --target-port=8080
   ```
 
-- **Create a Service for a Deployment**:
+- **Joylashtirish uchun xizmat yaratish**:
 
   ```bash
   kubectl expose deployment myapp --type=NodePort --port=80
   ```
 
-- **List All Services**:
+- **Barcha xizmatlar ro'yxati**:
 
   ```bash
   kubectl get services
   ```
 
-### Networking
+### Tarmoq
 
-- **Understanding Cluster Networking**: Kubernetes abstracts network communication between Pods.
-- **Network Policies**: Restrict Pod communication using Network Policies.
+- **Klaster tarmog'ini tushunish**: Kubernetes Podlar orasidagi tarmoq aloqasini qisqacha bayon qiladi.
+- **Tarmoq siyosatlari**: Tarmoq siyosatlari yordamida Pod aloqasini cheklash.
 
   ```yaml
   apiVersion: networking.k8s.io/v1
@@ -192,11 +192,11 @@
 
 ---
 
-## 5. Persistent Storage
+## 5. Doimiy saqlash
 
-### Volumes
+### Hajmlar
 
-- **Create a Persistent Volume**:
+- **Doimiy jild yaratish**:
 
   ```yaml
   apiVersion: v1
@@ -212,7 +212,7 @@
       path: "/mnt/data"
   ```
 
-- **Create a Persistent Volume Claim**:
+- **Doimiy hajmdagi da'vo yaratish**:
 
   ```yaml
   apiVersion: v1
@@ -227,9 +227,9 @@
         storage: 1Gi
   ```
 
-### StorageClasses
+### StorageClasss
 
-- **Create a StorageClass**:
+- **StorageClass yaratish**:
 
   ```yaml
   apiVersion: storage.k8s.io/v1
@@ -243,23 +243,23 @@
 
 ---
 
-## 6. ConfigMaps and Secrets
+## 6. ConfigMaps va sirlari
 
 ### ConfigMaps
 
-- **Create a ConfigMap from a File**:
+- **Fayldan ConfigMap yarating**:
 
   ```bash
   kubectl create configmap myconfig --from-file=config.txt
   ```
 
-- **View a ConfigMap**:
+- **ConfigMap ni ko'rish**:
 
   ```bash
   kubectl get configmap myconfig -o yaml
   ```
 
-- **Use a ConfigMap in a Pod**:
+- **Podda ConfigMap dan foydalaning**:
 
   ```yaml
   apiVersion: v1
@@ -275,21 +275,21 @@
           name: myconfig
   ```
 
-### Secrets
+### Sirlar
 
-- **Create a Secret from a Literal Value**:
+- **Haqiqiy qiymatdan sir yarating**:
 
   ```bash
   kubectl create secret generic mysecret --from-literal=username=admin
   ```
 
-- **View a Secret**:
+- **Sirni ko'rish**:
 
   ```bash
   kubectl get secret mysecret -o yaml
   ```
 
-- **Use a Secret in a Pod**:
+- **Podda sirdan foydalaning**:
 
   ```yaml
   apiVersion: v1
@@ -307,19 +307,19 @@
 
 ---
 
-## 7. Ingress Controllers
+## 7. Kirish nazoratchilari
 
-### Setting Up Ingress
+### Kirishni sozlash
 
-- **Install an Ingress Controller**: Use a Helm chart or YAML manifest to install an ingress controller (e.g., NGINX Ingress Controller).
+- **Kirish kontrollerini o'rnatish**: Kirish kontrollerini o'rnatish uchun Helm diagrammasi yoki YAML manifestidan foydalaning (masalan, NGINX kirish kontrolleri).
 
   ```bash
   kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
   ```
 
-### Configuring Ingress Resources
+### Kirish resurslarini sozlash
 
-- **Create an Ingress Resource**:
+- **Kirish resursini yaratish**:
 
   ```yaml
   apiVersion: networking.k8s.io/v1
@@ -340,7 +340,7 @@
                 number: 80
   ```
 
-- **TLS Termination with Ingress**:
+- **Kirish bilan TLS tugashi**:
 
   ```yaml
   apiVersion: networking.k8s.io/v1
@@ -367,11 +367,11 @@
 
 ---
 
-## 8. Kubernetes Security
+## 8. Kubernetes xavfsizligi
 
-### Role-Based Access Control (RBAC)
+### Rolga asoslangan kirishni boshqarish (RBAC)
 
-- **Create a Role**:
+- **Rol yaratish**:
 
   ```yaml
   apiVersion: rbac.authorization.k8s.io/v1
@@ -385,7 +385,7 @@
     verbs: ["get", "watch", "list"]
   ```
 
-- **Bind a Role to a User**:
+- **Foydalanuvchiga rolni bog'lash**:
 
   ```yaml
   apiVersion: rbac.authorization.k8s.io/v1
@@ -403,9 +403,9 @@
     apiGroup: rbac.authorization.k8s.io
   ```
 
-### Pod Security Policies (PSP)
+### Pod xavfsizlik siyosati (PSP)
 
-- **Create a PSP**:
+- **PSP yaratish**:
 
   ```yaml
   apiVersion: policy/v1beta1
@@ -426,9 +426,9 @@
     - '*'
   ```
 
-### Network Policies
+### Tarmoq siyosatlari
 
-- **Create a Network Policy**:
+- **Tarmoq siyosatini yaratish**:
 
   ```yaml
   apiVersion: networking.k8s.io/v1
@@ -451,10 +451,10 @@
             role: frontend
   ```
 
-### Securing Kubernetes API Server
+### Kubernetes API serverini himoyalash
 
-- **Enable API Server Auditing**:
-  - Edit the API server manifest to include auditing options.
+- **API Server Auditini Yoqish**:
+- Audit parametrlarini qo'shish uchun API server manifestini tahrirlash.
 
   ```yaml
   - --audit-log-path=/var/log/kubernetes/audit.log
@@ -463,11 +463,11 @@
 
 ---
 
-## 9. Advanced Kubernetes
+## 9. Kengaytirilgan Kubernetes
 
-### Custom Resource Definitions (CRDs)
+### Maxsus resurs ta'riflari (CRD)
 
-- **Create a Custom Resource Definition**:
+- **Maxsus resurs ta'rifini yarating**:
 
   ```yaml
   apiVersion: apiextensions.k8s.io/v1
@@ -495,35 +495,35 @@
       - mr
   ```
 
-### Operators
+### Operatorlar
 
-- **Introduction to Operators**: Operators are Kubernetes applications designed to manage complex stateful applications by extending the Kubernetes API.
-- **Creating an Operator**:
-  - Use the Operator SDK to scaffold and build an operator.
+- **Operatorlarga kirish**: Operatorlar - bu Kubernetes API-ni kengaytirish orqali murakkab holatli ilovalarni boshqarish uchun mo'ljallangan Kubernetes ilovalari.
+- **Operator yaratish**:
+- Operatorni qurish va uni yaratish uchun Operator SDK dan foydalaning.
 
   ```bash
   operator-sdk init --domain=example.com --repo=github.com/example/memcached-operator
   operator-sdk create api --group=cache --version=v1 --kind=Memcached --resource --controller
   ```
 
-### Service Mesh with Istio
+### Istio bilan xizmat ko'rsatish tarmog'i
 
-- **Install Istio**:
+- **Istio-ni o'rnatish**:
 
   ```bash
   istioctl install --set profile=demo
   ```
 
-- **Deploy an Application with Istio**:
-  - Annotate namespace to enable Istio sidecar injection.
+- **Istio yordamida ilovani joylashtirish**:
+  - Istio yonma-yon in'ektsiyasini yoqish uchun nom maydoniga izoh qo'shing.
 
   ```bash
   kubectl label namespace mynamespace istio-injection=enabled
   ```
 
-  - Deploy application in the annotated namespace.
-- **Traffic Management with Istio**:
-  - Create VirtualService and DestinationRule to manage traffic routing.
+  - Ilovani izohli nomlar maydoniga joylashtiring.
+- **Istio bilan trafikni boshqarish**:
+- Trafikni marshrutlashni boshqarish uchun VirtualService va DestinationRule yarating.
 
   ```yaml
   apiVersion: networking.istio.io/v1alpha3
@@ -540,69 +540,69 @@
           subset: v1
   ```
   
-### Monitoring and Logging
+### Monitoring va jurnalga yozish
 
-- **Prometheus and Grafana**:
-  - **Install Prometheus**:
+- **Prometey va Grafana**:
+- **Prometeyni o'rnating**:
 
     ```bash
     kubectl apply -f https://github.com/prometheus-operator/prometheus-operator/blob/main/bundle.yaml
     ```
 
-  - **Install Grafana**:
+  - **Grafanani o'rnatish**:
 
     ```bash
     kubectl apply -f https://raw.githubusercontent.com/grafana/grafana/main/deploy/kubernetes/grafana-deployment.yaml
     ```
 
-  - **View Metrics in Grafana**: Access the Grafana dashboard and configure data sources to use Prometheus.
+  - **Grafana’da metrikalarni ko‘rish**: Grafana boshqaruv paneliga kiring va Prometheus’dan foydalanish uchun ma’lumot manbalarini sozlang.
 
-- **Logging with ELK Stack**:
-  - **Deploy ELK Stack**: Use Helm or custom YAML manifests to deploy Elasticsearch, Logstash, and Kibana.
+- **ELK Stack bilan jurnalga yozish**:
+  - **ELK Stackni joylashtirish**: Elasticsearch, Logstash va Kibana’ni joylashtirish uchun Helm yoki maxsus YAML manifestlaridan foydalaning.
 
     ```bash
     helm install elk-stack stable/elastic-stack
     ```
 
-  - **Configure Fluentd for Log Collection**:
-    - Deploy Fluentd as a DaemonSet to collect logs from all nodes and send them to Elasticsearch.
+  - **Jurnallarni yig'ish uchun Fluentd ni sozlang**:
+    - Barcha tugunlardan jurnallarni to'plash va ularni Elasticsearch-ga yuborish uchun Fluentd-ni DaemonSet sifatida joylashtiring.
 
-### High Availability and Disaster Recovery
+### Yuqori darajadagi mavjudlik va tabiiy ofatlardan keyin tiklanish
 
-- **Kubernetes High Availability (HA)**:
-  - **HA Master Nodes**: Set up multiple master nodes to ensure availability.
-  - **HA etcd Cluster**: Use an HA etcd cluster to store Kubernetes state with redundancy.
+- **Kubernetes yuqori mavjudligi (HA)**:
+  - **HA asosiy tugunlari**: Mavjudligini ta'minlash uchun bir nechta asosiy tugunlarni sozlang.
+  - **HA va boshqalar klasteri**: Kubernetes holatini ortiqcha saqlash uchun HA va boshqalar klasteridan foydalaning.
 
-- **Disaster Recovery**:
-  - **Backup and Restore etcd**:
-    - Use `etcdctl` to take snapshots of the etcd cluster.
+- **Ofatlardan keyin tiklash**:
+- **Zaxiralash va tiklash va boshqalar**:
+    - Etcd klasterining suratlarini olish uchun `etcdctl` dan foydalaning.
 
     ```bash
     etcdctl snapshot save /path/to/backup
     ```
 
-    - Restore from the snapshot when needed.
+    - Zarur bo'lganda suratdan tiklang.
 
-### Federation
+### Federatsiya
 
-- **Multi-Cluster Federation**:
-  - **Set Up Federation**: Use Kubernetes Federation v2 to manage multiple clusters from a single control plane.
+- **Ko'p klasterli federatsiya**:
+  - **Federatsiyani sozlash**: Bitta boshqaruv tekisligidan bir nechta klasterlarni boshqarish uchun Kubernetes Federation v2 dan foydalaning.
 
   ```bash
   kubefedctl join mycluster --cluster-context=mycluster-context --host-cluster-context=host-cluster-context
   ```
 
-  - **Deploy Federated Resources**: Deploy resources that span across multiple clusters using the Federation API.
+  - **Federatsiyalangan resurslarni joylashtirish**: Federatsiya API yordamida bir nechta klasterlarni qamrab oluvchi resurslarni joylashtirish.
 
 ---
 
-## 10. References
+## 10. Adabiyotlar
 
-### Official Documentation
+### Rasmiy hujjatlar
 
-- [Kubernetes Official Documentation](https://kubernetes.io/docs/)
+- [Rasmiy Kubernetes  Documentation](https://kubernetes.io/docs/)
 
-### Community Resources
+### Jamiyat resurslari
 
 - [Kubernetes Slack](http://slack.k8s.io/)
 - [Kubernetes GitHub Repository](https://github.com/kubernetes/kubernetes)
