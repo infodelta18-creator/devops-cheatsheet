@@ -2,166 +2,166 @@
 
 ![text](https://imgur.com/2HuS6vE.png)
 
-## Table of Contents
+## Mundarija
 
-1. **Introduction to OpenShift**
-   - What is OpenShift?
-   - Key Features
-   - OpenShift Editions
-   - Architecture Overview
-2. **Installation and Setup**
-   - System Requirements
-   - Installing OpenShift
-   - Setting Up OpenShift CLI (`oc`)
-   - Post-Installation Configuration
-3. **Basic Concepts**
-   - Projects and Namespaces
-   - Pods, Services, and Routes
-   - Deployments and DeploymentConfigs
-   - StatefulSets and DaemonSets
-   - OpenShift Builds and ImageStreams
-   - ConfigMaps and Secrets
-4. **User Management**
-   - Creating and Managing Users
-   - Role-Based Access Control (RBAC)
-   - Service Accounts
-   - Managing Quotas and Limits
-5. **Networking**
-   - OpenShift SDN Overview
-   - Ingress and Egress Traffic Management
-   - Configuring Routes and DNS
-   - NetworkPolicies for Pod Security
-6. **Storage**
-   - Persistent Volumes and Persistent Volume Claims
-   - StorageClasses and Dynamic Provisioning
-   - Managing Storage for Stateful Applications
-   - NFS and GlusterFS Integration
-7. **Security**
-   - OpenShift Security Context Constraints (SCCs)
-   - Using SELinux with OpenShift
-   - Securing Routes with TLS
-   - OpenShift Compliance and Security Audits
-8. **Application Lifecycle Management**
-   - Creating Applications using `oc new-app`
-   - Managing Application Deployments
-   - Rolling Updates and Rollbacks
-   - Blue-Green and Canary Deployments
-9. **Monitoring and Logging**
-   - Monitoring with Prometheus and Grafana
-   - Logging with Elasticsearch, Fluentd, and Kibana (EFK)
-   - Setting Up Alerts and Notifications
-   - Debugging Pods and Containers
-10. **Advanced Configuration**
-    - Customizing OpenShift Templates
-    - Managing Resources with Limits and Requests
-    - Configuring Auto-scaling with Horizontal Pod Autoscalers (HPA)
-    - Customizing OpenShift SDN
-11. **CI/CD Pipelines**
-    - OpenShift Pipelines with Tekton
-    - Integrating Jenkins with OpenShift
-    - Automating Builds with BuildConfigs
-    - Continuous Delivery Strategies
-12. **OpenShift Service Mesh**
-    - Introduction to Istio and Service Mesh
-    - Configuring OpenShift Service Mesh
-    - Traffic Management with Istio
-    - Monitoring and Tracing with Kiali and Jaeger
-13. **Serverless Computing**
-    - OpenShift Serverless Overview
-    - Deploying Serverless Applications with Knative
-    - Autoscaling Serverless Functions
-14. **Hybrid Cloud and Multi-Cloud Deployments**
-    - OpenShift 4.x Hybrid Cloud Capabilities
-    - Deploying OpenShift Across Multiple Clouds
-    - Managing Multi-Cluster Deployments with ACM
-15. **Troubleshooting and Best Practices**
-    - Common Issues and Fixes
-    - Best Practices for OpenShift Operations
-    - Performance Tuning
+1. **OpenShiftga kirish**
+   - OpenShift nima?
+   - Asosiy xususiyatlar
+   - OpenShift nashrlari
+   - Arxitektura haqida umumiy ma'lumot
+2. **O'rnatish va sozlash**
+   - Tizim talablari
+   - OpenShift o'rnatilmoqda
+   - OpenShift CLI (`oc`) ni sozlash
+   - O'rnatishdan keyingi konfiguratsiya
+3. **Asosiy tushunchalar**
+   - Loyihalar va nomlar maydoni
+   - Podlar, xizmatlar va marshrutlar
+   - Joylashtirishlar va Joylashtirish Konfiguratsiyalari
+   - StatefulSets va DaemonSets
+   - OpenShift tuzilmalari va tasvir oqimlari
+   - ConfigMaps va sirlar
+4. **Foydalanuvchilarni boshqarish**
+   - Foydalanuvchilarni yaratish va boshqarish
+   - Rolga asoslangan kirishni boshqarish (RBAC)
+   - Xizmat hisoblari
+   - Kvotalar va limitlarni boshqarish
+5. **Tarmoq**
+   - OpenShift SDN haqida umumiy ma'lumot
+   - Kirish va chiqish trafikini boshqarish
+   - Marshrutlar va DNS ni sozlash
+   - Pod xavfsizligi uchun tarmoq siyosatlari
+6. **Saqlash**
+   - Doimiy hajmlar va doimiy hajmdagi da'volar
+   - StorageClasss va Dinamik Ta'minot
+   - Holatli ilovalar uchun saqlashni boshqarish
+   - NFS va GlusterFS integratsiyasi
+7. **Xavfsizlik**
+   - OpenShift xavfsizlik kontekst cheklovlari (SCC)
+   - SELinuxni OpenShift bilan ishlatish
+   - TLS yordamida marshrutlarni himoya qilish
+   - OpenShift muvofiqligi va xavfsizlik auditi
+8. **Ilova hayot aylanishini boshqarish**
+   - `oc new-app` yordamida ilovalar yaratish
+   - Ilovalarni joylashtirishni boshqarish
+   - Rolling yangilanishlari va orqaga qaytarishlar
+   - Moviy-yashil va kanareykalarni joylashtirish
+9. **Monitoring va jurnalga yozish**
+   - Prometey va Grafana bilan monitoring
+   - Elasticsearch, Fluentd va Kibana (EFK) bilan jurnal yuritish
+   - Ogohlantirishlar va bildirishnomalarni sozlash
+   - Podlar va konteynerlarni nosozliklarni tuzatish
+10. **Kengaytirilgan konfiguratsiya**
+    - OpenShift shablonlarini sozlash
+    - Cheklovlar va so'rovlar bilan resurslarni boshqarish
+    - Gorizontal Pod Autoscalers (HPA) yordamida avtomatik masshtablashni sozlash
+    - OpenShift SDN ni sozlash
+11. **CI/CD yoli**
+    - Tekton bilan OpenShift yollari
+    - Jenkinsni OpenShift bilan integratsiya qilish
+    - BuildConfigs yordamida qurilishlarni avtomatlashtirish
+    - Uzluksiz yetkazib berish strategiyalari
+12. **OpenShift xizmat ko'rsatish tarmog'i**
+    - Istio va Service Meshga kirish
+    - OpenShift xizmat tarmog'ini sozlash
+    - Istio bilan trafikni boshqarish
+    - Kiali va Jaeger bilan monitoring va kuzatuv
+13. **Serversiz hisoblash**
+    - OpenShift Serversiz Umumiy Tasavvur
+    - Knative yordamida serversiz ilovalarni joylashtirish
+    - Serversiz funksiyalarni avtomatik masshtablash
+14. **Gibrid bulut va ko'p bulutli joylashtirishlar**
+    - OpenShift 4.x gibrid bulut imkoniyatlari
+    - OpenShiftni bir nechta bulutlarga joylashtirish
+    - ACM yordamida ko'p klasterli joylashtirishlarni boshqarish
+15. **Muammolarni bartaraf etish va eng yaxshi amaliyotlar**
+    - Umumiy muammolar va tuzatishlar
+    - OpenShift operatsiyalari uchun eng yaxshi amaliyotlar
+    - Ishlashni sozlash
 16. **FAQs**
-    - Common Questions about OpenShift
-17. **References**
-    - Official Documentation
-    - Community Resources
+    - OpenShift haqida keng tarqalgan savollar
+17. **Manbalar**
+    - Rasmiy hujjatlar
+    - Jamiyat resurslari
 
 ---
 
-## 1. Introduction to OpenShift
+## 1. OpenShiftga kirish
 
-### What is OpenShift?
+### OpenShift nima?
 
-- **OpenShift** is an enterprise Kubernetes platform developed by Red Hat, offering container orchestration, DevOps tools, and a robust ecosystem for developing, deploying, and managing applications at scale.
+- **OpenShift** Red Hat tomonidan ishlab chiqilgan korporativ Kubernetes platformasi bo‘lib, konteyner orkestrini, DevOps vositalarini va keng miqyosda ilovalarni ishlab chiqish, joylashtirish va boshqarish uchun mustahkam ekotizimni taklif etadi.
 
-### Key Features
+### Asosiy xususiyatlar
 
-- **Integrated Developer Tools**: Supports CI/CD pipelines, source-to-image (S2I) builds, and developer environments.
-- **Enterprise Security**: Includes role-based access control (RBAC), network policies, and Security Context Constraints (SCCs).
-- **Scalability**: Auto-scaling features for applications and clusters.
-- **Multi-cloud and Hybrid Cloud**: Deploy and manage applications across multiple cloud environments.
+- **Integratsiyalashgan dasturchi vositalari**: CI/CD quvurlarini, manbadan tasvirga (S2I) tuzilmalarini va dasturchi muhitlarini qo'llab-quvvatlaydi.
+- **Korxona xavfsizligi**: Rolga asoslangan kirishni boshqarish (RBAC), tarmoq siyosati va xavfsizlik kontekst cheklovlarini (SCC) o'z ichiga oladi.
+- **Miqyoslash imkoniyati**: Ilovalar va klasterlar uchun avtomatik masshtablash xususiyatlari.
+- **Ko'p bulutli va gibrid bulut**: Ilovalarni bir nechta bulutli muhitlarda joylashtirish va boshqarish.
 
-### OpenShift Editions
+### OpenShift nashrlari
 
-- **OpenShift Container Platform (OCP)**: The full-featured enterprise version.
-- **OpenShift Online**: Managed OpenShift service hosted by Red Hat.
-- **OpenShift Dedicated**: A managed version of OpenShift Container Platform.
-- **OKD (OpenShift Kubernetes Distribution)**: The open-source, community-supported version.
+- **OpenShift konteyner platformasi (OCP)**: To'liq funksiyali korporativ versiya.
+- **OpenShift Online**: Red Hat tomonidan boshqariladigan OpenShift xizmati.
+- **OpenShift Dedicated**: OpenShift konteyner platformasining boshqariladigan versiyasi.
+- **OKD (OpenShift Kubernetes Distribution)**: Ochiq kodli, hamjamiyat tomonidan qo'llab-quvvatlanadigan versiya.
 
-### Architecture Overview
+### Arxitektura haqida umumiy ma'lumot
 
-- **Master Nodes**: Handle API requests, manage the cluster state, and schedule workloads.
-- **Worker Nodes**: Run the containerized applications, managed by the master nodes.
-- **etcd**: A distributed key-value store that holds the cluster state.
-- **SDN**: OpenShift Software-Defined Networking for managing networking.
+- **Asosiy tugunlar**: API so'rovlarini qayta ishlash, klaster holatini boshqarish va ish yuklamalarini rejalashtirish.
+- **Ishchi tugunlar**: Asosiy tugunlar tomonidan boshqariladigan konteynerlashtirilgan ilovalarni ishga tushiradi.
+- **etcd**: Klaster holatini saqlaydigan taqsimlangan kalit-qiymat ombori.
+- **SDN**: Tarmoqni boshqarish uchun OpenShift dasturiy ta'minoti bilan belgilangan tarmoq.
 
 ---
 
-## 2. Installation and Setup
+## 2. O'rnatish va sozlash
 
-### System Requirements
+### Tizim talablari
 
-- **Operating System**: RHEL, CentOS, or Fedora.
-- **Memory**: Minimum 16 GB RAM for a single-node installation.
-- **Storage**: At least 50 GB of disk space.
-- **CPU**: 4 cores or more.
+- **Operatsion tizim**: RHEL, CentOS yoki Fedora.
+- **Xotira**: Bitta tugunli o'rnatish uchun kamida 16 GB operativ xotira.
+- **Xotira**: Kamida 50 GB disk maydoni.
+- **CPU**: 4 yoki undan ko'p yadro.
 
-### Installing OpenShift
+### OpenShift o'rnatilmoqda
 
-- **Single-node Cluster (CodeReady Containers)**:
+- **Bitta tugunli klaster (CodeReady konteynerlari)**:
 
   ```bash
   crc setup
   crc start
   ```
 
-- **Multi-node Cluster (OpenShift Installer)**:
+- **Ko'p tugunli klaster (OpenShift o'rnatuvchisi)**:
 
   ```bash
   openshift-install create cluster
   ```
 
-### Setting Up OpenShift CLI (`oc`)
+### OpenShift CLI (`oc`) ni sozlash
 
-- **Install `oc` CLI**:
+- **`oc` CLI ni o'rnatish**:
 
   ```bash
   sudo dnf install -y openshift-clients
   ```
 
-- **Login to Cluster**:
+- **Klasterga kirish**:
 
   ```bash
   oc login https://<master-url>:6443 --token=<token>
   ```
 
-### Post-Installation Configuration
+### O'rnatishdan keyingi konfiguratsiya
 
-- **Verify Installation**:
+- **O'rnatishni tasdiqlash**:
 
   ```bash
   oc status
   ```
 
-- **Set up Default Project**:
+- **Standart loyihani sozlash**:
 
   ```bash
   oc new-project <project-name>
@@ -169,93 +169,93 @@
 
 ---
 
-## 3. Basic Concepts
+## 3. Asosiy tushunchalar
 
-### Projects and Namespaces
+### Loyihalar va nomlar fazosi
 
-- **Create a New Project**:
+- **Yangi loyiha yaratish**:
 
   ```bash
   oc new-project myproject
   ```
 
-- **Switch Project**:
+- **Switch loyihasi**:
 
   ```bash
   oc project myproject
   ```
 
-### Pods, Services, and Routes
+### Podlar, xizmatlar va marshrutlar
 
-- **Create a Pod**:
+- **Pod yarating**:
 
   ```bash
   oc run myapp --image=myimage
   ```
 
-- **Expose a Service**:
+- **Xizmatni namoyish qilish**:
 
   ```bash
   oc expose pod myapp --port=8080
   ```
 
-- **Create a Route**:
+- **Yo'nalish yarating**:
 
   ```bash
   oc expose service myapp
   ```
 
-### Deployments and DeploymentConfigs
+### Joylashtirishlar va Joylashtirish Konfiguratsiyalari
 
-- **Create a Deployment**:
+- **Joylashtirishni yaratish**:
 
   ```bash
   oc create deployment myapp --image=myimage
   ```
 
-- **Update a Deployment**:
+- **Joylashtirishni yangilash**:
 
   ```bash
   oc set image deployment/myapp myapp=mynewimage
   ```
 
-### StatefulSets and DaemonSets
+### StatefulSets va DaemonSets
 
-- **Create a StatefulSet**:
+- **StatefulSet yaratish**:
 
   ```bash
   oc create -f statefulset.yaml
   ```
 
-- **Create a DaemonSet**:
+- **DaemonSet yaratish**:
 
   ```bash
   oc create daemonset myds --image=mydaemonimage
   ```
 
-### OpenShift Builds and ImageStreams
+### OpenShift tuzilmalari va tasvir oqimlari
 
-- **Start a Build**:
+- **Qurilishni boshlang**:
 
   ```bash
   oc start-build mybuild
   ```
 
-- **Create an ImageStream**:
+- **ImageStream yaratish**:
 
   ```bash
   oc create imagestream myimage
   ```
 
-### ConfigMaps and Secrets
+### ConfigMaps va sirlari
 
-- **Create a ConfigMap**:
+- **ConfigMap yarating**:
 
   ```bash
   oc create configmap myconfig --from-file=config.yaml
   ```
 
-- **Create a Secret**:
+- **Sir yarating**:
 
   ```bash
   oc create secret generic mysecret --from-literal=password=secret
@@ -263,59 +263,59 @@
 
 ---
 
-## 4. User Management
+## 4. Foydalanuvchilarni boshqarish
 
-### Creating and Managing Users
+### Foydalanuvchilarni yaratish va boshqarish
 
-- **Create a New User**:
+- **Yangi foydalanuvchi yaratish**:
 
   ```bash
   oc create user myuser
   ```
 
-- **Assign a User to a Project**:
+- **Loyihaga foydalanuvchi tayinlash**:
 
   ```bash
   oc adm policy add-role-to-user admin myuser -n myproject
   ```
 
-### Role-Based Access Control (RBAC)
+### Rollarga asoslangan kirishni boshqarish (RBAC)
 
-- **Create a Role**:
+- **Rol yaratish**:
 
   ```bash
   oc create role myrole --verb=get --verb=list --resource=pods
   ```
 
-- **Assign a Role to a User**:
+- **Foydalanuvchiga rol tayinlash**:
 
   ```bash
   oc adm policy add-role-to-user myrole myuser -n myproject
   ```
 
-### Service Accounts
+### Xizmat hisoblari
 
-- **Create a Service Account**:
+- **Xizmat hisobini yaratish**:
 
   ```bash
   oc create serviceaccount myserviceaccount
   ```
 
-- **Assign a Role to a Service Account**:
+- **Xizmat hisobiga rol tayinlash**:
 
   ```bash
   oc adm policy add-cluster-role-to-user cluster-admin -z myserviceaccount
   ```
 
-### Managing Quotas and Limits
+### Kvotalar va limitlarni boshqarish
 
-- **Create a Resource Quota**:
+- **Resurs kvotasini yaratish**:
 
   ```bash
   oc create quota myquota --hard=cpu=2,memory=4Gi -n myproject
   ```
 
-- **Set Limits for a Project**:
+- **Loyiha uchun limitlarni belgilash**:
 
   ```bash
   oc create limitrange mylimits --default=cpu=500m,memory=1Gi -n myproject
@@ -323,37 +323,37 @@
 
 ---
 
-## 5. Networking
+## 5. Tarmoq
 
-### OpenShift SDN Overview
+### OpenShift SDN haqida umumiy ma'lumot
 
-- **Default Network**: OpenShift uses the OpenShift SDN by default, which provides networking capabilities to connect pods and services.
+- **Standart Tarmoq**: OpenShift sukut bo'yicha OpenShift SDN dan foydalanadi, bu esa podlar va xizmatlarni ulash uchun tarmoq imkoniyatlarini taqdim etadi.
 
-### Ingress and Egress Traffic Management
+### Kirish va chiqish trafikini boshqarish
 
-- **Create an Ingress Rule**:
+- **Kirish qoidasini yarating**:
 
   ```bash
   oc create route edge myroute --service=myservice --hostname=myapp.example.com
   ```
 
-### Configuring Routes and DNS
+### Marshrutlar va DNS ni sozlash
 
-- **Create a Route**:
+- **Marshrut yaratish**:
 
   ```bash
   oc expose service myservice --hostname=myapp.example.com
   ```
 
-- **Check Route Status**:
+- **Yo'nalish holatini tekshirish**:
 
   ```bash
   oc get routes
   ```
 
-### NetworkPolicies for Pod Security
+### Pod xavfsizligi uchun tarmoq siyosatlari
 
-- **Create a NetworkPolicy**:
+- **Tarmoq siyosatini yarating**:
 
   ```bash
   oc create -f networkpolicy.yaml
@@ -363,35 +363,35 @@
 
 ## 6
 
-. Storage
+. Saqlash
 
-### Persistent Volumes and Persistent Volume Claims
+### Doimiy hajmlar va doimiy hajmdagi da'volar
 
-- **Create a Persistent Volume**:
+- **Doimiy jild yaratish**:
 
   ```bash
   oc create -f persistentvolume.yaml
   ```
 
-- **Create a Persistent Volume Claim**:
+- **Doimiy hajmdagi da'vo yaratish**:
 
   ```bash
   oc create -f persistentvolumeclaim.yaml
   ```
 
-### StorageClasses and Dynamic Provisioning
+### StorageClasss va Dinamik Ta'minot
 
-- **Create a StorageClass**:
+- **StorageClass yaratish**:
 
   ```bash
   oc create -f storageclass.yaml
   ```
 
-- **Use Dynamic Provisioning**: OpenShift can automatically provision storage based on the StorageClass.
+- **Dinamik ta'minotdan foydalaning**: OpenShift StorageClass asosida avtomatik ravishda xotirani ta'minlay oladi.
 
-### Managing Storage for Stateful Applications
+### Holatli ilovalar uchun saqlashni boshqarish
 
-- **Assign a Persistent Volume to a StatefulSet**:
+- **Holatli to'plamga doimiy jildni tayinlang**:
 
   ```yaml
   volumeClaimTemplates:
@@ -405,134 +405,134 @@
           storage: 1Gi
   ```
 
-### NFS and GlusterFS Integration
+### NFS va GlusterFS integratsiyasi
 
-- **Use NFS**: Set up NFS as a storage backend and create PersistentVolumes with NFS settings.
-- **Use GlusterFS**: Deploy a GlusterFS cluster and configure OpenShift to use it as a storage backend.
+- **NFS dan foydalanish**: NFS ni saqlash serveri sifatida sozlang va NFS sozlamalari bilan PersistentVolumes yarating.
+- **GlusterFS dan foydalaning**: GlusterFS klasterini joylashtiring va OpenShift ni uni saqlash serveri sifatida ishlatish uchun sozlang.
 
 ---
 
-## 7. Security
+## 7. Xavfsizlik
 
-### OpenShift Security Context Constraints (SCCs)
+### OpenShift xavfsizlik kontekst cheklovlari (SCC)
 
-- **View Available SCCs**:
+- **Mavjud SCClarni ko'rish**:
 
   ```bash
   oc get scc
   ```
 
-- **Assign an SCC to a Service Account**:
+- **Xizmat hisobiga SCC tayinlang**:
 
   ```bash
   oc adm policy add-scc-to-user privileged -z myserviceaccount -n myproject
   ```
 
-### Using SELinux with OpenShift
+### SELinuxni OpenShift bilan ishlatish
 
-- **Enable SELinux**:
+- **SELinuxni yoqish**:
 
   ```bash
   setenforce 1
   ```
 
-- **Configure SELinux for OpenShift**: Ensure the correct SELinux policies are in place for OpenShift.
+- **OpenShift uchun SELinux ni sozlash**: OpenShift uchun to'g'ri SELinux siyosatlari o'rnatilganligiga ishonch hosil qiling.
 
-### Securing Routes with TLS
+### TLS yordamida marshrutlarni himoyalash
 
-- **Create a TLS Route**:
+- **TLS marshrutini yaratish**:
 
   ```bash
   oc create route edge myroute --service=myservice --cert=tls.crt --key=tls.key --ca-cert=ca.crt
   ```
 
-### OpenShift Compliance and Security Audits
+### OpenShift muvofiqligi va xavfsizlik auditi
 
-- **Run a Security Scan**:
+- **Xavfsizlik tekshiruvini ishga tushiring**:
 
   ```bash
   oc adm diagnostics security
   ```
 
-- **Compliance Operator**: Use OpenShift's Compliance Operator to automate security compliance checks.
+- **Muvofiqlik operatori**: Xavfsizlikka muvofiqlikni tekshirishni avtomatlashtirish uchun OpenShift'ning Muvofiqlik operatoridan foydalaning.
 
 ---
 
-## 8. Application Lifecycle Management
+## 8. Ilova hayot aylanishini boshqarish
 
-### Creating Applications using `oc new-app`
+### `oc new-app` yordamida ilovalar yaratish
 
-- **Create an Application from a Git Repository**:
+- **Git omboridan ilova yaratish**:
 
   ```bash
   oc new-app https://github.com/myorg/myrepo.git --name=myapp
   ```
 
-### Managing Application Deployments
+### Ilovalarni joylashtirishni boshqarish
 
-- **Create a DeploymentConfig**:
+- **Joylashtirish konfiguratsiyasini yaratish**:
 
   ```bash
   oc create -f deploymentconfig.yaml
   ```
 
-- **Trigger a New Deployment**:
+- **Yangi joylashtirishni ishga tushirish**:
 
   ```bash
   oc rollout latest dc/myapp
   ```
 
-### Rolling Updates and Rollbacks
+### Rolling yangilanishlari va qaytarishlar
 
-- **Perform a Rolling Update**:
+- **Rolling yangilanishini amalga oshirish**:
 
   ```bash
   oc set image dc/myapp myapp=mynewimage
   ```
 
-- **Rollback to a Previous Version**:
+- **Oldingi versiyaga qaytish**:
 
   ```bash
   oc rollout undo dc/myapp
   ```
 
-### Blue-Green and Canary Deployments
+### Moviy-yashil va kanareykalarni joylashtirish
 
-- **Blue-Green Deployment**: Create two separate environments (blue and green) and switch traffic between them using routes.
-- **Canary Deployment**: Gradually shift traffic to a new version using multiple routes and services.
+- **Moviy-yashil joylashtirish**: Ikkita alohida muhitni (ko'k va yashil) yarating va marshrutlar yordamida ular o'rtasida trafikni almashtiring.
+- **Kanareykalarni joylashtirish**: Bir nechta marshrutlar va xizmatlardan foydalangan holda trafikni asta-sekin yangi versiyaga o'tkazish.
 
 ---
 
-## 9. Monitoring and Logging
+## 9. Monitoring va jurnalga yozish
 
-### Monitoring with Prometheus and Grafana
+### Prometheus va Grafana bilan monitoring
 
-- **Access Prometheus**: Typically available at `<openshift-master>:9090`.
-- **Access Grafana**: Access via the OpenShift Web Console under Monitoring > Dashboards.
+- **Prometheusga kirish**: Odatda `<openshift-master>:9090` manzilida mavjud.
+- **Grafanaga kirish**: Monitoring > Boshqaruv panellari ostidagi OpenShift veb-konsoli orqali kirish.
 
-### Logging with Elasticsearch, Fluentd, and Kibana (EFK)
+### Elasticsearch, Fluentd va Kibana (EFK) yordamida jurnal yuritish
 
-- **View Logs in Kibana**: Access Kibana via the OpenShift Web Console.
-- **Search Logs**:
+- **Kibana’da jurnallarni ko‘rish**: OpenShift veb-konsoli orqali Kibana’ga kirish.
+- **Jurnallarni qidirish**:
 
   ```bash
   oc logs -f <pod-name>
   ```
 
-### Setting Up Alerts and Notifications
+### Ogohlantirishlar va bildirishnomalarni sozlash
 
-- **Configure Alerts in Prometheus**: Set up alerting rules in Prometheus.
-- **Integrate with Notification Channels**: Use Alertmanager to send notifications to channels like Slack, email, etc.
+- **Prometheusda ogohlantirishlarni sozlash**: Prometheusda ogohlantirish qoidalarini o'rnatish.
+- **Xabarnoma kanallari bilan integratsiya**: Slack, elektron pochta va boshqalar kabi kanallarga bildirishnomalarni yuborish uchun Alertmanagerdan foydalaning.
 
-### Debugging Pods and Containers
+### Podlar va konteynerlarni nosozliklarni tuzatish
 
-- **Get Pod Logs**:
+- **Pod jurnallarini olish**:
 
   ```bash
   oc logs <pod-name>
   ```
 
-- **Execute Commands in a Running Pod**:
+- **Ishlayotgan podda buyruqlarni bajarish**:
 
   ```bash
   oc exec -it <pod-name> -- /bin/bash
@@ -540,25 +540,25 @@
 
 ---
 
-## 10. Advanced Configuration
+## 10. Kengaytirilgan konfiguratsiya
 
-### Customizing OpenShift Templates
+### OpenShift shablonlarini sozlash
 
-- **Create a New Template**:
+- **Yangi shablon yaratish**:
 
   ```bash
   oc create -f template.yaml
   ```
 
-- **Instantiate a Template**:
+- **Shablon yaratish**:
 
   ```bash
   oc process -f template.yaml | oc create -f -
   ```
 
-### Managing Resources with Limits and Requests
+### Resurslarni limitlar va so'rovlar bilan boshqarish
 
-- **Set Resource Limits**:
+- **Resurs limitlarini belgilash**:
 
   ```yaml
   resources:
@@ -570,100 +570,100 @@
       cpu: "500m"
   ```
 
-### Configuring Auto-scaling with Horizontal Pod Autoscalers (HPA)
+### Gorizontal Pod Autoscalers (HPA) yordamida avtomatik masshtablashni sozlash
 
-- **Create an HPA**:
+- **HPA yaratish**:
 
   ```bash
   oc autoscale dc/myapp --min=1 --max=10 --cpu-percent=80
   ```
 
-### Customizing OpenShift SDN
+### OpenShift SDN ni sozlash
 
-- **Configure SDN**: Modify the SDN configuration through the OpenShift Web Console or by editing the SDN-related resources.
+- **SDN ni sozlash**: SDN konfiguratsiyasini OpenShift veb-konsoli orqali yoki SDN bilan bog'liq resurslarni tahrirlash orqali o'zgartirish.
 
 ---
 
-## 11. CI/CD Pipelines
+## 11. CI/CD quvurlari
 
-### OpenShift Pipelines with Tekton
+### Tekton bilan OpenShift quvurlari
 
-- **Install Tekton**:
+- **Tektonni o'rnatish**:
 
   ```bash
   oc apply -f tekton-pipelines.yaml
   ```
 
-- **Create a Tekton Pipeline**:
+- **Tekton quvur liniyasini yaratish**:
 
   ```bash
   oc create -f pipeline.yaml
   ```
 
-### Integrating Jenkins with OpenShift
+### Jenkinsni OpenShift bilan integratsiya qilish
 
-- **Deploy Jenkins**:
+- **Jenkinsni joylashtirish**:
 
   ```bash
   oc new-app jenkins-ephemeral
   ```
 
-- **Create a Jenkins Pipeline**:
+- **Jenkins quvur liniyasini yarating**:
 
   ```bash
   oc create -f jenkins-pipeline.yaml
   ```
 
-### Automating Builds with BuildConfigs
+### BuildConfigs yordamida qurilishlarni avtomatlashtirish
 
-- **Create a BuildConfig**:
+- **BuildConfig yarating**:
 
   ```bash
   oc create -f buildconfig.yaml
   ```
 
-- **Trigger a Build**:
+- **Yig'ishni ishga tushirish**:
 
   ```bash
   oc start-build mybuildconfig
   ```
 
-### Continuous Delivery Strategies
+### Uzluksiz yetkazib berish strategiyalari
 
-- **Implement CI/CD with Jenkins**: Create pipelines in Jenkins integrated with OpenShift to manage the full application lifecycle.
-- **Use Tekton for GitOps**: Automate deployments using GitOps principles with Tekton pipelines.
+- **Jenkins bilan CI/CD ni amalga oshirish**: Jenkinsda OpenShift bilan integratsiyalashgan holda dasturning butun hayot aylanishini boshqarish uchun quvurlarni yaratish.
+- **GitOps uchun Tektondan foydalaning**: Tekton quvurlari yordamida GitOps tamoyillaridan foydalangan holda joylashtirishlarni avtomatlashtiring.
 
 ---
 
-## 12. OpenShift Service Mesh
+## 12. OpenShift xizmat ko'rsatish tarmog'i
 
-### Introduction to Istio and Service Mesh
+### Istio va xizmat ko'rsatish tarmog'iga kirish
 
-- **Service Mesh Overview**: OpenShift Service Mesh is based on Istio, providing traffic management, security, and observability for microservices.
+- **Service Mesh haqida umumiy ma'lumot**: OpenShift Service Mesh Istio-ga asoslangan bo'lib, mikroservislar uchun trafikni boshqarish, xavfsizlik va kuzatuvni ta'minlaydi.
 
-### Configuring OpenShift Service Mesh
+### OpenShift xizmat ko'rsatish tarmog'ini sozlash
 
-- **Install Service Mesh Components**:
+- **Xizmat ko'rsatish tarmog'i komponentlarini o'rnatish**:
 
   ```bash
   oc apply -f servicemesh-install.yaml
   ```
 
-- **Create a Service Mesh Control Plane**:
+- **Xizmat ko'rsatish tarmog'ini boshqarish tekisligini yarating**:
 
   ```bash
   oc apply -f controlplane.yaml
   ```
 
-### Traffic Management with Istio
+### Istio bilan trafikni boshqarish
 
-- **Create a VirtualService**:
+- **Virtual xizmat yarating**:
 
   ```bash
   oc create -f virtualservice.yaml
   ```
 
-- **Configure Traffic Splitting**:
+- **Trafikni ajratishni sozlash**:
 
   ```yaml
   http:
@@ -678,30 +678,30 @@
       weight: 50
   ```
 
-### Monitoring and Tracing with Kiali and Jaeger
+### Kiali va Jaeger bilan monitoring va kuzatuv
 
-- **Access Kiali**: Typically available via the OpenShift Web Console under the Service Mesh section.
-- **Use Jaeger for Tracing**: View distributed traces for microservices in Jaeger.
+- **Kirish Kiali**: Odatda OpenShift veb-konsoli orqali Service Mesh bo'limida mavjud.
+- **Kuzatuv uchun Jaegerdan foydalaning**: Jaegerda mikroservislar uchun taqsimlangan kuzatuvlarni ko'rish.
 
 ---
 
-## 13. Serverless Computing
+## 13. Serversiz hisoblash
 
-### OpenShift Serverless Overview
+### OpenShift Serversiz Umumiy Tasavvur
 
-- **Knative on OpenShift**: OpenShift Serverless is built on Knative, providing serverless capabilities for deploying functions and apps that scale to zero.
+- **OpenShiftdagi Knative**: OpenShift Serverless Knative asosida yaratilgan bo'lib, nolga tenglashtirilgan funksiyalar va ilovalarni joylashtirish uchun serversiz imkoniyatlarni taqdim etadi.
 
-### Deploying Serverless Applications with Knative
+### Knative yordamida serversiz ilovalarni joylashtirish
 
-- **Create a Knative Service**:
+- **Knative xizmatini yarating**:
 
   ```bash
   oc create -f knative-service.yaml
   ```
 
-### Autoscaling Serverless Functions
+### Serversiz avtomatik masshtablash funksiyalari
 
-- **Configure Autoscaling**:
+- **Avtomatik masshtablashni sozlash**:
 
   ```yaml
   spec:
@@ -712,75 +712,75 @@
 
 ---
 
-## 14. Hybrid Cloud and Multi-Cloud Deployments
+## 14. Gibrid bulut va ko'p bulutli joylashtirishlar
 
-### OpenShift 4.x Hybrid Cloud Capabilities
+### OpenShift 4.x gibrid bulut imkoniyatlari
 
-- **Deploy on Multiple Clouds**: OpenShift supports deployment across AWS, Azure, GCP, and on-premise environments.
+- **Bir nechta bulutlarda joylashtirish**: OpenShift AWS, Azure, GCP va mahalliy muhitlarda joylashtirishni qo'llab-quvvatlaydi.
 
-### Deploying OpenShift Across Multiple Clouds
+### OpenShiftni bir nechta bulutlar bo'ylab joylashtirish
 
-- **Use Red Hat Advanced Cluster Management (ACM)**: Manage multiple OpenShift clusters across different environments.
-- **Configure Multi-Cloud Deployments**: Use ACM to deploy applications across multiple OpenShift clusters.
+- **Red Hat Advanced Cluster Management (ACM) dan foydalaning**: Turli muhitlarda bir nechta OpenShift klasterlarini boshqaring.
+- **Ko'p bulutli joylashtirishlarni sozlash**: Ilovalarni bir nechta OpenShift klasterlariga joylashtirish uchun ACM dan foydalaning.
 
-### Managing Multi-Cluster Deployments with ACM
+### ACM yordamida ko'p klasterli joylashtirishlarni boshqarish
 
-- **Install ACM**:
+- **ACM ni o'rnatish**:
 
   ```bash
   oc apply -f acm-install.yaml
   ```
 
-- **Manage Multiple Clusters**: Use ACM to oversee the health, configuration, and workload management across multiple clusters.
+- **Bir nechta klasterlarni boshqarish**: Bir nechta klasterlardagi sog'liqni saqlash, konfiguratsiya va ish yukini boshqarishni nazorat qilish uchun ACM dan foydalaning.
 
 ---
 
-## 15. Troubleshooting and Best Practices
+## 15. Muammolarni bartaraf etish va eng yaxshi amaliyotlar
 
-### Common Issues and Fixes
+### Umumiy muammolar va ularni hal qilish yo'llari
 
-- **Debugging Pods**:
+- **Nosozliklarni tuzatish podlari**:
 
   ```bash
   oc describe pod <pod-name>
   ```
 
-- **Network Issues**: Check the status of routes and network policies.
+- **Tarmoq muammolari**: Marshrutlar va tarmoq siyosatlarining holatini tekshiring.
 
-### Best Practices for OpenShift Operations
+### OpenShift operatsiyalari uchun eng yaxshi amaliyotlar
 
-- **Use RBAC**: Ensure role-based access control is correctly implemented to limit access.
-- **Monitor Resource Usage**: Use monitoring tools to keep an eye on resource usage and scaling needs.
+- **RBAC dan foydalaning**: Kirishni cheklash uchun rolga asoslangan kirishni boshqarish to'g'ri amalga oshirilganligiga ishonch hosil qiling.
+- **Resurslardan foydalanishni kuzatish**: Resurslardan foydalanish va masshtablash ehtiyojlarini kuzatib borish uchun monitoring vositalaridan foydalaning.
 
-### Performance Tuning
+### Ishlashni sozlash
 
-- **Optimize Resource Requests and Limits**: Set appropriate limits and requests for CPU and memory to avoid over-provisioning.
-- **Tune SDN**: Adjust SDN configurations for optimal network performance.
-
----
-
-## 16. FAQs
-
-
-
-### Common Questions about OpenShift
-
-- **What is the difference between OpenShift and Kubernetes?**
-  - OpenShift is an enterprise Kubernetes platform with additional features like integrated CI/CD, developer tools, and enterprise security.
-
-- **How do I upgrade OpenShift?**
-  - Upgrading OpenShift involves using the OpenShift CLI or the Web Console to initiate a cluster upgrade.
+- **Resurs so'rovlari va limitlarini optimallashtirish**: Ortiqcha ta'minotni oldini olish uchun protsessor va xotira uchun tegishli limitlar va so'rovlarni o'rnating.
+- **SDN ni sozlash**: Tarmoqning optimal ishlashi uchun SDN konfiguratsiyalarini sozlang.
 
 ---
 
-## 17. References
+## 16. Tez-tez so'raladigan savollar
 
-### Official Documentation
 
-- [OpenShift Documentation](https://docs.openshift.com/)
+
+### OpenShift haqida keng tarqalgan savollar
+
+- **OpenShift va Kubernetes o'rtasidagi farq nima?**
+  - OpenShift - bu integratsiyalashgan CI/CD, ishlab chiquvchi vositalari va korxona xavfsizligi kabi qo'shimcha funksiyalarga ega korporativ Kubernetes platformasi.
+
+- **OpenShiftni qanday yangilayman?**
+  - OpenShiftni yangilash klaster yangilanishini boshlash uchun OpenShift CLI yoki veb-konsolidan foydalanishni o'z ichiga oladi.
+
+---
+
+## 17. Adabiyotlar
+
+### Rasmiy hujjatlar
+
+- [OpenShift Hujjatlar](https://docs.openshift.com/)
 - [Red Hat OpenShift Blog](https://cloud.redhat.com/blog/)
 
-### Community Resources
+### Jamiyat resurslari
 
-- [OpenShift Commons](https://commons.openshift.org/)
+- [OpenShift Umumiy](https://commons.openshift.org/)
 - [Red Hat Developer](https://developers.redhat.com/)
