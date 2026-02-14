@@ -2,66 +2,66 @@
 
 ![text](https://imgur.com/nDW9BHK.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- **Helm** is a package manager for Kubernetes, helping you define, install, and upgrade even the most complex Kubernetes applications. It uses charts to package Kubernetes resources.
+- **Helm** Kubernetes uchun paket menejeri bo'lib, sizga hatto eng murakkab Kubernetes ilovalarini aniqlash, o'rnatish va yangilashda yordam beradi. Kubernetes resurslarini paketlash uchun jadvallardan foydalanadi.
 
-**2. Key Concepts:**
+**2. Asosiy tushunchalar:**
 
-- **Chart:** A collection of files that describe a set of Kubernetes resources.
-- **Release:** An instance of a chart running in a Kubernetes cluster.
-- **Repository:** A place where charts can be collected and shared.
+- **Grafik:** Kubernetes resurslari to'plamini tavsiflovchi fayllar to'plami.
+- **Chiqarilish sanasi:** Kubernetes klasterida ishlaydigan diagrammaning namunasi.
+- **Omborxona:** Diagrammalarni to'plash va ulashish mumkin bo'lgan joy.
 
-**3. Installing Helm:**
+**3. Dubulg'ani o'rnatish:**
 
-- **Helm Installation:**
+- **Dulg'ani o'rnatish:**
 
   ```bash
   curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
   ```
 
-- **Add a Helm Repository:**
+- **Helm omborini qo'shish:**
 
   ```bash
   helm repo add stable https://charts.helm.sh/stable
   helm repo update
   ```
 
-**4. Helm Commands:**
+**4. Dubulg'a buyruqlari:**
 
-- **Install a Chart:**
+- **Jadval o'rnatish:**
 
   ```bash
   helm install my-release stable/nginx
   ```
 
-- **List Releases:**
+- **Chiqarilganlar ro'yxati:**
 
   ```bash
   helm list
   ```
 
-- **Upgrade a Release:**
+- **Relizni yangilash:**
 
   ```bash
   helm upgrade my-release stable/nginx
   ```
 
-- **Uninstall a Release:**
+- **Relizni o'chirish:**
 
   ```bash
   helm uninstall my-release
   ```
 
-- **Search for Charts:**
+- **Grafiklarni qidirish:**
 
   ```bash
   helm search repo nginx
   ```
 
-**5. Chart Structure:**
+**5. Grafik tuzilishi:**
 
-- **Basic Chart Structure:**
+- **Asosiy grafik tuzilishi:**
 
   ```
   my-chart/
@@ -83,7 +83,7 @@
   version: 0.1.0
   ```
 
-- **values.yaml:**
+- **qiymatlar.yaml:**
 
   ```yaml
   replicaCount: 3
@@ -92,7 +92,7 @@
     tag: stable
   ```
 
-- **Template Example (deployment.yaml):**
+- **Andoza namunasi (joylashtirish.yaml):**
 
   ```yaml
   apiVersion: apps/v1
@@ -114,44 +114,44 @@
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
   ```
 
-**6. Helm Lifecycle:**
+**6. Rulet hayot aylanishi:**
 
-- **Creating a New Chart:**
+- **Yangi jadval yaratish:**
 
   ```bash
   helm create my-chart
   ```
 
-- **Templating:**
-  - **List all template values:**
+- **Shablon yaratish:**
+- **Barcha shablon qiymatlarini ro'yxatlash:**
 
     ```bash
     helm template my-release my-chart
     ```
   
-  - **Lint a Chart:**
+  - **Jadvalni chizish:**
 
     ```bash
     helm lint my-chart
     ```
 
-**7. Helm Repositories:**
+**7. Helm omborlari:**
 
-- **Creating a Local Helm Repository:**
+- **Mahalliy Helm omborini yaratish:**
 
   ```bash
   helm repo index ./charts --url http://example.com/charts
   ```
   
-- **Serving Charts:**
+- **Porsiya jadvallari:**
 
   ```bash
   helm serve --address 0.0.0.0:8879
   ```
 
-**8. Helm Hooks:**
+**8. Dubulg'a ilgaklari:**
 
-- **Example of a Pre-Install Hook:**
+- **O'rnatishdan oldin ilgakning namunasi:**
 
   ```yaml
   apiVersion: batch/v1
@@ -170,9 +170,9 @@
         restartPolicy: Never
   ```
 
-**9. Helm and CI/CD:**
+**9. Helm va CI/CD:**
 
-- **Using Helm in Jenkins Pipeline:**
+- **Jenkins quvur liniyasida Helmdan foydalanish:**
 
   ```groovy
   pipeline {
@@ -189,39 +189,39 @@
   }
   ```
 
-**10. Advanced Helm Concepts:**
+**10. Murakkab Dubulg'a Konsepsiyalari:**
 
-- **Subcharts:** Use subcharts to package related Kubernetes resources together.
-- **Chart Museum:** Helm repository server to store and manage Helm charts.
-- **Helmfile:** A declarative spec for deploying Helm charts.
+- **Subchartlar:** Tegishli Kubernetes resurslarini birgalikda paketlash uchun subchartlardan foydalaning.
+- **Charts Museum:** Helm diagrammalarini saqlash va boshqarish uchun Helm ombori serveri.
+- **Helmfile:** Helm jadvallarini joylashtirish uchun deklarativ spetsifikatsiya.
 
-**11. Helm Security:**
+**11. Dubulg'a xavfsizligi:**
 
-- **Chart Signing:**
-  - Sign and verify Helm charts to ensure integrity.
+- **Chart imzolash:**
+- Butunlikni ta'minlash uchun Helm jadvallarini imzolang va tasdiqlang.
 
   ```bash
   helm package --sign --key <key> --keyring <keyring> my-chart
   helm verify my-chart-0.1.0.tgz
   ```
 
-- **RBAC:** Control access to Helm releases with Kubernetes RBAC.
+- **RBAC:** Kubernetes RBAC yordamida Helm relizlariga kirishni boshqarish.
 
-**12. Troubleshooting Helm:**
+**12. Muammolarni bartaraf etish bo'yicha yordamchi dastur:**
 
-- **Debugging a Chart Installation:**
+- **Grafik o'rnatishda xatolarni tuzatish:**
 
   ```bash
   helm install --debug --dry-run my-release ./my-chart
   ```
 
-- **Checking Helm Release History:**
+- **Helmning chiqarilish tarixini tekshirish:**
 
   ```bash
   helm history my-release
   ```
 
-- **Rollback a Release:**
+- **Relizni qaytarish:**
 
   ```bash
   helm rollback my-release 1
