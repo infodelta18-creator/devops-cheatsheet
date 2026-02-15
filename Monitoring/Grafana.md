@@ -2,20 +2,20 @@
 
 ![text](https://imgur.com/j07r4L6.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- **Grafana** is an open-source platform for monitoring and observability that allows you to query, visualize, and alert on metrics from multiple data sources like Prometheus, InfluxDB, Elasticsearch, and more.
+- **Grafana** - bu Prometheus, InfluxDB, Elasticsearch va boshqalar kabi bir nechta ma'lumotlar manbalaridan olingan ko'rsatkichlarni so'rash, vizualizatsiya qilish va ogohlantirish imkonini beruvchi ochiq manbali monitoring va kuzatish platformasi.
 
-**2. Key Concepts:**
+**2. Asosiy tushunchalar:**
 
-- **Dashboard:** A collection of panels organized into a grid.
-- **Panel:** A visualization of data (graphs, charts, etc.) from a specific data source.
-- **Data Source:** The database or service that provides the metrics for Grafana to visualize.
-- **Alerting:** Set up conditions to trigger notifications when metrics meet specific criteria.
+- **Boshqaruv paneli:** Tarmoqqa joylashtirilgan panellar to'plami.
+- **Panel:** Muayyan ma'lumotlar manbasidan olingan ma'lumotlarning vizualizatsiyasi (grafiklar, diagrammalar va boshqalar).
+- **Ma'lumotlar manbai:** Grafana vizualizatsiya qilish uchun ko'rsatkichlarni taqdim etadigan ma'lumotlar bazasi yoki xizmat.
+- **Ogohlantirish:** Metrikalar muayyan mezonlarga javob berganda bildirishnomalarni ishga tushirish shartlarini o'rnating.
 
-**3. Installation:**
+**3. O'rnatish:**
 
-- **Running Grafana:**
+- **Grafanani ishga tushirish:**
 
   ```bash
   sudo apt-get install -y adduser libfontconfig1
@@ -31,87 +31,88 @@
   docker run -d -p 3000:3000 --name=grafana grafana/grafana
   ```
 
-**4. Configuring Data Sources:**
+**4. Ma'lumot manbalarini sozlash:**
 
-- **Adding Prometheus as a Data Source:**
-  1. Navigate to **Configuration > Data Sources**.
-  2. Click on **Add data source** and select **Prometheus**.
-  3. Enter the URL of your Prometheus server (e.g., `http://localhost:9090`).
-  4. Click **Save & Test** to verify the connection.
+- **Prometheusni ma'lumot manbai sifatida qo'shish:**
+  1. **Konfiguratsiya > Ma'lumotlar manbalari** ga o'ting.
+  2. Bosing **Add data source** va tanlang **Prometheus**.
+  3. Prometheus serveringizning URL manzilini kiriting (e.g., `http://localhost:9090`).
+  4. Bosing **Save & Test** ulanishni tekshirish uchun.
 
-- **Adding Elasticsearch as a Data Source:**
-  1. Navigate to **Configuration > Data Sources**.
-  2. Click on **Add data source** and select **Elasticsearch**.
-  3. Enter the URL, index name, and time field.
-  4. Click **Save & Test** to verify the connection.
+- **Elasticsearch’ni ma’lumot manbai sifatida qo‘shish:**
+  1. Navigatsiya qiling **Configuration > Data Sources**.
+  2. Bosing **Add data source** va tanlang **Elasticsearch**.
+  3. URL manzilini, indeks nomini va vaqt maydonini kiriting.
+  4. Bosing **Save & Test** ulanishni tekshirish uchun.
 
-**5. Building Dashboards:**
+**5. Qurilish boshqaruv panellari (Building Dashboards):**
 
-- **Creating a New Dashboard:**
-  1. Click the **+** icon in the sidebar and select **Dashboard**.
-  2. Click **Add new panel**.
-  3. Choose your data source and write a query (e.g., `rate(http_requests_total[5m])` for Prometheus).
-  4. Select a visualization type (e.g., **Graph**, **Stat**, **Gauge**).
-  5. Save the panel and the dashboard.
+- **Yangi boshqaruv paneli yaratish:**
+  1. Bosing **+** yon paneldagi belgini bosing va tanlang **Dashboard**.
+  2. Bosing **Add new panel**.
+  3. Ma'lumotlar manbasini tanlang va so'rov yozing (masalan, Prometheus uchun `rate(http_requests_total[5m])`).
+  4. Vizualizatsiya turini tanlang (masalan, **Graph**, **Stat**, **Gauge**).
+  5. Panelni va boshqaruv panelini saqlang.
 
-- **Using Variables:**
-  - **Creating a Variable:**
-    1. Go to **Dashboard settings** > **Variables** > **New**.
-    2. Set the **Name**, **Type** (e.g., **Query**), and **Query**.
-    3. Use the variable in panel queries by referencing it as **`$variable_name`**.
+- **Foydalanish Variables:**
+  - **Variable yaratish:**
+    1. Boring **Dashboard settings** > **Variables** > **New**.
+    2. **Ism**, **Tur** (masalan, **So'rov**) va **So'rov** ni o'rnating.
+    3. Panel so'rovlarida o'zgaruvchidan **`$variable_name`** sifatida foydalaning.
 
-**6. Alerting:**
+**6. Ogohlantirish (Alerting):**
+ 
+- **Ogohlantirishlar yaratish:**
 
-- **Creating Alerts:**
+  1. Boshqaruv paneliga panel qo'shing.
+  2. Ichida **Alert** yorliq, bosing **Create Alert**.
+  3. O'rnating **Conditions** ogohlantirishni ishga tushirish uchun (masalan, metrik chegaradan o'tganda).
+  4. Aniqlang **Evaluation Interval** va **No Data** variantlar.
+  5. Elektron pochta, Slack yoki boshqa kanallar orqali bildirishnomalar yuborish uchun **Notifications** ni sozlang.
 
-  1. Add a panel to your dashboard.
-  2. In the **Alert** tab, click **Create Alert**.
-  3. Set the **Conditions** for triggering the alert (e.g., when a metric crosses a threshold).
-  4. Define the **Evaluation Interval** and **No Data** options.
-  5. Configure **Notifications** to send alerts via email, Slack, or other channels.
+- **Ogohlantirishlarni boshqarish:**
+  - Ogohlantirishlarni yon paneldagi **Ogohlantirish** bo'limi orqali markaziy ravishda boshqarish mumkin.
 
-- **Managing Alerts:**
-  - Alerts can be managed centrally through the **Alerting** section in the sidebar.
+**7. Grafana plaginlari:**
 
-**7. Grafana Plugins:**
-
-- **Installing Plugins:**
+- **Plaginlarni o'rnatish:**
 
   ```bash
   grafana-cli plugins install grafana-piechart-panel
   sudo systemctl restart grafana-server
   ```
 
-- **Popular Plugins:**
-  - **Pie Chart Panel:** Display metrics in a pie chart.
-  - **Worldmap Panel:** Visualize data on a world map.
-  - **Alert List Panel:** Display active alerts from multiple sources.
+- **Ommabop plaginlar:**
+  - **Pie Chart Panel:** Ko'rsatkichlarni doira shaklidagi diagrammada ko'rsatish.
+  - **Worldmap Panel:** Dunyo xaritasida ma'lumotlarni vizualizatsiya qiling.
+  - **Alert List Panel:** Bir nechta manbalardan faol ogohlantirishlarni ko'rsatish.
 
-**8. Dashboard Templating:**
+**8. Boshqaruv paneli shabloni:**
 
-- **Using Templated Dashboards:**
-  - Leverage variables to create dynamic dashboards that can change based on user input.
+- **Shablonlangan boshqaruv panellaridan foydalanish:**
+  - Foydalanuvchi kiritishiga qarab o'zgarishi mumkin bo'lgan dinamik boshqaruv panellarini yaratish uchun o'zgaruvchilardan foydalaning.
 
-- **Dynamic Panels:**
-  - Create repeating panels or rows based on variable values (e.g., show metrics per host).
+- **Dinamik panellar:**
+  - O'zgaruvchan qiymatlar asosida takrorlanadigan panellar yoki qatorlar yarating (masalan, har bir xost uchun ko'rsatkichlarni ko'rsatish).
 
-**9. Customizing Grafana:**
+**9. Grafanani sozlash:**
 
-- **Themes:**
-  - Switch between light and dark themes via **Preferences** in the dashboard settings.
+- **Mavzular:**
+  - Boshqaruv paneli sozlamalarida **Preferences** orqali yorug' va qorong'i mavzular o'rtasida almashinish mumkin.
 
-- **Custom Branding:**
-  - Modify Grafana's appearance by adding custom logos and colors. Requires editing configuration files and CSS.
 
-**10. Securing Grafana:**
+- **Maxsus brending:**
+  - Maxsus logotiplar va ranglarni qo'shish orqali Grafana ko'rinishini o'zgartiring. Konfiguratsiya fayllari va CSS-ni tahrirlashni talab qiladi.
 
-- **User Management:**
-  - Add users and assign them roles such as Viewer, Editor, or Admin.
+**10. Grafanani himoya qilish:**
 
-- **LDAP/SSO Integration:**
-  - Configure Grafana to use LDAP or Single Sign-On (SSO) for user authentication.
+- **Foydalanuvchi boshqaruvi:**
+  - Foydalanuvchilarni qo'shing va ularga Tomoshabin, Muharrir yoki Administrator kabi rollarni tayinlang.
 
-- **Enabling HTTPS:**
+- **LDAP/SSO integratsiyasi:**
+  - Grafana’ni foydalanuvchi autentifikatsiyasi uchun LDAP yoki bitta kirish (SSO) dan foydalanish uchun sozlang.
+
+- **HTTPSni yoqish:**
 
   ```yaml
   [server]
@@ -120,31 +121,31 @@
   cert_key = /path/to/cert.key
   ```
 
-**11. Advanced Queries and Visualizations:**
+**11. Murakkab so'rovlar va vizualizatsiyalar:**
 
-- **Grafana with PromQL:**
-  - Use advanced PromQL queries for more complex visualizations.
+- **PromQL bilan Grafana:**
+  - Murakkabroq vizualizatsiyalar uchun ilg'or PromQL so'rovlaridan foydalaning.
 
-- **Annotations:**
-  - Add annotations to mark specific events on graphs, useful for correlating issues with changes or incidents.
+- **Izohlar:**
+  - Grafiklardagi muayyan hodisalarni belgilash uchun izohlar qo'shing, bu muammolarni o'zgarishlar yoki hodisalar bilan bog'lash uchun foydalidir.
 
 **12. Grafana Loki:**
 
-- **Introduction to Loki:**
-  - Grafana Loki is a horizontally scalable, highly available log aggregation system inspired by Prometheus.
+- **Loki bilan tanishish:**
+  - Grafana Loki - bu Prometeydan ilhomlanib, gorizontal ravishda masshtablanadigan, yuqori darajada mavjud bo'lgan log agregatsiyasi tizimi.
 
-- **Setting up Loki:**
+- **Loki-ni sozlash:**
 
   ```bash
   docker run -d --name=loki -p 3100:3100 grafana/loki:2.2.0 -config.file=/etc/loki/local-config.yaml
   ```
 
-- **Querying Logs in Grafana:**
-  - Use **Loki** as a data source to query and visualize logs alongside metrics.
+- **Grafanada jurnallarga so'rov yuborish:**
+  - **Loki** dan ma'lumotlar manbai sifatida foydalanib, metrikalar bilan birga jurnallarga so'rov yuboring va ularni vizualizatsiya qiling.
 
-**13. Grafana in Kubernetes:**
+**13. Kubernetesdagi Grafana:**
 
-- **Deploying Grafana in Kubernetes:**
+- **Kubernetesda Grafanani joylashtirish:**
 
   ```yaml
   apiVersion: apps/v1
@@ -168,13 +169,13 @@
           - containerPort: 3000
   ```
 
-**14. Troubleshooting Grafana:**
+**14. Grafana bilan bog'liq muammolarni bartaraf etish:**
 
-- **Common Issues:**
-  - **No Data:** Check data source configuration and queries.
-  - **Slow Dashboards:** Optimize queries and reduce the time range.
-  - **Plugin Errors:** Ensure plugins are compatible with your Grafana version.
+- **Umumiy Issues:**
+  - **No Data:** Ma'lumotlar manbai konfiguratsiyasi va so'rovlarini tekshiring.
+  - **Slow Dashboards:** So'rovlarni optimallashtiring va vaqt oralig'ini qisqartiring.
+  - **Plugin Errors:** Plaginlarning Grafana versiyangiz bilan mos kelishiga ishonch hosil qiling.
 
-- **Debugging:**
-  - View logs at `/var/log/grafana/grafana.log` for error details.
-  - Use **`curl`** to test data source connectivity (e.g., `curl http://localhost:9090` for Prometheus).
+- **Nosozliklarni tuzatish:**
+  - Xatolar haqida batafsil ma'lumot olish uchun `/var/log/grafana/grafana.log` manzilidagi jurnallarni ko'ring.
+  - Ma'lumotlar manbasiga ulanish holatini tekshirish uchun **`curl`** dan foydalaning (masalan, Prometheus uchun `curl http://localhost:9090`).
