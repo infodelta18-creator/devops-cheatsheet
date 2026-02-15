@@ -2,122 +2,122 @@
 
 ![text](https://imgur.com/2MpF0w5.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- **Google Cloud Platform (GCP)** is a suite of cloud computing services offered by Google. It provides a range of services including compute, storage, databases, machine learning, and more.
+- **Google Cloud Platform (GCP)** - bu Google tomonidan taqdim etiladigan bulutli hisoblash xizmatlari to'plami. U hisoblash, saqlash, ma'lumotlar bazalari, mashinani o'rganish va boshqalar kabi bir qator xizmatlarni taqdim etadi.
 
-**2. Core GCP Services:**
+**2. Asosiy GCP xizmatlari:**
 
-- **Compute:**
-  - **Google Compute Engine (GCE):**
-    - Scalable virtual machines running on Google’s infrastructure.
-    - Key Concepts: Machine Types, Images, Snapshots, Persistent Disks.
-    - Example:
+- **Hisoblash:**
+  - **Google hisoblash mexanizmi (GCE):**
+    - Google infratuzilmasida ishlaydigan kengaytiriladigan virtual mashinalar.
+    - Asosiy tushunchalar: Mashina turlari, tasvirlar, suratlar, doimiy disklar.
+    - Misol:
 
       ```bash
       gcloud compute instances create my-instance --zone=us-central1-a --machine-type=e2-medium --image-family=debian-10 --image-project=debian-cloud
       ```
 
-  - **Google Kubernetes Engine (GKE):**
-    - Managed Kubernetes service for running containerized applications.
-    - Key Concepts: Clusters, Nodes, Pods, Services, Deployments.
-    - Example:
+  - **Google Kubernetes dvigateli (GKE):**
+    - Konteynerlashtirilgan ilovalarni ishga tushirish uchun boshqariladigan Kubernetes xizmati.
+    - Asosiy tushunchalar: Klasterlar, Tugunlar, Podlar, Xizmatlar, Joylashtirishlar.
+    - Misol:
 
       ```bash
       gcloud container clusters create my-cluster --zone us-central1-a --num-nodes 3
       ```
 
-  - **Cloud Functions:**
-    - Serverless environment to execute code in response to events.
-    - Key Concepts: Functions, Triggers, Event Sources.
-    - Example:
+  - **Cloud funksiyalari:**
+    - Hodisalarga javoban kodni bajarish uchun serversiz muhit.
+    - Asosiy tushunchalar: Funksiyalar, Triggerlar, Hodisa manbalari.
+    - Misol:
 
       ```bash
       gcloud functions deploy my-function --runtime python39 --trigger-http --allow-unauthenticated
       ```
 
-- **Storage:**
-  - **Google Cloud Storage:**
-    - Object storage service for storing and accessing data.
-    - Key Concepts: Buckets, Objects, Classes (Standard, Nearline, Coldline, Archive).
-    - Example:
+- **Saqlash:**
+  - **Google bulutli xotirasi:**
+    - Ma'lumotlarni saqlash va ularga kirish uchun obyektlarni saqlash xizmati.
+    - Asosiy tushunchalar: Chelaklar, Obyektlar, Sinflar (Standart, Yaqin chiziq, Coldline, Arxiv).
+    - Misol:
 
       ```bash
       gsutil mb gs://my-bucket
       gsutil cp my-file.txt gs://my-bucket/
       ```
 
-  - **Persistent Disks:**
-    - Durable, high-performance block storage for VM instances.
-    - Key Concepts: Disk Types (Standard, SSD, Balanced), Snapshots, Zonal/Regional Disks.
-    - Example:
+  - **Doimiy disklar:**
+    - VM nusxalari uchun bardoshli, yuqori samarali blokli saqlash.
+    - Asosiy tushunchalar: Disk turlari (Standart, SSD, Balanslangan), Snapshotlar, Zonal/Mintaqaviy disklar.
+    - Misol:
 
       ```bash
       gcloud compute disks create my-disk --size=100GB --type=pd-ssd --zone=us-central1-a
       ```
 
-  - **Filestore:**
-    - Fully managed file storage service for applications that require a file system interface.
-    - Key Concepts: Instances, Tiers (Basic, High Scale, Enterprise).
-    - Example:
+  - **Fayllar ombori:**
+    - Fayl tizimi interfeysini talab qiladigan ilovalar uchun to'liq boshqariladigan fayllarni saqlash xizmati.
+    - Asosiy tushunchalar: Instanslar, Tiers (Asosiy, Yuqori miqyosli, Korxona).
+    - Misol:
 
       ```bash
       gcloud filestore instances create my-filestore-instance --zone=us-central1-a --tier=STANDARD --file-share=name="my-share",capacity=1TB --network=name="default"
       ```
 
-- **Database:**
+- **Ma'lumotlar bazasi (Database):**
   - **Cloud SQL:**
-    - Managed relational database service supporting MySQL, PostgreSQL, and SQL Server.
-    - Key Concepts: Instances, Backups, Failover, Maintenance Windows.
-    - Example:
+    - MySQL, PostgreSQL va SQL Serverni qo'llab-quvvatlaydigan boshqariladigan relyatsion ma'lumotlar bazasi xizmati.
+    - Asosiy tushunchalar: Instansiyalar, Zaxira nusxalari, Ishdan chiqish, Ta'mirlash oynalari.
+    - Misol:
 
       ```bash
       gcloud sql instances create my-instance --database-version=MYSQL_8_0 --tier=db-f1-micro --region=us-central1
       ```
 
-  - **Cloud Spanner:**
-    - Scalable, globally-distributed, and strongly consistent database service.
-    - Key Concepts: Instances, Databases, Schemas, Nodes.
-    - Example:
+  - **Cloud Kalit:**
+    - Kengaytiriladigan, global miqyosda tarqalgan va kuchli izchil ma'lumotlar bazasi xizmati.
+    - Asosiy tushunchalar: Instansiyalar, Ma'lumotlar bazalari, Sxemalar, Tugunlar.
+    - Misol:
 
       ```bash
       gcloud spanner instances create my-instance --config=regional-us-central1 --nodes=1 --description="My Spanner Instance"
       ```
 
   - **Firestore:**
-    - NoSQL document database for mobile, web, and server development.
-    - Key Concepts: Collections, Documents, Queries, Indexes.
-    - Example:
+    - Mobil, veb va serverlarni ishlab chiqish uchun NoSQL hujjatlar ma'lumotlar bazasi.
+    - Asosiy tushunchalar: To'plamlar, Hujjatlar, So'rovlar, Indekslar.
+    - Misol:
 
       ```bash
       gcloud firestore databases create --region=us-central
       ```
 
-**3. Networking:**
+**3. Tarmoq:**
 
 - **VPC (Virtual Private Cloud):**
-  - Isolated network environments within GCP.
-  - Key Concepts: Subnets, Routes, Firewalls, VPN, Interconnect.
-  - Example:
+  - GCP ichidagi izolyatsiya qilingan tarmoq muhitlari.
+  - Asosiy tushunchalar: Subnetlar, Marshrutlar, Xavfsizlik devorlari, VPN, O'zaro bog'lanish.
+  - Misol:
 
     ```bash
     gcloud compute networks create my-vpc --subnet-mode=custom
     gcloud compute networks subnets create my-subnet --network=my-vpc --region=us-central1 --range=10.0.0.0/24
     ```
 
-- **Cloud Load Balancing:**
-  - Global load balancing service for distributing traffic across multiple instances.
-  - Key Concepts: Frontends, Backends, URL Maps, Health Checks.
-  - Example:
+- **Cloud yuklarni muvozanatlash:**
+  - Trafikni bir nechta holatlarda taqsimlash uchun global yuklarni muvozanatlash xizmati.
+  - Asosiy tushunchalar: Frontendlar, Backendlar, URL xaritalari, Sog'liqni saqlash tekshiruvlari.
+  - Misol:
 
     ```bash
     gcloud compute forwarding-rules create my-rule --global --target-http-proxy=my-proxy --ports=80
     ```
 
 - **Cloud DNS:**
-  - Managed DNS service running on the same infrastructure as Google.
-  - Key Concepts: Managed Zones, DNS Records, Policies.
-  - Example:
+  - Google bilan bir xil infratuzilmada ishlaydigan boshqariladigan DNS xizmati.
+  - Asosiy tushunchalar: Boshqariladigan zonalar, DNS yozuvlari, siyosatlar.
+  - Misol:
 
     ```bash
     gcloud dns managed-zones create my-zone --dns-name="example.com." --description="My DNS zone"
@@ -127,9 +127,9 @@
     ```
 
 - **Cloud CDN:**
-  - Content delivery network for delivering web and video content globally.
-  - Key Concepts: Backends, Cache Modes, Signed URLs.
-  - Example:
+  - Veb va video kontentni butun dunyo bo'ylab yetkazib berish uchun kontent yetkazib berish tarmog'i.
+  - Asosiy tushunchalar: Orqa tomonlar, Kesh rejimlari, Imzolangan URL manzillar.
+  - Misol:
 
     ```bash
     gcloud compute url-maps create my-url-map --default-service=my-backend-service
@@ -137,113 +137,113 @@
     gcloud compute backend-buckets add-backend --url-map=my-url-map --default-backend-bucket=my-backend-bucket
     ```
 
-**4. Security and Identity:**
+**4. Xavfsizlik va shaxsni aniqlash:**
 
-- **Identity and Access Management (IAM):**
-  - Manage access to resources with fine-grained control.
-  - Key Concepts: Roles, Permissions, Policies, Service Accounts.
-  - Example:
+- **Identifikatsiya va kirishni boshqarish (IAM):**
+  - Resurslarga kirishni nozik nazorat bilan boshqaring.
+  - Asosiy tushunchalar: Rollar, Ruxsatnomalar, Siyosat, Xizmat Hisoblari.
+  - Misol:
 
     ```bash
     gcloud projects add-iam-policy-binding my-project --member="user:example@gmail.com" --role="roles/editor"
     ```
 
-- **Cloud Identity:**
-  - Identity management for users and groups across services.
-  - Key Concepts: Directory, Groups, Security Settings, OAuth.
-  - Example:
-    - Managed via Google Admin Console.
+- **Cloud Shaxs:**
+  - Xizmatlar bo'ylab foydalanuvchilar va guruhlar uchun identifikatsiyani boshqarish.
+  - Asosiy tushunchalar: Katalog, Guruhlar, Xavfsizlik sozlamalari, OAuth.
+  - Misol:
+    - Google Admin Console orqali boshqariladi.
 
-- **Cloud Key Management Service (KMS):**
-  - Create, manage, and use cryptographic keys.
-  - Key Concepts: Key Rings, Keys, Versions, Policies.
-  - Example:
+- **Bulutli kalitlarni boshqarish xizmati (KMS):**
+  - Kriptografik kalitlarni yaratish, boshqarish va ulardan foydalanish.
+  - Asosiy tushunchalar: Kalit halqalar, kalitlar, versiyalar, siyosatlar.
+  - Misol:
 
     ```bash
     gcloud kms keyrings create my-keyring --location=global
     gcloud kms keys create my-key --keyring=my-keyring --location=global --purpose=encryption
     ```
 
-- **Cloud Security Command Center (SCC):**
-  - Security and risk management platform for GCP.
-  - Key Concepts: Findings, Assets, Sources, Security Health Analytics.
-  - Example:
-    - Managed via GCP Console.
+- **Bulutli xavfsizlik qo'mondonlik markazi (SCC):**
+  - GCP uchun xavfsizlik va xavflarni boshqarish platformasi.
+  - Asosiy tushunchalar: Topilmalar, Aktivlar, Manbalar, Xavfsizlik va sog'liqni saqlash tahlili.
+  - Misol:
+    - GCP konsoli orqali boshqariladi.
 
-**5. Management Tools:**
+**5. Boshqaruv vositalari:**
 
-- **Deployment Manager:**
-  - Infrastructure as code service for managing GCP resources.
-  - Key Concepts: Templates, Deployments, Resources.
-  - Example:
+- **Deployment Menejer:**
+  - GCP resurslarini boshqarish uchun kod xizmati sifatida infratuzilma.
+  - Asosiy tushunchalar: Shablonlar, Joylashtirishlar, Resurslar.
+  - Misol:
 
     ```bash
     gcloud deployment-manager deployments create my-deployment --config=config.yaml
     ```
 
-- **Stackdriver (now part of Operations Suite):**
-  - Monitoring, logging, and diagnostics tool for GCP.
-  - Key Concepts: Metrics, Logs, Alerts, Dashboards.
-  - Example:
+- **Stackdriver (endi Operations Suite tarkibiga kiradi):**
+  - GCP uchun monitoring, jurnalga yozish va diagnostika vositasi.
+  - Asosiy tushunchalar: Metrikalar, jurnallar, ogohlantirishlar, boshqaruv panellari.
+  - Misol:
 
     ```bash
     gcloud logging write my-log "This is a log entry" --severity=ERROR
     ```
 
-- **Cloud Console:**
-  - Web-based interface to manage GCP resources.
-  - Key Concepts: Dashboards, Cloud Shell, Editor.
+- **Cloud Konsol:**
+  - GCP resurslarini boshqarish uchun veb-ga asoslangan interfeys.
+  - Asosiy tushunchalar: Boshqaruv panellari, bulutli qobiq, muharrir.
 
-- **Cloud Shell:**
-  - Command-line interface with access to all GCP resources.
-  - Example:
+- **Cloud Qobiq:**
+  - Barcha GCP resurslariga kirish imkoniyatiga ega buyruq satri interfeysi.
+  - Misol:
 
     ```bash
     gcloud config set project my-project
     ```
 
-**6. Advanced Topics:**
+**6. Murakkab mavzular:**
 
-- **Cost Management:**
-  - Monitor and optimize your GCP costs using Billing Reports and Budgets.
-  - Example
+- **Xarajatlarni boshqarish:**
+  - Hisob-kitob hisobotlari va byudjetlaridan foydalanib, GCP xarajatlaringizni kuzatib boring va optimallashtiring.
+  - Misol
 
 :
     ```bash
     gcloud beta billing budgets create --billing-account=012345-67890A-BCDEF0 --display-name="My Budget" --amount=500USD
     ```
 
-- **Auto Scaling:**
-  - Automatically adjust the number of VM instances based on demand.
-  - Key Concepts: Instance Groups, Autoscaler, Metrics.
-  - Example:
+- **Avtomatik masshtablash:**
+  - Talabga qarab VM nusxalari sonini avtomatik ravishda sozlang.
+  - Asosiy tushunchalar: Instance Groups, Autoscaler, Metrics.
+  - Misol:
 
     ```bash
     gcloud compute instance-groups managed set-autoscaling my-group --max-num-replicas 10 --min-num-replicas 1 --target-cpu-utilization 0.6
     ```
 
-- **Serverless Architectures:**
-  - Use Cloud Functions, Cloud Run, and Pub/Sub for serverless solutions.
-  - Key Concepts: Triggers, Events, Containers, Scaling.
-  - Example:
+- **Serversiz arxitekturalar:**
+  - Serversiz yechimlar uchun Cloud Functions, Cloud Run va Pub/Sub dan foydalaning.
+  - Asosiy tushunchalar: Triggerlar, Hodisalar, Konteynerlar, Masshtablash.
+  - Misol:
 
     ```bash
     gcloud run deploy my-service --image=gcr.io/my-project/my-image --platform managed
     ```
 
-**7. Best Practices:**
+**7. Eng yaxshi amaliyotlar:**
 
-- **Security:**
-  - Use IAM policies, encrypt data, monitor with SCC, apply security best practices.
+- **Xavfsizlik:**
+  - IAM siyosatlaridan foydalaning, ma'lumotlarni shifrlang, SCC bilan kuzatib boring, xavfsizlikning eng yaxshi amaliyotlarini qo'llang.
   
-- **Reliability:**
-  - Use multiple zones/regions, set up failover, and implement backups.
+- **Ishonchlilik:**
+  - Bir nechta zonalar/mintaqalardan foydalaning, o'chirib qo'yishni sozlang va zaxira nusxalarini yarating.
 
-- **Performance Efficiency:**
-  - Choose appropriate machine types, use caching, optimize databases.
+- **Ishlash samaradorligi:**
+  - Tegishli mashina turlarini tanlang, keshlashdan foydalaning, ma'lumotlar bazalarini optimallashtiring.
 
-- **Cost Optimization:**
-  - Use committed use contracts, monitor spend, and optimize resources.
+- **Xarajatlarni optimallashtirish:**
+  - Majburiy foydalanish shartnomalaridan foydalaning, xarajatlarni kuzatib boring va resurslarni optimallashtiring.
 
-- **Operational Excellence:**
-  - Automate deployments, monitor operations, and use infrastructure as code (IaC).
+- **Operatsion mukammallik:**
+  - Joylashtirishlarni avtomatlashtirish, operatsiyalarni kuzatish va infratuzilmadan kod sifatida foydalanish (IaC).
