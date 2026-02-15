@@ -2,47 +2,47 @@
 
 ![text](https://imgur.com/DDbwilK.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- **Amazon Web Services (AWS)** is a comprehensive cloud platform offering over 200 fully featured services from data centers globally. AWS provides cloud solutions for compute, storage, databases, machine learning, security, and more.
+- **Amazon Web Services (AWS)** - bu butun dunyo bo'ylab ma'lumotlar markazlaridan 200 dan ortiq to'liq xususiyatli xizmatlarni taklif qiluvchi keng qamrovli bulutli platforma. AWS hisoblash, saqlash, ma'lumotlar bazalari, mashinani o'rganish, xavfsizlik va boshqalar uchun bulutli yechimlarni taqdim etadi.
 
-**2. Core AWS Services:**
+**2. Asosiy AWS xizmatlari:**
 
-- **Compute:**
+- **Hisoblash:**
   - **EC2 (Elastic Compute Cloud):**
-    - Virtual servers for running applications.
-    - Instance types: General Purpose, Compute Optimized, Memory Optimized, etc.
-    - Key Concepts: AMI, Instance Types, Key Pairs, Security Groups, EBS Volumes.
-    - Example:
+    - Ilovalarni ishga tushirish uchun virtual serverlar.
+    - Instansiya turlari: Umumiy maqsad, Hisoblash optimallashtirilgan, Xotira optimallashtirilgan va boshqalar.
+    - Asosiy tushunchalar: AMI, Instance turlari, Kalit juftliklari, Xavfsizlik guruhlari, EBS hajmlari.
+    - Misol:
 
       ```bash
       aws ec2 run-instances --image-id ami-12345678 --instance-type t2.micro --key-name MyKeyPair
       ```
 
   - **Lambda:**
-    - Serverless computing to run code without provisioning or managing servers.
-    - Key Concepts: Functions, Event Sources, IAM Roles.
-    - Example:
+    - Serverlarni taqdim etmasdan yoki boshqarmasdan kodni ishga tushirish uchun serversiz hisoblash.
+    - Asosiy tushunchalar: Funksiyalar, Hodisa manbalari, IAM rollari.
+    - Misol:
 
       ```bash
       aws lambda create-function --function-name my-function --runtime python3.8 --role arn:aws:iam::123456789012:role/execution_role --handler my_function.handler --zip-file fileb://my-deployment-package.zip
       ```
 
   - **ECS/EKS (Elastic Container Service/Elastic Kubernetes Service):**
-    - ECS: Fully managed container orchestration service.
-    - EKS: Managed Kubernetes service for running Kubernetes on AWS.
-    - Key Concepts: Clusters, Tasks, Services, Fargate.
-    - Example:
+    - ECS: To'liq boshqariladigan konteyner orkestrlash xizmati.
+    - EKS: Kubernetesni AWSda ishga tushirish uchun boshqariladigan Kubernetes xizmati.
+    - Asosiy tushunchalar: Klasterlar, Vazifalar, Xizmatlar, Fargate.
+    - Misol:
 
       ```bash
       aws ecs create-cluster --cluster-name my-cluster
       ```
 
-- **Storage:**
+- **Saqlash:**
   - **S3 (Simple Storage Service):**
-    - Scalable object storage service.
-    - Key Concepts: Buckets, Objects, Storage Classes, Lifecycle Policies.
-    - Example:
+    - Kengaytiriladigan obyektlarni saqlash xizmati.
+    - Asosiy tushunchalar: Chelaklar, Obyektlar, Saqlash Sinflari, Hayotiy Aylanish Siyosati.
+    - Misol:
 
       ```bash
       aws s3 mb s3://my-bucket
@@ -50,96 +50,96 @@
       ```
 
   - **EBS (Elastic Block Store):**
-    - Block storage for use with EC2 instances.
-    - Key Concepts: Volumes, Snapshots, Volume Types (gp2, io1, st1, etc.).
-    - Example:
+    - EC2 nusxalari bilan foydalanish uchun saqlashni bloklash.
+    - Asosiy tushunchalar: Jildlar, Suratlar, Jild turlari (gp2, io1, st1 va boshqalar).
+    - Misol:
 
       ```bash
       aws ec2 create-volume --size 10 --region us-east-1 --availability-zone us-east-1a --volume-type gp2
       ```
 
-  - **Glacier:**
-    - Long-term, secure, and durable storage for data archiving and backup.
-    - Key Concepts: Vaults, Archives, Retrieval Policies.
-    - Example:
+  - **Muzlik:**
+    - Ma'lumotlarni arxivlash va zaxiralash uchun uzoq muddatli, xavfsiz va bardoshli saqlash.
+    - Asosiy tushunchalar: Omborlar, Arxivlar, Qidiruv siyosati.
+    - Misol:
 
       ```bash
       aws glacier create-vault --vault-name my-vault --account-id -
       ```
 
-- **Database:**
+- **Ma'lumotlar bazasi (Database):**
   - **RDS (Relational Database Service):**
-    - Managed relational database service supporting various engines (MySQL, PostgreSQL, Oracle, SQL Server, etc.).
-    - Key Concepts: DB Instances, Snapshots, Security Groups, Multi-AZ.
-    - Example:
+    - Turli xil dvigatellarni (MySQL, PostgreSQL, Oracle, SQL Server va boshqalar) qo'llab-quvvatlaydigan boshqariladigan relyatsion ma'lumotlar bazasi xizmati.
+    - Asosiy tushunchalar: Ma'lumotlar bazasi nusxalari, suratlar, xavfsizlik guruhlari, Multi-AZ.
+    - Misol:
 
       ```bash
       aws rds create-db-instance --db-instance-identifier mydbinstance --db-instance-class db.t2.micro --engine mysql --master-username admin --master-user-password password --allocated-storage 20
       ```
 
   - **DynamoDB:**
-    - Managed NoSQL database service.
-    - Key Concepts: Tables, Items, Attributes, Primary Key, Global/Local Secondary Indexes.
-    - Example:
+    - Boshqariladigan NoSQL ma'lumotlar bazasi xizmati.
+    - Asosiy tushunchalar: Jadvallar, Elementlar, Atributlar, Birlamchi kalit, Global/Lokal ikkilamchi indekslar.
+    - Misol:
 
       ```bash
       aws dynamodb create-table --table-name MyTable --attribute-definitions AttributeName=Id,AttributeType=N --key-schema AttributeName=Id,KeyType=HASH --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
       ```
 
   - **Aurora:**
-    - MySQL and PostgreSQL-compatible relational database built for the cloud, providing high performance and availability.
-    - Key Concepts: Clusters, Replicas, Global Databases.
-    - Example:
+    - Bulut uchun yaratilgan, yuqori unumdorlik va mavjudlikni ta'minlaydigan MySQL va PostgreSQL bilan mos keladigan relyatsion ma'lumotlar bazasi.
+    - Asosiy tushunchalar: Klasterlar, Replikalar, Global ma'lumotlar bazalari.
+    - Misol:
 
       ```bash
       aws rds create-db-cluster --db-cluster-identifier my-cluster --engine aurora-mysql --master-username admin --master-user-password password
       ```
 
-**3. Networking:**
+**3. Tarmoq:**
 
 - **VPC (Virtual Private Cloud):**
-  - Isolated network environment to launch AWS resources.
-  - Key Concepts: Subnets, Route Tables, Internet Gateways, NAT Gateways, Security Groups, NACLs.
-  - Example:
+  - AWS resurslarini ishga tushirish uchun izolyatsiya qilingan tarmoq muhiti.
+  - Asosiy tushunchalar: Subnetlar, Marshrut jadvallari, Internet shlyuzlari, NAT shlyuzlari, Xavfsizlik guruhlari, NACLlar.
+  - Misol:
 
     ```bash
     aws ec2 create-vpc --cidr-block 10.0.0.0/16
     aws ec2 create-subnet --vpc-id vpc-12345678 --cidr-block 10.0.1.0/24
     ```
 
-- **Route 53:**
-  - Scalable DNS and domain name registration service.
-  - Key Concepts: Hosted Zones, Record Sets, Health Checks, Traffic Policies.
-  - Example:
+- **Yo'nalish 53 (Route 53):**
+  - Kengaytiriladigan DNS va domen nomini ro'yxatdan o'tkazish xizmati.
+  - Asosiy tushunchalar: Xostlangan zonalar, rekordlar to'plami, tibbiy ko'riklar, yo'l harakati qoidalari.
+  - Misol:
 
     ```bash
     aws route53 create-hosted-zone --name example.com --caller-reference unique-string
     ```
 
 - **CloudFront:**
-  - Content delivery network (CDN) for delivering content globally with low latency.
-  - Key Concepts: Distributions, Origins, Behaviors, Edge Locations.
-  - Example:
+  - Kontentni global miqyosda past kechikish bilan yetkazib berish uchun kontent yetkazib berish tarmog'i (CDN).
+  - Asosiy tushunchalar: Tarqalishlar, Kelib chiqishi, Xulq-atvori, Chegara joylashuvi.
+  - Misol:
 
     ```bash
     aws cloudfront create-distribution --origin-domain-name mybucket.s3.amazonaws.com
     ```
 
 - **Elastic Load Balancing (ELB):**
-  - Distributes incoming traffic across multiple targets, such as EC2 instances.
-  - Key Concepts: Load Balancers (ALB, NLB, CLB), Target Groups, Listeners.
-  - Example:
+  - Kiruvchi trafikni EC2 nusxalari kabi bir nechta maqsadlarga taqsimlaydi.
+  - Asosiy tushunchalar: Yuk balanslashtiruvchilari (ALB, NLB, CLB), Maqsadli guruhlar, Tinglovchilar.
+  - Misol:
 
     ```bash
     aws elbv2 create-load-balancer --name my-load-balancer --subnets subnet-12345678 subnet-87654321 --security-groups sg-12345678
     ```
 
-**4. Security and Identity:**
+**4. Xavfsizlik va shaxsni aniqlash:**
 
 - **IAM (Identity and Access Management):**
-  - Manages users, groups, roles, and permissions.
-  - Key Concepts: Users, Groups, Roles, Policies, MFA, Access Keys.
-  - Example:
+  - Foydalanuvchilar, guruhlar, rollar va ruxsatlarni boshqaradi.
+  - Asosiy tushunchalar: Foydalanuvchilar, Guruhlar, Rollar, Siyosat, MFA, Kirish kalitlari.
+  - Misol:
 
     ```bash
     aws iam create-user --user-name myuser
@@ -147,81 +147,81 @@
     ```
 
 - **KMS (Key Management Service):**
-  - Managed service for creating and controlling encryption keys.
-  - Key Concepts: CMKs (Customer Master Keys), Aliases, Grants, Key Policies.
-  - Example:
+  - Shifrlash kalitlarini yaratish va boshqarish uchun boshqariladigan xizmat.
+  - Asosiy tushunchalar: CMKlar (mijozlar uchun asosiy kalitlar), taxalluslar, grantlar, asosiy siyosatlar.
+  - Misol:
 
     ```bash
     aws kms create-key --description "My CMK"
     ```
 
 - **CloudTrail:**
-  - Tracks user activity and API usage across AWS accounts.
-  - Key Concepts: Trails, Logs, S3 Buckets, Insights.
-  - Example:
+  - AWS hisoblari bo'ylab foydalanuvchi faolligi va API foydalanishini kuzatib boradi.
+  - Asosiy tushunchalar: Yo'llar, Jurnallar, S3 chelaklari, Ma'lumotlar.
+  - Misol:
 
     ```bash
     aws cloudtrail create-trail --name MyTrail --s3-bucket-name my-bucket
     ```
 
-**5. Management Tools:**
+**5. Boshqaruv vositalari:**
 
 - **CloudFormation:**
-  - Infrastructure as Code service for modeling and setting up AWS resources.
-  - Key Concepts: Templates, Stacks, Resources, Outputs, Parameters.
-  - Example:
+  - AWS resurslarini modellashtirish va sozlash uchun kod xizmati sifatida infratuzilma.
+  - Asosiy tushunchalar: Shablonlar, Steklar, Resurslar, Chiqishlar, Parametrlar.
+  - Misol:
 
     ```bash
     aws cloudformation create-stack --stack-name my-stack --template-body file://template.json
     ```
 
 - **CloudWatch:**
-  - Monitoring and observability service for AWS resources and applications.
-  - Key Concepts: Metrics, Alarms, Logs, Events, Dashboards.
-  - Example:
+  - AWS resurslari va ilovalari uchun monitoring va kuzatuv xizmati.
+  - Asosiy tushunchalar: Metrikalar, signallar, jurnallar, hodisalar, boshqaruv panellari.
+  - Misol:
 
     ```bash
     aws cloudwatch put-metric-alarm --alarm-name my-alarm --metric-name CPUUtilization --namespace AWS/EC2 --statistic Average --period 300 --threshold 80 --comparison-operator GreaterThanOrEqualToThreshold --evaluation-periods 1 --alarm-actions arn:aws:sns:us-east-1:123456789012:my-topic
     ```
 
 - **AWS Config:**
-  - Service for assessing, auditing, and evaluating the configurations of AWS resources.
-  - Key Concepts: Rules, Resources, Aggregators, Config Recorder.
-  - Example:
+  - AWS resurslarining konfiguratsiyalarini baholash, audit qilish va baholash xizmati.
+  - Asosiy tushunchalar: Qoidalar, Resurslar, Agregatorlar, Konfiguratsiya Yozuvchisi.
+  - Misol:
 
     ```bash
     aws configservice put-configuration-recorder --configuration-recorder name=my-recorder,roleARN=arn:aws:iam::123456789012:role/my-role
     ```
 
-- **Trusted Advisor:**
-  - Provides real-time guidance to help you provision your resources following AWS best practices.
-  - Key Concepts: Checks, Recommendations.
-  - Example:
-    - Access via AWS Management Console.
+- **Ishonchli maslahatchi:**
+  - AWSning eng yaxshi amaliyotlariga rioya qilgan holda resurslaringizni taqdim etishda sizga yordam beradigan real vaqt rejimida ko'rsatmalar beradi.
+  - Asosiy tushunchalar: Tekshiruvlar, Tavsiyalar.
+  - Misol:
+    - AWS boshqaruv konsoli orqali kirish.
 
-**6. Advanced Topics:**
+**6. Murakkab mavzular:**
 
 - **Cost Management:**
-  - Use AWS Cost Explorer, Budgets, and Cost & Usage Reports to monitor and optimize spending.
-  - Example:
+  - Xarajatlarni kuzatib borish va optimallashtirish uchun AWS Cost Explorer, Budgets va Cost & Foydalanish hisobotlaridan foydalaning.
+  - Misol:
 
     ```bash
     aws ce get-cost-and-usage --time-period Start=2024-08-01,End=2024-08-31 --granularity MONTHLY --metrics "BlendedCost"
     ```
 
 - **Auto Scaling:**
-  - Automatically adjust the capacity of your resources based on demand.
-  - Key Concepts: Auto Scaling Groups, Scaling Policies, Launch Configurations.
-  - Example:
+  - Resurslaringiz hajmini talabga qarab avtomatik ravishda sozlang.
+  - Asosiy tushunchalar: Avtomatik masshtablash guruhlari, masshtablash siyosati, ishga tushirish konfiguratsiyalari.
+  - Misol:
 
     ```bash
     aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-asg --launch-configuration-name my-lc --min-size 1 --max-size 10 --desired-capacity 2 --vpc-zone-identifier subnet-12345678
     ```
 
-- **Serverless Architectures:**
-  - Use AWS Lambda, API Gateway, and DynamoDB to build serverless applications.
-  - Key Concepts: Functions, APIs, Tables, Events, Triggers.
-  - Example:
+- **Serversiz arxitekturalar:**
+  - Serversiz ilovalarni yaratish uchun AWS Lambda, API Gateway va DynamoDB dan foydalaning.
+  - Asosiy tushunchalar: Funksiyalar, APIlar, jadvallar, hodisalar, triggerlar.
+  - Misol:
 
     ```bash
     aws apigateway create-rest-api --name 'My API'
@@ -231,17 +231,17 @@
 
  Practices:**
 
-- **Security:**
-  - Use IAM Roles and Policies, enable MFA, encrypt data at rest and in transit, monitor with CloudTrail, and apply the Principle of Least Privilege.
+- **Xavfsizlik:**
+  - IAM rollari va siyosatlaridan foydalaning, MFA ni yoqing, ma'lumotlarni dam olish va uzatish paytida shifrlang, CloudTrail bilan kuzatib boring va eng kam imtiyoz printsipini qo'llang.
   
-- **Reliability:**
-  - Design for failure, use multiple Availability Zones (AZs), implement backups, and set up auto-scaling.
+- **Ishonchlilik:**
+  - Muvaffaqiyatsizlikka tayyorlaning, bir nechta mavjudlik zonalaridan (AZ) foydalaning, zaxira nusxalarini yarating va avtomatik masshtablashni sozlang.
 
-- **Performance Efficiency:**
-  - Right-size instances, use appropriate storage classes, and leverage managed services.
+- **Ishlash samaradorligi:**
+  - To'g'ri o'lchamdagi nusxalar, tegishli saqlash sinflaridan foydalaning va boshqariladigan xizmatlardan foydalaning.
 
-- **Cost Optimization:**
-  - Use Reserved Instances (RIs), Spot Instances, and review billing regularly.
+- **Xarajatlarni optimallashtirish:**
+  - Rezervlangan nusxalardan (RI), Spot nusxalaridan foydalaning va to'lovlarni muntazam ravishda ko'rib chiqing.
 
-- **Operational Excellence:**
-  - Automate processes, monitor operations, and use infrastructure as code (IaC).
+- **Operatsion mukammallik:**
+  - Jarayonlarni avtomatlashtirish, operatsiyalarni kuzatish va infratuzilmadan kod sifatida foydalanish (IaC).
