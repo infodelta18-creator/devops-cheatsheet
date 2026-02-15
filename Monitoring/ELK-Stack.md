@@ -2,13 +2,13 @@
 
 ![text](https://imgur.com/wLayBA4.png)
 
-**1. Introduction:**
+**1. Kirish:**
 
-- The **ELK Stack** is a powerful suite of open-source tools: **Elasticsearch** for search and analytics, **Logstash** for data processing, and **Kibana** for visualization. It's often extended with **Beats** for data collection and **X-Pack** for additional features.
+- **ELK Stack** ochiq manbali vositalarning kuchli to‘plamidir: qidiruv va tahlil uchun **Elasticsearch**, ma’lumotlarni qayta ishlash uchun **Logstash** va vizualizatsiya uchun **Kibana**. U koʻpincha maʼlumotlar yigʻish uchun **Beats** va qoʻshimcha funksiyalar uchun **X-Pack** bilan kengaytiriladi.
 
 **2. Elasticsearch:**
 
-- **Installing Elasticsearch:**
+- **Elasticsearch-ni o'rnatish:**
 
   ```bash
   wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.10.2-x86_64.rpm
@@ -17,7 +17,7 @@
   sudo systemctl enable elasticsearch
   ```
 
-- **Basic Configuration:**
+- **Asosiy konfiguratsiya:**
   - Edit `/etc/elasticsearch/elasticsearch.yml`:
 
   ```yaml
@@ -25,29 +25,29 @@
   http.port: 9200
   ```
 
-- **Basic Queries:**
+- **Asosiy so'rovlar:**
 
   ```bash
   curl -X GET "localhost:9200/_cat/indices?v"
   curl -X GET "localhost:9200/my-index/_search?q=user:john"
   ```
 
-- **Indexing Documents:**
+- **Indekslash hujjatlari:**
 
   ```bash
   curl -X POST "localhost:9200/my-index/_doc/1" -H 'Content-Type: application/json' -d'
   {
     "user": "john",
-    "message": "Hello, Elasticsearch!"
+    "message": "Salom, Elasticsearch!"
   }'
   ```
 
-- **Elasticsearch Cluster:**
-  - Configure multi-node clusters by setting `cluster.name`, `node.name`, and `discovery.seed_hosts` in `elasticsearch.yml`.
+- **Elasticsearch klasteri:**
+  - `elasticsearch.yml` faylida `cluster.name`, `node.name` va `discovery.seed_hosts` parametrlarini o'rnatish orqali ko'p tugunli klasterlarni sozlang.
 
 **3. Logstash:**
 
-- **Installing Logstash:**
+- **Logstashni o'rnatish:**
 
   ```bash
   wget https://artifacts.elastic.co/downloads/logstash/logstash-7.10.2.rpm
@@ -56,7 +56,7 @@
   sudo systemctl enable logstash
   ```
 
-- **Logstash Configuration:**
+- **Logstash konfiguratsiyasi:**
 
   ```yaml
   input {
@@ -78,18 +78,18 @@
   }
   ```
 
-- **Running Logstash:**
+- **Logstash ishga tushirish:**
 
   ```bash
   sudo systemctl start logstash
   ```
 
-- **Using Beats with Logstash:**
-  - Use **Filebeat**, **Metricbeat**, or **Packetbeat** to ship data to Logstash for processing.
+- **Logstash bilan Beatsdan foydalanish:**
+  - Ma'lumotlarni qayta ishlash uchun Logstashga yuborish uchun **Filebeat**, **Metricbeat** yoki **Packetbeat** dan foydalaning.
 
 **4. Kibana:**
 
-- **Installing Kibana:**
+- **Kibana o'rnatish:**
 
   ```bash
   wget https://artifacts.elastic.co/downloads/kibana/kibana-7.10.2-x86_64.rpm
@@ -98,7 +98,7 @@
   sudo systemctl enable kibana
   ```
 
-- **Basic Configuration:**
+- **Asosiy konfiguratsiya:**
   - Edit `/etc/kibana/kibana.yml`:
 
   ```yaml
@@ -107,19 +107,19 @@
   elasticsearch.hosts: ["http://localhost:9200"]
   ```
 
-- **Creating Visualizations:**
-  1. Navigate to **Visualize** in the Kibana interface.
-  2. Choose a visualization type (e.g., line chart, pie chart).
-  3. Select the data source and configure your queries.
-  4. Save and add the visualization to a dashboard.
+- **Vizualizatsiyalarni yaratish:**
+  1. Kibana interfeysida **Visualize** ga o'ting.
+  2. Vizualizatsiya turini tanlang (masalan, chiziqli diagramma, doiraviy diagramma).
+  3. Ma'lumot manbasini tanlang va so'rovlaringizni sozlang.
+  4. Vizualizatsiyani saqlang va boshqaruv paneliga qo'shing.
 
-- **Kibana Dashboards:**
-  - Use dashboards to combine multiple visualizations into a single view, useful for monitoring and analysis.
+- **Kibana boshqaruv panellari:**
+  - Monitoring va tahlil qilish uchun foydali bo'lgan bir nechta vizualizatsiyalarni bitta ko'rinishga birlashtirish uchun boshqaruv panellaridan foydalaning.
 
 **5. Beats:**
 
 - **Filebeat:**
-  - **Installing Filebeat:**
+  - **Filebeat o'rnatish:**
 
     ```bash
     wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.10.2-x86_64.rpm
@@ -128,7 +128,7 @@
     sudo systemctl enable filebeat
     ```
 
-  - **Configuring Filebeat:**
+  - **Filebeat ni sozlash:**
 
     ```yaml
     filebeat.inputs:
@@ -140,21 +140,21 @@
       hosts: ["localhost:9200"]
     ```
 
-  - **Running Filebeat:**
+  - **Filebeat ishga tushirish:**
 
     ```bash
     sudo systemctl start filebeat
     ```
 
 - **Metricbeat:**
-  - Collects metrics from the system and services like MySQL, Docker, etc.
+  - Tizim va MySQL, Docker va boshqalar kabi xizmatlardan metriklarni to'playdi.
 
 - **Packetbeat:**
-  - Captures network traffic and analyzes protocols.
+  - Tarmoq trafikini qayd etadi va protokollarni tahlil qiladi.
 
-**6. Security in ELK Stack:**
+**6. ELK Stackdagi xavfsizlik:**
 
-- **Enabling HTTPS in Elasticsearch:**
+- **Elasticsearch’da HTTPS’ni yoqish:**
 
   ```yaml
   xpack.security.enabled: true
@@ -162,22 +162,22 @@
   xpack.security.http.ssl.keystore.path: /path/to/keystore.jks
   ```
 
-- **User Authentication:**
-  - Use **X-Pack** to manage users, roles, and permissions.
+- **Foydalanuvchi autentifikatsiyasi:**
+  - Foydalanuvchilar, rollar va ruxsatlarni boshqarish uchun **X-Pack** dan foydalaning.
 
-**7. ELK Stack in Kubernetes:**
+**7. Kubernetesdagi ELK stack:**
 
 - **Deploying ELK Stack:**
-  - Use Helm charts to deploy the ELK stack in Kubernetes for easier management and scaling.
+  - Osonroq boshqarish va masshtablash uchun ELK stackini Kubernetes-ga joylashtirish uchun Helm jadvallaridan foydalaning.
 
-**8. Troubleshooting ELK Stack:**
+**8. ELK Stack bilan bog'liq muammolarni bartaraf etish:**
 
-- **Common Issues:**
-  - **High Memory Usage:** Optimize the heap size in Elasticsearch.
-  - **Logstash Performance:** Tune pipeline workers
+- **Umumiy muammolar:**
+  - **Xotiradan yuqori foydalanish:** Elasticsearch’da uyum hajmini optimallashtirish.
+  - **Logstash Performance:** yo'l liniyasi ishchilarini sozlang
 
- and batch size.
+ va partiya hajmi.
 
-- **Debugging:**
-  - Check logs for Elasticsearch (`/var/log/elasticsearch/`), Logstash (`/var/log/logstash/`), and Kibana (`/var/log/kibana/`).
-  - Use `curl` to test Elasticsearch endpoints and ensure services are running.
+- **Nosozliklarni tuzatish:**
+  - Elasticsearch (`/var/log/elasticsearch/`), Logstash (`/var/log/logstash/`) va Kibana (`/var/log/kibana/`) uchun jurnallarni tekshiring.
+  - Elasticsearch so'nggi nuqtalarini sinab ko'rish va xizmatlarning ishlashini ta'minlash uchun `curl` dan foydalaning.
