@@ -2,86 +2,86 @@
 
 ![text](https://imgur.com/BU5g7ce.png)
 
-Amazon CloudWatch is a comprehensive monitoring and management service designed for AWS and hybrid cloud applications. This guide covers everything from basic concepts to advanced configurations, helping you leverage CloudWatch for performance monitoring, troubleshooting, and operational insights.
+Amazon CloudWatch - bu AWS va gibrid bulutli ilovalar uchun mo'ljallangan keng qamrovli monitoring va boshqaruv xizmati. Ushbu qo'llanma asosiy tushunchalardan tortib ilg'or konfiguratsiyalargacha bo'lgan hamma narsani qamrab oladi, bu sizga CloudWatch-dan unumdorlikni kuzatish, muammolarni bartaraf etish va operatsion tushunchalar uchun foydalanishga yordam beradi.
 
 ---
 
-## **1. Introduction to CloudWatch**
+## **1. CloudWatch’ga kirish**
 
-### What is CloudWatch?
+### CloudWatch nima?
 
-- Amazon CloudWatch is a monitoring and observability service for AWS resources and custom applications.
-- Provides actionable insights through metrics, logs, alarms, and dashboards.
-- Supports both infrastructure and application-level monitoring.
+- Amazon CloudWatch - bu AWS resurslari va maxsus ilovalar uchun monitoring va kuzatuv xizmati.
+- Metrikalar, jurnallar, signallar va boshqaruv panellari orqali amaliy tushunchalarni taqdim etadi.
+- Infratuzilma va ilovalar darajasidagi monitoringni qo‘llab-quvvatlaydi.
 
-### Key Features:
+### Asosiy xususiyatlar:
 
-- **Metrics**: Collect and monitor key performance data.
-- **Logs**: Aggregate, analyze, and search logs.
-- **Alarms**: Set thresholds for metrics to trigger automated actions.
-- **Dashboards**: Visualize data in real time.
-- **CloudWatch Events**: Trigger actions based on changes in AWS resources.
-
----
-
-## **2. CloudWatch Architecture Overview**
-
-- **Data Sources**:
-  - AWS Services: EC2, RDS, Lambda, etc.
-  - On-premises servers or hybrid setups using CloudWatch Agent.
-- **Core Components**:
-  - **Metrics**: Quantifiable data points (e.g., CPU utilization).
-  - **Logs**: Application and system logs.
-  - **Alarms**: Notifications or automated responses.
-  - **Dashboards**: Custom visualizations.
-  - **Insights**: Advanced log analytics.
+- **Metrics**: Asosiy ishlash ma'lumotlarini to'plang va kuzatib boring.
+- **Logs**: Jurnallarni yig'ing, tahlil qiling va qidiring.
+- **Alarms**: Avtomatlashtirilgan harakatlarni ishga tushirish uchun ko'rsatkichlar uchun chegara qiymatlarini o'rnating.
+- **Dashboards**: Ma'lumotlarni real vaqt rejimida vizualizatsiya qiling.
+- **CloudWatch Events**: AWS resurslaridagi o'zgarishlarga asoslangan tetik harakatlari.
 
 ---
 
-## **3. Setting Up CloudWatch**
+## **2. CloudWatch arxitekturasiga umumiy nuqtai nazar**
 
-### Accessing CloudWatch
+- **Ma'lumot manbalari**:
+  - AWS Xizmatlar: EC2, RDS, Lambda, etc.
+  - CloudWatch Agent yordamida mahalliy serverlar yoki gibrid sozlamalar.
+- **Asosiy komponentlar**:
+  - **Metrics**: Miqdoriy ma'lumotlar nuqtalari (masalan, protsessordan foydalanish).
+  - **Logs**: Ilova va tizim jurnallari.
+  - **Alarms**: Bildirishnomalar yoki avtomatlashtirilgan javoblar.
+  - **Dashboards**: Maxsus vizualizatsiyalar.
+  - **Insights**: Kengaytirilgan jurnal tahlili.
 
-1. Go to the **AWS Management Console**.
-2. Navigate to **CloudWatch** under the **Management & Governance** section.
+---
 
-### CloudWatch Agent Installation
+## **3. CloudWatchni sozlash**
 
-To monitor custom metrics or on-premises resources:
+### CloudWatchga kirish
 
-1. Install the CloudWatch Agent on your instance:
+1. Boring **AWS Management Console**.
+2. Navigatsiya qiling **CloudWatch** ostida **Management & Governance** bo'lim.
+
+### CloudWatch Agentini O'rnatish
+
+Maxsus ko'rsatkichlarni yoki mahalliy resurslarni kuzatish uchun:
+
+1. CloudWatch Agentni o'zingizning nusxangizga o'rnating:
 
    ```bash
    sudo yum install amazon-cloudwatch-agent
    ```
 
-2. Configure the agent:
+2. Agentni sozlash:
 
    ```bash
    sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
    ```
 
-3. Start the agent:
+3. Agentni ishga tushiring:
 
    ```bash
    sudo /opt/aws/amazon-cloudwatch-agent/bin/start-amazon-cloudwatch-agent
    ```
 
-### Setting IAM Permissions
+### IAM ruxsatnomalarini sozlash
 
-Attach the **CloudWatchFullAccess** policy to the IAM role or user managing CloudWatch.
+**CloudWatchFullAccess** siyosatini IAM roliga yoki CloudWatchni boshqaradigan foydalanuvchiga biriktiring.
 
 ---
 
-## **4. Metrics Monitoring**
+## **4. Metrikalar monitoringi**
 
-### Viewing Metrics
+### Ko'rish ko'rsatkichlari
 
-1. In the CloudWatch console, go to **Metrics**.
-2. Select a namespace (e.g., `AWS/EC2`, `AWS/Lambda`).
-3. Choose metrics like `CPUUtilization`, `DiskWriteOps`, etc.
+1. CloudWatch konsolida **Metrics** ga o'ting.
+2. Nom maydonini tanlang (e.g., `AWS/EC2`, `AWS/Lambda`).
+3. “CPUUtilization”, “DiskWriteOps” kabi koʻrsatkichlarni tanlang.
 
-### Common Metrics:
+### Umumiy ko'rsatkichlar:
 
 - **EC2**:
   - `CPUUtilization`
@@ -96,12 +96,12 @@ Attach the **CloudWatchFullAccess** policy to the IAM role or user managing Clou
   - `Duration`
   - `Errors`
 
-### Custom Metrics
+### Maxsus metrikalar
 
-To send custom metrics:
+Maxsus ko'rsatkichlarni yuborish uchun:
 
-1. Install the AWS CLI.
-2. Publish a metric:
+1. AWS CLI ni o'rnating.
+2. Metrika nashr eting:
 
    ```bash
    aws cloudwatch put-metric-data --namespace "CustomNamespace" --metric-name "MetricName" --value 100
@@ -109,24 +109,24 @@ To send custom metrics:
 
 ---
 
-## **5. CloudWatch Logs**
+## **5. CloudWatch jurnallari**
 
-### Setting Up Log Groups and Streams
+### Jurnal guruhlari va oqimlarini sozlash
 
-1. Navigate to **Logs** in the CloudWatch console.
-2. Create a **Log Group** (e.g., `/aws/lambda/my-function`).
-3. Each application/service writes to a **Log Stream** under the group.
+1. CloudWatch konsolida **Logs** ga o'ting.
+2. **Log group** yarating (masalan, `/aws/lambda/my-function`).
+3. Har bir dastur/xizmat guruh ostidagi **Log Stream** yozadi.
 
-### Exporting Logs to S3
+### Logs ni S3 ga eksport qilish
 
-1. Go to **Logs** → Select a log group.
-2. Click **Actions** → **Export data to Amazon S3**.
-3. Configure the export with the desired time range.
+1. Boring **Logs** → Log guruhini tanlang.
+2. Bosing **Actions** → **Export data to Amazon S3**.
+3. Eksportni kerakli vaqt oralig'i bilan sozlang.
 
-### Querying Logs with CloudWatch Logs Insights
+### CloudWatch Logs Insights yordamida log larni so'rov qilish
 
-1. Navigate to **Logs Insights**.
-2. Write queries for analysis:
+1. **Logs Insights** ga o'ting.
+2. Tahlil uchun so'rovlar yozing:
 
    ```sql
    fields @timestamp, @message
@@ -137,49 +137,49 @@ To send custom metrics:
 
 ---
 
-## **6. CloudWatch Alarms**
+## **6. CloudWatch signallari**
 
-### Creating an Alarm
+### Signal yaratish
 
-1. Go to **Alarms** in the CloudWatch console.
-2. Click **Create Alarm**.
-3. Select a metric (e.g., `CPUUtilization`).
-4. Set a threshold (e.g., `> 80%` for 5 minutes).
-5. Choose an action (e.g., send an SNS notification).
+1. Boring **Alarms** CloudWatch konsolida.
+2. Bosing **Create Alarm**.
+3. Ko'rsatkichni tanlang (masalan, `CPUUtilization`).
 
-### Alarm States:
+5. Amalni tanlang (masalan, SNS bildirishnomasini yuboring).
 
-- **OK**: Metric is within the defined threshold.
-- **ALARM**: Metric breaches the threshold.
-- **INSUFFICIENT DATA**: No data available.
+### Signal holatlari:
 
-### Advanced Alarm Configurations
+- **OK**: Metrika belgilangan chegara ichida.
+- **ALARM**: Metrika chegarani buzadi.
+- **INSUFFICIENT DATA**: Ma'lumotlar mavjud emas.
 
-- Composite Alarms: Combine multiple alarms.
-- Actions:
-  - Notify via SNS.
-  - Trigger Lambda functions.
-  - Stop/start EC2 instances.
+### Kengaytirilgan signal konfiguratsiyalari
+
+- Kompozit signallar: Bir nechta signallarni birlashtirish.
+- Harakatlar:
+  - SNS orqali xabar bering.
+  - Lambda funksiyalarini ishga tushirish.
+  - EC2 nusxalarini to'xtatish/boshlash.
 
 ---
 
-## **7. CloudWatch Dashboards**
+## **7. CloudWatch boshqaruv panellari**
 
-### Creating a Dashboard
+### Boshqaruv panelini yaratish
 
-1. Go to **Dashboards** in the CloudWatch console.
-2. Click **Create Dashboard**.
-3. Add widgets:
-   - **Line** for metrics.
-   - **Number** for single values.
-   - **Text** for notes.
+1. Boring **Dashboards** CloudWatch konsolida.
+2. Bosing **Create Dashboard**.
+3. Vidjetlarni qo'shish:
+   - **Line** metrikalar uchun.
+   - **Number** bitta qiymatlar uchun.
+   - **Text** notalar uchun.
 
-### Customizing Widgets
+### Vidjetlarni sozlash
 
-- Choose metrics from different namespaces.
-- Configure time ranges and granularity.
+- Turli nom maydonlaridan metrikalarni tanlang.
+- Vaqt diapazonlari va teranlikni sozlang.
 
-### Example: Multi-Service Dashboard
+### Misol: Ko'p xizmatli boshqaruv paneli
 
 - **EC2 Metrics**: CPU, Disk, Network.
 - **RDS Metrics**: Connections, IOPS.
@@ -187,17 +187,17 @@ To send custom metrics:
 
 ---
 
-## **8. CloudWatch Events (EventBridge)**
+## **8. CloudWatch tadbirlari (EventBridge)**
 
-### Creating Rules
+### Qoidalar yaratish
 
-1. Navigate to **Rules** under **Events** in the CloudWatch console.
-2. Create a rule with an event pattern (e.g., EC2 state change).
-3. Add a target (e.g., SNS, Lambda, Step Functions).
+1. Navigatsiya qiling **Rules** ostida **Events** CloudWatch konsolida.
+2. Hodisa naqshiga ega qoida yarating (masalan, EC2 holatini o'zgartirish).
+3. Maqsad qo'shing (masalan, SNS, Lambda, Step Functions).
 
-### Example: Automate Instance Shutdown
+### Misol: Avtomatik o'chirish misoli
 
-1. Event Pattern:
+1. Tadbir shakli:
 
    ```json
    {
@@ -209,29 +209,29 @@ To send custom metrics:
    }
    ```
 
-2. Target: Send an SNS notification.
+2. Nishon: SNS bildirishnomasini yuboring.
 
 ---
 
-## **9. Advanced Configurations**
+## **9. Kengaytirilgan konfiguratsiyalar**
 
-### Cross-Account Monitoring
+### Hisoblararo monitoring
 
-1. Create a cross-account role with permissions to access CloudWatch in the target account.
-2. Use the `CloudWatch:ListMetrics` and `CloudWatch:GetMetricData` APIs.
+1. Maqsadli hisobda CloudWatch’ga kirish huquqiga ega boʻlgan hisoblararo rol yarating.
+2. `CloudWatch:ListMetrics` va `CloudWatch:GetMetricData` API'laridan foydalaning.
 
-### Anomaly Detection
+### Anomaliyani aniqlash
 
-Enable anomaly detection for metrics:
+Ko'rsatkichlar uchun anomaliyani aniqlashni yoqish:
 
-1. Go to **Metrics** → Select a metric.
-2. Click **Actions** → **Enable anomaly detection**.
+1. Boring **Metrics** → Metrikani tanlang.
+2. Bosing **Actions** → **Enable anomaly detection**.
 
-### Metric Math
+### Metrik matematika
 
-Perform calculations across metrics:
+Ko'rsatkichlar bo'yicha hisob-kitoblarni amalga oshiring:
 
-- Example: Combine CPU utilization across instances.
+- Misol: Turli holatlarda protsessordan foydalanishni birlashtirish.
 
   ```bash
   (m1+m2)/2
@@ -239,80 +239,80 @@ Perform calculations across metrics:
 
 ---
 
-## **10. Integration with Other Services**
+## **10. Boshqa xizmatlar bilan integratsiya**
 
 ### AWS Lambda
 
-- Use `console.log()` to write logs to CloudWatch.
-- Monitor Lambda-specific metrics like `Errors` and `Throttles`.
+- CloudWatch’ga jurnallar yozish uchun `console.log()` dan foydalaning.
+- “Xatolar” va “Drossellar” kabi Lambdaga xos koʻrsatkichlarni kuzatib boring.
 
 ### ECS/EKS
 
-- Enable CloudWatch Container Insights for detailed monitoring.
-- Use `awslogs` driver to send container logs to CloudWatch.
+- Batafsil monitoring uchun CloudWatch Container Insights funksiyasini yoqing.
+- Konteyner jurnallarini CloudWatch’ga yuborish uchun `awslogs` drayveridan foydalaning.
 
-### Integration with Third-Party Tools
+### Uchinchi tomon vositalari bilan integratsiya
 
-- Use **DataDog** or **Grafana** for enhanced visualization.
-- Integrate CloudWatch metrics into these platforms using APIs.
+- Foydalanish **DataDog** yoki **Grafana** vizualizatsiyani yaxshilash uchun.
+- API yordamida CloudWatch metrikalarini ushbu platformalarga integratsiya qiling.
 
 ---
 
-## **11. Security Best Practices**
+## **11. Xavfsizlikning eng yaxshi amaliyotlari**
 
-### Log Retention
+### Logni saqlash
 
-- Set retention policies for logs to reduce costs:
+- Xarajatlarni kamaytirish uchun jurnallarni saqlash siyosatini o'rnating:
 
   ```bash
   aws logs put-retention-policy --log-group-name "/aws/lambda/my-function" --retention-in-days 30
   ```
 
-### Fine-Grained Access Control
+### Nozik donador kirishni boshqarish
 
-- Use IAM policies to restrict access to specific metrics, logs, or dashboards.
+- Muayyan ko'rsatkichlar, log lar yoki boshqaruv panellariga kirishni cheklash uchun IAM siyosatlaridan foydalaning.
 
 ---
 
-## **12. CloudWatch Pricing**
+## **12. CloudWatch narxlari**
 
-### Pricing Model
+### Narxlash modeli
 
-1. **Metrics**: Charged per metric, per month.
+1. **Metrics**: Har bir metrika uchun, har oy uchun to'lov olinadi.
 2. **Logs**:
-   - Ingestion: Cost per GB ingested.
-   - Storage: Cost per GB stored.
-3. **Dashboards**: Charged per dashboard, per month.
+   - Yutish: Yutilgan har bir GB uchun narx.
+   - Saqlash: Har bir GB saqlangan joy narxi.
+3. **Dashboards**: Har bir boshqaruv paneli uchun oyiga to'lov olinadi.
 
-### Cost Optimization Tips
+### Xarajatlarni optimallashtirish bo'yicha maslahatlar
 
-- Use metric filters to limit data collection.
-- Set shorter retention periods for logs.
-
----
-
-## **13. Best Practices**
-
-1. **Organize Log Groups**:
-   - Use consistent naming conventions (e.g., `/application/environment/service`).
-
-2. **Use Alarms Wisely**:
-   - Avoid too many alarms to prevent alert fatigue.
-   - Use composite alarms to group related metrics.
-
-3. **Automate Monitoring**:
-   - Automate alert creation and dashboards using CloudFormation or Terraform.
-
-4. **Optimize Log Storage**:
-   - Export logs to S3 for long-term storage and analysis.
-
-5. **Enable Anomaly Detection**:
-   - Automate anomaly detection for critical metrics.
+- Ma'lumotlar to'plashni cheklash uchun metrik filtrlardan foydalaning.
+- Jurnallar uchun qisqaroq saqlash muddatlarini belgilang.
 
 ---
 
-## **14. References and Resources**
+## **13. Eng yaxshi amaliyotlar**
 
-- [CloudWatch Documentation](https://docs.aws.amazon.com/cloudwatch/)
-- [Metric Math Syntax Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html)
-- [CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/)
+1. **Log guruhlarini tashkil qilish**:
+   - Izchil nomlash konventsiyalaridan foydalaning (masalan, `/application/environment/service`).
+
+2. **Signallardan oqilona foydalaning**:
+   - Uyg'otish charchoqlarining oldini olish uchun juda ko'p signallardan saqlaning.
+   - Tegishli ko'rsatkichlarni guruhlash uchun kompozit signallardan foydalaning.
+
+3. **Avtomatlashtirilgan monitoring**:
+   - CloudFormation yoki Terraform yordamida ogohlantirishlarni yaratish va boshqaruv panellarini avtomatlashtiring.
+
+4. **Log saqlashni optimallashtirish**:
+   - Uzoq muddatli saqlash va tahlil qilish uchun jurnallarni S3 ga eksport qiling.
+
+5. **Anomaliyani aniqlashni yoqish**:
+   - Muhim ko'rsatkichlar uchun anomaliyalarni aniqlashni avtomatlashtirish.
+
+---
+
+## **14. Adabiyotlar va resurslar**
+
+- [CloudWatch Hujjatlar](https://docs.aws.amazon.com/cloudwatch/)
+- [Metrik matematika sintaksisi qo'llanmasi](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html)
+- [CloudWatch Narxlar](https://aws.amazon.com/cloudwatch/pricing/)
