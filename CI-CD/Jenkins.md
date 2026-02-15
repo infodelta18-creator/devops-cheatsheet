@@ -36,9 +36,9 @@
 - **Jenkins’ga kirish:**
 - Veb-brauzeringizda `http://localhost:8080` ga tashrif buyuring.
 
-**3. Jenkins Quvuri:**
+**3. Jenkins yo'li:**
 
-- **Deklarativ Quvuri:**
+- **Deklarativ yo'li:**
 
   ```groovy
   pipeline {
@@ -79,7 +79,7 @@
   }
   ```
 
-- **Ssenariy asosida tuzilgan quvur liniyasi:**
+- **Ssenariy asosida tuzilgan yo'l liniyasi:**
 
   ```groovy
   node {
@@ -116,14 +116,14 @@
 
 - **Moviy Okean:** Jenkins quvur liniyalari uchun zamonaviy foydalanuvchi interfeysi.
 - **Git:** Git versiya boshqaruvini Jenkinsga integratsiya qilish.
-- **Quvur liniyasi:** Quvur liniyasini kod sifatida yoqadi.
+- **Yo'l liniyasi:** Yo'l liniyasini kod sifatida yoqadi.
 - **Ishonch yorliqlarini bog'lash:** Ishonch yorliqlarini xavfsiz boshqarish
 - **SonarQube skaneri:** Kod sifatini tekshirishni birlashtiradi.
 - **Slack bildirishnomasi:** Slack’ga quvur liniyasi holati haqida bildirishnomalarni yuboring.
 
 **6. Eng yaxshi amaliyotlar:**
 
-- **Quvur liniyasi kodi sifatida:** Izchil va versiya nazorati ostidagi tuzilmalar uchun har doim `Jenkinsfile` da belgilangan Jenkins quvur liniyasidan foydalaning.
+- **Yo'l liniyasi kodi sifatida:** Izchil va versiya nazorati ostidagi tuzilmalar uchun har doim `Jenkinsfile` da belgilangan Jenkins quvur liniyasidan foydalaning.
 - **Parametrlardan foydalaning:** Quvur liniyasini moslashuvchan va qayta ishlash uchun parametrlardan foydalaning.
 
   ```groovy
@@ -182,7 +182,7 @@
    sudo chown -R jenkins:jenkins /var/lib/jenkins
    ```
 
-2. **Quvur liniyasidagi nosozlik**
+2. **Yo'l liniyasidagi nosozlik**
    ```groovy
    // Add error handling
    pipeline {
